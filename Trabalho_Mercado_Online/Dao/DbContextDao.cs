@@ -1,38 +1,41 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Trabalho_Mercado_Online.Models;
 
-namespace Trabalho_Mercado_Online.Dao
+#nullable disable
+
+namespace Trabalho_Mercado_Online.DAO
 {
-    class DbContextDao : DbContext
+    public partial class DBContextDAO : DbContext
     {
-        public DbContextDao()
+        public DBContextDAO()
         {
         }
 
-        public DbContextDao(DbContextOptions<DbContextDao> options)
+        public DBContextDAO(DbContextOptions<DBContextDAO> options)
             : base(options)
         {
         }
-        public virtual DbSet<TbBairro> TbBairros { get; set; }
-        public virtual DbSet<TbCarrinho> TbCarrinhos { get; set; }
-        public virtual DbSet<TbCategoriasNivel1> TbCategoriasNivel1s { get; set; }
-        public virtual DbSet<TbCategoriasNivel2> TbCategoriasNivel2s { get; set; }
-        public virtual DbSet<TbCategoriasNivel3> TbCategoriasNivel3s { get; set; }
-        public virtual DbSet<TbCliente> TbClientes { get; set; }
-        public virtual DbSet<TbEstado> TbEstados { get; set; }
-        public virtual DbSet<TbLocaisEntrega> TbLocaisEntregas { get; set; }
-        public virtual DbSet<TbMunicipio> TbMunicipios { get; set; }
-        public virtual DbSet<TbProduto> TbProdutos { get; set; }
-        public virtual DbSet<TbProdutosCategorium> TbProdutosCategoria { get; set; }
-        public virtual DbSet<TbProdutosCodigoBarra> TbProdutosCodigoBarras { get; set; }
+
+        public virtual DbSet<Bairro> Bairros { get; set; }
+        public virtual DbSet<Carrinho> Carrinhos { get; set; }
+        public virtual DbSet<CategoriasNivel1> CategoriasNivel1s { get; set; }
+        public virtual DbSet<CategoriasNivel2> CategoriasNivel2s { get; set; }
+        public virtual DbSet<CategoriasNivel3> CategoriasNivel3s { get; set; }
+        public virtual DbSet<Cliente> Clientes { get; set; }
+        public virtual DbSet<Estado> Estados { get; set; }
+        public virtual DbSet<LocaisEntrega> LocaisEntregas { get; set; }
+        public virtual DbSet<Municipio> Municipios { get; set; }
+        public virtual DbSet<Produto> Produtos { get; set; }
+        public virtual DbSet<ProdutosCategorium> ProdutosCategoria { get; set; }
+        public virtual DbSet<ProdutosCodigoBarra> ProdutosCodigoBarras { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseMySql("server=108.179.252.18;port=3306;database=merca467_mercado_online;uid=merca467_sistema;pwd=sistemavalendo;sslmode=none;connect timeout=30", Microsoft.EntityFrameworkCore.ServerVersion.Parse("5.6.41-mysql"));
             }
         }
@@ -42,9 +45,9 @@ namespace Trabalho_Mercado_Online.Dao
             modelBuilder.HasCharSet("utf8")
                 .UseCollation("utf8_unicode_ci");
 
-            modelBuilder.Entity<TbBairro>(entity =>
+            modelBuilder.Entity<Bairro>(entity =>
             {
-                entity.ToTable("tb_bairros");
+                entity.ToTable("bairros");
 
                 entity.HasComment("tabela com todos os bairros");
 
@@ -78,9 +81,9 @@ namespace Trabalho_Mercado_Online.Dao
                     .HasComment("nome do bairro");
             });
 
-            modelBuilder.Entity<TbCarrinho>(entity =>
+            modelBuilder.Entity<Carrinho>(entity =>
             {
-                entity.ToTable("tb_carrinhos");
+                entity.ToTable("carrinhos");
 
                 entity.HasComment("tabela com os dados do carrinho dos clientes");
 
@@ -105,9 +108,9 @@ namespace Trabalho_Mercado_Online.Dao
                     .HasComment("quantidade de itens do mesmo produto no carrinho");
             });
 
-            modelBuilder.Entity<TbCategoriasNivel1>(entity =>
+            modelBuilder.Entity<CategoriasNivel1>(entity =>
             {
-                entity.ToTable("tb_categorias_nivel_1");
+                entity.ToTable("categorias_nivel_1");
 
                 entity.HasComment("tabela com os dados da categoria nivel 1");
 
@@ -134,9 +137,9 @@ namespace Trabalho_Mercado_Online.Dao
                     .HasComment("ordem de exibição");
             });
 
-            modelBuilder.Entity<TbCategoriasNivel2>(entity =>
+            modelBuilder.Entity<CategoriasNivel2>(entity =>
             {
-                entity.ToTable("tb_categorias_nivel_2");
+                entity.ToTable("categorias_nivel_2");
 
                 entity.HasComment("tabela com os dados da categoria nivel 2");
 
@@ -168,9 +171,9 @@ namespace Trabalho_Mercado_Online.Dao
                     .HasComment("ordem de exibição");
             });
 
-            modelBuilder.Entity<TbCategoriasNivel3>(entity =>
+            modelBuilder.Entity<CategoriasNivel3>(entity =>
             {
-                entity.ToTable("tb_categorias_nivel_3");
+                entity.ToTable("categorias_nivel_3");
 
                 entity.HasComment("tabela com os dados da categoria nivel 3");
 
@@ -207,9 +210,9 @@ namespace Trabalho_Mercado_Online.Dao
                     .HasComment("ordem de exibição");
             });
 
-            modelBuilder.Entity<TbCliente>(entity =>
+            modelBuilder.Entity<Cliente>(entity =>
             {
-                entity.ToTable("tb_clientes");
+                entity.ToTable("clientes");
 
                 entity.HasComment("tabela com informações dos clientes");
 
@@ -271,9 +274,9 @@ namespace Trabalho_Mercado_Online.Dao
                     .HasComment("saldo do cliente");
             });
 
-            modelBuilder.Entity<TbEstado>(entity =>
+            modelBuilder.Entity<Estado>(entity =>
             {
-                entity.ToTable("tb_estados");
+                entity.ToTable("estados");
 
                 entity.HasComment("tabela com todos os estados ");
 
@@ -295,9 +298,9 @@ namespace Trabalho_Mercado_Online.Dao
                     .HasComment("nome do estado");
             });
 
-            modelBuilder.Entity<TbLocaisEntrega>(entity =>
+            modelBuilder.Entity<LocaisEntrega>(entity =>
             {
-                entity.ToTable("tb_locais_entrega");
+                entity.ToTable("locais_entrega");
 
                 entity.HasComment("tabela com objetivo de informar as localidades com entrega disponivel");
 
@@ -324,9 +327,9 @@ namespace Trabalho_Mercado_Online.Dao
                     .HasComment("codigo do municipio");
             });
 
-            modelBuilder.Entity<TbMunicipio>(entity =>
+            modelBuilder.Entity<Municipio>(entity =>
             {
-                entity.ToTable("tb_municipios");
+                entity.ToTable("municipios");
 
                 entity.HasComment("tabela com todos os municipio ");
 
@@ -354,9 +357,9 @@ namespace Trabalho_Mercado_Online.Dao
                     .HasComment("nome do municipio");
             });
 
-            modelBuilder.Entity<TbProduto>(entity =>
+            modelBuilder.Entity<Produto>(entity =>
             {
-                entity.ToTable("tb_produtos");
+                entity.ToTable("produtos");
 
                 entity.HasComment("tabela com os dados dos produtos");
 
@@ -455,9 +458,9 @@ namespace Trabalho_Mercado_Online.Dao
                     .HasComment("30 - caixa volume =100 (cabe 3 na caixa)volume do produto\n");
             });
 
-            modelBuilder.Entity<TbProdutosCategorium>(entity =>
+            modelBuilder.Entity<ProdutosCategorium>(entity =>
             {
-                entity.ToTable("tb_produtos_categoria");
+                entity.ToTable("produtos_categoria");
 
                 entity.HasComment("tabela com os dados dos produtos relacionando com as categorias");
 
@@ -487,9 +490,9 @@ namespace Trabalho_Mercado_Online.Dao
                     .HasComment("referencia ao codigo do produto");
             });
 
-            modelBuilder.Entity<TbProdutosCodigoBarra>(entity =>
+            modelBuilder.Entity<ProdutosCodigoBarra>(entity =>
             {
-                entity.ToTable("tb_produtos_codigo_barra");
+                entity.ToTable("produtos_codigo_barra");
 
                 entity.HasComment("tabela com dados dos codigos de barra relacionando com o codigo do produto");
 
@@ -510,9 +513,9 @@ namespace Trabalho_Mercado_Online.Dao
                     .HasComment("referencia do codigo do produto");
             });
 
-           
+            OnModelCreatingPartial(modelBuilder);
         }
 
-       
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
