@@ -1,0 +1,9 @@
+﻿<Application x:Class="Trabalho_Mercado_Online.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Trabalho_Mercado_Online"
+             StartupUri="Views/Main_Window.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
