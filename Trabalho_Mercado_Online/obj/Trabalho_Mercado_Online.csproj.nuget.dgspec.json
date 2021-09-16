@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "D:\\Git\\Trabalho_Mercado_Online\\Trabalho_Mercado_Online\\Trabalho_Mercado_Online.csproj",
-        "projectName": "Trabalho_Mercado_Online",
+        "projectName": "Mercado Online",
         "projectPath": "D:\\Git\\Trabalho_Mercado_Online\\Trabalho_Mercado_Online\\Trabalho_Mercado_Online.csproj",
         "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
         "outputPath": "D:\\Git\\Trabalho_Mercado_Online\\Trabalho_Mercado_Online\\obj\\",
@@ -44,25 +44,41 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "MMLib.Extensions": {
+              "target": "Package",
+              "version": "[1.0.10.13, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.9, )"
+              "version": "[5.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.9, )"
+              "version": "[5.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.9, )"
+              "version": "[5.0.10, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[5.0.1, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Unoffical.System.Speech": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "WindowsAzure.Storage": {
+              "target": "Package",
+              "version": "[9.3.3, )"
             }
           },
           "imports": [

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Trabalho_Mercado_Online.Helpers;
 using Trabalho_Mercado_Online.Views;
 
 namespace Trabalho_Mercado_Online
@@ -18,7 +19,8 @@ namespace Trabalho_Mercado_Online
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
+            Global.Listas = new ListasBanco();
+            Application.Run(new FrmPrincipal());
         }
     }
 }

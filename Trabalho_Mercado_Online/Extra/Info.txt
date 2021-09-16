@@ -1,0 +1,8 @@
+﻿tamanho img produto 1000x1200
+
+tamanho img categoria 550x310
+
+
+
+Atualizar o Banco
+Scaffold-DbContext "Server=108.179.252.18; Port= 3306; Database=merca467_mercado_online; Uid=merca467_sistema; Pwd=sistemavalendo; SslMode = none; Connect Timeout = 30;" Pomelo.EntityFrameworkCore.MySql -OutputDir Models -f

@@ -1,22 +1,8 @@
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.csproj.AssemblyReference.cache
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmMain.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.csproj.GenerateResource.cache
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.AssemblyInfoInputs.cache
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.AssemblyInfo.cs
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.csproj.CoreCompileInputs.cache
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Trabalho_Mercado_Online.exe
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Trabalho_Mercado_Online.deps.json
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Trabalho_Mercado_Online.runtimeconfig.json
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Trabalho_Mercado_Online.runtimeconfig.dev.json
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Trabalho_Mercado_Online.dll
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Trabalho_Mercado_Online.pdb
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.dll
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.pdb
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.genruntimeconfig.cache
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmCategoria_Nivel_1.resources
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmCategoria_Nivel_2.resources
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmCategoria_Nivel_3.resources
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmProduto.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Humanizer.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -37,3 +23,47 @@ D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\S
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.csproj.CopyComplete
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Properties.Resources.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmInicio.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmPrincipal.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmCategorias_Nivel_1.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmCategorias_Nivel_2.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmCategorias_Nivel_3.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmProdutos.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views_Access.FrmAlimentarProdutosAccess.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views_Access.FrmProdutosAccess.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Mercado Online.exe
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Mercado Online.deps.json
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Mercado Online.runtimeconfig.json
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Mercado Online.runtimeconfig.dev.json
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Mercado Online.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Mercado Online.pdb
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Mercado Online.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Mercado Online.pdb
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmProduto.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\MMLib.Core.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\MMLib.Extensions.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.csproj.AssemblyReference.cache
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\System.CodeDom.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\System.Security.AccessControl.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\System.Security.Principal.Windows.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\System.Speech.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\zh-HANS\System.Speech.resources.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Microsoft.WindowsAzure.Storage.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll

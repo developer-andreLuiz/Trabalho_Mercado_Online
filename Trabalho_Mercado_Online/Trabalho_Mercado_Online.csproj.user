@@ -1,19 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Views\FrmCategoria_Nivel_1.cs">
+    <Compile Update="Views Access\FrmAlimentarProdutosAccess.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\FrmCategoria_Nivel_2.cs">
+    <Compile Update="Views Access\FrmProdutosAccess.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\FrmCategoria_Nivel_3.cs">
+    <Compile Update="Views\FrmCategorias_Nivel_1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\FrmMain.cs">
+    <Compile Update="Views\FrmCategorias_Nivel_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\FrmCategorias_Nivel_3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\FrmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\FrmProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\FrmProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

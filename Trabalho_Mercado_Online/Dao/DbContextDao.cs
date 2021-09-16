@@ -7,17 +7,15 @@ using Trabalho_Mercado_Online.Models;
 
 namespace Trabalho_Mercado_Online.DAO
 {
-    public partial class DBContextDAO : DbContext
+    public partial class DBContextDAO:DbContext
     {
         public DBContextDAO()
         {
         }
-
-        public DBContextDAO(DbContextOptions<DBContextDAO> options)
-            : base(options)
+        public DBContextDAO(DbContextOptions<DBContextDAO> options) : base(options)
         {
-        }
 
+        }
         public virtual DbSet<Bairro> Bairros { get; set; }
         public virtual DbSet<Carrinho> Carrinhos { get; set; }
         public virtual DbSet<CategoriasNivel1> CategoriasNivel1s { get; set; }
@@ -27,10 +25,9 @@ namespace Trabalho_Mercado_Online.DAO
         public virtual DbSet<Estado> Estados { get; set; }
         public virtual DbSet<LocaisEntrega> LocaisEntregas { get; set; }
         public virtual DbSet<Municipio> Municipios { get; set; }
-        public virtual DbSet<Produto> Produtos { get; set; }
-        public virtual DbSet<ProdutosCategorium> ProdutosCategoria { get; set; }
+        public virtual DbSet<Produtos> Produtos { get; set; }
+        public virtual DbSet<ProdutosCategoria> ProdutosCategoria { get; set; }
         public virtual DbSet<ProdutosCodigoBarra> ProdutosCodigoBarras { get; set; }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -39,7 +36,6 @@ namespace Trabalho_Mercado_Online.DAO
                 optionsBuilder.UseMySql("server=108.179.252.18;port=3306;database=merca467_mercado_online;uid=merca467_sistema;pwd=sistemavalendo;sslmode=none;connect timeout=30", Microsoft.EntityFrameworkCore.ServerVersion.Parse("5.6.41-mysql"));
             }
         }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasCharSet("utf8")
@@ -357,7 +353,7 @@ namespace Trabalho_Mercado_Online.DAO
                     .HasComment("nome do municipio");
             });
 
-            modelBuilder.Entity<Produto>(entity =>
+            modelBuilder.Entity<Produtos>(entity =>
             {
                 entity.ToTable("produtos");
 
@@ -365,7 +361,6 @@ namespace Trabalho_Mercado_Online.DAO
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
-                    .ValueGeneratedNever()
                     .HasColumnName("id")
                     .HasComment("autonumerico chave primaria da tabela");
 
@@ -377,9 +372,8 @@ namespace Trabalho_Mercado_Online.DAO
                     .HasComment("numero de codigo interno da loja\\n");
 
                 entity.Property(e => e.CustoUnitario)
-                    .HasPrecision(2)
                     .HasColumnName("custo_unitario")
-                    .HasComment("valor de custo do produto\n");
+                    .HasComment("valor de custo do produto\\\\n");
 
                 entity.Property(e => e.Descricao)
                     .IsRequired()
@@ -398,11 +392,6 @@ namespace Trabalho_Mercado_Online.DAO
                     .HasMaxLength(255)
                     .HasColumnName("gramatura")
                     .HasComment("1,5L  - 50ml (sem espaço e maiusculo) kg - gr - lt - ml - und\n");
-
-                entity.Property(e => e.IgualaFardo)
-                    .HasColumnType("int(11)")
-                    .HasColumnName("iguala_fardo")
-                    .HasComment("0 - 1 - 2 -3 \nserve para realizar alteração em fardos iguais");
 
                 entity.Property(e => e.IgualaProduto)
                     .HasColumnType("int(11)")
@@ -443,14 +432,12 @@ namespace Trabalho_Mercado_Online.DAO
                     .HasComment("se o produto é perecivel ou nao\n");
 
                 entity.Property(e => e.ValorPromocao)
-                    .HasPrecision(2)
                     .HasColumnName("valor_promocao")
-                    .HasComment("valor de promoção do produto\n");
+                    .HasComment("valor de promoção do produto\\\\n");
 
                 entity.Property(e => e.ValorVenda)
-                    .HasPrecision(2)
                     .HasColumnName("valor_venda")
-                    .HasComment("valor de venda do produto\n");
+                    .HasComment("valor de venda do produto\\\\n");
 
                 entity.Property(e => e.Volume)
                     .HasColumnType("int(11)")
@@ -458,7 +445,7 @@ namespace Trabalho_Mercado_Online.DAO
                     .HasComment("30 - caixa volume =100 (cabe 3 na caixa)volume do produto\n");
             });
 
-            modelBuilder.Entity<ProdutosCategorium>(entity =>
+            modelBuilder.Entity<ProdutosCategoria>(entity =>
             {
                 entity.ToTable("produtos_categoria");
 
@@ -488,6 +475,10 @@ namespace Trabalho_Mercado_Online.DAO
                     .HasColumnType("int(11)")
                     .HasColumnName("codigo_produto")
                     .HasComment("referencia ao codigo do produto");
+
+                entity.Property(e => e.Ordem)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("ordem");
             });
 
             modelBuilder.Entity<ProdutosCodigoBarra>(entity =>
@@ -515,7 +506,6 @@ namespace Trabalho_Mercado_Online.DAO
 
             OnModelCreatingPartial(modelBuilder);
         }
-
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
