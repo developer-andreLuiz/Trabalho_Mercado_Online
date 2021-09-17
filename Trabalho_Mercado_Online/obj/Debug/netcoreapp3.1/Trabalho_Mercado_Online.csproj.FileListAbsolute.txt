@@ -67,3 +67,7 @@ D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\S
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Microsoft.WindowsAzure.Storage.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\System.Data.OleDb.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\System.Diagnostics.PerformanceCounter.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Data.OleDb.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll

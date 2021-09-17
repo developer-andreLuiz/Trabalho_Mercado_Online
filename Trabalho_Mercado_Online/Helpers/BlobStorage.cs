@@ -31,7 +31,7 @@ namespace Trabalho_Mercado_Online.Helpers
             blob.UploadFromFileAsync(pathLocal);
         }
 
-        public static void Delete(string conteinerLocal, string nomeImagemLocal)
+        public static void Deletar(string conteinerLocal, string nomeImagemLocal)
         {
             CloudStorageAccount account = CloudStorageAccount.Parse(conexao);
             CloudBlobClient client = account.CreateCloudBlobClient();

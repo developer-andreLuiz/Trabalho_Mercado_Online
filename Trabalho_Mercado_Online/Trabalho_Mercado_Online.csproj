@@ -6,6 +6,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <AssemblyName>Mercado Online</AssemblyName>
     <ApplicationIcon>Icone.ico</ApplicationIcon>
+    <Platforms>AnyCPU;x86</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,6 +22,7 @@
     <PackageReference Include="MMLib.Extensions" Version="1.0.10.13" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.1" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+    <PackageReference Include="System.Data.OleDb" Version="5.0.0" />
     <PackageReference Include="Unoffical.System.Speech" Version="1.0.0" />
     <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
   </ItemGroup>

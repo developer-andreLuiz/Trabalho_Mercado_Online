@@ -488,7 +488,7 @@ namespace Trabalho_Mercado_Online.Views
 
             if (Continuar)
             {
-                string pergunta = $"Deseja inserir os Produtos nas Categorias:{Environment.NewLine}Categoria Nive1: {Nome1}.{Environment.NewLine}Categoria Nive2: {Nome2}.{Environment.NewLine}Categoria Nive3: {Nome3}.";
+                string pergunta = $"Deseja inserir os Produtos nas Categorias:{Environment.NewLine}Categoria Nivel1: {Nome1}.{Environment.NewLine}Categoria Nivel2: {Nome2}.{Environment.NewLine}Categoria Nivel3: {Nome3}.";
 
                 DialogResult dialog = MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -582,7 +582,7 @@ namespace Trabalho_Mercado_Online.Views
                         ProdutosCategoria p = Global.Listas.ProdutosCategoria.Find(x => x.CodigoProduto == id && x.CategoriaNivel1 == nivel1 && x.CategoriaNivel2 == nivel2 && x.CategoriaNivel3 == nivel3);
                         if (p != null)
                         {
-                            ProdutosCategoriaController.Delete(p);
+                            ProdutosCategoriaController.Deletar(p);
                         }
 
                     }

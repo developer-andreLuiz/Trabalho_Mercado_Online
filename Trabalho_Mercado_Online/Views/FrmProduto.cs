@@ -536,18 +536,37 @@ namespace Trabalho_Mercado_Online.Views
             }
             else
             {
-                DialogResult dialog = MessageBox.Show("ATENÇÃO! Deseja Deletar o Produto? é irreversível.", "Perigo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialog = MessageBox.Show("ATENÇÃO! Deseja Deletar o Produto? é irreversível.", "Perigo!", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
                 if (dialog == DialogResult.Yes)
                 {
-                    dialog = MessageBox.Show("ATENÇÃO! Tem Certeza? o registro sera perdido.", "Perigo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    dialog = MessageBox.Show("ATENÇÃO! Tem Certeza? O Registro será Deletado.", "Perigo!", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
                     if (dialog == DialogResult.Yes)
                     {
-                        //buscar produto 
-                        //apagar img
-                        //apagar da categoria 
-                        //apagar do codigo de barra 
-                        //atualizar todas as listas
-                        //exibir primeiro registro
+                        var p = Global.Listas.Produtos.Find(x=>x.Id==int.Parse(lblId.Text));
+                        ProdutosController.Deletar(p);
+                        BlobStorage.Deletar("produtos",p.Id.ToString());
+                        
+                        var listaCategorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CodigoProduto == p.Id);
+                        foreach (var item in listaCategorias)
+                        {
+                            ProdutosCategoriaController.Deletar(item);
+                        }
+
+                        var listaCodigoBarra = Global.Listas.ProdutosCodigoBarra.FindAll(x => x.CodigoProduto == p.Id);
+                        foreach (var item in listaCodigoBarra)
+                        {
+                            ProdutosCodigoBarraController.Deletar(item);
+                        }
+                        Global.Listas.Produtos = ProdutosController.GetAll();
+                        Global.Listas.ProdutosCategoria = ProdutosCategoriaController.GetAll();
+                        Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
+                        Limpar();
+                        AberturaForm();
+                        if (Global.Listas.Produtos.Count>0)
+                        {
+                            ExibirDados(Global.Listas.Produtos[0]);
+                        }
+                        MessageBox.Show("Atualizado", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }

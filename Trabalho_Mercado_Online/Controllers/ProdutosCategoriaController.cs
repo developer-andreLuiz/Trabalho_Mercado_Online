@@ -27,7 +27,7 @@ namespace Trabalho_Mercado_Online.Controllers
             }
             return obj;
         }
-        public static bool Delete(ProdutosCategoria obj)
+        public static bool Deletar(ProdutosCategoria obj)
         {
             bool r = false;
             try

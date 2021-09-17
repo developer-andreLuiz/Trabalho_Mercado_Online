@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LU15vz7K7k2NUS6PRRaRLB3RIGzZSHz9zAsnk8vMpBimWRv0K8m8cVhPqVh8puZ96R8/grQ7P6Mrv09486u1vg==",
+  "dgSpecHash": "yU/taufq20pkCllodBN+xJ2A5M7levUK8c8nXshheE81tYdpWd7EpipIY4dCUBcCO58P9E7n9rC55il9kdIGCA==",
   "success": true,
   "projectFilePath": "D:\\Git\\Trabalho_Mercado_Online\\Trabalho_Mercado_Online\\Trabalho_Mercado_Online.csproj",
   "expectedPackageFiles": [
@@ -61,8 +61,10 @@
     "C:\\Users\\Developer\\.nuget\\packages\\system.componentmodel.typeconverter\\4.3.0\\system.componentmodel.typeconverter.4.3.0.nupkg.sha512",
     "C:\\Users\\Developer\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",
     "C:\\Users\\Developer\\.nuget\\packages\\system.console\\4.3.0\\system.console.4.3.0.nupkg.sha512",
+    "C:\\Users\\Developer\\.nuget\\packages\\system.data.oledb\\5.0.0\\system.data.oledb.5.0.0.nupkg.sha512",
     "C:\\Users\\Developer\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Users\\Developer\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
+    "C:\\Users\\Developer\\.nuget\\packages\\system.diagnostics.performancecounter\\5.0.0\\system.diagnostics.performancecounter.5.0.0.nupkg.sha512",
     "C:\\Users\\Developer\\.nuget\\packages\\system.diagnostics.tools\\4.3.0\\system.diagnostics.tools.4.3.0.nupkg.sha512",
     "C:\\Users\\Developer\\.nuget\\packages\\system.diagnostics.tracing\\4.3.0\\system.diagnostics.tracing.4.3.0.nupkg.sha512",
     "C:\\Users\\Developer\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
