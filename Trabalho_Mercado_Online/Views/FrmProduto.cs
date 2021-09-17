@@ -492,14 +492,18 @@ namespace Trabalho_Mercado_Online.Views
                 p = ProdutosController.Gravar(p);
                 
                 BlobStorage.Upload("produtos",p.Id.ToString(),pathImagem);
-                
-                pCB.CodigoBarra = txtCodigoBarra.Text.Trim();
-                pCB.CodigoProduto = p.Id;
-                
-                ProdutosCodigoBarraController.Gravar(pCB);
+
+                if (novo)
+                {
+                    pCB.CodigoBarra = txtCodigoBarra.Text.Trim();
+                    pCB.CodigoProduto = p.Id;
+                    ProdutosCodigoBarraController.Gravar(pCB);
+                    Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
+                }
+               
                 
                 Global.Listas.Produtos = ProdutosController.GetAll();
-                Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
+               
                 ExibirDados(p);
                 BtnGravarLayout();
                 

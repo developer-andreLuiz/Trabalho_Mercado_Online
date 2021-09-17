@@ -30,9 +30,9 @@ namespace Trabalho_Mercado_Online.Views_Access
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAlimentarProdutosAccess));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSelecionarTudo = new System.Windows.Forms.Button();
             this.lblSelecionados = new System.Windows.Forms.Label();
@@ -53,8 +53,13 @@ namespace Trabalho_Mercado_Online.Views_Access
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.chkMaisQue = new System.Windows.Forms.CheckBox();
+            this.chkMenosQue = new System.Windows.Forms.CheckBox();
+            this.nUDQuantidade = new System.Windows.Forms.NumericUpDown();
+            this.btnAtualizarCodigos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDQuantidade)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -82,6 +87,7 @@ namespace Trabalho_Mercado_Online.Views_Access
             this.btnSelecionarTudo.Text = "Selecionar Tudo";
             this.btnSelecionarTudo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSelecionarTudo.UseVisualStyleBackColor = false;
+            this.btnSelecionarTudo.Click += new System.EventHandler(this.btnSelecionarTudo_Click);
             // 
             // lblSelecionados
             // 
@@ -111,6 +117,7 @@ namespace Trabalho_Mercado_Online.Views_Access
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdicionar.UseVisualStyleBackColor = false;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnLimparFiltro
             // 
@@ -119,9 +126,9 @@ namespace Trabalho_Mercado_Online.Views_Access
             this.btnLimparFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimparFiltro.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLimparFiltro.ForeColor = System.Drawing.Color.White;
-            this.btnLimparFiltro.Location = new System.Drawing.Point(785, 87);
+            this.btnLimparFiltro.Location = new System.Drawing.Point(797, 87);
             this.btnLimparFiltro.Name = "btnLimparFiltro";
-            this.btnLimparFiltro.Size = new System.Drawing.Size(101, 27);
+            this.btnLimparFiltro.Size = new System.Drawing.Size(89, 27);
             this.btnLimparFiltro.TabIndex = 97;
             this.btnLimparFiltro.Text = "Limpar Filtro";
             this.btnLimparFiltro.UseVisualStyleBackColor = false;
@@ -132,7 +139,7 @@ namespace Trabalho_Mercado_Online.Views_Access
             this.chkIgualaProduto.AutoSize = true;
             this.chkIgualaProduto.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkIgualaProduto.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkIgualaProduto.Location = new System.Drawing.Point(465, 90);
+            this.chkIgualaProduto.Location = new System.Drawing.Point(429, 90);
             this.chkIgualaProduto.Name = "chkIgualaProduto";
             this.chkIgualaProduto.Size = new System.Drawing.Size(105, 18);
             this.chkIgualaProduto.TabIndex = 96;
@@ -158,7 +165,7 @@ namespace Trabalho_Mercado_Online.Views_Access
             this.chkSemCategoria.AutoSize = true;
             this.chkSemCategoria.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkSemCategoria.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkSemCategoria.Location = new System.Drawing.Point(240, 90);
+            this.chkSemCategoria.Location = new System.Drawing.Point(228, 90);
             this.chkSemCategoria.Name = "chkSemCategoria";
             this.chkSemCategoria.Size = new System.Drawing.Size(107, 18);
             this.chkSemCategoria.TabIndex = 94;
@@ -171,7 +178,7 @@ namespace Trabalho_Mercado_Online.Views_Access
             this.chkPromocao.AutoSize = true;
             this.chkPromocao.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkPromocao.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkPromocao.Location = new System.Drawing.Point(364, 90);
+            this.chkPromocao.Location = new System.Drawing.Point(341, 90);
             this.chkPromocao.Name = "chkPromocao";
             this.chkPromocao.Size = new System.Drawing.Size(82, 18);
             this.chkPromocao.TabIndex = 93;
@@ -286,35 +293,35 @@ namespace Trabalho_Mercado_Online.Views_Access
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AllowUserToResizeColumns = false;
             this.dataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(224)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.MidnightBlue;
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(224)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.MidnightBlue;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.ColumnHeadersHeight = 40;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView.EnableHeadersVisualStyles = false;
             this.dataGridView.Location = new System.Drawing.Point(16, 174);
@@ -324,6 +331,7 @@ namespace Trabalho_Mercado_Online.Views_Access
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(869, 377);
             this.dataGridView.TabIndex = 84;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // txtDescricao
             // 
@@ -340,7 +348,7 @@ namespace Trabalho_Mercado_Online.Views_Access
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.label1.Location = new System.Drawing.Point(11, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 58);
@@ -348,12 +356,77 @@ namespace Trabalho_Mercado_Online.Views_Access
             this.label1.Text = "Produtos \r\nAccess\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // chkMaisQue
+            // 
+            this.chkMaisQue.AutoSize = true;
+            this.chkMaisQue.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chkMaisQue.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.chkMaisQue.Location = new System.Drawing.Point(540, 90);
+            this.chkMaisQue.Name = "chkMaisQue";
+            this.chkMaisQue.Size = new System.Drawing.Size(89, 18);
+            this.chkMaisQue.TabIndex = 102;
+            this.chkMaisQue.Text = "Vendido + =";
+            this.chkMaisQue.UseVisualStyleBackColor = true;
+            this.chkMaisQue.CheckedChanged += new System.EventHandler(this.chkMaisQue_CheckedChanged);
+            // 
+            // chkMenosQue
+            // 
+            this.chkMenosQue.AutoSize = true;
+            this.chkMenosQue.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chkMenosQue.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.chkMenosQue.Location = new System.Drawing.Point(632, 90);
+            this.chkMenosQue.Name = "chkMenosQue";
+            this.chkMenosQue.Size = new System.Drawing.Size(87, 18);
+            this.chkMenosQue.TabIndex = 103;
+            this.chkMenosQue.Text = "Vendido - =";
+            this.chkMenosQue.UseVisualStyleBackColor = true;
+            this.chkMenosQue.CheckedChanged += new System.EventHandler(this.chkMenosQue_CheckedChanged);
+            // 
+            // nUDQuantidade
+            // 
+            this.nUDQuantidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.nUDQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nUDQuantidade.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nUDQuantidade.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.nUDQuantidade.Location = new System.Drawing.Point(738, 92);
+            this.nUDQuantidade.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.nUDQuantidade.Name = "nUDQuantidade";
+            this.nUDQuantidade.Size = new System.Drawing.Size(53, 18);
+            this.nUDQuantidade.TabIndex = 105;
+            this.nUDQuantidade.ValueChanged += new System.EventHandler(this.nUDQuantidade_ValueChanged);
+            // 
+            // btnAtualizarCodigos
+            // 
+            this.btnAtualizarCodigos.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAtualizarCodigos.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnAtualizarCodigos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizarCodigos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAtualizarCodigos.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizarCodigos.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_barcode;
+            this.btnAtualizarCodigos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAtualizarCodigos.Location = new System.Drawing.Point(173, 588);
+            this.btnAtualizarCodigos.Name = "btnAtualizarCodigos";
+            this.btnAtualizarCodigos.Size = new System.Drawing.Size(132, 50);
+            this.btnAtualizarCodigos.TabIndex = 106;
+            this.btnAtualizarCodigos.Text = "  Atualizar\r\n  Codigos";
+            this.btnAtualizarCodigos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAtualizarCodigos.UseVisualStyleBackColor = false;
+            this.btnAtualizarCodigos.Click += new System.EventHandler(this.btnAtualizarCodigos_Click);
+            // 
             // FrmAlimentarProdutosAccess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(897, 648);
+            this.Controls.Add(this.btnAtualizarCodigos);
+            this.Controls.Add(this.nUDQuantidade);
+            this.Controls.Add(this.chkMenosQue);
+            this.Controls.Add(this.chkMaisQue);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSelecionarTudo);
             this.Controls.Add(this.lblSelecionados);
@@ -382,6 +455,7 @@ namespace Trabalho_Mercado_Online.Views_Access
             this.Text = "FrmAlimentarProdutosAccess";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDQuantidade)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,5 +483,9 @@ namespace Trabalho_Mercado_Online.Views_Access
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chkMaisQue;
+        private System.Windows.Forms.CheckBox chkMenosQue;
+        private System.Windows.Forms.NumericUpDown nUDQuantidade;
+        private System.Windows.Forms.Button btnAtualizarCodigos;
     }
 }

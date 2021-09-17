@@ -19,11 +19,11 @@ namespace Trabalho_Mercado_Online.Controllers
         {
             if (obj.Id > 0)
             {
-                ProdutosCodigoBarraDAO.Update(obj);
+                obj = ProdutosCodigoBarraDAO.Update(obj);
             }
             else
             {
-                ProdutosCodigoBarraDAO.Insert(obj);
+                obj = ProdutosCodigoBarraDAO.Insert(obj);
             }
             return obj;
         }
