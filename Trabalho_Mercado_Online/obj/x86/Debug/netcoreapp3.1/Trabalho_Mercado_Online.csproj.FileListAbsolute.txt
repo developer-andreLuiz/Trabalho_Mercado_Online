@@ -52,7 +52,6 @@ D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\x86\Debug\netcoreapp3
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\x86\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\x86\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\x86\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.csproj.AssemblyReference.cache
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Properties.Resources.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views_Access.FrmAlimentarProdutosAccess.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views_Access.FrmProdutosAccess.resources

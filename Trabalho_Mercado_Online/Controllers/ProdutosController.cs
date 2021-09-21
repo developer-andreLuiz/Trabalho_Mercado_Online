@@ -28,6 +28,8 @@ namespace Trabalho_Mercado_Online.Controllers
                 obj = ProdutosDAO.Insert(obj);
                 obj.Img = @"https://aplicativo.blob.core.windows.net/produtos/"+obj.Id+".jpg";
                 obj = ProdutosDAO.Update(obj);
+                //iguala
+                //-venda - promocao - peso - quant cx - volune - gamatura - embalagem
             }
             return obj;
         }

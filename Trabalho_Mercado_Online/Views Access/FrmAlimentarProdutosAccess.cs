@@ -485,12 +485,12 @@ namespace Trabalho_Mercado_Online.Views_Access
                         produto_Online.Embalagem = produto_access.embalagem;
                         produto_Online.Peso = "00000";
                         
-                        //produto_Online.IgualaProduto = produto_access.iguala;
+                        
                         produto_Online.IgualaProduto = 0;
                         
                         produto_Online.ItensCaixa = int.Parse(produto_access.Numero);
                         produto_Online.Volume = 0;
-                        //verificar validade
+                        
                         produto_Online.Validade = true;
                         produto_Online.Informacao = string.Empty;
 
@@ -502,23 +502,23 @@ namespace Trabalho_Mercado_Online.Views_Access
                         produto_Online = pesquisaProduto[0];
                     }
 
-                    //inserir codigo de barra
-                    foreach (var item in listacodigosproduto)
-                    {
-                        var pesquisaCodigoBarra = Global.Listas.ProdutosCodigoBarra.FindAll(x => x.CodigoBarra.Equals(item.Codigo_Barra));
-                        if (pesquisaCodigoBarra.Count==0)
-                        {
-                            if (produto_Online.Id>0)
-                            {
-                                ProdutosCodigoBarra produtosCodigoBarra = new ProdutosCodigoBarra();
-                                produtosCodigoBarra.CodigoBarra = item.Codigo_Barra;
-                                produtosCodigoBarra.CodigoProduto = produto_Online.Id;
-                                produtosCodigoBarra = ProdutosCodigoBarraController.Gravar(produtosCodigoBarra);
-                                Global.Listas.ProdutosCodigoBarra.Add(produtosCodigoBarra);
+                    ////inserir codigo de barra
+                    //foreach (var item in listacodigosproduto)
+                    //{
+                    //    var pesquisaCodigoBarra = Global.Listas.ProdutosCodigoBarra.FindAll(x => x.CodigoBarra.Equals(item.Codigo_Barra));
+                    //    if (pesquisaCodigoBarra.Count==0)
+                    //    {
+                    //        if (produto_Online.Id>0)
+                    //        {
+                    //            ProdutosCodigoBarra produtosCodigoBarra = new ProdutosCodigoBarra();
+                    //            produtosCodigoBarra.CodigoBarra = item.Codigo_Barra;
+                    //            produtosCodigoBarra.CodigoProduto = produto_Online.Id;
+                    //            produtosCodigoBarra = ProdutosCodigoBarraController.Gravar(produtosCodigoBarra);
+                    //            Global.Listas.ProdutosCodigoBarra.Add(produtosCodigoBarra);
                                 
-                            }
-                        }
-                    }
+                    //        }
+                    //    }
+                    //}
                 }
                
                 MessageBox.Show("Atualizado");
@@ -529,34 +529,34 @@ namespace Trabalho_Mercado_Online.Views_Access
 
         private void btnAtualizarCodigos_Click(object sender, EventArgs e)
         {
-            string pergunta = $"Deseja Atualizar os Codigos de Barra na Base de Dados Online?";
+            //string pergunta = $"Deseja Atualizar os Codigos de Barra na Base de Dados Online?";
 
-            DialogResult dialog = MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialog == DialogResult.Yes)
-            {
-                AtualizarListas();
-                foreach(var produto in Global.Listas.Produtos)
-                {
-                    var lista_codigos_produto = Lista_Codigos_Barras.FindAll(x=>x.Codigo.Equals(produto.CodigoLoja));
+            //DialogResult dialog = MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //if (dialog == DialogResult.Yes)
+            //{
+            //    AtualizarListas();
+            //    foreach(var produto in Global.Listas.Produtos)
+            //    {
+            //        var lista_codigos_produto = Lista_Codigos_Barras.FindAll(x=>x.Codigo.Equals(produto.CodigoLoja));
                     
-                    foreach (var item in lista_codigos_produto)
-                    {
-                        var pesquisaCodigoBarra = Global.Listas.ProdutosCodigoBarra.FindAll(x => x.CodigoBarra.Equals(item.Codigo_Barra));
+            //        foreach (var item in lista_codigos_produto)
+            //        {
+            //            var pesquisaCodigoBarra = Global.Listas.ProdutosCodigoBarra.FindAll(x => x.CodigoBarra.Equals(item.Codigo_Barra));
                        
-                        if (pesquisaCodigoBarra.Count == 0)
-                        {
-                            ProdutosCodigoBarra produtosCodigoBarra = new ProdutosCodigoBarra();
-                            produtosCodigoBarra.CodigoBarra = item.Codigo_Barra;
-                            produtosCodigoBarra.CodigoProduto = produto.Id;
+            //            if (pesquisaCodigoBarra.Count == 0)
+            //            {
+            //                ProdutosCodigoBarra produtosCodigoBarra = new ProdutosCodigoBarra();
+            //                produtosCodigoBarra.CodigoBarra = item.Codigo_Barra;
+            //                produtosCodigoBarra.CodigoProduto = produto.Id;
 
-                            produtosCodigoBarra = ProdutosCodigoBarraController.Gravar(produtosCodigoBarra);
-                            Global.Listas.ProdutosCodigoBarra.Add(produtosCodigoBarra);
-                        }
-                    }
+            //                produtosCodigoBarra = ProdutosCodigoBarraController.Gravar(produtosCodigoBarra);
+            //                Global.Listas.ProdutosCodigoBarra.Add(produtosCodigoBarra);
+            //            }
+            //        }
 
-                }
-                MessageBox.Show("Atualizado");
-            }
+            //    }
+            //    MessageBox.Show("Atualizado");
+            //}
         }
     }
 }

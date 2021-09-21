@@ -415,6 +415,7 @@ namespace Trabalho_Mercado_Online.Views_Access
             this.btnAtualizarCodigos.Text = "  Atualizar\r\n  Codigos";
             this.btnAtualizarCodigos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAtualizarCodigos.UseVisualStyleBackColor = false;
+            this.btnAtualizarCodigos.Visible = false;
             this.btnAtualizarCodigos.Click += new System.EventHandler(this.btnAtualizarCodigos_Click);
             // 
             // FrmAlimentarProdutosAccess
