@@ -19,17 +19,15 @@ namespace Trabalho_Mercado_Online.Controllers
         {
             if (obj.Id > 0)
             {
-                CategoriasNivel1DAO.Update(obj);
+                obj.Img = @"https://aplicativo.blob.core.windows.net/categoriasnivel1/" + obj.Id + ".jpg";
+                obj = CategoriasNivel1DAO.Update(obj);
             }
             else
             {
-                CategoriasNivel1DAO.Insert(obj);
+                obj = CategoriasNivel1DAO.Insert(obj);
+                obj = Gravar(obj);
             }
             return obj;
-
-
-
-
         }
         public static bool Deletar(CategoriasNivel1 obj)
         {

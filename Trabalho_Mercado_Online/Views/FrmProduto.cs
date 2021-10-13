@@ -63,7 +63,7 @@ namespace Trabalho_Mercado_Online.Views
                 return retorno;
             }
 
-            obj.Img = "" + obj.Id; //todo função img
+            obj.Img = "" + obj.Id; 
             obj.CodigoLoja = lblCodigoLoja.Text;
 
             if (Double.TryParse(txtCusto.Text, out double v1))
@@ -480,7 +480,14 @@ namespace Trabalho_Mercado_Online.Views
         {
             ultimoProduto = int.Parse(lblId.Text);
             pathImagem = string.Empty;
-            BtnEditarLayout();
+            if (ultimoProduto>0)
+            {
+                BtnEditarLayout();
+            }
+            else
+            {
+                MessageBox.Show("Sem Registro para Editar");
+            }
         }
         private void btnGravar_Click(object sender, EventArgs e)
         {
@@ -540,39 +547,48 @@ namespace Trabalho_Mercado_Online.Views
             }
             else
             {
-                DialogResult dialog = MessageBox.Show("ATENÇÃO! Deseja Deletar o Produto? é irreversível.", "Perigo!", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
-                if (dialog == DialogResult.Yes)
+                int idDeletar = int.Parse(lblId.Text);
+                if (idDeletar > 0)
                 {
-                    dialog = MessageBox.Show("ATENÇÃO! Tem Certeza? O Registro será Deletado.", "Perigo!", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                    DialogResult dialog = MessageBox.Show("ATENÇÃO! Deseja Deletar o Produto? é irreversível.", "Perigo!", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
                     if (dialog == DialogResult.Yes)
                     {
-                        var p = Global.Listas.Produtos.Find(x=>x.Id==int.Parse(lblId.Text));
-                        ProdutosController.Deletar(p);
-                        BlobStorage.Deletar("produtos",p.Id.ToString());
-                        
-                        var listaCategorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CodigoProduto == p.Id);
-                        foreach (var item in listaCategorias)
+                        dialog = MessageBox.Show("ATENÇÃO! Tem Certeza? O Registro será Deletado.", "Perigo!", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                        if (dialog == DialogResult.Yes)
                         {
-                            ProdutosCategoriaController.Deletar(item);
-                        }
+                            var p = Global.Listas.Produtos.Find(x => x.Id == int.Parse(lblId.Text));
+                            ProdutosController.Deletar(p);
+                            BlobStorage.Deletar("produtos", p.Id.ToString());
 
-                        var listaCodigoBarra = Global.Listas.ProdutosCodigoBarra.FindAll(x => x.CodigoProduto == p.Id);
-                        foreach (var item in listaCodigoBarra)
-                        {
-                            ProdutosCodigoBarraController.Deletar(item);
+                            var listaCategorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CodigoProduto == p.Id);
+                            foreach (var item in listaCategorias)
+                            {
+                                ProdutosCategoriaController.Deletar(item);
+                            }
+
+                            var listaCodigoBarra = Global.Listas.ProdutosCodigoBarra.FindAll(x => x.CodigoProduto == p.Id);
+                            foreach (var item in listaCodigoBarra)
+                            {
+                                ProdutosCodigoBarraController.Deletar(item);
+                            }
+                            Global.Listas.Produtos = ProdutosController.GetAll();
+                            Global.Listas.ProdutosCategoria = ProdutosCategoriaController.GetAll();
+                            Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
+                            Limpar();
+                            AberturaForm();
+                            if (Global.Listas.Produtos.Count > 0)
+                            {
+                                ExibirDados(Global.Listas.Produtos[0]);
+                            }
+                            MessageBox.Show("Atualizado", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        Global.Listas.Produtos = ProdutosController.GetAll();
-                        Global.Listas.ProdutosCategoria = ProdutosCategoriaController.GetAll();
-                        Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
-                        Limpar();
-                        AberturaForm();
-                        if (Global.Listas.Produtos.Count>0)
-                        {
-                            ExibirDados(Global.Listas.Produtos[0]);
-                        }
-                        MessageBox.Show("Atualizado", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Sem Registro para Deletar");
+                }
+                
             }
         }
         private void btnInserirImagem_Click(object sender, EventArgs e)
@@ -594,6 +610,11 @@ namespace Trabalho_Mercado_Online.Views
             if (Double.TryParse(txtCusto.Text, out teste) == false)
             {
                 txtCusto.Text = "0,00";
+            }
+            else
+            {
+                double txt = Double.Parse(txtCusto.Text);
+                txtCusto.Text = txt.ToString("F2");
             }
 
             if (Double.TryParse(txtCusto.Text, out teste) && Double.TryParse(txtVenda.Text, out teste))
@@ -670,22 +691,22 @@ namespace Trabalho_Mercado_Online.Views
         }
         private void txtPromocaoMargem_Leave(object sender, EventArgs e)
         {
-            //if (Double.TryParse(txtPromocaoMargem.Text, out Double v1) && Double.TryParse(txtCusto.Text, out Double v2))
-            //{
-            //    double custo = double.Parse(txtCusto.Text);
-            //    double margemD = double.Parse(txtPromocaoMargem.Text) / 100;
-            //    double vendaD = custo + (custo * margemD);
+            if (Double.TryParse(txtPromocaoMargem.Text, out Double v1) && Double.TryParse(txtCusto.Text, out Double v2))
+            {
+                double custo = double.Parse(txtCusto.Text);
+                double margemD = double.Parse(txtPromocaoMargem.Text) / 100;
+                double vendaD = custo + (custo * margemD);
 
 
-            //    string venda = vendaD.ToString("F2");
-            //    txtPromocao.Text = venda;
+                string venda = vendaD.ToString("F2");
+                txtPromocao.Text = venda;
 
-            //}
-            //else
-            //{
-            //    txtPromocao.Text = "0,00";
-            //    txtPromocaoMargem.Text = "0,00";
-            //}
+            }
+            else
+            {
+                txtPromocao.Text = "0,00";
+                txtPromocaoMargem.Text = "0,00";
+            }
         }
 
         //Datagrid

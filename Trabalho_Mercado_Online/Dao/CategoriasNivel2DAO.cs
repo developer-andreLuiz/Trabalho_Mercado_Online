@@ -28,39 +28,24 @@ namespace Trabalho_Mercado_Online.DAO
             }
             return Lista;
         }
-        public static bool Insert(CategoriasNivel2 obj)
+        public static CategoriasNivel2 Insert(CategoriasNivel2 obj)
         {
-            int retorno = 0;
             using (var banco = new DBContextDAO())
             {
                 banco.Add(obj);
-                retorno = banco.SaveChanges();
+                banco.SaveChanges();
             }
-            if (retorno == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return obj;
+            
         }
-        public static bool Update(CategoriasNivel2 obj)
+        public static CategoriasNivel2 Update(CategoriasNivel2 obj)
         {
-            int retorno = 0;
             using (var banco = new DBContextDAO())
             {
                 banco.Update(obj);
-                retorno = banco.SaveChanges();
+                banco.SaveChanges();
             }
-            if (retorno == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return obj;
         }
         public static bool Delete(CategoriasNivel2 obj)
         {

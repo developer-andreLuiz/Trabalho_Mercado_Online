@@ -22,14 +22,28 @@ namespace Trabalho_Mercado_Online.Controllers
             {
                 obj.Img = @"https://aplicativo.blob.core.windows.net/produtos/" + obj.Id + ".jpg";
                 obj = ProdutosDAO.Update(obj);
+
+                if (obj.IgualaProduto>0)
+                {
+                    List<Produtos> ListaIguala = ProdutosDAO.GetAll().FindAll(x=>x.IgualaProduto==obj.IgualaProduto);
+                    foreach (var item in ListaIguala)
+                    {
+                        item.ValorVenda = obj.ValorVenda;
+                        item.ValorPromocao = obj.ValorPromocao;
+                        item.Peso = obj.Peso;
+                        item.ItensCaixa = obj.ItensCaixa;
+                        item.Volume = obj.Volume;
+                        item.Gramatura = obj.Gramatura;
+                        item.Embalagem = obj.Embalagem;
+
+                        ProdutosDAO.Update(item);
+                    }
+                }
             }
             else
             {
                 obj = ProdutosDAO.Insert(obj);
-                obj.Img = @"https://aplicativo.blob.core.windows.net/produtos/"+obj.Id+".jpg";
-                obj = ProdutosDAO.Update(obj);
-                //iguala
-                //-venda - promocao - peso - quant cx - volune - gamatura - embalagem
+                obj = Gravar(obj);
             }
             return obj;
         }
