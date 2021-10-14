@@ -91,7 +91,6 @@ namespace Trabalho_Mercado_Online.Views
         }
 
         //Dados
-        
         void ExibirDados(CategoriasNivel1 obj)
         {
             lblId.Text = obj.Id.ToString();
@@ -123,7 +122,6 @@ namespace Trabalho_Mercado_Online.Views
             }
             return retorno;
         }
-
         void CarregarComboBoxNivel1()
         {
             cbCategoriasNivel1.DataSource = null;
@@ -363,14 +361,6 @@ namespace Trabalho_Mercado_Online.Views
                             CategoriasNivel1Controller.Deletar(cat);
                             BlobStorage.Deletar("categoriasnivel1", cat.Id.ToString());
 
-
-                            //Deletar em Produto Categoria
-                            var ListaProdutoCategoria = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel1 == cat.Id);
-                            foreach (var item in ListaProdutoCategoria)
-                            {
-                                ProdutosCategoriaController.Deletar(item);
-                            }
-
                             //Deletar em Categoria Nivel 2
                             var ListaNivel2 = Global.Listas.CategoriasNivel2.FindAll(x => x.CategoriaNivel1 == cat.Id);
                             foreach (var item in ListaNivel2)
@@ -387,7 +377,14 @@ namespace Trabalho_Mercado_Online.Views
                                 BlobStorage.Deletar("categoriasnivel3", item.Id.ToString());
                             }
 
-                            
+                            //Deletar em Produto Categoria
+                            var ListaProdutoCategoria = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel1 == cat.Id);
+                            foreach (var item in ListaProdutoCategoria)
+                            {
+                                ProdutosCategoriaController.Deletar(item);
+                            }
+
+
                             Limpar();
                             InterfaceAbrir();
                             Global.AtualizarCategorasNivel1();
@@ -408,8 +405,8 @@ namespace Trabalho_Mercado_Online.Views
                 }
             }
         }
-
-
+        
+        //List View
         private void listView_ItemDrag(object sender, ItemDragEventArgs e)
         {
             listView.DoDragDrop(listView.SelectedItems, DragDropEffects.Link);
@@ -469,10 +466,6 @@ namespace Trabalho_Mercado_Online.Views
             }
             catch { }
         }
-
         #endregion
-
-
-
     }
 }

@@ -320,7 +320,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnGravar.Size = new System.Drawing.Size(150, 50);
             this.btnGravar.TabIndex = 5566;
             this.btnGravar.TabStop = false;
-            this.btnGravar.Text = "   Gravar";
+            this.btnGravar.Text = "   Salvar";
             this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGravar.UseVisualStyleBackColor = false;
             this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);

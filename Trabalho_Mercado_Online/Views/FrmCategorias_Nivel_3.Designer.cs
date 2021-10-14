@@ -30,29 +30,36 @@ namespace Trabalho_Mercado_Online.Views
         private void InitializeComponent()
         {
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cbCategoriasNivel2 = new System.Windows.Forms.ComboBox();
+            this.btnImg = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.btnDeletar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.label14 = new System.Windows.Forms.Label();
-            this.cbGramatura = new System.Windows.Forms.ComboBox();
+            this.cbCategoriasNivel1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbCategoriasNivel3 = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAtualizarLista = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel = new System.Windows.Forms.Panel();
+            this.listView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -66,41 +73,43 @@ namespace Trabalho_Mercado_Online.Views
             this.label4.TabIndex = 5613;
             this.label4.Text = "Categorias Nivel 2";
             // 
-            // comboBox1
+            // cbCategoriasNivel2
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbCategoriasNivel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.cbCategoriasNivel2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategoriasNivel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCategoriasNivel2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cbCategoriasNivel2.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.cbCategoriasNivel2.FormattingEnabled = true;
+            this.cbCategoriasNivel2.Items.AddRange(new object[] {
             "Kg",
             "gr",
             "Lt",
             "ml",
             "Und"});
-            this.comboBox1.Location = new System.Drawing.Point(71, 349);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.comboBox1.Size = new System.Drawing.Size(253, 32);
-            this.comboBox1.TabIndex = 5612;
+            this.cbCategoriasNivel2.Location = new System.Drawing.Point(71, 349);
+            this.cbCategoriasNivel2.Name = "cbCategoriasNivel2";
+            this.cbCategoriasNivel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cbCategoriasNivel2.Size = new System.Drawing.Size(253, 32);
+            this.cbCategoriasNivel2.TabIndex = 5612;
+            this.cbCategoriasNivel2.SelectedIndexChanged += new System.EventHandler(this.cbCategoriasNivel2_SelectedIndexChanged);
             // 
-            // button2
+            // btnImg
             // 
-            this.button2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_camera;
-            this.button2.Location = new System.Drawing.Point(265, 163);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(59, 31);
-            this.button2.TabIndex = 5611;
-            this.button2.TabStop = false;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnImg.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnImg.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImg.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnImg.ForeColor = System.Drawing.Color.White;
+            this.btnImg.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_camera;
+            this.btnImg.Location = new System.Drawing.Point(265, 163);
+            this.btnImg.Name = "btnImg";
+            this.btnImg.Size = new System.Drawing.Size(59, 31);
+            this.btnImg.TabIndex = 5611;
+            this.btnImg.TabStop = false;
+            this.btnImg.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImg.UseVisualStyleBackColor = false;
+            this.btnImg.Click += new System.EventHandler(this.btnImg_Click);
             // 
             // label5
             // 
@@ -141,6 +150,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnDeletar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDeletar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDeletar.UseVisualStyleBackColor = false;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // btnNovo
             // 
@@ -159,6 +169,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnNovo.Text = "   Novo";
             this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnEditar
             // 
@@ -177,6 +188,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnEditar.Text = "   Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGravar
             // 
@@ -192,38 +204,10 @@ namespace Trabalho_Mercado_Online.Views
             this.btnGravar.Size = new System.Drawing.Size(150, 50);
             this.btnGravar.TabIndex = 5605;
             this.btnGravar.TabStop = false;
-            this.btnGravar.Text = "   Gravar";
+            this.btnGravar.Text = "   Salvar";
             this.btnGravar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGravar.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_select_all;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(346, 585);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(201, 50);
-            this.button1.TabIndex = 5604;
-            this.button1.TabStop = false;
-            this.button1.Text = "         Atualizar";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // listView1
-            // 
-            this.listView1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.listView1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(346, 15);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(201, 564);
-            this.listView1.TabIndex = 5603;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // label14
             // 
@@ -236,25 +220,26 @@ namespace Trabalho_Mercado_Online.Views
             this.label14.TabIndex = 5602;
             this.label14.Text = "Categorias Nivel 1";
             // 
-            // cbGramatura
+            // cbCategoriasNivel1
             // 
-            this.cbGramatura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.cbGramatura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGramatura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbGramatura.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cbGramatura.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.cbGramatura.FormattingEnabled = true;
-            this.cbGramatura.Items.AddRange(new object[] {
+            this.cbCategoriasNivel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.cbCategoriasNivel1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategoriasNivel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCategoriasNivel1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cbCategoriasNivel1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.cbCategoriasNivel1.FormattingEnabled = true;
+            this.cbCategoriasNivel1.Items.AddRange(new object[] {
             "Kg",
             "gr",
             "Lt",
             "ml",
             "Und"});
-            this.cbGramatura.Location = new System.Drawing.Point(71, 295);
-            this.cbGramatura.Name = "cbGramatura";
-            this.cbGramatura.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbGramatura.Size = new System.Drawing.Size(253, 32);
-            this.cbGramatura.TabIndex = 5601;
+            this.cbCategoriasNivel1.Location = new System.Drawing.Point(71, 295);
+            this.cbCategoriasNivel1.Name = "cbCategoriasNivel1";
+            this.cbCategoriasNivel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cbCategoriasNivel1.Size = new System.Drawing.Size(253, 32);
+            this.cbCategoriasNivel1.TabIndex = 5601;
+            this.cbCategoriasNivel1.SelectedIndexChanged += new System.EventHandler(this.cbCategoriasNivel1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -290,15 +275,15 @@ namespace Trabalho_Mercado_Online.Views
             this.label2.TabIndex = 5598;
             this.label2.Text = "ID";
             // 
-            // txtDescricao
+            // txtNome
             // 
-            this.txtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescricao.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDescricao.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtDescricao.Location = new System.Drawing.Point(71, 103);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(253, 32);
-            this.txtDescricao.TabIndex = 5597;
+            this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNome.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNome.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.txtNome.Location = new System.Drawing.Point(71, 103);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(253, 32);
+            this.txtNome.TabIndex = 5597;
             // 
             // pictureBox1
             // 
@@ -320,15 +305,6 @@ namespace Trabalho_Mercado_Online.Views
             this.label3.TabIndex = 5596;
             this.label3.Text = "Categorias Nivel 3";
             // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.celular_Fundo;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(553, 15);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(330, 620);
-            this.panel2.TabIndex = 5594;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -340,25 +316,120 @@ namespace Trabalho_Mercado_Online.Views
             this.label6.TabIndex = 5615;
             this.label6.Text = "Categorias Nivel 3";
             // 
-            // comboBox2
+            // cbCategoriasNivel3
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.comboBox2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbCategoriasNivel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.cbCategoriasNivel3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategoriasNivel3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCategoriasNivel3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cbCategoriasNivel3.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.cbCategoriasNivel3.FormattingEnabled = true;
+            this.cbCategoriasNivel3.Items.AddRange(new object[] {
             "Kg",
             "gr",
             "Lt",
             "ml",
             "Und"});
-            this.comboBox2.Location = new System.Drawing.Point(71, 404);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.comboBox2.Size = new System.Drawing.Size(253, 32);
-            this.comboBox2.TabIndex = 5614;
+            this.cbCategoriasNivel3.Location = new System.Drawing.Point(71, 404);
+            this.cbCategoriasNivel3.Name = "cbCategoriasNivel3";
+            this.cbCategoriasNivel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cbCategoriasNivel3.Size = new System.Drawing.Size(253, 32);
+            this.cbCategoriasNivel3.TabIndex = 5614;
+            this.cbCategoriasNivel3.SelectedIndexChanged += new System.EventHandler(this.cbCategoriasNivel3_SelectedIndexChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.celular_Fundo;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.btnAtualizarLista);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.panel);
+            this.panel2.Location = new System.Drawing.Point(555, 16);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(330, 620);
+            this.panel2.TabIndex = 5616;
+            // 
+            // btnAtualizarLista
+            // 
+            this.btnAtualizarLista.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAtualizarLista.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnAtualizarLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizarLista.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAtualizarLista.ForeColor = System.Drawing.Color.DimGray;
+            this.btnAtualizarLista.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAtualizarLista.Location = new System.Drawing.Point(125, 569);
+            this.btnAtualizarLista.Name = "btnAtualizarLista";
+            this.btnAtualizarLista.Size = new System.Drawing.Size(82, 28);
+            this.btnAtualizarLista.TabIndex = 5585;
+            this.btnAtualizarLista.TabStop = false;
+            this.btnAtualizarLista.Text = "Atualizar";
+            this.btnAtualizarLista.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAtualizarLista.UseVisualStyleBackColor = false;
+            this.btnAtualizarLista.Click += new System.EventHandler(this.btnAtualizarLista_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Arial", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(279, 63);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(28, 12);
+            this.label7.TabIndex = 5558;
+            this.label7.Text = "23:55";
+            // 
+            // panel
+            // 
+            this.panel.Location = new System.Drawing.Point(22, 88);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(286, 469);
+            this.panel.TabIndex = 0;
+            // 
+            // listView
+            // 
+            this.listView.AllowDrop = true;
+            this.listView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listView.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listView.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.listView.FullRowSelect = true;
+            this.listView.GridLines = true;
+            this.listView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.listView.HideSelection = false;
+            this.listView.Location = new System.Drawing.Point(348, 14);
+            this.listView.Name = "listView";
+            this.listView.Size = new System.Drawing.Size(201, 620);
+            this.listView.TabIndex = 5617;
+            this.listView.UseCompatibleStateImageBehavior = false;
+            this.listView.View = System.Windows.Forms.View.Details;
+            this.listView.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.listView_ItemDrag);
+            this.listView.DragDrop += new System.Windows.Forms.DragEventHandler(this.listView_DragDrop);
+            this.listView.DragEnter += new System.Windows.Forms.DragEventHandler(this.listView_DragEnter);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "";
+            this.columnHeader1.Width = 200;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "ORDEM";
+            this.columnHeader2.Width = 0;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "ID";
+            this.columnHeader3.Width = 0;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Img";
+            this.columnHeader4.Width = 0;
             // 
             // FrmCategorias_Nivel_3
             // 
@@ -366,28 +437,27 @@ namespace Trabalho_Mercado_Online.Views
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(897, 648);
+            this.Controls.Add(this.listView);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbCategoriasNivel3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.cbCategoriasNivel2);
+            this.Controls.Add(this.btnImg);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnGravar);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.cbGramatura);
+            this.Controls.Add(this.cbCategoriasNivel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtDescricao);
+            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -396,6 +466,8 @@ namespace Trabalho_Mercado_Online.Views
             this.Text = "FrmCategoria_Nivel_3";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,26 +476,32 @@ namespace Trabalho_Mercado_Online.Views
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cbCategoriasNivel2;
+        private System.Windows.Forms.Button btnImg;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button btnDeletar;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGravar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox cbGramatura;
+        private System.Windows.Forms.ComboBox cbCategoriasNivel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtDescricao;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbCategoriasNivel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnAtualizarLista;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.ListView listView;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
