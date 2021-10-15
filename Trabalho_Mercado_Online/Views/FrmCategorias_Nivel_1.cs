@@ -104,7 +104,7 @@ namespace Trabalho_Mercado_Online.Views
             obj.Id = int.Parse(lblId.Text);
             if (txtNome.Text.Length > 0)
             {
-                obj.Nome = txtNome.Text;
+                obj.Nome = txtNome.Text.ToUpper();
             }
             else
             {
@@ -134,7 +134,12 @@ namespace Trabalho_Mercado_Online.Views
             if (Global.Listas.CategoriasNivel1.Count > 0)
             {
                 listView.Items.Clear();
-                var list = Global.Listas.CategoriasNivel1;
+                var list = new List<CategoriasNivel1>();
+                foreach (var item in Global.Listas.CategoriasNivel1)
+                {
+                    list.Add(item);
+                }
+                   
                 list.Sort((x, y) => x.Ordem.CompareTo(y.Ordem));
 
 

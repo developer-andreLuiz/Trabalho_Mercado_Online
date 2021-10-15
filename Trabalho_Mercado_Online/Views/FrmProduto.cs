@@ -41,7 +41,7 @@ namespace Trabalho_Mercado_Online.Views
             obj.Id = int.Parse(lblId.Text);
             if (txtDescricao.Text.Length > 0)
             {
-                obj.Descricao = txtDescricao.Text;
+                obj.Descricao = txtDescricao.Text.ToUpper();
             }
             else
             {

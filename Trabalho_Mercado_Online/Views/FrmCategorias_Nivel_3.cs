@@ -138,7 +138,7 @@ namespace Trabalho_Mercado_Online.Views
             obj.Id = int.Parse(lblId.Text);
             if (txtNome.Text.Length > 0)
             {
-                obj.Nome = txtNome.Text;
+                obj.Nome = txtNome.Text.ToUpper();
             }
             else
             {
@@ -222,7 +222,12 @@ namespace Trabalho_Mercado_Online.Views
             {
                 listView.Items.Clear();
                 int nivel2 = int.Parse(cbCategoriasNivel2.SelectedValue.ToString());
-                var list = Global.Listas.CategoriasNivel3.FindAll(x => x.CategoriaNivel2 == nivel2);
+                var list = new List<CategoriasNivel3>();
+                foreach (var item in Global.Listas.CategoriasNivel3.FindAll(x => x.CategoriaNivel2 == nivel2))
+                {
+                    list.Add(item);
+                }
+                
                 list.Sort((x, y) => x.Ordem.CompareTo(y.Ordem));
 
 

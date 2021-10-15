@@ -116,7 +116,7 @@ namespace Trabalho_Mercado_Online.Views
             obj.Id = int.Parse(lblId.Text);
             if (txtNome.Text.Length > 0)
             {
-                obj.Nome = txtNome.Text;
+                obj.Nome = txtNome.Text.ToUpper();
             }
             else
             {
@@ -176,7 +176,15 @@ namespace Trabalho_Mercado_Online.Views
             {
                 listView.Items.Clear();
                 int nivel1 = int.Parse(cbCategoriasNivel1.SelectedValue.ToString());
-                var list = Global.Listas.CategoriasNivel2.FindAll(x=>x.CategoriaNivel1==nivel1);
+                var list = new List<CategoriasNivel2>();
+                foreach (var item in Global.Listas.CategoriasNivel2.FindAll(x => x.CategoriaNivel1 == nivel1))
+                {
+                    list.Add(item);
+                }
+                    
+
+
+
                 list.Sort((x, y) => x.Ordem.CompareTo(y.Ordem));
 
 

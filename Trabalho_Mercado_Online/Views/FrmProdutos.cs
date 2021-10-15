@@ -200,7 +200,7 @@ namespace Trabalho_Mercado_Online.Views
             {
                 ProdutosDataGrid produtosDataGrid = new ProdutosDataGrid();
                 produtosDataGrid.Id = obj.Id.ToString();
-                produtosDataGrid.Descricao = obj.Descricao + " " + obj.Gramatura;
+                produtosDataGrid.Descricao = obj.Descricao + " " + obj.Gramatura + " " + obj.Embalagem;
                 produtosDataGrid.Iguala = obj.IgualaProduto.ToString();
                 produtosDataGrid.Custo = "R$" + obj.CustoUnitario.ToString("F2");
                 produtosDataGrid.Venda = "R$" + obj.ValorVenda.ToString("F2");
