@@ -35,6 +35,11 @@ namespace Trabalho_Mercado_Online.Views
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.lblListaItens = new System.Windows.Forms.Label();
+            this.btnUltimoRegistro = new System.Windows.Forms.Button();
+            this.btnProximoRegistro = new System.Windows.Forms.Button();
+            this.btnRegristroAnterior = new System.Windows.Forms.Button();
+            this.btnPrimeiroRegistro = new System.Windows.Forms.Button();
             this.lblUltimoIguala = new System.Windows.Forms.Label();
             this.lblPeso = new System.Windows.Forms.Label();
             this.txtPromocaoMargem = new System.Windows.Forms.TextBox();
@@ -47,7 +52,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnDeletar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
+            this.lblAviso = new System.Windows.Forms.Label();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
@@ -102,6 +107,11 @@ namespace Trabalho_Mercado_Online.Views
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.lblListaItens);
+            this.panelMain.Controls.Add(this.btnUltimoRegistro);
+            this.panelMain.Controls.Add(this.btnProximoRegistro);
+            this.panelMain.Controls.Add(this.btnRegristroAnterior);
+            this.panelMain.Controls.Add(this.btnPrimeiroRegistro);
             this.panelMain.Controls.Add(this.lblUltimoIguala);
             this.panelMain.Controls.Add(this.lblPeso);
             this.panelMain.Controls.Add(this.txtPromocaoMargem);
@@ -114,7 +124,7 @@ namespace Trabalho_Mercado_Online.Views
             this.panelMain.Controls.Add(this.btnDeletar);
             this.panelMain.Controls.Add(this.btnNovo);
             this.panelMain.Controls.Add(this.btnEditar);
-            this.panelMain.Controls.Add(this.label21);
+            this.panelMain.Controls.Add(this.lblAviso);
             this.panelMain.Controls.Add(this.txtPesquisar);
             this.panelMain.Controls.Add(this.btnPesquisar);
             this.panelMain.Controls.Add(this.label20);
@@ -162,6 +172,86 @@ namespace Trabalho_Mercado_Online.Views
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(897, 648);
             this.panelMain.TabIndex = 555;
+            // 
+            // lblListaItens
+            // 
+            this.lblListaItens.AutoSize = true;
+            this.lblListaItens.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblListaItens.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblListaItens.Location = new System.Drawing.Point(234, 34);
+            this.lblListaItens.Name = "lblListaItens";
+            this.lblListaItens.Size = new System.Drawing.Size(84, 14);
+            this.lblListaItens.TabIndex = 55562;
+            this.lblListaItens.Text = " Itens na Lista";
+            this.lblListaItens.Visible = false;
+            // 
+            // btnUltimoRegistro
+            // 
+            this.btnUltimoRegistro.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnUltimoRegistro.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnUltimoRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUltimoRegistro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnUltimoRegistro.ForeColor = System.Drawing.Color.White;
+            this.btnUltimoRegistro.Location = new System.Drawing.Point(260, 540);
+            this.btnUltimoRegistro.Name = "btnUltimoRegistro";
+            this.btnUltimoRegistro.Size = new System.Drawing.Size(44, 32);
+            this.btnUltimoRegistro.TabIndex = 55561;
+            this.btnUltimoRegistro.TabStop = false;
+            this.btnUltimoRegistro.Text = ">>|";
+            this.btnUltimoRegistro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUltimoRegistro.UseVisualStyleBackColor = false;
+            this.btnUltimoRegistro.Click += new System.EventHandler(this.btnUltimoRegistro_Click);
+            // 
+            // btnProximoRegistro
+            // 
+            this.btnProximoRegistro.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnProximoRegistro.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnProximoRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProximoRegistro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnProximoRegistro.ForeColor = System.Drawing.Color.White;
+            this.btnProximoRegistro.Location = new System.Drawing.Point(210, 540);
+            this.btnProximoRegistro.Name = "btnProximoRegistro";
+            this.btnProximoRegistro.Size = new System.Drawing.Size(44, 32);
+            this.btnProximoRegistro.TabIndex = 55560;
+            this.btnProximoRegistro.TabStop = false;
+            this.btnProximoRegistro.Text = ">";
+            this.btnProximoRegistro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProximoRegistro.UseVisualStyleBackColor = false;
+            this.btnProximoRegistro.Click += new System.EventHandler(this.btnProximoRegistro_Click);
+            // 
+            // btnRegristroAnterior
+            // 
+            this.btnRegristroAnterior.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnRegristroAnterior.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnRegristroAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegristroAnterior.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRegristroAnterior.ForeColor = System.Drawing.Color.White;
+            this.btnRegristroAnterior.Location = new System.Drawing.Point(160, 540);
+            this.btnRegristroAnterior.Name = "btnRegristroAnterior";
+            this.btnRegristroAnterior.Size = new System.Drawing.Size(44, 32);
+            this.btnRegristroAnterior.TabIndex = 55559;
+            this.btnRegristroAnterior.TabStop = false;
+            this.btnRegristroAnterior.Text = "<";
+            this.btnRegristroAnterior.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegristroAnterior.UseVisualStyleBackColor = false;
+            this.btnRegristroAnterior.Click += new System.EventHandler(this.btnRegristroAnterior_Click);
+            // 
+            // btnPrimeiroRegistro
+            // 
+            this.btnPrimeiroRegistro.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnPrimeiroRegistro.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnPrimeiroRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrimeiroRegistro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPrimeiroRegistro.ForeColor = System.Drawing.Color.White;
+            this.btnPrimeiroRegistro.Location = new System.Drawing.Point(110, 540);
+            this.btnPrimeiroRegistro.Name = "btnPrimeiroRegistro";
+            this.btnPrimeiroRegistro.Size = new System.Drawing.Size(44, 32);
+            this.btnPrimeiroRegistro.TabIndex = 55558;
+            this.btnPrimeiroRegistro.TabStop = false;
+            this.btnPrimeiroRegistro.Text = "|<<";
+            this.btnPrimeiroRegistro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrimeiroRegistro.UseVisualStyleBackColor = false;
+            this.btnPrimeiroRegistro.Click += new System.EventHandler(this.btnPrimeiroRegistro_Click);
             // 
             // lblUltimoIguala
             // 
@@ -329,23 +419,23 @@ namespace Trabalho_Mercado_Online.Views
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // label21
+            // lblAviso
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label21.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label21.Location = new System.Drawing.Point(12, 578);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(154, 14);
-            this.label21.TabIndex = 89;
-            this.label21.Text = "Código ou Código de Barra";
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblAviso.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblAviso.Location = new System.Drawing.Point(18, 587);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(154, 14);
+            this.lblAviso.TabIndex = 89;
+            this.lblAviso.Text = "Código ou Código de Barra";
             // 
             // txtPesquisar
             // 
             this.txtPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPesquisar.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPesquisar.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtPesquisar.Location = new System.Drawing.Point(12, 595);
+            this.txtPesquisar.Location = new System.Drawing.Point(18, 604);
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(165, 32);
             this.txtPesquisar.TabIndex = 88;
@@ -361,7 +451,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnPesquisar.ForeColor = System.Drawing.Color.White;
             this.btnPesquisar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_search;
             this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPesquisar.Location = new System.Drawing.Point(183, 595);
+            this.btnPesquisar.Location = new System.Drawing.Point(189, 604);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(38, 31);
             this.btnPesquisar.TabIndex = 87;
@@ -979,7 +1069,7 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.Button btnDeletar;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label lblAviso;
         private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -989,5 +1079,10 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label lblPeso;
         private System.Windows.Forms.Label lblUltimoIguala;
+        private System.Windows.Forms.Button btnUltimoRegistro;
+        private System.Windows.Forms.Button btnProximoRegistro;
+        private System.Windows.Forms.Button btnRegristroAnterior;
+        private System.Windows.Forms.Button btnPrimeiroRegistro;
+        private System.Windows.Forms.Label lblListaItens;
     }
 }

@@ -124,11 +124,11 @@
   <data name="icone_barcode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_barcode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconse_sum_database" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\iconse_sum_database.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Produto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Produto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icone_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Icone_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icone_products" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_products.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,17 +139,14 @@
   <data name="icone_save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icone_category1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icone_category1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icone_tools" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_tools.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_sound.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icone_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icone_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icone_access" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_access.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,11 +160,17 @@
   <data name="Categoria" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Categoria.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icone_select_all" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icone_select_all.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icone_category2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_category2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_select_all" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_select_all.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="celular Fundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\celular Fundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icone_sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icone_sound.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icone_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,16 +181,16 @@
   <data name="icone_category3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_category3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_category1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_category1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconse_sum_database" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\iconse_sum_database.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icone_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Icone_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icone_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icone_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icone_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="celular Fundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\celular Fundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icone_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icone_list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -18,6 +18,7 @@ namespace Trabalho_Mercado_Online.Views
         bool editar = false;
         string pathImagem = string.Empty;
         int ultimo = 0;
+        bool CmdExibir = true;//função de travar carregamento de combo no exibir dados
         #endregion
       
         #region Funções
@@ -101,36 +102,26 @@ namespace Trabalho_Mercado_Online.Views
         //Dados
         void ExibirDados(CategoriasNivel3 obj)
         {
+            CmdExibir = true;
+            var lista2 = Global.Listas.CategoriasNivel2.FindAll(x=>x.CategoriaNivel1==obj.CategoriaNivel1);
+            var lista3 = Global.Listas.CategoriasNivel3.FindAll(x => x.CategoriaNivel2 == obj.CategoriaNivel2);
+
+            int index1 = Global.Listas.CategoriasNivel1.FindIndex(x=>x.Id==obj.CategoriaNivel1);
+            int index2 = lista2.FindIndex(x => x.Id == obj.CategoriaNivel2);
+            int index3 = lista3.FindIndex(x => x.Id == obj.Id);
+
+            cbCategoriasNivel1.SelectedIndex = index1;
+            CarregarComboBoxNivel2(lista2);
+
+            cbCategoriasNivel2.SelectedIndex = index2;
+            CarregarComboBoxNivel3(lista3);
+            
+            cbCategoriasNivel3.SelectedIndex = index3;
             lblId.Text = obj.Id.ToString();
             txtNome.Text = obj.Nome;
-
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox.ImageLocation = obj.Img;
-
-            int indexNivel1 = Global.Listas.CategoriasNivel1.FindIndex(x => x.Id == obj.CategoriaNivel1);
-            
-            var list2 = Global.Listas.CategoriasNivel2.FindAll(x => x.CategoriaNivel1 == obj.CategoriaNivel1);
-            int indexNivel2 = list2.FindIndex(x => x.Id == obj.Id);
-
-            var list3 = Global.Listas.CategoriasNivel3.FindAll(x => x.CategoriaNivel2 == obj.CategoriaNivel2);
-            int indexNivel3 = list3.FindIndex(x => x.Id == obj.Id);
-           
-            if (cbCategoriasNivel1.Items.Count<=indexNivel1 && indexNivel1 > 0)
-            {
-                cbCategoriasNivel1.SelectedIndex = indexNivel1;
-            }
-            if (cbCategoriasNivel2.Items.Count <= indexNivel2 && indexNivel2>0)
-            {
-                cbCategoriasNivel2.SelectedIndex = indexNivel2;
-            }
-            if (cbCategoriasNivel3.Items.Count <= indexNivel3 && indexNivel3 > 0)
-            {
-                cbCategoriasNivel3.SelectedIndex = indexNivel3;
-            }
-           
-            
-            
-
+            CmdExibir = false;
         }
         Retorno CapturarDados(CategoriasNivel3 obj)
         {
@@ -180,7 +171,7 @@ namespace Trabalho_Mercado_Online.Views
             return retorno;
         }
         void CarregarComboBoxNivel1()
-        {
+        {   
             cbCategoriasNivel1.DataSource = null;
             if (Global.Listas.CategoriasNivel1.Count > 0)
             {
@@ -188,10 +179,11 @@ namespace Trabalho_Mercado_Online.Views
                 cbCategoriasNivel1.ValueMember = "Id";
                 cbCategoriasNivel1.DataSource = Global.Listas.CategoriasNivel1;
             }
-
         }
-        void CarregarComboBoxNivel2()
+        void CarregarComboBoxNivel2(List<CategoriasNivel2>ListaLocal)
         {
+            var lista = new List<CategoriasNivel2>();
+            lista.AddRange(Global.Listas.CategoriasNivel2);
             cbCategoriasNivel2.DataSource = null;
             if (cbCategoriasNivel1.Text.Length > 0)
             {
@@ -199,12 +191,14 @@ namespace Trabalho_Mercado_Online.Views
                 cbCategoriasNivel2.ValueMember = "Id";
 
                 int idNivel1 = int.Parse(cbCategoriasNivel1.SelectedValue.ToString());
-                var list = Global.Listas.CategoriasNivel2.FindAll(x => x.CategoriaNivel1 == idNivel1);
+                var list = lista.FindAll(x => x.CategoriaNivel1 == idNivel1);
                 cbCategoriasNivel2.DataSource = list;
             }
         }
-        void CarregarComboBoxNivel3()
+        void CarregarComboBoxNivel3(List<CategoriasNivel3> ListaLocal)
         {
+            var lista = new List<CategoriasNivel3>();
+            lista.AddRange(Global.Listas.CategoriasNivel3);
             cbCategoriasNivel3.DataSource = null;
             if (cbCategoriasNivel2.Text.Length > 0)
             {
@@ -212,15 +206,16 @@ namespace Trabalho_Mercado_Online.Views
                 cbCategoriasNivel3.ValueMember = "Id";
 
                 int idNivel2 = int.Parse(cbCategoriasNivel2.SelectedValue.ToString());
-                var list = Global.Listas.CategoriasNivel3.FindAll(x => x.CategoriaNivel2 == idNivel2);
+                var list = lista.FindAll(x => x.CategoriaNivel2 == idNivel2);
                 cbCategoriasNivel3.DataSource = list;
             }
         }
         void CarregarListView()
         {
+            listView.Items.Clear();
             if (cbCategoriasNivel2.Text.Length>0)
             {
-                listView.Items.Clear();
+                
                 int nivel2 = int.Parse(cbCategoriasNivel2.SelectedValue.ToString());
                 var list = new List<CategoriasNivel3>();
                 foreach (var item in Global.Listas.CategoriasNivel3.FindAll(x => x.CategoriaNivel2 == nivel2))
@@ -337,31 +332,41 @@ namespace Trabalho_Mercado_Online.Views
             Global.AtualizarCategorasNivel3();
             InterfaceAbrir();
             CarregarComboBoxNivel1();
-            CarregarComboBoxNivel2();
-            CarregarComboBoxNivel3();
+            CarregarComboBoxNivel2(Global.Listas.CategoriasNivel2);
+            CarregarComboBoxNivel3(Global.Listas.CategoriasNivel3);
             CarregarListView();
             CarregarAparelho();
-            if (Global.Listas.CategoriasNivel3.Count > 0)
+            if (Global.Listas.CategoriasNivel3.Count>0)
             {
+
                 ExibirDados(Global.Listas.CategoriasNivel3[0]);
             }
         }
         private void cbCategoriasNivel1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CarregarComboBoxNivel2();
+            if (!CmdExibir)
+            {
+                CarregarComboBoxNivel2(Global.Listas.CategoriasNivel2);
+            }
+           
         }
         private void cbCategoriasNivel2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CarregarComboBoxNivel3();
+            if (!CmdExibir)
+            {
+                CarregarComboBoxNivel3(Global.Listas.CategoriasNivel3);
+            }
+               
         }
         private void cbCategoriasNivel3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!novo && !editar && cbCategoriasNivel2.Enabled)
+            if (!novo && !editar && cbCategoriasNivel2.Enabled && cbCategoriasNivel3.Text.Length>0 && !CmdExibir)
             {
-                if (cbCategoriasNivel3.DataSource != null)
-                {
-                    ExibirDados(Global.Listas.CategoriasNivel3.Find(x => x.Id == int.Parse(cbCategoriasNivel3.SelectedValue.ToString())));
-                }
+                ExibirDados(Global.Listas.CategoriasNivel3.Find(x => x.Id == int.Parse(cbCategoriasNivel3.SelectedValue.ToString())));
+            }
+            else
+            {
+                Limpar();
             }
             CarregarListView();
             CarregarAparelho();
@@ -408,7 +413,7 @@ namespace Trabalho_Mercado_Online.Views
                 }
                 Limpar();
                 Global.AtualizarCategorasNivel3();
-                CarregarComboBoxNivel3();
+                CarregarComboBoxNivel3(Global.Listas.CategoriasNivel3);
                 CarregarListView();
                 CarregarAparelho();
                 ExibirDados(obj);
@@ -477,8 +482,8 @@ namespace Trabalho_Mercado_Online.Views
                             InterfaceAbrir();
                             Global.AtualizarCategorasNivel3();
                             CarregarComboBoxNivel1();
-                            CarregarComboBoxNivel2();
-                            CarregarComboBoxNivel3();
+                            CarregarComboBoxNivel2(Global.Listas.CategoriasNivel2);
+                            CarregarComboBoxNivel3(Global.Listas.CategoriasNivel3);
                             CarregarListView();
                             CarregarAparelho();
                             if (Global.Listas.CategoriasNivel3.Count > 0)

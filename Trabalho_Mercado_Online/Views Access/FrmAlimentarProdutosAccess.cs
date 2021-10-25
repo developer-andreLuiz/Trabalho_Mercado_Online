@@ -256,8 +256,19 @@ namespace Trabalho_Mercado_Online.Views_Access
                 case 1: lblSelecionados.Text = $"1 Selecionado"; break;
                 default: lblSelecionados.Text = $"{dataGridView.SelectedRows.Count} Selecionados"; break;
             }
-            dataGridView.Columns[0].Width = 70;
+            
+            
+            
             dataGridView.Columns[1].Width = 350;
+            dataGridView.Columns[3].Width = 50;
+            dataGridView.Columns[4].Width = 50;
+
+            dataGridView.Columns[0].Visible = false;
+            dataGridView.Columns[2].Visible = false;
+            dataGridView.Columns[5].Visible = false;
+            dataGridView.Columns[6].Visible = false;
+
+
             if (ListaGrid.Count > 0)
             {
                 btnAdicionar.Enabled = true;

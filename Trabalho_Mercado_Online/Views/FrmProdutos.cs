@@ -20,7 +20,7 @@ namespace Trabalho_Mercado_Online.Views
         #region Variaveis 
         //Open Form
         private Form activeForm = null;
-
+        string ListaImprimir = string.Empty;
         #endregion
 
         #region Funções
@@ -50,7 +50,8 @@ namespace Trabalho_Mercado_Online.Views
             bool descricao = !String.IsNullOrEmpty(txtDescricao.Text);
             bool promocao = chkPromocao.Checked;
             bool igualaProduto = chkIgualaProduto.Checked;
-           
+            bool faltaEditar = chkFaltaEditar.Checked;
+
             bool categoria = chkCategoria.Checked;
             bool semCategoria = chkSemCategoria.Checked;
 
@@ -79,6 +80,11 @@ namespace Trabalho_Mercado_Online.Views
             if (igualaProduto)
             {
                 var lt = ListaProdutos.FindAll(x => x.IgualaProduto > 0);
+                ListaProdutos = lt;
+            }
+            if (faltaEditar)
+            {
+                var lt = ListaProdutos.FindAll(x => x.Peso.Equals("00000"));
                 ListaProdutos = lt;
             }
             if (semCategoria)
@@ -243,12 +249,14 @@ namespace Trabalho_Mercado_Online.Views
                 btnAdicionar.Enabled = true;
                 btnRemover.Enabled = true;
                 btnLimparPromocoes.Enabled = true;
+                btnAbrirProdutos.Enabled = true;
 
                 btnAdicionar.Visible = true;
                 btnRemover.Visible = true;
                 btnLimparPromocoes.Visible = true;
                 btnSelecionarTudo.Visible = true;
                 lblSelecionados.Visible = true;
+                btnAbrirProdutos.Visible = true;
 
             }
             else
@@ -256,12 +264,14 @@ namespace Trabalho_Mercado_Online.Views
                 btnAdicionar.Enabled = false;
                 btnRemover.Enabled = false;
                 btnLimparPromocoes.Enabled = false;
+                btnAbrirProdutos.Enabled = false;
 
                 btnAdicionar.Visible = false;
                 btnRemover.Visible = false;
                 btnLimparPromocoes.Visible = false;
                 btnSelecionarTudo.Visible = false;
                 lblSelecionados.Visible = false;
+                btnAbrirProdutos.Visible = false;
             }
             #endregion
         }
@@ -381,6 +391,10 @@ namespace Trabalho_Mercado_Online.Views
         {
             Filtrar();
         }
+        private void chkFaltaEditar_CheckedChanged(object sender, EventArgs e)
+        {
+            Filtrar();
+        }
         private void chkCategoria_CheckedChanged(object sender, EventArgs e)
         {
             if (chkCategoria.Checked)
@@ -423,7 +437,7 @@ namespace Trabalho_Mercado_Online.Views
         //Buttons
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            openChildForm(new FrmProduto(new Produtos()));
+            openChildForm(new FrmProduto(new Produtos(),new List<int>()));
         }
         private void btnLimparPromocoes_Click(object sender, EventArgs e)
         {
@@ -599,6 +613,7 @@ namespace Trabalho_Mercado_Online.Views
         private void btnLimparFiltro_Click(object sender, EventArgs e)
         {
             chkCategoria.Checked = false;
+            chkFaltaEditar.Checked = false;
             chkSemCategoria.Checked = false;
             chkCategoriaNivel2.Checked = false;
             chkCategoriaNivel3.Checked = false;
@@ -621,6 +636,42 @@ namespace Trabalho_Mercado_Online.Views
                 default: lblSelecionados.Text = $"{dataGridView.SelectedRows.Count} Selecionados"; break;
             }
         }
+        private void btnAbrirProdutos_Click(object sender, EventArgs e)
+        {
+            List<int> lista = new List<int>();
+            List<string> listaNome = new List<string>();
+            for (int i = 0; i < dataGridView.SelectedRows.Count; i++)
+            {
+                var valor = dataGridView.SelectedRows[i].Cells[0].Value;
+                var nome = dataGridView.SelectedRows[i].Cells[1].Value;
+                int id = int.Parse(valor.ToString());
+                lista.Add(id);
+                listaNome.Add(nome.ToString());
+            }
+            if (lista.Count > 0)
+            {
+                DialogResult dialog = MessageBox.Show("Deseja Imprimir Lista de Produtos","Imprimir",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                if (dialog==DialogResult.Yes)
+                {
+                    ListaImprimir = string.Empty;
+                    foreach (var item in listaNome)
+                    {
+                        ListaImprimir += Environment.NewLine + item;
+                    }
+                    printDocument.Print();
+                }
+
+
+
+
+
+                openChildForm(new FrmProduto(new Produtos(), lista));
+            }
+            else
+            {
+                MessageBox.Show("Nehum Produto Selecionado");
+            }
+        }
         //DataGrid
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -632,7 +683,7 @@ namespace Trabalho_Mercado_Online.Views
             catch { }
             if (id > 0)
             {
-                openChildForm(new FrmProduto(Global.Listas.Produtos.Find(x => x.Id == id)));
+                openChildForm(new FrmProduto(Global.Listas.Produtos.Find(x => x.Id == id),new List<int>()));
             }
         }
         private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -676,7 +727,7 @@ namespace Trabalho_Mercado_Online.Views
                             ProdutosCodigoBarra p = Global.Listas.ProdutosCodigoBarra.Find(x => x.CodigoBarra.Equals(txt));
                             if (p != null)
                             {
-                                openChildForm(new FrmProduto(Global.Listas.Produtos.Find(x => x.Id == p.CodigoProduto)));
+                                openChildForm(new FrmProduto(Global.Listas.Produtos.Find(x => x.Id == p.CodigoProduto),new List<int>()));
                             }
                             else
                             {
@@ -690,7 +741,7 @@ namespace Trabalho_Mercado_Online.Views
                             Produtos p = Global.Listas.Produtos.Find(x => x.Id == valor);
                             if (p != null)
                             {
-                                openChildForm(new FrmProduto(p));
+                                openChildForm(new FrmProduto(p, new List<int>()));
                             }
                             else
                             {
@@ -709,6 +760,15 @@ namespace Trabalho_Mercado_Online.Views
             }
         }
 
+        //Impressão
+        private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(ListaImprimir, new Font("Arial", 12, FontStyle.Bold), Brushes.Black, 50, 50);
+        }
         #endregion
+
+
+
+
     }
 }

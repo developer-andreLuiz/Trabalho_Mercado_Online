@@ -18,6 +18,7 @@ namespace Trabalho_Mercado_Online.Views
         bool editar = false;
         string pathImagem = string.Empty;
         int ultimo = 0;
+        bool CmdExibir = true;//função de travar carregamento de combo no exibir dados
         #endregion
 
         #region Funções
@@ -97,18 +98,18 @@ namespace Trabalho_Mercado_Online.Views
         //Dados
         void ExibirDados(CategoriasNivel2 obj)
         {
+            CmdExibir = true;
+            var lista2 = Global.Listas.CategoriasNivel2.FindAll(x => x.CategoriaNivel1 == obj.CategoriaNivel1);
+            int index1 = Global.Listas.CategoriasNivel1.FindIndex(x => x.Id == obj.CategoriaNivel1);
+            int index2 = lista2.FindIndex(x => x.Id == obj.Id);
+            cbCategoriasNivel1.SelectedIndex = index1;
+            CarregarComboBoxNivel2(lista2);
+            cbCategoriasNivel2.SelectedIndex = index2;
             lblId.Text = obj.Id.ToString();
             txtNome.Text = obj.Nome;
-
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox.ImageLocation = obj.Img;
-
-            int indexNivel1 = Global.Listas.CategoriasNivel1.FindIndex(x => x.Id == obj.CategoriaNivel1);
-            int indexNivel2 = Global.Listas.CategoriasNivel2.FindAll(x => x.CategoriaNivel1 == obj.CategoriaNivel1).FindIndex(x => x.Id == obj.Id);
-            
-            cbCategoriasNivel1.SelectedIndex = indexNivel1;
-            cbCategoriasNivel2.SelectedIndex = indexNivel2;
-
+            CmdExibir = false;
         }
         Retorno CapturarDados(CategoriasNivel2 obj)
         {
@@ -157,8 +158,10 @@ namespace Trabalho_Mercado_Online.Views
             }
             
         }
-        void CarregarComboBoxNivel2()
+        void CarregarComboBoxNivel2(List<CategoriasNivel2> ListaLocal)
         {
+            var lista = new List<CategoriasNivel2>();
+            lista.AddRange(Global.Listas.CategoriasNivel2);
             cbCategoriasNivel2.DataSource = null;
             if (cbCategoriasNivel1.Text.Length>0)
             {
@@ -166,15 +169,16 @@ namespace Trabalho_Mercado_Online.Views
                 cbCategoriasNivel2.ValueMember = "Id";
 
                 int idNivel1 = int.Parse(cbCategoriasNivel1.SelectedValue.ToString());
-                var list = Global.Listas.CategoriasNivel2.FindAll(x=>x.CategoriaNivel1==idNivel1);
+                var list = lista.FindAll(x=>x.CategoriaNivel1==idNivel1);
                 cbCategoriasNivel2.DataSource = list;
             }
         }
         void CarregarListView()
         {
+            listView.Items.Clear();
             if (cbCategoriasNivel1.Text.Length > 0)
             {
-                listView.Items.Clear();
+                
                 int nivel1 = int.Parse(cbCategoriasNivel1.SelectedValue.ToString());
                 var list = new List<CategoriasNivel2>();
                 foreach (var item in Global.Listas.CategoriasNivel2.FindAll(x => x.CategoriaNivel1 == nivel1))
@@ -293,7 +297,7 @@ namespace Trabalho_Mercado_Online.Views
             Global.AtualizarCategorasNivel2();
             InterfaceAbrir();
             CarregarComboBoxNivel1();
-            CarregarComboBoxNivel2();
+            CarregarComboBoxNivel2(Global.Listas.CategoriasNivel2);
             CarregarListView();
             CarregarAparelho();
             if (Global.Listas.CategoriasNivel2.Count > 0)
@@ -303,16 +307,20 @@ namespace Trabalho_Mercado_Online.Views
         }
         private void cbCategoriasNivel1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CarregarComboBoxNivel2();
+            if (!CmdExibir)
+            {
+                CarregarComboBoxNivel2(Global.Listas.CategoriasNivel2);
+            }
         }
         private void cbCategoriasNivel2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!novo && !editar && cbCategoriasNivel1.Enabled)
+            if (!novo && !editar && cbCategoriasNivel1.Enabled && cbCategoriasNivel2.Text.Length>0 && !CmdExibir)
             {
-                if (cbCategoriasNivel2.DataSource != null)
-                {
-                    ExibirDados(Global.Listas.CategoriasNivel2.Find(x => x.Id == int.Parse(cbCategoriasNivel2.SelectedValue.ToString())));
-                }
+                ExibirDados(Global.Listas.CategoriasNivel2.Find(x => x.Id == int.Parse(cbCategoriasNivel2.SelectedValue.ToString())));
+            }
+            else
+            {
+                Limpar();
             }
             CarregarListView();
             CarregarAparelho();
@@ -359,7 +367,7 @@ namespace Trabalho_Mercado_Online.Views
                 }
                 Limpar();
                 Global.AtualizarCategorasNivel2();
-                CarregarComboBoxNivel2();
+                CarregarComboBoxNivel2(Global.Listas.CategoriasNivel2);
                 CarregarListView();
                 CarregarAparelho();
                 ExibirDados(obj);
@@ -442,7 +450,7 @@ namespace Trabalho_Mercado_Online.Views
                             InterfaceAbrir();
                             Global.AtualizarCategorasNivel2();
                             CarregarComboBoxNivel1();
-                            CarregarComboBoxNivel2();
+                            CarregarComboBoxNivel2(Global.Listas.CategoriasNivel2);
                             CarregarListView();
                             CarregarAparelho();
                             if (Global.Listas.CategoriasNivel2.Count > 0)

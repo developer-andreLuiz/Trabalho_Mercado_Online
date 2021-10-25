@@ -34,6 +34,7 @@ namespace Trabalho_Mercado_Online.Views
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnAbrirProdutos = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSelecionarTudo = new System.Windows.Forms.Button();
             this.lblSelecionados = new System.Windows.Forms.Label();
@@ -62,6 +63,8 @@ namespace Trabalho_Mercado_Online.Views
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
+            this.chkFaltaEditar = new System.Windows.Forms.CheckBox();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -70,6 +73,8 @@ namespace Trabalho_Mercado_Online.Views
             // panelMain
             // 
             this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelMain.Controls.Add(this.chkFaltaEditar);
+            this.panelMain.Controls.Add(this.btnAbrirProdutos);
             this.panelMain.Controls.Add(this.pictureBox1);
             this.panelMain.Controls.Add(this.btnSelecionarTudo);
             this.panelMain.Controls.Add(this.lblSelecionados);
@@ -103,6 +108,24 @@ namespace Trabalho_Mercado_Online.Views
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(897, 648);
             this.panelMain.TabIndex = 3;
+            // 
+            // btnAbrirProdutos
+            // 
+            this.btnAbrirProdutos.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAbrirProdutos.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnAbrirProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbrirProdutos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAbrirProdutos.ForeColor = System.Drawing.Color.White;
+            this.btnAbrirProdutos.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_list;
+            this.btnAbrirProdutos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAbrirProdutos.Location = new System.Drawing.Point(286, 586);
+            this.btnAbrirProdutos.Name = "btnAbrirProdutos";
+            this.btnAbrirProdutos.Size = new System.Drawing.Size(132, 50);
+            this.btnAbrirProdutos.TabIndex = 54;
+            this.btnAbrirProdutos.Text = "Abrir Produtos";
+            this.btnAbrirProdutos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAbrirProdutos.UseVisualStyleBackColor = false;
+            this.btnAbrirProdutos.Click += new System.EventHandler(this.btnAbrirProdutos_Click);
             // 
             // pictureBox1
             // 
@@ -228,7 +251,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnLimparPromocoes.ForeColor = System.Drawing.Color.White;
             this.btnLimparPromocoes.Image = ((System.Drawing.Image)(resources.GetObject("btnLimparPromocoes.Image")));
             this.btnLimparPromocoes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimparPromocoes.Location = new System.Drawing.Point(286, 586);
+            this.btnLimparPromocoes.Location = new System.Drawing.Point(424, 586);
             this.btnLimparPromocoes.Name = "btnLimparPromocoes";
             this.btnLimparPromocoes.Size = new System.Drawing.Size(132, 50);
             this.btnLimparPromocoes.TabIndex = 44;
@@ -512,6 +535,23 @@ namespace Trabalho_Mercado_Online.Views
             this.label1.TabIndex = 0;
             this.label1.Text = "Produtos";
             // 
+            // printDocument
+            // 
+            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
+            // 
+            // chkFaltaEditar
+            // 
+            this.chkFaltaEditar.AutoSize = true;
+            this.chkFaltaEditar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chkFaltaEditar.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.chkFaltaEditar.Location = new System.Drawing.Point(548, 73);
+            this.chkFaltaEditar.Name = "chkFaltaEditar";
+            this.chkFaltaEditar.Size = new System.Drawing.Size(85, 18);
+            this.chkFaltaEditar.TabIndex = 55;
+            this.chkFaltaEditar.Text = "Falta Editar";
+            this.chkFaltaEditar.UseVisualStyleBackColor = true;
+            this.chkFaltaEditar.CheckedChanged += new System.EventHandler(this.chkFaltaEditar_CheckedChanged);
+            // 
             // FrmProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -565,5 +605,8 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.Label lblSelecionados;
         private System.Windows.Forms.Button btnSelecionarTudo;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnAbrirProdutos;
+        private System.Drawing.Printing.PrintDocument printDocument;
+        private System.Windows.Forms.CheckBox chkFaltaEditar;
     }
 }

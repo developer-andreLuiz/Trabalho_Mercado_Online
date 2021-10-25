@@ -20,6 +20,7 @@ namespace Trabalho_Mercado_Online.Views
         bool editar = false;
         string pathImagem = string.Empty;
         int ultimoProduto = 0;
+        List<int> ListaId = new List<int>();
         private static SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         #endregion
 
@@ -453,20 +454,44 @@ namespace Trabalho_Mercado_Online.Views
         #endregion
 
         #region Eventos 
-        public FrmProduto(Produtos obj)
+        public FrmProduto(Produtos obj,List<int>ListaIdLocal)
         {
             InitializeComponent();
             AberturaForm();
             Limpar();
-            if (obj.Id > 0)
+           
+            if (ListaIdLocal.Count>0)
             {
-                ExibirDados(obj);
-                CarregarGrid(obj.Id);
+                ListaId.AddRange(ListaIdLocal);
+                ListaId.Sort((x,y) => x.CompareTo(y));
+                Produtos p = Global.Listas.Produtos.Find(x=>x.Id==ListaId[0]);
+                lblListaItens.Visible = true;
+                lblListaItens.Text = ListaId.Count+ " Itens na Lista";
+                ExibirDados(p);
+                CarregarGrid(p.Id);
+                if (ListaIdLocal.Count == 1)
+                {
+                    lblListaItens.Visible = false;
+                }
+                else
+                {
+                    txtPesquisar.Visible = false;
+                    btnPesquisar.Visible = false;
+                    lblAviso.Visible = false;
+                }
             }
             else
             {
-                novo = true;
-                BtnNovoLayout();
+                if (obj.Id > 0)
+                {
+                    ExibirDados(obj);
+                    CarregarGrid(obj.Id);
+                }
+                else
+                {
+                    novo = true;
+                    BtnNovoLayout();
+                }
             }
         }
 
@@ -560,6 +585,14 @@ namespace Trabalho_Mercado_Online.Views
                             ProdutosController.Deletar(p);
                             BlobStorage.Deletar("produtos", p.Id.ToString());
 
+                            if (ListaId.Count>0)
+                            {
+                                var li = ListaId.FindAll(x => x == p.Id);
+                                if (li.Count>0)
+                                {
+                                    ListaId.Remove(p.Id);
+                                }
+                            }
                             var listaCategorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CodigoProduto == p.Id);
                             foreach (var item in listaCategorias)
                             {
@@ -791,7 +824,6 @@ namespace Trabalho_Mercado_Online.Views
                         AberturaForm();
                         var produto = Global.Listas.Produtos.Find(x => x.Id == pCodigoBarra.CodigoProduto);
                         ExibirDados(produto);
-                      
                     }
                 }
                 else
@@ -843,7 +875,6 @@ namespace Trabalho_Mercado_Online.Views
         private void txtPesquisar_KeyPress(object sender, KeyPressEventArgs e)
         {
             var tecla = e.KeyChar;
-
             if (tecla.ToString().Equals("\r"))
             {
                 btnPesquisar.PerformClick();
@@ -860,8 +891,179 @@ namespace Trabalho_Mercado_Online.Views
         }
 
 
+        //Passagem de Produtos
+        private void btnPrimeiroRegistro_Click(object sender, EventArgs e)
+        {
+            bool continuar = true;
+            if (novo || editar)
+            {
+                DialogResult dialog = MessageBox.Show("Esta em processo de edição, deseja sair ?", "Status", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.No)
+                {
+                    continuar = false;
+                }
+            }
+            if (continuar && Global.Listas.Produtos.Count>0)
+            {
+                var ListaProdutos = new List<Produtos>();
+                ListaProdutos.AddRange(Global.Listas.Produtos);
+                ListaProdutos.Sort((x,y)=>x.Id.CompareTo(y.Id));
+                Limpar();
+                AberturaForm();
+                if (ListaId.Count > 1)
+                {
+                    ExibirDados(ListaProdutos.Find(x=>x.Id==ListaId[0]));
+                }
+                else
+                {
+                    ExibirDados(ListaProdutos[0]);
+                }
+            }
+        }
+        private void btnRegristroAnterior_Click(object sender, EventArgs e)
+        {
+            bool continuar = true;
+            if (novo || editar)
+            {
+                DialogResult dialog = MessageBox.Show("Esta em processo de edição, deseja sair ?", "Status", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.No)
+                {
+                    continuar = false;
+                }
+            }
+            if (continuar && Global.Listas.Produtos.Count > 0)
+            {
+                var ListaProdutos = new List<Produtos>();
+                ListaProdutos.AddRange(Global.Listas.Produtos);
+                ListaProdutos.Sort((x, y) => x.Id.CompareTo(y.Id));
+                int idAtual = int.Parse(lblId.Text);
+                Limpar();
+                AberturaForm();
+                if (ListaId.Count > 1)
+                {
+                    int indexAtual = ListaId.FindIndex(x=>x == idAtual);
+                    if (indexAtual > 0)
+                    {
+                        indexAtual--;
+                        ExibirDados(ListaProdutos.Find(x => x.Id == ListaId[indexAtual]));
+                    }
+                    else
+                    {
+                        ExibirDados(ListaProdutos.Find(x => x.Id == ListaId[indexAtual]));
+                    }
+                }
+                else
+                {
+                    
+                    if (idAtual > 0 == false)
+                    {
+                        ExibirDados(ListaProdutos[0]);
+                    }
+                    else
+                    {
+                        int indexAtual = ListaProdutos.FindIndex(x => x.Id == idAtual);
+                        if (indexAtual > 0)
+                        {
+                            indexAtual--;
+                            ExibirDados(ListaProdutos[indexAtual]);
+                        }
+                        else
+                        {
+                            ExibirDados(ListaProdutos[0]);
+                        }
+
+                    }
+                }
+            }
+        }
+        private void btnProximoRegistro_Click(object sender, EventArgs e)
+        {
+            bool continuar = true;
+            if (novo || editar)
+            {
+                DialogResult dialog = MessageBox.Show("Esta em processo de edição, deseja sair ?", "Status", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.No)
+                {
+                    continuar = false;
+                }
+            }
+            if (continuar && Global.Listas.Produtos.Count > 0)
+            {
+                var ListaProdutos = new List<Produtos>();
+                ListaProdutos.AddRange(Global.Listas.Produtos);
+                ListaProdutos.Sort((x, y) => x.Id.CompareTo(y.Id));
+                int idAtual = int.Parse(lblId.Text);
+                Limpar();
+                AberturaForm();
+                if (ListaId.Count > 1)
+                {
+                    int indexAtual = ListaId.FindIndex(x => x == idAtual);
+                    
+                    if (indexAtual < ListaId.Count -1)
+                    {
+                        indexAtual++;
+                        ExibirDados(ListaProdutos.Find(x => x.Id == ListaId[indexAtual]));
+                    }
+                    else
+                    {
+                        ExibirDados(ListaProdutos.Find(x => x.Id == ListaId[indexAtual]));
+                    }
+                }
+                else
+                {
+                    if (idAtual>0==false)
+                    {
+                        ExibirDados(ListaProdutos[0]);
+                    }
+                    else
+                    {
+                        int indexAtual = ListaProdutos.FindIndex(x=>x.Id== idAtual);
+                        if (indexAtual<ListaProdutos.Count-1)
+                        {
+                            indexAtual++;
+                            ExibirDados(ListaProdutos[indexAtual]);
+                        }
+                        else
+                        {
+                            ExibirDados(ListaProdutos[indexAtual]);
+                        }
+
+                    }
+                }
+            }
+        }
+        private void btnUltimoRegistro_Click(object sender, EventArgs e)
+        {
+            bool continuar = true;
+            if (novo || editar)
+            {
+                DialogResult dialog = MessageBox.Show("Esta em processo de edição, deseja sair ?", "Status", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.No)
+                {
+                    continuar = false;
+                }
+            }
+            if (continuar && Global.Listas.Produtos.Count > 0)
+            {
+
+                var ListaProdutos = new List<Produtos>();
+                ListaProdutos.AddRange(Global.Listas.Produtos);
+                ListaProdutos.Sort((x, y) => x.Id.CompareTo(y.Id));
+                Limpar();
+                AberturaForm();
+                if (ListaId.Count > 1)
+                {
+                    ExibirDados(ListaProdutos.Find(x => x.Id == ListaId[ListaId.Count-1]));
+                }
+                else
+                {
+                    
+                    ExibirDados(ListaProdutos[ListaProdutos.Count-1]);
+                }
+            }
+        }
         #endregion
 
-        
+
     }
 }
