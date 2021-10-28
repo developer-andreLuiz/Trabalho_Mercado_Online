@@ -18,13 +18,29 @@ namespace Trabalho_Mercado_Online.Views
         #region Variaveis 
         bool novo = false;
         bool editar = false;
-        string pathImagem = string.Empty;
+        public string pathImagem = string.Empty;
         int ultimoProduto = 0;
         List<int> ListaId = new List<int>();
         private static SpeechSynthesizer synthesizer = new SpeechSynthesizer();
+        private Form activeForm = null;
         #endregion
 
         #region Funções 
+        private void openChildForm(Form ChildForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = ChildForm;
+            ChildForm.TopLevel = false;
+            ChildForm.FormBorderStyle = FormBorderStyle.None;
+            ChildForm.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(ChildForm);
+            panelMain.Tag = ChildForm;
+            ChildForm.BringToFront();
+            ChildForm.Show();
+        }
         //Fala
         void Falar()
         {
@@ -171,7 +187,7 @@ namespace Trabalho_Mercado_Online.Views
             obj.Informacao = txtInformacao.Text;
 
             return retorno;
-        }
+        }//erro
         void ExibirDados(Produtos obj)
         {
             Limpar();
@@ -253,6 +269,7 @@ namespace Trabalho_Mercado_Online.Views
             txtInformacao.Text = obj.Informacao;
 
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            
             pictureBox.ImageLocation = obj.Img;
             CarregarGrid(obj.Id);
 
@@ -314,6 +331,7 @@ namespace Trabalho_Mercado_Online.Views
             txtInformacao.Enabled = false;
             btnCodigoBarra.Visible = false;
             btnInserirImagem.Enabled = false;
+            btnPesquisarImagem.Enabled = false;
             btnOuvir.Enabled = false;
         }
         void BtnGravarLayout()
@@ -342,6 +360,7 @@ namespace Trabalho_Mercado_Online.Views
             txtInformacao.Enabled = false;
             btnCodigoBarra.Visible = false;
             btnInserirImagem.Enabled = false;
+            btnPesquisarImagem.Enabled = false;
             btnOuvir.Enabled = false;
         }
         void BtnNovoLayout()
@@ -373,6 +392,7 @@ namespace Trabalho_Mercado_Online.Views
             txtInformacao.Enabled = true;
             btnCodigoBarra.Visible = false;
             btnInserirImagem.Enabled = true;
+            btnPesquisarImagem.Enabled = true;
             btnOuvir.Enabled = true;
         }
         void BtnEditarLayout()
@@ -405,6 +425,7 @@ namespace Trabalho_Mercado_Online.Views
            
             btnCodigoBarra.Visible = true;
             btnInserirImagem.Enabled = true;
+            btnPesquisarImagem.Enabled = true;
             btnOuvir.Enabled = true;
         }
         void Limpar()
@@ -628,12 +649,25 @@ namespace Trabalho_Mercado_Online.Views
         {
             pathImagem = string.Empty;
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg;)|*.jpg;";
+            open.Filter = "Image Files(*.jpg;*.png;)|*.jpg;*.png";
             if (open.ShowDialog() == DialogResult.OK)
             {
                 pathImagem = open.FileName;
-                pictureBox.Image = Image.FromFile(pathImagem);
+                Image img = Image.FromFile(pathImagem);
+                Image ImgNewSize = ImagemService.ResizeImage(img, 1000, 1200);
+                ImagemService.SaveImg(ImgNewSize);
+                
+                pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+                pictureBox.Image = null;
+                pictureBox.BackgroundImage = null;
+                pathImagem = System.IO.Directory.GetCurrentDirectory() + "\\Image.jpg";
+                pictureBox.ImageLocation = pathImagem;
             }
+        }
+        private void btnPesquisarImagem_Click(object sender, EventArgs e)
+        {
+            pathImagem = string.Empty;
+            openChildForm(new FrmPesquisarImagem(this,txtDescricao.Text));
         }
 
         //Margem Venda
@@ -1062,8 +1096,9 @@ namespace Trabalho_Mercado_Online.Views
                 }
             }
         }
+
         #endregion
 
-
+        
     }
 }

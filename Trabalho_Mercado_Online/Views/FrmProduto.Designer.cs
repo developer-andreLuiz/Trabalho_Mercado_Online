@@ -30,11 +30,12 @@ namespace Trabalho_Mercado_Online.Views
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProduto));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProduto));
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnPesquisarImagem = new System.Windows.Forms.Button();
             this.lblListaItens = new System.Windows.Forms.Label();
             this.btnUltimoRegistro = new System.Windows.Forms.Button();
             this.btnProximoRegistro = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@ namespace Trabalho_Mercado_Online.Views
             this.label23 = new System.Windows.Forms.Label();
             this.txtVendaMargem = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label22 = new System.Windows.Forms.Label();
             this.btnInserirImagem = new System.Windows.Forms.Button();
             this.btnDeletar = new System.Windows.Forms.Button();
@@ -96,17 +96,20 @@ namespace Trabalho_Mercado_Online.Views
             this.label3 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDItensCaixa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDIgualaProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.pictureBox1);
+            this.panelMain.Controls.Add(this.btnPesquisarImagem);
             this.panelMain.Controls.Add(this.lblListaItens);
             this.panelMain.Controls.Add(this.btnUltimoRegistro);
             this.panelMain.Controls.Add(this.btnProximoRegistro);
@@ -118,7 +121,6 @@ namespace Trabalho_Mercado_Online.Views
             this.panelMain.Controls.Add(this.label23);
             this.panelMain.Controls.Add(this.txtVendaMargem);
             this.panelMain.Controls.Add(this.label26);
-            this.panelMain.Controls.Add(this.pictureBox1);
             this.panelMain.Controls.Add(this.label22);
             this.panelMain.Controls.Add(this.btnInserirImagem);
             this.panelMain.Controls.Add(this.btnDeletar);
@@ -172,6 +174,28 @@ namespace Trabalho_Mercado_Online.Views
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(897, 648);
             this.panelMain.TabIndex = 555;
+            // 
+            // btnPesquisarImagem
+            // 
+            this.btnPesquisarImagem.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnPesquisarImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPesquisarImagem.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnPesquisarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisarImagem.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnPesquisarImagem.ForeColor = System.Drawing.Color.White;
+            this.btnPesquisarImagem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_img30x30;
+            this.btnPesquisarImagem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnPesquisarImagem.Location = new System.Drawing.Point(685, 518);
+            this.btnPesquisarImagem.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPesquisarImagem.Name = "btnPesquisarImagem";
+            this.btnPesquisarImagem.Size = new System.Drawing.Size(102, 40);
+            this.btnPesquisarImagem.TabIndex = 55563;
+            this.btnPesquisarImagem.TabStop = false;
+            this.btnPesquisarImagem.Text = "Buscar Imagem HD";
+            this.btnPesquisarImagem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPesquisarImagem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPesquisarImagem.UseVisualStyleBackColor = false;
+            this.btnPesquisarImagem.Click += new System.EventHandler(this.btnPesquisarImagem_Click);
             // 
             // lblListaItens
             // 
@@ -323,15 +347,6 @@ namespace Trabalho_Mercado_Online.Views
             this.label26.TabIndex = 98;
             this.label26.Text = "Venda %";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(18, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.TabIndex = 97;
-            this.pictureBox1.TabStop = false;
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -346,17 +361,21 @@ namespace Trabalho_Mercado_Online.Views
             // btnInserirImagem
             // 
             this.btnInserirImagem.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnInserirImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInserirImagem.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnInserirImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInserirImagem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnInserirImagem.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnInserirImagem.ForeColor = System.Drawing.Color.White;
             this.btnInserirImagem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_camera;
-            this.btnInserirImagem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInserirImagem.Location = new System.Drawing.Point(847, 540);
+            this.btnInserirImagem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnInserirImagem.Location = new System.Drawing.Point(790, 518);
+            this.btnInserirImagem.Margin = new System.Windows.Forms.Padding(0);
             this.btnInserirImagem.Name = "btnInserirImagem";
-            this.btnInserirImagem.Size = new System.Drawing.Size(38, 31);
+            this.btnInserirImagem.Size = new System.Drawing.Size(96, 40);
             this.btnInserirImagem.TabIndex = 93;
             this.btnInserirImagem.TabStop = false;
+            this.btnInserirImagem.Text = "Nova Imagem";
+            this.btnInserirImagem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnInserirImagem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInserirImagem.UseVisualStyleBackColor = false;
             this.btnInserirImagem.Click += new System.EventHandler(this.btnInserirImagem_Click);
@@ -465,7 +484,7 @@ namespace Trabalho_Mercado_Online.Views
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label20.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label20.Location = new System.Drawing.Point(110, 400);
+            this.label20.Location = new System.Drawing.Point(110, 381);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(69, 14);
             this.label20.TabIndex = 86;
@@ -476,7 +495,7 @@ namespace Trabalho_Mercado_Online.Views
             this.txtInformacao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtInformacao.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtInformacao.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtInformacao.Location = new System.Drawing.Point(110, 417);
+            this.txtInformacao.Location = new System.Drawing.Point(110, 398);
             this.txtInformacao.Multiline = true;
             this.txtInformacao.Name = "txtInformacao";
             this.txtInformacao.Size = new System.Drawing.Size(539, 117);
@@ -805,7 +824,7 @@ namespace Trabalho_Mercado_Online.Views
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(684, 277);
+            this.label5.Location = new System.Drawing.Point(684, 258);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 14);
             this.label5.TabIndex = 57;
@@ -912,7 +931,7 @@ namespace Trabalho_Mercado_Online.Views
             // 
             this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Location = new System.Drawing.Point(685, 294);
+            this.pictureBox.Location = new System.Drawing.Point(685, 275);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(200, 240);
             this.pictureBox.TabIndex = 51;
@@ -995,6 +1014,15 @@ namespace Trabalho_Mercado_Online.Views
             this.lblId.TabIndex = 5555;
             this.lblId.Text = "0";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.TabIndex = 55564;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -1010,12 +1038,12 @@ namespace Trabalho_Mercado_Online.Views
             this.Text = "FrmProduto";
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDVolume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDItensCaixa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDIgualaProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1030,7 +1058,6 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.TextBox txtGramatura;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtPromocao;
@@ -1072,7 +1099,6 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.Label lblAviso;
         private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtPromocaoMargem;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txtVendaMargem;
@@ -1084,5 +1110,8 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.Button btnRegristroAnterior;
         private System.Windows.Forms.Button btnPrimeiroRegistro;
         private System.Windows.Forms.Label lblListaItens;
+        private System.Windows.Forms.Button btnPesquisarImagem;
+        public System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

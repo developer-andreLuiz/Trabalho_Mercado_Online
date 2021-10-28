@@ -329,11 +329,19 @@ namespace Trabalho_Mercado_Online.Views
         {
             pathImagem = string.Empty;
             OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg;)|*.jpg;";
+            open.Filter = "Image Files(*.jpg;*.png;)|*.jpg;*.png";
             if (open.ShowDialog() == DialogResult.OK)
             {
                 pathImagem = open.FileName;
-                pictureBox.Image = Image.FromFile(pathImagem);
+                Image img = Image.FromFile(pathImagem);
+                Image ImgNewSize = ImagemService.ResizeImage(img, 550, 310);
+                ImagemService.SaveImg(ImgNewSize);
+
+                pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+                pictureBox.Image = null;
+                pictureBox.BackgroundImage = null;
+                pathImagem = System.IO.Directory.GetCurrentDirectory() + "\\Image.jpg";
+                pictureBox.ImageLocation = pathImagem;
             }
         }
         private void btnNovo_Click(object sender, EventArgs e)

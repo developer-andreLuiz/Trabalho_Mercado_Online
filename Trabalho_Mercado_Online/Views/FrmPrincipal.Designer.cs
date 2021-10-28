@@ -37,9 +37,10 @@ namespace Trabalho_Mercado_Online.Views
             this.panelMenuLateral = new System.Windows.Forms.Panel();
             this.panelAccessSubMenu = new System.Windows.Forms.Panel();
             this.btnProdutosAccess = new System.Windows.Forms.Button();
+            this.btnAlimentarProdutos = new System.Windows.Forms.Button();
             this.btnAccess = new System.Windows.Forms.Button();
             this.panelFerramentasSubMenu = new System.Windows.Forms.Panel();
-            this.btnAlimentarProdutos = new System.Windows.Forms.Button();
+            this.btnImagens = new System.Windows.Forms.Button();
             this.btnFerramentas = new System.Windows.Forms.Button();
             this.panelBasedeDadosSubMenu = new System.Windows.Forms.Panel();
             this.btnCategoriasNivel3 = new System.Windows.Forms.Button();
@@ -129,10 +130,11 @@ namespace Trabalho_Mercado_Online.Views
             // 
             this.panelAccessSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
             this.panelAccessSubMenu.Controls.Add(this.btnProdutosAccess);
+            this.panelAccessSubMenu.Controls.Add(this.btnAlimentarProdutos);
             this.panelAccessSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAccessSubMenu.Location = new System.Drawing.Point(0, 458);
             this.panelAccessSubMenu.Name = "panelAccessSubMenu";
-            this.panelAccessSubMenu.Size = new System.Drawing.Size(200, 50);
+            this.panelAccessSubMenu.Size = new System.Drawing.Size(200, 95);
             this.panelAccessSubMenu.TabIndex = 9;
             // 
             // btnProdutosAccess
@@ -145,16 +147,37 @@ namespace Trabalho_Mercado_Online.Views
             this.btnProdutosAccess.ForeColor = System.Drawing.Color.White;
             this.btnProdutosAccess.Image = ((System.Drawing.Image)(resources.GetObject("btnProdutosAccess.Image")));
             this.btnProdutosAccess.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProdutosAccess.Location = new System.Drawing.Point(0, 0);
+            this.btnProdutosAccess.Location = new System.Drawing.Point(0, 45);
             this.btnProdutosAccess.Name = "btnProdutosAccess";
             this.btnProdutosAccess.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnProdutosAccess.Size = new System.Drawing.Size(200, 45);
-            this.btnProdutosAccess.TabIndex = 3;
+            this.btnProdutosAccess.TabIndex = 5;
             this.btnProdutosAccess.Text = "Produtos";
             this.btnProdutosAccess.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProdutosAccess.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProdutosAccess.UseVisualStyleBackColor = false;
             this.btnProdutosAccess.Click += new System.EventHandler(this.btnProdutosAccess_Click);
+            // 
+            // btnAlimentarProdutos
+            // 
+            this.btnAlimentarProdutos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
+            this.btnAlimentarProdutos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAlimentarProdutos.FlatAppearance.BorderSize = 0;
+            this.btnAlimentarProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlimentarProdutos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAlimentarProdutos.ForeColor = System.Drawing.Color.White;
+            this.btnAlimentarProdutos.Image = ((System.Drawing.Image)(resources.GetObject("btnAlimentarProdutos.Image")));
+            this.btnAlimentarProdutos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlimentarProdutos.Location = new System.Drawing.Point(0, 0);
+            this.btnAlimentarProdutos.Name = "btnAlimentarProdutos";
+            this.btnAlimentarProdutos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAlimentarProdutos.Size = new System.Drawing.Size(200, 45);
+            this.btnAlimentarProdutos.TabIndex = 4;
+            this.btnAlimentarProdutos.Text = "Alimentar Produtos";
+            this.btnAlimentarProdutos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlimentarProdutos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAlimentarProdutos.UseVisualStyleBackColor = false;
+            this.btnAlimentarProdutos.Click += new System.EventHandler(this.btnAlimentarProdutos_Click);
             // 
             // btnAccess
             // 
@@ -179,33 +202,33 @@ namespace Trabalho_Mercado_Online.Views
             // panelFerramentasSubMenu
             // 
             this.panelFerramentasSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
-            this.panelFerramentasSubMenu.Controls.Add(this.btnAlimentarProdutos);
+            this.panelFerramentasSubMenu.Controls.Add(this.btnImagens);
             this.panelFerramentasSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelFerramentasSubMenu.Location = new System.Drawing.Point(0, 358);
             this.panelFerramentasSubMenu.Name = "panelFerramentasSubMenu";
             this.panelFerramentasSubMenu.Size = new System.Drawing.Size(200, 50);
             this.panelFerramentasSubMenu.TabIndex = 7;
             // 
-            // btnAlimentarProdutos
+            // btnImagens
             // 
-            this.btnAlimentarProdutos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
-            this.btnAlimentarProdutos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAlimentarProdutos.FlatAppearance.BorderSize = 0;
-            this.btnAlimentarProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlimentarProdutos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAlimentarProdutos.ForeColor = System.Drawing.Color.White;
-            this.btnAlimentarProdutos.Image = ((System.Drawing.Image)(resources.GetObject("btnAlimentarProdutos.Image")));
-            this.btnAlimentarProdutos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlimentarProdutos.Location = new System.Drawing.Point(0, 0);
-            this.btnAlimentarProdutos.Name = "btnAlimentarProdutos";
-            this.btnAlimentarProdutos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAlimentarProdutos.Size = new System.Drawing.Size(200, 45);
-            this.btnAlimentarProdutos.TabIndex = 3;
-            this.btnAlimentarProdutos.Text = "Alimentar Produtos";
-            this.btnAlimentarProdutos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlimentarProdutos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAlimentarProdutos.UseVisualStyleBackColor = false;
-            this.btnAlimentarProdutos.Click += new System.EventHandler(this.btnAlimentarProdutos_Click);
+            this.btnImagens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
+            this.btnImagens.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnImagens.FlatAppearance.BorderSize = 0;
+            this.btnImagens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImagens.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnImagens.ForeColor = System.Drawing.Color.White;
+            this.btnImagens.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_img;
+            this.btnImagens.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImagens.Location = new System.Drawing.Point(0, 0);
+            this.btnImagens.Name = "btnImagens";
+            this.btnImagens.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnImagens.Size = new System.Drawing.Size(200, 45);
+            this.btnImagens.TabIndex = 4;
+            this.btnImagens.Text = "Imagens";
+            this.btnImagens.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImagens.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImagens.UseVisualStyleBackColor = false;
+            this.btnImagens.Click += new System.EventHandler(this.btnImagens_Click);
             // 
             // btnFerramentas
             // 
@@ -458,13 +481,14 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.Button btnProdutos;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Panel panelAccessSubMenu;
-        private System.Windows.Forms.Button btnProdutosAccess;
         private System.Windows.Forms.Button btnAccess;
         private System.Windows.Forms.Panel panelFerramentasSubMenu;
-        private System.Windows.Forms.Button btnAlimentarProdutos;
         private System.Windows.Forms.Button btnFerramentas;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label lblFuncionario;
+        private System.Windows.Forms.Button btnProdutosAccess;
+        private System.Windows.Forms.Button btnAlimentarProdutos;
+        private System.Windows.Forms.Button btnImagens;
     }
 }

@@ -173,9 +173,39 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icone_desligar {
+            get {
+                object obj = ResourceManager.GetObject("icone_desligar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icone_edit {
             get {
                 object obj = ResourceManager.GetObject("icone_edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icone_img {
+            get {
+                object obj = ResourceManager.GetObject("icone_img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icone_img30x30 {
+            get {
+                object obj = ResourceManager.GetObject("icone_img30x30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -256,6 +286,16 @@ namespace Trabalho_Mercado_Online.Properties {
         internal static System.Drawing.Bitmap icone_select_all {
             get {
                 object obj = ResourceManager.GetObject("icone_select_all", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icone_send_file {
+            get {
+                object obj = ResourceManager.GetObject("icone_send_file", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

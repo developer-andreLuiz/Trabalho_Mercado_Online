@@ -220,37 +220,38 @@ namespace Trabalho_Mercado_Online.Views
         private void btnProdutos_Click(object sender, EventArgs e)
         {
             openChildForm(new FrmProdutos());
-            //EsconderSubMenu();
         }
         private void btnCategoriasNivel1_Click(object sender, EventArgs e)
         {
             openChildForm(new FrmCategorias_Nivel_1());
-            //EsconderSubMenu();
         }
         private void btnCategoriasNivel2_Click(object sender, EventArgs e)
         {
             openChildForm(new FrmCategorias_Nivel_2());
-            //EsconderSubMenu();
         }
         private void btnCategoriasNivel3_Click(object sender, EventArgs e)
         {
             openChildForm(new FrmCategorias_Nivel_3());
-            //EsconderSubMenu();
         }
-     
+
         //Botoes do menu Ferramentas
-        private void btnAlimentarProdutos_Click(object sender, EventArgs e)
+        private void btnImagens_Click(object sender, EventArgs e)
         {
-            openChildForm(new FrmAlimentarProdutosAccess());
-            //EsconderSubMenu();
+            openChildForm(new FrmPesquisarImagem());
         }
 
         //Botoes do menu Access
+        private void btnAlimentarProdutos_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FrmAlimentarProdutosAccess());
+        }
+
         private void btnProdutosAccess_Click(object sender, EventArgs e)
         {
             openChildForm(new FrmProdutosAccess());
-            //EsconderSubMenu();
         }
+
+        
 
         //Botoes de Sair
         private void btnSair_Click(object sender, EventArgs e)
