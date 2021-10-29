@@ -21,11 +21,16 @@ namespace Trabalho_Mercado_Online.DAO
         public static List<ProdutosCodigoBarra> GetAll()
         {
             List<ProdutosCodigoBarra> Lista = new List<ProdutosCodigoBarra>();
-            using (var banco = new DBContextDAO())
+            try
             {
-                var itens = banco.ProdutosCodigoBarras.AsNoTracking().AsQueryable().OrderBy(x => x.Id);
-                Lista.AddRange(itens.ToList());
+                using (var banco = new DBContextDAO())
+                {
+                    var itens = banco.ProdutosCodigoBarras.AsNoTracking().AsQueryable().OrderBy(x => x.Id);
+                    Lista.AddRange(itens.ToList());
+                }
             }
+            catch { }
+            
             return Lista;
         }
         public static ProdutosCodigoBarra Insert(ProdutosCodigoBarra obj)

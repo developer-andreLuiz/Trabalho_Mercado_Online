@@ -1097,8 +1097,16 @@ namespace Trabalho_Mercado_Online.Views
             }
         }
 
+
         #endregion
 
-        
+        private void lblPeso_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblPeso.Text = Balanca.Peso();
+            }
+            catch { }
+        }
     }
 }

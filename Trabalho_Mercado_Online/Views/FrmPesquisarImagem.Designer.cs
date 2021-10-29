@@ -34,6 +34,7 @@ namespace Trabalho_Mercado_Online.Views
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPesquisarImagem));
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSelecionar = new System.Windows.Forms.Button();
@@ -59,6 +60,7 @@ namespace Trabalho_Mercado_Online.Views
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.White;
+            this.panelMain.Controls.Add(this.btnPesquisar);
             this.panelMain.Controls.Add(this.pictureBox1);
             this.panelMain.Controls.Add(this.label5);
             this.panelMain.Controls.Add(this.btnSelecionar);
@@ -80,6 +82,24 @@ namespace Trabalho_Mercado_Online.Views
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(897, 648);
             this.panelMain.TabIndex = 0;
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnPesquisar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPesquisar.ForeColor = System.Drawing.Color.White;
+            this.btnPesquisar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_search;
+            this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPesquisar.Location = new System.Drawing.Point(641, 86);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(38, 31);
+            this.btnPesquisar.TabIndex = 558;
+            this.btnPesquisar.TabStop = false;
+            this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // pictureBox1
             // 
@@ -240,9 +260,10 @@ namespace Trabalho_Mercado_Online.Views
             this.txtProduto.ForeColor = System.Drawing.Color.DodgerBlue;
             this.txtProduto.Location = new System.Drawing.Point(12, 86);
             this.txtProduto.Name = "txtProduto";
-            this.txtProduto.Size = new System.Drawing.Size(667, 32);
+            this.txtProduto.Size = new System.Drawing.Size(623, 32);
             this.txtProduto.TabIndex = 96;
             this.txtProduto.TextChanged += new System.EventHandler(this.txtProduto_TextChanged);
+            this.txtProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduto_KeyPress);
             // 
             // dataGridView
             // 
@@ -288,7 +309,7 @@ namespace Trabalho_Mercado_Online.Views
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(667, 482);
             this.dataGridView.TabIndex = 95;
-            this.dataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentDoubleClick);
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // btnFechar
             // 
@@ -321,6 +342,7 @@ namespace Trabalho_Mercado_Online.Views
             this.Controls.Add(this.panelMain);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPesquisarImagem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -353,5 +375,6 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.Button btnSelecionar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnPesquisar;
     }
 }

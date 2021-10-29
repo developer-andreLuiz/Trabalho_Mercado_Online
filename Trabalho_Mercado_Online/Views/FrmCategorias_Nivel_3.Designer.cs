@@ -381,6 +381,7 @@ namespace Trabalho_Mercado_Online.Views
             // 
             // panel
             // 
+            this.panel.AutoScroll = true;
             this.panel.Location = new System.Drawing.Point(22, 88);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(286, 469);

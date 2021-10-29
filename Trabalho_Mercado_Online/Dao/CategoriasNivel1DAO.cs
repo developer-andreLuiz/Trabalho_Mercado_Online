@@ -21,11 +21,16 @@ namespace Trabalho_Mercado_Online.DAO
         public static List<CategoriasNivel1> GetAll()
         {
             List<CategoriasNivel1> Lista = new List<CategoriasNivel1>();
-            using (var banco = new DBContextDAO())
+            try
             {
-                var itens = banco.CategoriasNivel1s.AsNoTracking().AsQueryable().OrderBy(x => x.Nome);
-                Lista.AddRange(itens.ToList());
+                using (var banco = new DBContextDAO())
+                {
+                    var itens = banco.CategoriasNivel1s.AsNoTracking().AsQueryable().OrderBy(x => x.Nome);
+                    Lista.AddRange(itens.ToList());
+                }
             }
+            catch { }
+            
             return Lista;
         }
         public static CategoriasNivel1 Insert(CategoriasNivel1 obj)

@@ -166,20 +166,9 @@ namespace Trabalho_Mercado_Online.Views
         }
         private void txtProduto_TextChanged(object sender, EventArgs e)
         {
-            CarregarGrid();
-        }
-        private void dataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (string.IsNullOrEmpty(Global.CaminhoPastaImagem) == false)
+            if (txtProduto.Text.Length==0)
             {
-                try
-                {
-                    string pathImg = Global.CaminhoPastaImagem + "\\" + dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString().Trim();
-                    Image image = Image.FromFile(pathImg);
-                    pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
-                    pictureBox.BackgroundImage = ImagemService.ResizeImage(image, 1000, 1200);
-                }
-                catch { }
+                CarregarGrid();
             }
         }
         private void btnSelecionar_Click(object sender, EventArgs e)
@@ -213,10 +202,35 @@ namespace Trabalho_Mercado_Online.Views
                     }
                 }
             }
-            #endregion
+        }
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            CarregarGrid();
+        }
+        private void txtProduto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var Tecla = ((byte)e.KeyChar);
+            if (Tecla == 13)
+            {
+                CarregarGrid();
+            }
 
+        }
+        #endregion
 
-
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (string.IsNullOrEmpty(Global.CaminhoPastaImagem) == false)
+            {
+                try
+                {
+                    string pathImg = Global.CaminhoPastaImagem + "\\" + dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString().Trim();
+                    Image image = Image.FromFile(pathImg);
+                    pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+                    pictureBox.BackgroundImage = ImagemService.ResizeImage(image, 1000, 1200);
+                }
+                catch { }
+            }
         }
     }
 }
