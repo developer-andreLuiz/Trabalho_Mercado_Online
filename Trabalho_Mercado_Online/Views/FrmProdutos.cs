@@ -275,6 +275,152 @@ namespace Trabalho_Mercado_Online.Views
             }
             #endregion
         }
+        public void FiltrarCategorias(int categoria)
+        {
+            List<ProdutosDataGrid> ListaGrid = new List<ProdutosDataGrid>();
+            List<Produtos> ListaProdutos = new List<Produtos>();
+           
+
+
+            //Sem Filtro
+            ListaProdutos.AddRange(Global.Listas.Produtos);
+           
+            if (categoria==1)
+            {
+                if (cbNivel1.SelectedValue != null)
+                {
+                    int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
+                    var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel1 == valor1);
+                    List<Produtos> ListaBase = new List<Produtos>();
+                    ListaBase.AddRange(ListaProdutos);
+                    foreach (var item in ListaBase)
+                    {
+                        var itemcategoria = ltCateorias.Find(x => x.CodigoProduto == item.Id);
+                        if (itemcategoria == null)
+                        {
+                            ListaProdutos.Remove(item);
+                        }
+                    }
+                }
+            }
+            if (categoria==2)
+            {
+                if (cbNivel2.SelectedValue != null)
+                {
+                   
+                    int valor2 = int.Parse(cbNivel2.SelectedValue.ToString());
+                    var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel2 == valor2);
+                    List<Produtos> ListaBase = new List<Produtos>();
+                    ListaBase.AddRange(ListaProdutos);
+                    foreach (var item in ListaBase)
+                    {
+                        var itemcategoria = ltCateorias.Find(x => x.CodigoProduto == item.Id);
+                        if (itemcategoria == null)
+                        {
+                            ListaProdutos.Remove(item);
+                        }
+                    }
+                }
+            }
+            if (categoria==3)
+            {
+                if (cbNivel3.SelectedValue != null)
+                {
+
+                    int valor3 = int.Parse(cbNivel3.SelectedValue.ToString());
+                    var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel3 == valor3);
+                    List<Produtos> ListaBase = new List<Produtos>();
+                    ListaBase.AddRange(ListaProdutos);
+                    foreach (var item in ListaBase)
+                    {
+                        var itemcategoria = ltCateorias.Find(x => x.CodigoProduto == item.Id);
+                        if (itemcategoria == null)
+                        {
+                            ListaProdutos.Remove(item);
+                        }
+                    }
+                }
+            }
+            if (chkFaltaEditar.Checked)
+            {
+                var lt = ListaProdutos.FindAll(x => x.Peso.Equals("00000"));
+                ListaProdutos = lt;
+            }
+            #region Formatação dos Dados Grid
+            foreach (var obj in ListaProdutos)
+            {
+                ProdutosDataGrid produtosDataGrid = new ProdutosDataGrid();
+                produtosDataGrid.Id = obj.Id.ToString();
+                produtosDataGrid.Descricao = obj.Descricao + " " + obj.Gramatura + " " + obj.Embalagem;
+                produtosDataGrid.Iguala = obj.IgualaProduto.ToString();
+                produtosDataGrid.Custo = "R$" + obj.CustoUnitario.ToString("F2");
+                produtosDataGrid.Venda = "R$" + obj.ValorVenda.ToString("F2");
+                produtosDataGrid.Promoção = "R$" + obj.ValorPromocao.ToString("F2");
+                string margem = string.Empty;
+                if (obj.ValorPromocao > 0)
+                {
+                    double lucro = obj.ValorPromocao - obj.CustoUnitario;
+                    double margemD = (lucro / obj.CustoUnitario) * 100;
+                    margem = margemD.ToString("F2");
+                }
+                else
+                {
+                    double lucro = obj.ValorVenda - obj.CustoUnitario;
+                    double margemD = (lucro / obj.CustoUnitario) * 100;
+                    margem = margemD.ToString("F2");
+                }
+
+
+                produtosDataGrid.Margem = margem.ToString() + "%";
+                ListaGrid.Add(produtosDataGrid);
+            }
+            dataGridView.DataSource = ListaGrid;
+            switch (ListaGrid.Count)
+            {
+                case 0: lblRegistros.Text = $"Sem Registro"; break;
+                case 1: lblRegistros.Text = $"1 Registro"; break;
+                default: lblRegistros.Text = $"{ListaGrid.Count} Registros"; break;
+            }
+            switch (dataGridView.SelectedRows.Count)
+            {
+                case 0: lblSelecionados.Text = $"Nenhum Selecionado"; break;
+                case 1: lblSelecionados.Text = $"1 Selecionado"; break;
+                default: lblSelecionados.Text = $"{dataGridView.SelectedRows.Count} Selecionados"; break;
+            }
+            dataGridView.Columns[0].Width = 70;
+            dataGridView.Columns[1].Width = 350;
+            if (ListaGrid.Count > 0)
+            {
+                btnAdicionar.Enabled = true;
+                btnRemover.Enabled = true;
+                btnLimparPromocoes.Enabled = true;
+                btnAbrirProdutos.Enabled = true;
+
+                btnAdicionar.Visible = true;
+                btnRemover.Visible = true;
+                btnLimparPromocoes.Visible = true;
+                btnSelecionarTudo.Visible = true;
+                lblSelecionados.Visible = true;
+                btnAbrirProdutos.Visible = true;
+
+            }
+            else
+            {
+                btnAdicionar.Enabled = false;
+                btnRemover.Enabled = false;
+                btnLimparPromocoes.Enabled = false;
+                btnAbrirProdutos.Enabled = false;
+
+                btnAdicionar.Visible = false;
+                btnRemover.Visible = false;
+                btnLimparPromocoes.Visible = false;
+                btnSelecionarTudo.Visible = false;
+                lblSelecionados.Visible = false;
+                btnAbrirProdutos.Visible = false;
+            }
+            #endregion
+        }
+
 
         //Listas
         public void AtualizarListas()
@@ -759,16 +905,69 @@ namespace Trabalho_Mercado_Online.Views
 
             }
         }
+        private void btnBuscarCategoria1_Click(object sender, EventArgs e)
+        {
+            if (cbNivel1.SelectedValue != null)
+            {
+                chkCategoria.Checked = false;
+               
+                chkSemCategoria.Checked = false;
+                chkCategoriaNivel2.Checked = false;
+                chkCategoriaNivel3.Checked = false;
+                chkIgualaProduto.Checked = false;
+                chkPromocao.Checked = false;
+                txtDescricao.Text = string.Empty;
+                txtCodigoBarraCodigo.Text = string.Empty;
+                txtDescricao.Focus();
+                FiltrarCategorias(1);
+            }
+                
+        }
+
+        private void btnBuscarCategoria2_Click(object sender, EventArgs e)
+        {
+            if (cbNivel2.SelectedValue != null)
+            {
+                chkSemCategoria.Checked = false;
+                chkCategoriaNivel2.Checked = false;
+                chkCategoriaNivel3.Checked = false;
+                chkIgualaProduto.Checked = false;
+                chkPromocao.Checked = false;
+                txtDescricao.Text = string.Empty;
+                txtCodigoBarraCodigo.Text = string.Empty;
+                txtDescricao.Focus();
+                FiltrarCategorias(2);
+            }
+                
+        }
+
+        private void btnBuscarCategoria3_Click(object sender, EventArgs e)
+        {
+            if (cbNivel3.SelectedValue != null)
+            {
+                chkSemCategoria.Checked = false;
+                chkCategoriaNivel2.Checked = false;
+                chkCategoriaNivel3.Checked = false;
+                chkIgualaProduto.Checked = false;
+                chkPromocao.Checked = false;
+                txtDescricao.Text = string.Empty;
+                txtCodigoBarraCodigo.Text = string.Empty;
+                txtDescricao.Focus();
+                FiltrarCategorias(3);
+            }
+                
+        }
 
         //Impressão
         private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             e.Graphics.DrawString(ListaImprimir, new Font("Arial", 12, FontStyle.Bold), Brushes.Black, 50, 50);
         }
+
+
+
         #endregion
 
-
-
-
+        
     }
 }

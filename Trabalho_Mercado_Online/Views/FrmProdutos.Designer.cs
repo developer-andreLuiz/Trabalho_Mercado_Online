@@ -30,10 +30,12 @@ namespace Trabalho_Mercado_Online.Views
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProdutos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnBuscarCategoria3 = new System.Windows.Forms.Button();
+            this.chkFaltaEditar = new System.Windows.Forms.CheckBox();
             this.btnAbrirProdutos = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSelecionarTudo = new System.Windows.Forms.Button();
@@ -64,7 +66,8 @@ namespace Trabalho_Mercado_Online.Views
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
-            this.chkFaltaEditar = new System.Windows.Forms.CheckBox();
+            this.btnBuscarCategoria2 = new System.Windows.Forms.Button();
+            this.btnBuscarCategoria1 = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -73,6 +76,9 @@ namespace Trabalho_Mercado_Online.Views
             // panelMain
             // 
             this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelMain.Controls.Add(this.btnBuscarCategoria1);
+            this.panelMain.Controls.Add(this.btnBuscarCategoria2);
+            this.panelMain.Controls.Add(this.btnBuscarCategoria3);
             this.panelMain.Controls.Add(this.chkFaltaEditar);
             this.panelMain.Controls.Add(this.btnAbrirProdutos);
             this.panelMain.Controls.Add(this.pictureBox1);
@@ -108,6 +114,35 @@ namespace Trabalho_Mercado_Online.Views
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(897, 648);
             this.panelMain.TabIndex = 3;
+            // 
+            // btnBuscarCategoria3
+            // 
+            this.btnBuscarCategoria3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnBuscarCategoria3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarCategoria3.FlatAppearance.BorderSize = 0;
+            this.btnBuscarCategoria3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCategoria3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBuscarCategoria3.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnBuscarCategoria3.Location = new System.Drawing.Point(855, 102);
+            this.btnBuscarCategoria3.Name = "btnBuscarCategoria3";
+            this.btnBuscarCategoria3.Size = new System.Drawing.Size(27, 27);
+            this.btnBuscarCategoria3.TabIndex = 58;
+            this.btnBuscarCategoria3.Text = "...";
+            this.btnBuscarCategoria3.UseVisualStyleBackColor = false;
+            this.btnBuscarCategoria3.Click += new System.EventHandler(this.btnBuscarCategoria3_Click);
+            // 
+            // chkFaltaEditar
+            // 
+            this.chkFaltaEditar.AutoSize = true;
+            this.chkFaltaEditar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chkFaltaEditar.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.chkFaltaEditar.Location = new System.Drawing.Point(548, 73);
+            this.chkFaltaEditar.Name = "chkFaltaEditar";
+            this.chkFaltaEditar.Size = new System.Drawing.Size(85, 18);
+            this.chkFaltaEditar.TabIndex = 55;
+            this.chkFaltaEditar.Text = "Falta Editar";
+            this.chkFaltaEditar.UseVisualStyleBackColor = true;
+            this.chkFaltaEditar.CheckedChanged += new System.EventHandler(this.chkFaltaEditar_CheckedChanged);
             // 
             // btnAbrirProdutos
             // 
@@ -332,7 +367,7 @@ namespace Trabalho_Mercado_Online.Views
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label7.Location = new System.Drawing.Point(635, 132);
+            this.label7.Location = new System.Drawing.Point(621, 132);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 14);
             this.label7.TabIndex = 31;
@@ -343,7 +378,7 @@ namespace Trabalho_Mercado_Online.Views
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(335, 132);
+            this.label6.Location = new System.Drawing.Point(323, 133);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 14);
             this.label6.TabIndex = 30;
@@ -365,7 +400,7 @@ namespace Trabalho_Mercado_Online.Views
             this.chkCategoriaNivel3.AutoSize = true;
             this.chkCategoriaNivel3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkCategoriaNivel3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkCategoriaNivel3.Location = new System.Drawing.Point(611, 107);
+            this.chkCategoriaNivel3.Location = new System.Drawing.Point(600, 108);
             this.chkCategoriaNivel3.Name = "chkCategoriaNivel3";
             this.chkCategoriaNivel3.Size = new System.Drawing.Size(15, 14);
             this.chkCategoriaNivel3.TabIndex = 28;
@@ -380,7 +415,7 @@ namespace Trabalho_Mercado_Online.Views
             this.chkCategoriaNivel1.Enabled = false;
             this.chkCategoriaNivel1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkCategoriaNivel1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkCategoriaNivel1.Location = new System.Drawing.Point(12, 107);
+            this.chkCategoriaNivel1.Location = new System.Drawing.Point(8, 108);
             this.chkCategoriaNivel1.Name = "chkCategoriaNivel1";
             this.chkCategoriaNivel1.Size = new System.Drawing.Size(15, 14);
             this.chkCategoriaNivel1.TabIndex = 27;
@@ -391,7 +426,7 @@ namespace Trabalho_Mercado_Online.Views
             this.chkCategoriaNivel2.AutoSize = true;
             this.chkCategoriaNivel2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkCategoriaNivel2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkCategoriaNivel2.Location = new System.Drawing.Point(314, 107);
+            this.chkCategoriaNivel2.Location = new System.Drawing.Point(302, 108);
             this.chkCategoriaNivel2.Name = "chkCategoriaNivel2";
             this.chkCategoriaNivel2.Size = new System.Drawing.Size(15, 14);
             this.chkCategoriaNivel2.TabIndex = 26;
@@ -406,10 +441,10 @@ namespace Trabalho_Mercado_Online.Views
             this.cbNivel3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cbNivel3.ForeColor = System.Drawing.Color.DodgerBlue;
             this.cbNivel3.FormattingEnabled = true;
-            this.cbNivel3.Location = new System.Drawing.Point(632, 102);
+            this.cbNivel3.Location = new System.Drawing.Point(621, 102);
             this.cbNivel3.Name = "cbNivel3";
             this.cbNivel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbNivel3.Size = new System.Drawing.Size(250, 27);
+            this.cbNivel3.Size = new System.Drawing.Size(230, 27);
             this.cbNivel3.TabIndex = 16;
             this.cbNivel3.SelectedIndexChanged += new System.EventHandler(this.cbNivel3_SelectedIndexChanged);
             // 
@@ -421,10 +456,10 @@ namespace Trabalho_Mercado_Online.Views
             this.cbNivel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cbNivel2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.cbNivel2.FormattingEnabled = true;
-            this.cbNivel2.Location = new System.Drawing.Point(335, 102);
+            this.cbNivel2.Location = new System.Drawing.Point(323, 103);
             this.cbNivel2.Name = "cbNivel2";
             this.cbNivel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbNivel2.Size = new System.Drawing.Size(250, 27);
+            this.cbNivel2.Size = new System.Drawing.Size(230, 27);
             this.cbNivel2.TabIndex = 15;
             this.cbNivel2.SelectedIndexChanged += new System.EventHandler(this.cbNivel2_SelectedIndexChanged);
             // 
@@ -439,7 +474,7 @@ namespace Trabalho_Mercado_Online.Views
             this.cbNivel1.Location = new System.Drawing.Point(29, 102);
             this.cbNivel1.Name = "cbNivel1";
             this.cbNivel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbNivel1.Size = new System.Drawing.Size(250, 27);
+            this.cbNivel1.Size = new System.Drawing.Size(230, 27);
             this.cbNivel1.TabIndex = 14;
             this.cbNivel1.SelectedIndexChanged += new System.EventHandler(this.cbNivel1_SelectedIndexChanged);
             // 
@@ -472,35 +507,35 @@ namespace Trabalho_Mercado_Online.Views
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AllowUserToResizeColumns = false;
             this.dataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(224)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.MidnightBlue;
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(224)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.MidnightBlue;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView.ColumnHeadersHeight = 40;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView.EnableHeadersVisualStyles = false;
             this.dataGridView.Location = new System.Drawing.Point(12, 149);
@@ -539,18 +574,37 @@ namespace Trabalho_Mercado_Online.Views
             // 
             this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
             // 
-            // chkFaltaEditar
+            // btnBuscarCategoria2
             // 
-            this.chkFaltaEditar.AutoSize = true;
-            this.chkFaltaEditar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.chkFaltaEditar.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkFaltaEditar.Location = new System.Drawing.Point(548, 73);
-            this.chkFaltaEditar.Name = "chkFaltaEditar";
-            this.chkFaltaEditar.Size = new System.Drawing.Size(85, 18);
-            this.chkFaltaEditar.TabIndex = 55;
-            this.chkFaltaEditar.Text = "Falta Editar";
-            this.chkFaltaEditar.UseVisualStyleBackColor = true;
-            this.chkFaltaEditar.CheckedChanged += new System.EventHandler(this.chkFaltaEditar_CheckedChanged);
+            this.btnBuscarCategoria2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnBuscarCategoria2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarCategoria2.FlatAppearance.BorderSize = 0;
+            this.btnBuscarCategoria2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCategoria2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBuscarCategoria2.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnBuscarCategoria2.Location = new System.Drawing.Point(558, 103);
+            this.btnBuscarCategoria2.Name = "btnBuscarCategoria2";
+            this.btnBuscarCategoria2.Size = new System.Drawing.Size(27, 27);
+            this.btnBuscarCategoria2.TabIndex = 59;
+            this.btnBuscarCategoria2.Text = "...";
+            this.btnBuscarCategoria2.UseVisualStyleBackColor = false;
+            this.btnBuscarCategoria2.Click += new System.EventHandler(this.btnBuscarCategoria2_Click);
+            // 
+            // btnBuscarCategoria1
+            // 
+            this.btnBuscarCategoria1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnBuscarCategoria1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarCategoria1.FlatAppearance.BorderSize = 0;
+            this.btnBuscarCategoria1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCategoria1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBuscarCategoria1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnBuscarCategoria1.Location = new System.Drawing.Point(264, 102);
+            this.btnBuscarCategoria1.Name = "btnBuscarCategoria1";
+            this.btnBuscarCategoria1.Size = new System.Drawing.Size(27, 27);
+            this.btnBuscarCategoria1.TabIndex = 60;
+            this.btnBuscarCategoria1.Text = "...";
+            this.btnBuscarCategoria1.UseVisualStyleBackColor = false;
+            this.btnBuscarCategoria1.Click += new System.EventHandler(this.btnBuscarCategoria1_Click);
             // 
             // FrmProdutos
             // 
@@ -608,5 +662,8 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.Button btnAbrirProdutos;
         private System.Drawing.Printing.PrintDocument printDocument;
         private System.Windows.Forms.CheckBox chkFaltaEditar;
+        private System.Windows.Forms.Button btnBuscarCategoria3;
+        private System.Windows.Forms.Button btnBuscarCategoria1;
+        private System.Windows.Forms.Button btnBuscarCategoria2;
     }
 }
