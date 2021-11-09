@@ -145,7 +145,7 @@ namespace Trabalho_Mercado_Online.Views
             this.lblItensGrid.AutoSize = true;
             this.lblItensGrid.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblItensGrid.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblItensGrid.Location = new System.Drawing.Point(778, 389);
+            this.lblItensGrid.Location = new System.Drawing.Point(778, 405);
             this.lblItensGrid.Name = "lblItensGrid";
             this.lblItensGrid.Size = new System.Drawing.Size(13, 14);
             this.lblItensGrid.TabIndex = 107;
@@ -156,7 +156,7 @@ namespace Trabalho_Mercado_Online.Views
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(688, 389);
+            this.label6.Location = new System.Drawing.Point(688, 405);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 14);
             this.label6.TabIndex = 106;
@@ -167,7 +167,7 @@ namespace Trabalho_Mercado_Online.Views
             this.lblTotalLista.AutoSize = true;
             this.lblTotalLista.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTotalLista.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblTotalLista.Location = new System.Drawing.Point(778, 365);
+            this.lblTotalLista.Location = new System.Drawing.Point(778, 381);
             this.lblTotalLista.Name = "lblTotalLista";
             this.lblTotalLista.Size = new System.Drawing.Size(13, 14);
             this.lblTotalLista.TabIndex = 105;
@@ -178,7 +178,7 @@ namespace Trabalho_Mercado_Online.Views
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(685, 365);
+            this.label4.Location = new System.Drawing.Point(685, 381);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 14);
             this.label4.TabIndex = 104;

@@ -14,7 +14,6 @@ namespace Trabalho_Mercado_Online.Views
     {
         #region Variaveis
         FrmProduto frmProduto;
-
         #endregion
 
         #region Funções
