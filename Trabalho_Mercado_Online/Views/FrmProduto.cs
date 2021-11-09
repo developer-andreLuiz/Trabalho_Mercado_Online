@@ -151,7 +151,6 @@ namespace Trabalho_Mercado_Online.Views
                     retorno.Mensagem = "Produto sem Imagem";
                     return retorno;
                 }
-
                 if (txtCodigoBarra.Text.Length > 0)
                 {
                     if (Global.Listas.ProdutosCodigoBarra.FindAll(x => x.CodigoBarra.Equals(txtCodigoBarra.Text.Trim())).Count > 0)
@@ -162,7 +161,6 @@ namespace Trabalho_Mercado_Online.Views
                         txtCodigoBarra.Focus();
                         return retorno;
                     }
-
                 }
                 else
                 {
@@ -172,10 +170,21 @@ namespace Trabalho_Mercado_Online.Views
                     return retorno;
                 }
             }
-           
-
-           
-
+            else
+            {
+                if (txtCodigoBarra.Text.Length > 0)
+                {
+                    if (Global.Listas.ProdutosCodigoBarra.FindAll(x => x.CodigoBarra.Equals(txtCodigoBarra.Text.Trim())).Count > 0)
+                    {
+                        retorno.Evento = false;
+                        retorno.Mensagem = "Codigo de Barra já Cadastrado";
+                        txtCodigoBarra.Text = string.Empty;
+                        txtCodigoBarra.Focus();
+                        return retorno;
+                    }
+                }
+            }
+            
             obj.Peso = lblPeso.Text;
 
             obj.IgualaProduto = int.Parse(nUDIgualaProduto.Value.ToString());
@@ -187,7 +196,7 @@ namespace Trabalho_Mercado_Online.Views
             obj.Informacao = txtInformacao.Text;
 
             return retorno;
-        }//erro
+        }
         void ExibirDados(Produtos obj)
         {
             Limpar();
@@ -313,6 +322,7 @@ namespace Trabalho_Mercado_Online.Views
             btnDeletar.Text = "    Deletar";
 
             txtDescricao.Enabled = false;
+            txtCodigoBarra.Enabled = false;
             txtPronuncia.Enabled = false;
             txtCusto.Enabled = false;
             txtVenda.Enabled = false;
@@ -329,7 +339,6 @@ namespace Trabalho_Mercado_Online.Views
             nUDItensCaixa.Enabled = false;
             nUDVolume.Enabled = false;
             txtInformacao.Enabled = false;
-            btnCodigoBarra.Visible = false;
             btnInserirImagem.Enabled = false;
             btnPesquisarImagem.Enabled = false;
             btnOuvir.Enabled = false;
@@ -342,6 +351,7 @@ namespace Trabalho_Mercado_Online.Views
             btnDeletar.Text = "    Deletar";
 
             txtDescricao.Enabled = false;
+            txtCodigoBarra.Enabled = false;
             txtPronuncia.Enabled = false;
             txtCusto.Enabled = false;
             txtVenda.Enabled = false;
@@ -358,7 +368,6 @@ namespace Trabalho_Mercado_Online.Views
             nUDItensCaixa.Enabled = false;
             nUDVolume.Enabled = false;
             txtInformacao.Enabled = false;
-            btnCodigoBarra.Visible = false;
             btnInserirImagem.Enabled = false;
             btnPesquisarImagem.Enabled = false;
             btnOuvir.Enabled = false;
@@ -374,6 +383,7 @@ namespace Trabalho_Mercado_Online.Views
             btnDeletar.Text = "  Cancelar";
 
             txtDescricao.Enabled = true;
+            txtCodigoBarra.Enabled = true;
             txtPronuncia.Enabled = true;
             txtCusto.Enabled = true;
             txtVenda.Enabled = true;
@@ -390,7 +400,6 @@ namespace Trabalho_Mercado_Online.Views
             nUDItensCaixa.Enabled = true;
             nUDVolume.Enabled = true;
             txtInformacao.Enabled = true;
-            btnCodigoBarra.Visible = false;
             btnInserirImagem.Enabled = true;
             btnPesquisarImagem.Enabled = true;
             btnOuvir.Enabled = true;
@@ -406,6 +415,7 @@ namespace Trabalho_Mercado_Online.Views
             btnDeletar.Text = "  Cancelar";
 
             txtDescricao.Enabled = true;
+            txtCodigoBarra.Enabled = true;
             txtPronuncia.Enabled = true;
             txtCusto.Enabled = true;
             txtVenda.Enabled = true;
@@ -423,7 +433,6 @@ namespace Trabalho_Mercado_Online.Views
             nUDVolume.Enabled = true;
             txtInformacao.Enabled = true;
            
-            btnCodigoBarra.Visible = true;
             btnInserirImagem.Enabled = true;
             btnPesquisarImagem.Enabled = true;
             btnOuvir.Enabled = true;
@@ -539,11 +548,11 @@ namespace Trabalho_Mercado_Online.Views
         {
             Produtos p = new Produtos();
             ProdutosCodigoBarra pCB = new ProdutosCodigoBarra();
+
             var retorno = CapturarDados(p);
             if (retorno.Evento)
             {
                 p = ProdutosController.Gravar(p);
-                
                 BlobStorage.Upload("produtos",p.Id.ToString(),pathImagem);
 
                 if (novo)
@@ -553,7 +562,16 @@ namespace Trabalho_Mercado_Online.Views
                     ProdutosCodigoBarraController.Gravar(pCB);
                     Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
                 }
-               
+                else
+                {
+                    if (txtCodigoBarra.Text.Length>0)
+                    {
+                        pCB.CodigoBarra = txtCodigoBarra.Text.Trim();
+                        pCB.CodigoProduto = p.Id;
+                        ProdutosCodigoBarraController.Gravar(pCB);
+                        Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
+                    }
+                }
                 
                 Global.Listas.Produtos = ProdutosController.GetAll();
                
@@ -802,37 +820,7 @@ namespace Trabalho_Mercado_Online.Views
                 }
             }
         }
-        private void btnCodigoBarra_Click(object sender, EventArgs e)
-        {
-            if (editar)
-            {
-                if (txtCodigoBarra.Text.Length > 5)
-                {
-                    ProdutosCodigoBarra p = new ProdutosCodigoBarra();
-                    p.CodigoBarra = txtCodigoBarra.Text;
-                    p.CodigoProduto = int.Parse(lblId.Text);
-
-
-                    var teste = Global.Listas.ProdutosCodigoBarra.FindAll(x => x.CodigoBarra.Equals(p.CodigoBarra));
-                    if (teste.Count == 0)
-                    {
-                        ProdutosCodigoBarraController.Gravar(p);
-                        Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
-                        CarregarGrid(p.CodigoProduto);
-                        MessageBox.Show("Atualizado", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Codigo de Barra ja Cadastrado", "Status", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Codigo de Barra Incorreto", "Status", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                txtCodigoBarra.Text = string.Empty;
-            }
-        }
+       
 
         //Pesquisa
         private void btnPesquisar_Click(object sender, EventArgs e)

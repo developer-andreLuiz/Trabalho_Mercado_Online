@@ -82,7 +82,6 @@ namespace Trabalho_Mercado_Online.Views
             this.lblCodigoLoja = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtCodigoBarra = new System.Windows.Forms.TextBox();
-            this.btnCodigoBarra = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btnOuvir = new System.Windows.Forms.Button();
             this.txtPronuncia = new System.Windows.Forms.TextBox();
@@ -155,7 +154,6 @@ namespace Trabalho_Mercado_Online.Views
             this.panelMain.Controls.Add(this.lblCodigoLoja);
             this.panelMain.Controls.Add(this.label6);
             this.panelMain.Controls.Add(this.txtCodigoBarra);
-            this.panelMain.Controls.Add(this.btnCodigoBarra);
             this.panelMain.Controls.Add(this.label5);
             this.panelMain.Controls.Add(this.btnOuvir);
             this.panelMain.Controls.Add(this.txtPronuncia);
@@ -807,27 +805,9 @@ namespace Trabalho_Mercado_Online.Views
             this.txtCodigoBarra.ForeColor = System.Drawing.Color.DodgerBlue;
             this.txtCodigoBarra.Location = new System.Drawing.Point(685, 82);
             this.txtCodigoBarra.Name = "txtCodigoBarra";
-            this.txtCodigoBarra.Size = new System.Drawing.Size(156, 32);
+            this.txtCodigoBarra.Size = new System.Drawing.Size(200, 32);
             this.txtCodigoBarra.TabIndex = 5555;
             this.txtCodigoBarra.TabStop = false;
-            // 
-            // btnCodigoBarra
-            // 
-            this.btnCodigoBarra.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnCodigoBarra.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnCodigoBarra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCodigoBarra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCodigoBarra.ForeColor = System.Drawing.Color.White;
-            this.btnCodigoBarra.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_barcode;
-            this.btnCodigoBarra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCodigoBarra.Location = new System.Drawing.Point(847, 82);
-            this.btnCodigoBarra.Name = "btnCodigoBarra";
-            this.btnCodigoBarra.Size = new System.Drawing.Size(38, 31);
-            this.btnCodigoBarra.TabIndex = 58;
-            this.btnCodigoBarra.TabStop = false;
-            this.btnCodigoBarra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCodigoBarra.UseVisualStyleBackColor = false;
-            this.btnCodigoBarra.Click += new System.EventHandler(this.btnCodigoBarra_Click);
             // 
             // label5
             // 
@@ -1070,7 +1050,6 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.Label lblCodigoLoja;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtCodigoBarra;
-        private System.Windows.Forms.Button btnCodigoBarra;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnOuvir;
         private System.Windows.Forms.TextBox txtPronuncia;
