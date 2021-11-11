@@ -127,6 +127,9 @@
   <data name="icone_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icone_dispose" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icone_dispose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icone_products" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_products.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -204,5 +207,8 @@
   </data>
   <data name="icone_products_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_products_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icone_editImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icone_editImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

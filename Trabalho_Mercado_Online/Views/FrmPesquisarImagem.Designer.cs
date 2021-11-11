@@ -89,7 +89,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnDesfazer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesfazer.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDesfazer.ForeColor = System.Drawing.Color.Black;
-            this.btnDesfazer.Image = ((System.Drawing.Image)(resources.GetObject("btnDesfazer.Image")));
+            this.btnDesfazer.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_dispose;
             this.btnDesfazer.Location = new System.Drawing.Point(689, 322);
             this.btnDesfazer.Name = "btnDesfazer";
             this.btnDesfazer.Size = new System.Drawing.Size(45, 37);
@@ -106,7 +106,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEditar.ForeColor = System.Drawing.Color.Black;
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_editImage;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.Location = new System.Drawing.Point(740, 322);
             this.btnEditar.Name = "btnEditar";
