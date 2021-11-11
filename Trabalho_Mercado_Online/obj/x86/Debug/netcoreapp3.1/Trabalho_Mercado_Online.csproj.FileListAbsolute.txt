@@ -20,8 +20,6 @@ D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\x86\Debug\netcoreapp3
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\x86\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\x86\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\x86\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\x86\Debug\netcoreapp3.1\MMLib.Core.dll
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\x86\Debug\netcoreapp3.1\MMLib.Extensions.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\x86\Debug\netcoreapp3.1\MySqlConnector.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\x86\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\x86\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll

@@ -31,12 +31,12 @@ namespace Trabalho_Mercado_Online.Views
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProduto));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMain = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnPesquisarImagem = new System.Windows.Forms.Button();
+            this.btnImagensOnline = new System.Windows.Forms.Button();
             this.lblListaItens = new System.Windows.Forms.Label();
             this.btnUltimoRegistro = new System.Windows.Forms.Button();
             this.btnProximoRegistro = new System.Windows.Forms.Button();
@@ -108,7 +108,7 @@ namespace Trabalho_Mercado_Online.Views
             // panelMain
             // 
             this.panelMain.Controls.Add(this.pictureBox1);
-            this.panelMain.Controls.Add(this.btnPesquisarImagem);
+            this.panelMain.Controls.Add(this.btnImagensOnline);
             this.panelMain.Controls.Add(this.lblListaItens);
             this.panelMain.Controls.Add(this.btnUltimoRegistro);
             this.panelMain.Controls.Add(this.btnProximoRegistro);
@@ -182,27 +182,27 @@ namespace Trabalho_Mercado_Online.Views
             this.pictureBox1.TabIndex = 55564;
             this.pictureBox1.TabStop = false;
             // 
-            // btnPesquisarImagem
+            // btnImagensOnline
             // 
-            this.btnPesquisarImagem.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnPesquisarImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPesquisarImagem.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnPesquisarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisarImagem.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnPesquisarImagem.ForeColor = System.Drawing.Color.White;
-            this.btnPesquisarImagem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_img30x30;
-            this.btnPesquisarImagem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnPesquisarImagem.Location = new System.Drawing.Point(685, 518);
-            this.btnPesquisarImagem.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPesquisarImagem.Name = "btnPesquisarImagem";
-            this.btnPesquisarImagem.Size = new System.Drawing.Size(102, 40);
-            this.btnPesquisarImagem.TabIndex = 55563;
-            this.btnPesquisarImagem.TabStop = false;
-            this.btnPesquisarImagem.Text = "Buscar Imagem HD";
-            this.btnPesquisarImagem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPesquisarImagem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPesquisarImagem.UseVisualStyleBackColor = false;
-            this.btnPesquisarImagem.Click += new System.EventHandler(this.btnPesquisarImagem_Click);
+            this.btnImagensOnline.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnImagensOnline.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImagensOnline.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnImagensOnline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImagensOnline.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnImagensOnline.ForeColor = System.Drawing.Color.White;
+            this.btnImagensOnline.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_img30x30;
+            this.btnImagensOnline.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnImagensOnline.Location = new System.Drawing.Point(685, 518);
+            this.btnImagensOnline.Margin = new System.Windows.Forms.Padding(0);
+            this.btnImagensOnline.Name = "btnImagensOnline";
+            this.btnImagensOnline.Size = new System.Drawing.Size(102, 40);
+            this.btnImagensOnline.TabIndex = 55563;
+            this.btnImagensOnline.TabStop = false;
+            this.btnImagensOnline.Text = "Imagens Online";
+            this.btnImagensOnline.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnImagensOnline.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImagensOnline.UseVisualStyleBackColor = false;
+            this.btnImagensOnline.Click += new System.EventHandler(this.btnImagensOnline_Click);
             // 
             // lblListaItens
             // 
@@ -865,35 +865,35 @@ namespace Trabalho_Mercado_Online.Views
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AllowUserToResizeColumns = false;
             this.dataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(224)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.MidnightBlue;
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(224)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.MidnightBlue;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView.ColumnHeadersHeight = 40;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView.EnableHeadersVisualStyles = false;
             this.dataGridView.Location = new System.Drawing.Point(685, 125);
             this.dataGridView.MultiSelect = false;
@@ -1090,7 +1090,7 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.Button btnRegristroAnterior;
         private System.Windows.Forms.Button btnPrimeiroRegistro;
         private System.Windows.Forms.Label lblListaItens;
-        private System.Windows.Forms.Button btnPesquisarImagem;
+        private System.Windows.Forms.Button btnImagensOnline;
         public System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

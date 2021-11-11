@@ -21,7 +21,6 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgNewtonsoft_Json Condition=" '$(PkgNewtonsoft_Json)' == '' ">C:\Users\Developer\.nuget\packages\newtonsoft.json\10.0.2</PkgNewtonsoft_Json>
-    <PkgMMLib_Extensions Condition=" '$(PkgMMLib_Extensions)' == '' ">C:\Users\Developer\.nuget\packages\mmlib.extensions\1.0.10.13</PkgMMLib_Extensions>
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\Developer\.nuget\packages\microsoft.entityframeworkcore.tools\5.0.10</PkgMicrosoft_EntityFrameworkCore_Tools>
   </PropertyGroup>
 </Project>

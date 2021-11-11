@@ -29,11 +29,13 @@ namespace Trabalho_Mercado_Online.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPesquisarImagem));
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnDesfazer = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.panelImagens = new System.Windows.Forms.Panel();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,22 +46,22 @@ namespace Trabalho_Mercado_Online.Views
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.btnCaminhoPasta = new System.Windows.Forms.Button();
-            this.lblCaminhoPasta = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtProduto = new System.Windows.Forms.TextBox();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.timerImagens = new System.Windows.Forms.Timer(this.components);
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.White;
+            this.panelMain.Controls.Add(this.btnDesfazer);
+            this.panelMain.Controls.Add(this.btnEditar);
+            this.panelMain.Controls.Add(this.btnLimpar);
+            this.panelMain.Controls.Add(this.panelImagens);
             this.panelMain.Controls.Add(this.btnPesquisar);
             this.panelMain.Controls.Add(this.pictureBox1);
             this.panelMain.Controls.Add(this.label5);
@@ -70,18 +72,82 @@ namespace Trabalho_Mercado_Online.Views
             this.panelMain.Controls.Add(this.label4);
             this.panelMain.Controls.Add(this.label1);
             this.panelMain.Controls.Add(this.pictureBox);
-            this.panelMain.Controls.Add(this.btnCaminhoPasta);
-            this.panelMain.Controls.Add(this.lblCaminhoPasta);
-            this.panelMain.Controls.Add(this.label3);
             this.panelMain.Controls.Add(this.label2);
             this.panelMain.Controls.Add(this.txtProduto);
-            this.panelMain.Controls.Add(this.dataGridView);
             this.panelMain.Controls.Add(this.btnFechar);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(897, 648);
             this.panelMain.TabIndex = 0;
+            // 
+            // btnDesfazer
+            // 
+            this.btnDesfazer.BackColor = System.Drawing.Color.White;
+            this.btnDesfazer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDesfazer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDesfazer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesfazer.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDesfazer.ForeColor = System.Drawing.Color.Black;
+            this.btnDesfazer.Image = ((System.Drawing.Image)(resources.GetObject("btnDesfazer.Image")));
+            this.btnDesfazer.Location = new System.Drawing.Point(689, 322);
+            this.btnDesfazer.Name = "btnDesfazer";
+            this.btnDesfazer.Size = new System.Drawing.Size(45, 37);
+            this.btnDesfazer.TabIndex = 570;
+            this.btnDesfazer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDesfazer.UseVisualStyleBackColor = false;
+            this.btnDesfazer.Click += new System.EventHandler(this.btnDesfazer_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.White;
+            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEditar.ForeColor = System.Drawing.Color.Black;
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(740, 322);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(149, 37);
+            this.btnEditar.TabIndex = 568;
+            this.btnEditar.Text = "Editar Imagem";
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.BackColor = System.Drawing.Color.White;
+            this.btnLimpar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpar.BackgroundImage")));
+            this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnLimpar.FlatAppearance.BorderSize = 0;
+            this.btnLimpar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnLimpar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLimpar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpar.Location = new System.Drawing.Point(647, 72);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(40, 40);
+            this.btnLimpar.TabIndex = 561;
+            this.btnLimpar.TabStop = false;
+            this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
+            // panelImagens
+            // 
+            this.panelImagens.AutoScroll = true;
+            this.panelImagens.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelImagens.Location = new System.Drawing.Point(12, 114);
+            this.panelImagens.Name = "panelImagens";
+            this.panelImagens.Size = new System.Drawing.Size(673, 512);
+            this.panelImagens.TabIndex = 0;
+            this.panelImagens.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panelImagens_Scroll);
             // 
             // btnPesquisar
             // 
@@ -92,9 +158,9 @@ namespace Trabalho_Mercado_Online.Views
             this.btnPesquisar.ForeColor = System.Drawing.Color.White;
             this.btnPesquisar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_search;
             this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPesquisar.Location = new System.Drawing.Point(641, 86);
+            this.btnPesquisar.Location = new System.Drawing.Point(607, 76);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(38, 31);
+            this.btnPesquisar.Size = new System.Drawing.Size(37, 32);
             this.btnPesquisar.TabIndex = 558;
             this.btnPesquisar.TabStop = false;
             this.btnPesquisar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -131,7 +197,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnSelecionar.ForeColor = System.Drawing.Color.White;
             this.btnSelecionar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_send_file;
             this.btnSelecionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelecionar.Location = new System.Drawing.Point(688, 556);
+            this.btnSelecionar.Location = new System.Drawing.Point(692, 578);
             this.btnSelecionar.Name = "btnSelecionar";
             this.btnSelecionar.Size = new System.Drawing.Size(197, 50);
             this.btnSelecionar.TabIndex = 108;
@@ -145,7 +211,7 @@ namespace Trabalho_Mercado_Online.Views
             this.lblItensGrid.AutoSize = true;
             this.lblItensGrid.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblItensGrid.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblItensGrid.Location = new System.Drawing.Point(778, 405);
+            this.lblItensGrid.Location = new System.Drawing.Point(102, 629);
             this.lblItensGrid.Name = "lblItensGrid";
             this.lblItensGrid.Size = new System.Drawing.Size(13, 14);
             this.lblItensGrid.TabIndex = 107;
@@ -156,7 +222,7 @@ namespace Trabalho_Mercado_Online.Views
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(688, 405);
+            this.label6.Location = new System.Drawing.Point(12, 629);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 14);
             this.label6.TabIndex = 106;
@@ -167,7 +233,7 @@ namespace Trabalho_Mercado_Online.Views
             this.lblTotalLista.AutoSize = true;
             this.lblTotalLista.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTotalLista.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblTotalLista.Location = new System.Drawing.Point(778, 381);
+            this.lblTotalLista.Location = new System.Drawing.Point(660, 629);
             this.lblTotalLista.Name = "lblTotalLista";
             this.lblTotalLista.Size = new System.Drawing.Size(13, 14);
             this.lblTotalLista.TabIndex = 105;
@@ -178,7 +244,7 @@ namespace Trabalho_Mercado_Online.Views
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(685, 381);
+            this.label4.Location = new System.Drawing.Point(567, 629);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 14);
             this.label4.TabIndex = 104;
@@ -189,7 +255,7 @@ namespace Trabalho_Mercado_Online.Views
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(685, 329);
+            this.label1.Location = new System.Drawing.Point(689, 362);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 14);
             this.label1.TabIndex = 103;
@@ -199,55 +265,21 @@ namespace Trabalho_Mercado_Online.Views
             // 
             this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Location = new System.Drawing.Point(685, 86);
+            this.pictureBox.Location = new System.Drawing.Point(689, 76);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(200, 240);
             this.pictureBox.TabIndex = 102;
             this.pictureBox.TabStop = false;
-            // 
-            // btnCaminhoPasta
-            // 
-            this.btnCaminhoPasta.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnCaminhoPasta.FlatAppearance.BorderSize = 0;
-            this.btnCaminhoPasta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCaminhoPasta.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCaminhoPasta.ForeColor = System.Drawing.Color.White;
-            this.btnCaminhoPasta.Location = new System.Drawing.Point(12, 612);
-            this.btnCaminhoPasta.Name = "btnCaminhoPasta";
-            this.btnCaminhoPasta.Size = new System.Drawing.Size(38, 27);
-            this.btnCaminhoPasta.TabIndex = 101;
-            this.btnCaminhoPasta.Text = "...";
-            this.btnCaminhoPasta.UseVisualStyleBackColor = false;
-            this.btnCaminhoPasta.Click += new System.EventHandler(this.btnCaminhoPasta_Click);
-            // 
-            // lblCaminhoPasta
-            // 
-            this.lblCaminhoPasta.AutoSize = true;
-            this.lblCaminhoPasta.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCaminhoPasta.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblCaminhoPasta.Location = new System.Drawing.Point(157, 625);
-            this.lblCaminhoPasta.Name = "lblCaminhoPasta";
-            this.lblCaminhoPasta.Size = new System.Drawing.Size(13, 14);
-            this.lblCaminhoPasta.TabIndex = 100;
-            this.lblCaminhoPasta.Text = "_";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label3.Location = new System.Drawing.Point(56, 625);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 14);
-            this.label3.TabIndex = 99;
-            this.label3.Text = "Caminho Pasta :";
+            this.pictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox_Paint);
+            this.pictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
+            this.pictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseMove);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label2.Location = new System.Drawing.Point(12, 69);
+            this.label2.Location = new System.Drawing.Point(12, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 14);
             this.label2.TabIndex = 97;
@@ -258,58 +290,11 @@ namespace Trabalho_Mercado_Online.Views
             this.txtProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProduto.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtProduto.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtProduto.Location = new System.Drawing.Point(12, 86);
+            this.txtProduto.Location = new System.Drawing.Point(12, 76);
             this.txtProduto.Name = "txtProduto";
-            this.txtProduto.Size = new System.Drawing.Size(623, 32);
-            this.txtProduto.TabIndex = 96;
-            this.txtProduto.TextChanged += new System.EventHandler(this.txtProduto_TextChanged);
+            this.txtProduto.Size = new System.Drawing.Size(589, 32);
+            this.txtProduto.TabIndex = 1;
             this.txtProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduto_KeyPress);
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.AllowUserToResizeColumns = false;
-            this.dataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(224)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.MidnightBlue;
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView.ColumnHeadersHeight = 40;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView.EnableHeadersVisualStyles = false;
-            this.dataGridView.Location = new System.Drawing.Point(12, 124);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.RowHeadersVisible = false;
-            this.dataGridView.RowTemplate.Height = 50;
-            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(667, 482);
-            this.dataGridView.TabIndex = 95;
-            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // btnFechar
             // 
@@ -333,6 +318,12 @@ namespace Trabalho_Mercado_Online.Views
             this.btnFechar.UseVisualStyleBackColor = false;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
+            // timerImagens
+            // 
+            this.timerImagens.Enabled = true;
+            this.timerImagens.Interval = 1000;
+            this.timerImagens.Tick += new System.EventHandler(this.timerImagens_Tick);
+            // 
             // FrmPesquisarImagem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -351,7 +342,6 @@ namespace Trabalho_Mercado_Online.Views
             this.panelMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -360,12 +350,8 @@ namespace Trabalho_Mercado_Online.Views
 
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Button btnFechar;
-        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.TextBox txtProduto;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblCaminhoPasta;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnCaminhoPasta;
         private System.Windows.Forms.Label lblItensGrid;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblTotalLista;
@@ -376,5 +362,10 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Panel panelImagens;
+        private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Timer timerImagens;
+        private System.Windows.Forms.Button btnDesfazer;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

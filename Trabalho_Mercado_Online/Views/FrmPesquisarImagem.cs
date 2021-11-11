@@ -1,10 +1,13 @@
-﻿using MMLib.Extensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
+using System.Net;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Trabalho_Mercado_Online.Helpers;
 
@@ -14,161 +17,171 @@ namespace Trabalho_Mercado_Online.Views
     {
         #region Variaveis
         FrmProduto frmProduto;
+        WebBrowser Navegador = new WebBrowser();
+        List<UrlService> ListaUrls = new List<UrlService>();
+        Bitmap ImagemOriginal;
+        bool breakThread = false;
+
+        //variaveis de edição de imagens
+        private Point RectStartPoint;
+        private Rectangle retangulo = new Rectangle();
+        private Brush brush = new SolidBrush(Color.FromArgb(128, 72, 145, 220));
         #endregion
 
         #region Funções
-        void BuscarCaminhoPastaImagem()
+        void InitNavegador()
         {
-            while (string.IsNullOrEmpty(Global.CaminhoPastaImagem))
-            {
-                using (var fbd = new FolderBrowserDialog())
-                {
-
-                    fbd.Description = "Pasta das Imagens HD";
-                    DialogResult result = fbd.ShowDialog();
-
-                    if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
-                    {
-                        Global.CaminhoPastaImagem = fbd.SelectedPath;
-
-                    }
-
-                }
-            }
-            lblCaminhoPasta.Text = Global.CaminhoPastaImagem;
+            Navegador.DocumentCompleted += Navegador_DocumentCompleted;
+            this.Controls.Add(Navegador);
+            Navegador.Size = new Size(4000, 4000);
+            Navegador.Location = new Point(0,0);
+            //Navegador.Navigate("www.gloogle.com.br");
         }
-        void CarregarBancoImagem()
+        void CarregarImagens()
         {
-            if (Global.ListaImagem.Count == 0)
+            int vertical = panelImagens.VerticalScroll.Value;
+            Point current = panelImagens.AutoScrollPosition;
+            Point scrolled = new Point(current.X, -current.Y);
+            
+            int itensGrid = 0;
+            panelImagens.Controls.Clear();
+            int linha = 0;
+            int coluna = 0;
+            foreach (var item in ListaUrls.FindAll(x => x.Img != null))
             {
-                try
+                Button btn = new Button();
+                btn.Text = string.Empty;
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 1;
+                btn.Size = new Size(160, 192);
+                btn.BackgroundImage = item.Img;
+                btn.Click += btn_Click;
+                btn.BackgroundImageLayout = ImageLayout.Stretch;
+                panelImagens.Controls.Add(btn);
+
+                int x = 3 + (coluna * 3) + (coluna * 160);
+                int y = 3 + (linha * 3) + (linha * 192);
+                btn.Location = new Point(x, y);
+                coluna++;
+                if (coluna==4)
                 {
-                    var ListaBruta = new List<string>();
-                    foreach (string line in System.IO.File.ReadLines(@"Imagens.txt"))
-                    {
-                        ListaBruta.Add(line);
-                    }
-                    foreach (var item in ListaBruta)
-                    {
-
-                        string frase = item;
-                        frase = frase.Replace(");", "");
-                        frase = frase.Replace("'", "");
-                        frase = frase.Replace("INSERT INTO \"tbl_eans_260_codbar\" VALUES (", "");
-
-                        var obj = frase.Split(",");
-
-                        Imagem img = new Imagem();
-
-                        img.codbar = obj[0];
-                        img.produto = obj[1];
-                        img.produto_upper = obj[2];
-                        img.produto_acento = obj[3];
-                        img.foto_png = obj[4];
-                        img.foto_webp = obj[5];
-                        img.marca = obj[6];
-                        img.img_gtin = obj[7];
-                        img.categoria = obj[8];
-
-                        Global.ListaImagem.Add(img);
-                    }
-
-
-
-
+                    coluna = 0; 
+                    linha++;
                 }
-                catch { }
+                item.Exibida = true;
+                itensGrid++;
             }
-            lblTotalLista.Text = Global.ListaImagem.Count.ToString();
+            itensGrid = ListaUrls.FindAll(x => x.Exibida).Count;
+            lblItensGrid.Text = itensGrid.ToString();
+            
+            panelImagens.VerticalScroll.Value = vertical;
+            panelImagens.AutoScrollPosition = scrolled;
         }
-        void CarregarGrid()
+        Bitmap ImagemUrl(string url)
         {
-            List<Imagem> Lista = new List<Imagem>();
-
-            //sem Filtro
-            Lista.AddRange(Global.ListaImagem);
-
-            if (txtProduto.Text.Length > 0)
+            try
             {
-                string txt = txtProduto.Text.RemoveDiacritics();
-                var listTxt = txt.Split(" ");
+               
+                WebRequest request = WebRequest.Create(url);
+                WebResponse response = request.GetResponse();
+                Stream responseStream = response.GetResponseStream();
+                Bitmap bitmap2 = new Bitmap(responseStream);
+                Bitmap bitmap3 = (Bitmap)ImagemService.ResizeImage(bitmap2,1000,1200);
 
-                foreach (var item in listTxt)
+                request.Abort();
+                response.Close();
+                response.Dispose();
+                responseStream.Dispose();
+                bitmap2.Dispose();
+
+                return bitmap3;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        void BaixarImagens20Imagens()
+        {
+            int max = 0;
+            foreach (var item in ListaUrls.FindAll(x => x.Verificada == false))
+            {
+                if (breakThread)
                 {
-                    var lt = Lista.FindAll(x => x.produto.RemoveDiacritics().Contains(item, StringComparison.InvariantCultureIgnoreCase));
-                    Lista = lt;
+                    break;
+                }
+                item.Verificada = true;
+                item.Img = ImagemUrl(item.Url);
+              
+                if (item.Img!=null)
+                {
+                    max++;
+                }
+                if (max==20)
+                {
+                    break;
                 }
             }
-
-
-            dataGridView.DataSource = null;
-            dataGridView.DataSource = Lista;
-
-            if (Lista.Count > 0)
+        }
+        void BaixarImagens8Imagens()
+        {
+            int max = 8;
+            foreach (var item in ListaUrls.FindAll(x => x.Verificada == false))
             {
-                dataGridView.Columns[0].Visible = false;
-                dataGridView.Columns[1].Width = 550;
-                dataGridView.Columns[2].Visible = false;
-                dataGridView.Columns[3].Visible = false;
-                dataGridView.Columns[4].Visible = false; //png
-                dataGridView.Columns[5].Visible = false;
-                dataGridView.Columns[6].Visible = false;
-                dataGridView.Columns[7].Visible = false;
-                dataGridView.Columns[8].Visible = false;
+                if (breakThread)
+                {
+                    break;
+                }
+                item.Verificada = true;
+                item.Img = ImagemUrl(item.Url);
+                if (item.Img != null)
+                {
+                    max++;
+                }
+                if (max == 20)
+                {
+                    break;
+                }
             }
-            else
-            {
-                dataGridView.Columns[0].Visible = false;
-                dataGridView.Columns[1].Visible = false;
-                dataGridView.Columns[2].Visible = false;
-                dataGridView.Columns[3].Visible = false;
-                dataGridView.Columns[4].Visible = false;
-                dataGridView.Columns[5].Visible = false;
-                dataGridView.Columns[6].Visible = false;
-                dataGridView.Columns[7].Visible = false;
-                dataGridView.Columns[8].Visible = false;
-            }
-
-
-            lblItensGrid.Text = Lista.Count.ToString();
         }
         #endregion
 
         #region Eventos
-        public FrmPesquisarImagem(FrmProduto frm, string txt)
+        public FrmPesquisarImagem(FrmProduto frm, string txt, string imgTemp)
         {
-
             InitializeComponent();
             frmProduto = frm;
             txtProduto.Text = txt;
-            BuscarCaminhoPastaImagem();
-            CarregarBancoImagem();
-            CarregarGrid();
+            panelImagens.MouseWheel += panelImagens_MouseWheel;
+            panelImagens.MouseWheel += panelImagens_MouseWheel;
+            if (imgTemp!=null)
+            {
+                ImagemOriginal = ImagemUrl(imgTemp);
+                if (ImagemOriginal!=null)
+                {
+                    Bitmap b = new Bitmap(ImagemOriginal);
+                    pictureBox.BackgroundImage = b;
+                }
+               
+            }
+            InitNavegador();
         }
         public FrmPesquisarImagem()
         {
-
             InitializeComponent();
-            BuscarCaminhoPastaImagem();
-            CarregarBancoImagem();
-            CarregarGrid();
             btnSelecionar.Text = "   Exportar";
+            panelImagens.MouseWheel += panelImagens_MouseWheel;
+            InitNavegador();
+        }
+        private void btn_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            ImagemOriginal = new Bitmap(btn.BackgroundImage);
+            pictureBox.BackgroundImage = btn.BackgroundImage;
         }
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        private void btnCaminhoPasta_Click(object sender, EventArgs e)
-        {
-            Global.CaminhoPastaImagem = string.Empty;
-            BuscarCaminhoPastaImagem();
-        }
-        private void txtProduto_TextChanged(object sender, EventArgs e)
-        {
-            if (txtProduto.Text.Length==0)
-            {
-                CarregarGrid();
-            }
         }
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
@@ -204,32 +217,181 @@ namespace Trabalho_Mercado_Online.Views
         }
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            CarregarGrid();
+            btnLimpar.PerformClick();
+
+            panelImagens.Controls.Clear();
+            ListaUrls = new List<UrlService>();
+            lblTotalLista.Text = "0";
+            string url1 = "https://www.bing.com/images/search?q=";
+            string url2 = string.Empty;
+            string url3 = "&first=1&tsc=ImageHoverTitle";
+            string url = string.Empty;
+            if (txtProduto.Text.Length > 0)
+            {
+                string texto = StringService.FormatarStringMinusculo(txtProduto.Text);
+                txtProduto.Text = texto;
+                var t = texto.Trim().Split(' ');
+                foreach (var item in t)
+                {
+                    url2 = url2 + "+" + item;
+                }
+
+                url = url1 + url2 + url3;
+                breakThread = false;
+                Navegador.Navigate(url);
+            }
+           
         }
         private void txtProduto_KeyPress(object sender, KeyPressEventArgs e)
         {
             var Tecla = ((byte)e.KeyChar);
             if (Tecla == 13)
             {
-                CarregarGrid();
+                btnPesquisar.PerformClick();
             }
 
         }
-        #endregion
-
-        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+       
+        private void panelImagens_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (string.IsNullOrEmpty(Global.CaminhoPastaImagem) == false)
+            VScrollProperties vsp = panelImagens.VerticalScroll;
+            int scrollmax = vsp.Maximum - vsp.LargeChange + 1;
+            if (vsp.Value== scrollmax)
+            {
+                Thread t = new Thread(BaixarImagens8Imagens);
+                t.Start();
+            }
+
+        }
+        private void panelImagens_Scroll(object sender, ScrollEventArgs e)
+        {
+            VScrollProperties vsp = panelImagens.VerticalScroll;
+            int scrollmax = vsp.Maximum - vsp.LargeChange + 1;
+            if (vsp.Value == scrollmax)
+            {
+                Thread t = new Thread(BaixarImagens8Imagens);
+                t.Start();
+            }
+        }
+        private void Navegador_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            string htmlString = string.Empty;
+            htmlString = Navegador.DocumentText;
+            string referencia = "\"murl\":\"";
+            if (htmlString.Contains(referencia))
+            {
+                string corte1 = htmlString.Substring(htmlString.IndexOf(referencia));
+                string[] stringReferencia = new string[] { referencia };
+                string[] cortes = corte1.Split(stringReferencia, StringSplitOptions.None);
+                foreach (var item in cortes)
+                {
+                    if (item.Length > 5)
+                    {
+                        string final = item.Substring(0, item.IndexOf("\""));
+                        if (ListaUrls.FindAll(x => x.Url.Equals(final)).Count == 0)
+                        {
+
+                            ListaUrls.Add(new UrlService(final));
+                        }
+                    }
+                }
+            }
+            lblTotalLista.Text = ListaUrls.Count.ToString();
+            Thread t = new Thread(BaixarImagens20Imagens);
+            t.Start();
+        }
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+           
+            breakThread = true;
+        }
+        private void timerImagens_Tick(object sender, EventArgs e)
+        {
+            if (ListaUrls.FindAll(x => x.Img != null && x.Exibida == false).Count != 0)
+            {
+                CarregarImagens();
+            }
+        }
+
+        //Edição Imagem
+        private void pictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (pictureBox.BackgroundImage != null)
+            {
+                RectStartPoint = e.Location;
+                Invalidate();
+            }
+
+        }
+        private void pictureBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (pictureBox.BackgroundImage != null)
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    Point tempEndPoint = e.Location;
+                    retangulo.Location = new Point(Math.Min(RectStartPoint.X, tempEndPoint.X), Math.Min(RectStartPoint.Y, tempEndPoint.Y));
+                    retangulo.Size = new Size(Math.Abs(RectStartPoint.X - tempEndPoint.X), Math.Abs(RectStartPoint.Y - tempEndPoint.Y));
+                    pictureBox.Invalidate();
+                }
+            }
+
+        }
+        private void pictureBox_Paint(object sender, PaintEventArgs e)
+        {
+            if (pictureBox.BackgroundImage != null)
+            {
+                if (retangulo != null && retangulo.Width > 0 && retangulo.Height > 0)
+                {
+                    e.Graphics.FillRectangle(brush, retangulo);
+                }
+            }
+        }
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (pictureBox.BackgroundImage != null && retangulo.Width != 0 && retangulo.Height != 0)
             {
                 try
                 {
-                    string pathImg = Global.CaminhoPastaImagem + "\\" + dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString().Trim();
-                    Image image = Image.FromFile(pathImg);
-                    pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
-                    pictureBox.BackgroundImage = ImagemService.ResizeImage(image, 1000, 1200);
+                    int multplicador = ImagemOriginal.Height / pictureBox.Height;
+
+                    Bitmap bitmap = new Bitmap(ImagemOriginal);
+
+                    Rectangle rect = new Rectangle();
+                    rect.Location = new Point(retangulo.Location.X * multplicador, retangulo.Location.Y * multplicador);
+                    rect.Width = retangulo.Width * multplicador;
+                    rect.Height = retangulo.Height * multplicador;
+
+                    retangulo = new Rectangle();
+
+                    Bitmap cropped = bitmap.Clone(rect, bitmap.PixelFormat);
+
+                    Bitmap imgFinal = (Bitmap)ImagemService.ResizeImage(cropped, 1000, 1200);
+                    pictureBox.BackgroundImage = imgFinal;
+
                 }
-                catch { }
+                catch { btnDesfazer.PerformClick(); }
             }
         }
+        private void btnDesfazer_Click(object sender, EventArgs e)
+        {
+            if (pictureBox.BackgroundImage != null)
+            {
+                Bitmap b = new Bitmap(ImagemOriginal);
+                pictureBox.BackgroundImage = b;
+                retangulo = new Rectangle();
+            }
+        }
+        #endregion
+
+
+
+
+
+
+
+
+
+
     }
 }

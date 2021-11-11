@@ -1,5 +1,4 @@
-﻿using MMLib.Extensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -139,11 +138,11 @@ namespace Trabalho_Mercado_Online.Views_Access
 
             if (descricao)
             {
-                string txt = txtDescricao.Text.RemoveDiacritics();
+                string txt = StringService.FormatarStringMaiusculo(txtDescricao.Text);
                 var listTxt = txt.Split(" ");
                 foreach (var item in listTxt)
                 {
-                    var lt = ListaProdutoAccess.FindAll(x => x.Descricao.RemoveDiacritics().Contains(item, StringComparison.InvariantCultureIgnoreCase));
+                    var lt = ListaProdutoAccess.FindAll(x => StringService.FormatarStringMaiusculo(x.Descricao).Contains(item, StringComparison.InvariantCultureIgnoreCase));
                     ListaProdutoAccess = lt;
                 }
             }

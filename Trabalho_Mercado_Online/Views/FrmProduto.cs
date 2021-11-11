@@ -340,7 +340,7 @@ namespace Trabalho_Mercado_Online.Views
             nUDVolume.Enabled = false;
             txtInformacao.Enabled = false;
             btnInserirImagem.Enabled = false;
-            btnPesquisarImagem.Enabled = false;
+            btnImagensOnline.Enabled = false;
             btnOuvir.Enabled = false;
         }
         void BtnGravarLayout()
@@ -369,7 +369,7 @@ namespace Trabalho_Mercado_Online.Views
             nUDVolume.Enabled = false;
             txtInformacao.Enabled = false;
             btnInserirImagem.Enabled = false;
-            btnPesquisarImagem.Enabled = false;
+            btnImagensOnline.Enabled = false;
             btnOuvir.Enabled = false;
         }
         void BtnNovoLayout()
@@ -401,7 +401,7 @@ namespace Trabalho_Mercado_Online.Views
             nUDVolume.Enabled = true;
             txtInformacao.Enabled = true;
             btnInserirImagem.Enabled = true;
-            btnPesquisarImagem.Enabled = true;
+            btnImagensOnline.Enabled = true;
             btnOuvir.Enabled = true;
         }
         void BtnEditarLayout()
@@ -434,7 +434,7 @@ namespace Trabalho_Mercado_Online.Views
             txtInformacao.Enabled = true;
            
             btnInserirImagem.Enabled = true;
-            btnPesquisarImagem.Enabled = true;
+            btnImagensOnline.Enabled = true;
             btnOuvir.Enabled = true;
         }
         void Limpar()
@@ -682,12 +682,11 @@ namespace Trabalho_Mercado_Online.Views
                 pictureBox.ImageLocation = pathImagem;
             }
         }
-        private void btnPesquisarImagem_Click(object sender, EventArgs e)
+        private void btnImagensOnline_Click(object sender, EventArgs e)
         {
             pathImagem = string.Empty;
-            openChildForm(new FrmPesquisarImagem(this,txtDescricao.Text));
+            openChildForm(new FrmPesquisarImagem(this, txtDescricao.Text,pictureBox.ImageLocation));
         }
-
         //Margem Venda
         private void txtCusto_Leave(object sender, EventArgs e)
         {
@@ -1096,5 +1095,7 @@ namespace Trabalho_Mercado_Online.Views
             }
             catch { }
         }
+
+        
     }
 }

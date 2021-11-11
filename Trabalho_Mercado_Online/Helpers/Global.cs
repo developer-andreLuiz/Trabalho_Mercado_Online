@@ -9,7 +9,7 @@ namespace Trabalho_Mercado_Online.Helpers
     class Global
     {
         public static ListasBanco Listas = new ListasBanco();
-        public static List<Imagem> ListaImagem = new List<Imagem>();
+       
         public static String CaminhoPastaImagem { get; set; }
         public static void AtualizarProdutosCategoria()
         {

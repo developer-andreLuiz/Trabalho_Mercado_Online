@@ -11,7 +11,6 @@ using Trabalho_Mercado_Online.Controllers;
 using Trabalho_Mercado_Online.DAO;
 using System.Globalization;
 using System.Linq;
-using MMLib.Extensions;
 
 namespace Trabalho_Mercado_Online.Views
 {
@@ -58,17 +57,16 @@ namespace Trabalho_Mercado_Online.Views
             bool categoriaNivel1 = chkCategoriaNivel1.Checked;
             bool categoriaNivel2 = chkCategoriaNivel2.Checked;
             bool categoriaNivel3 = chkCategoriaNivel3.Checked;
-
             //Sem Filtro
             ListaProdutos.AddRange(Global.Listas.Produtos);
 
             if (descricao)
             {
-                string txt = txtDescricao.Text.RemoveDiacritics();
+                string txt = StringService.FormatarStringMaiusculo(txtDescricao.Text);
                 var listTxt = txt.Split(" ");
                 foreach (var item in listTxt)
                 {
-                    var lt = ListaProdutos.FindAll(x => x.Descricao.RemoveDiacritics().Contains(item, StringComparison.InvariantCultureIgnoreCase));
+                    var lt = ListaProdutos.FindAll(x => StringService.FormatarStringMaiusculo(x.Descricao).Contains(item, StringComparison.InvariantCultureIgnoreCase));
                     ListaProdutos = lt;
                 }
             }

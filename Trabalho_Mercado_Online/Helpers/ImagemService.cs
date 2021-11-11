@@ -48,20 +48,31 @@ namespace Trabalho_Mercado_Online.Helpers
         public static void SaveImg(Image ImgLocal)
         {
             DeleteImg();
-            string path = System.IO.Directory.GetCurrentDirectory() + "\\Image.jpg";
-
-            Bitmap bitmap = (Bitmap)ImgLocal;
-            bitmap.Save(path,ImageFormat.Jpeg);
-        
+            try
+            {
+                string path = System.IO.Directory.GetCurrentDirectory() + "\\Image.jpg";
+                using (Bitmap bitmap = (Bitmap)ImgLocal)
+                {
+                    bitmap.Save(path, ImageFormat.Jpeg);
+                    bitmap.Dispose();
+                }
+            }
+            catch { }
         }
         public static void DeleteImg()
         {
-            string path = System.IO.Directory.GetCurrentDirectory() + "\\Image.jpg";
-            bool result = File.Exists(path);
-            if (result == true)
+            try
             {
-                File.Delete(path);
+                string path = System.IO.Directory.GetCurrentDirectory() + "\\Image.jpg";
+                bool result = File.Exists(path);
+                if (result == true)
+                {
+                    File.Delete(path);
+
+                }
             }
+            catch { }
+           
 
         }
         

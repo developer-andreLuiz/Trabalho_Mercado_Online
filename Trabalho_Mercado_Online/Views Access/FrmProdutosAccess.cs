@@ -13,6 +13,7 @@ namespace Trabalho_Mercado_Online.Views_Access
     public partial class FrmProdutosAccess : Form
     {
         #region Variaveis
+        WebBrowser Navegador = new WebBrowser();
         #endregion
         #region Funções
         void AtualizarProduto()
@@ -29,8 +30,17 @@ namespace Trabalho_Mercado_Online.Views_Access
         public FrmProdutosAccess()
         {
             InitializeComponent();
+         
+            this.Controls.Add(Navegador);
+            Navegador.Size = new Size(500, 500);
+            Navegador.Location = new Point(170, 100);
         }
         #endregion
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            Navegador.Navigate("www.gloogle.com.br");
+        }
     }
 }
