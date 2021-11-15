@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Trabalho_Mercado_Online.DAO;
 using System.Linq;
 using Trabalho_Mercado_Online.Views_Access;
+using Trabalho_Mercado_Online.Helpers;
 
 namespace Trabalho_Mercado_Online.Views
 {
@@ -256,7 +257,8 @@ namespace Trabalho_Mercado_Online.Views
         //Botoes de Sair
         private void btnSair_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Global.FinalizarThread();
+            Application.Exit();
         }
 
         #endregion

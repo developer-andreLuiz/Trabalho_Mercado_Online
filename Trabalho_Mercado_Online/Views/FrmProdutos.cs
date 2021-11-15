@@ -50,6 +50,7 @@ namespace Trabalho_Mercado_Online.Views
             bool promocao = chkPromocao.Checked;
             bool igualaProduto = chkIgualaProduto.Checked;
             bool faltaEditar = chkFaltaEditar.Checked;
+            bool editado = chkEditado.Checked;
 
             bool categoria = chkCategoria.Checked;
             bool semCategoria = chkSemCategoria.Checked;
@@ -83,6 +84,11 @@ namespace Trabalho_Mercado_Online.Views
             if (faltaEditar)
             {
                 var lt = ListaProdutos.FindAll(x => x.Peso.Equals("00000"));
+                ListaProdutos = lt;
+            }
+            if (editado)
+            {
+                var lt = ListaProdutos.FindAll(x => x.Peso.Equals("00000")==false);
                 ListaProdutos = lt;
             }
             if (semCategoria)
@@ -537,6 +543,18 @@ namespace Trabalho_Mercado_Online.Views
         }
         private void chkFaltaEditar_CheckedChanged(object sender, EventArgs e)
         {
+            if (chkFaltaEditar.Checked)
+            {
+                chkEditado.Checked = false;
+            }
+            Filtrar();
+        }
+        private void chkEditado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkEditado.Checked)
+            {
+                chkFaltaEditar.Checked = false;
+            }
             Filtrar();
         }
         private void chkCategoria_CheckedChanged(object sender, EventArgs e)
@@ -758,6 +776,7 @@ namespace Trabalho_Mercado_Online.Views
         {
             chkCategoria.Checked = false;
             chkFaltaEditar.Checked = false;
+            chkEditado.Checked = false;
             chkSemCategoria.Checked = false;
             chkCategoriaNivel2.Checked = false;
             chkCategoriaNivel3.Checked = false;
@@ -964,8 +983,9 @@ namespace Trabalho_Mercado_Online.Views
 
 
 
+
         #endregion
 
-        
+       
     }
 }

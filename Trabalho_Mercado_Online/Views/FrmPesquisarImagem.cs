@@ -20,8 +20,7 @@ namespace Trabalho_Mercado_Online.Views
         WebBrowser Navegador = new WebBrowser();
         List<UrlService> ListaUrls = new List<UrlService>();
         Bitmap ImagemOriginal;
-        bool breakThread = false;
-
+       
         //variaveis de edição de imagens
         private Point RectStartPoint;
         private Rectangle retangulo = new Rectangle();
@@ -106,7 +105,7 @@ namespace Trabalho_Mercado_Online.Views
             int max = 0;
             foreach (var item in ListaUrls.FindAll(x => x.Verificada == false))
             {
-                if (breakThread)
+                if (Global.Break_Thread)
                 {
                     break;
                 }
@@ -128,7 +127,7 @@ namespace Trabalho_Mercado_Online.Views
             int max = 8;
             foreach (var item in ListaUrls.FindAll(x => x.Verificada == false))
             {
-                if (breakThread)
+                if (Global.Break_Thread)
                 {
                     break;
                 }
@@ -150,6 +149,7 @@ namespace Trabalho_Mercado_Online.Views
         public FrmPesquisarImagem(FrmProduto frm, string txt, string imgTemp)
         {
             InitializeComponent();
+            Global.FinalizarThread();
             frmProduto = frm;
             txtProduto.Text = txt;
             panelImagens.MouseWheel += panelImagens_MouseWheel;
@@ -169,6 +169,7 @@ namespace Trabalho_Mercado_Online.Views
         public FrmPesquisarImagem()
         {
             InitializeComponent();
+            Global.FinalizarThread();
             btnSelecionar.Text = "   Exportar";
             panelImagens.MouseWheel += panelImagens_MouseWheel;
             InitNavegador();
@@ -214,11 +215,11 @@ namespace Trabalho_Mercado_Online.Views
                     }
                 }
             }
+            Global.FinalizarThread();
         }
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             btnLimpar.PerformClick();
-
             panelImagens.Controls.Clear();
             ListaUrls = new List<UrlService>();
             lblTotalLista.Text = "0";
@@ -235,9 +236,9 @@ namespace Trabalho_Mercado_Online.Views
                 {
                     url2 = url2 + "+" + item;
                 }
-
                 url = url1 + url2 + url3;
-                breakThread = false;
+                Global.FinalizarThread();
+                Global.Break_Thread = false;
                 Navegador.Navigate(url);
             }
            
@@ -249,17 +250,20 @@ namespace Trabalho_Mercado_Online.Views
             {
                 btnPesquisar.PerformClick();
             }
-
         }
        
+        //Carregamento de Imagens
         private void panelImagens_MouseWheel(object sender, MouseEventArgs e)
         {
             VScrollProperties vsp = panelImagens.VerticalScroll;
             int scrollmax = vsp.Maximum - vsp.LargeChange + 1;
             if (vsp.Value== scrollmax)
             {
-                Thread t = new Thread(BaixarImagens8Imagens);
-                t.Start();
+                Thread thread = new Thread(BaixarImagens8Imagens);
+                thread.IsBackground = true;
+                thread.Name = "Imagem";
+                thread.Start();
+                Global.Lista_Thread_Imagem.Add(thread);
             }
 
         }
@@ -269,8 +273,11 @@ namespace Trabalho_Mercado_Online.Views
             int scrollmax = vsp.Maximum - vsp.LargeChange + 1;
             if (vsp.Value == scrollmax)
             {
-                Thread t = new Thread(BaixarImagens8Imagens);
-                t.Start();
+                Thread thread = new Thread(BaixarImagens8Imagens);
+                thread.IsBackground = true;
+                thread.Name = "Imagem";
+                thread.Start();
+                Global.Lista_Thread_Imagem.Add(thread);
             }
         }
         private void Navegador_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -297,13 +304,18 @@ namespace Trabalho_Mercado_Online.Views
                 }
             }
             lblTotalLista.Text = ListaUrls.Count.ToString();
-            Thread t = new Thread(BaixarImagens20Imagens);
-            t.Start();
+            Thread thread = new Thread(BaixarImagens20Imagens);
+            thread.IsBackground = true;
+            thread.Name = "Imagem";
+            thread.Start();
+            Global.Lista_Thread_Imagem.Add(thread);
+          
         }
+      
         private void btnLimpar_Click(object sender, EventArgs e)
         {
            
-            breakThread = true;
+            Global.Break_Thread = true;
         }
         private void timerImagens_Tick(object sender, EventArgs e)
         {
@@ -312,7 +324,6 @@ namespace Trabalho_Mercado_Online.Views
                 CarregarImagens();
             }
         }
-
         //Edição Imagem
         private void pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
@@ -353,22 +364,51 @@ namespace Trabalho_Mercado_Online.Views
             {
                 try
                 {
+
+
                     int multplicador = ImagemOriginal.Height / pictureBox.Height;
-
                     Bitmap bitmap = new Bitmap(ImagemOriginal);
-
                     Rectangle rect = new Rectangle();
                     rect.Location = new Point(retangulo.Location.X * multplicador, retangulo.Location.Y * multplicador);
                     rect.Width = retangulo.Width * multplicador;
                     rect.Height = retangulo.Height * multplicador;
-
                     retangulo = new Rectangle();
-
                     Bitmap cropped = bitmap.Clone(rect, bitmap.PixelFormat);
+                    if (nUD.Value==1)
+                    {
 
-                    Bitmap imgFinal = (Bitmap)ImagemService.ResizeImage(cropped, 1000, 1200);
-                    pictureBox.BackgroundImage = imgFinal;
+                        Bitmap imgFinal = (Bitmap)ImagemService.ResizeImage(cropped, 1000, 1200);
+                        pictureBox.BackgroundImage = imgFinal;
+                    }
+                    else
+                    {
+                        int valor = int.Parse(nUD.Value.ToString());
+                        if (rbLado.Checked)
+                        {
 
+                            Bitmap imgMult = new Bitmap(valor*cropped.Width, cropped.Height);
+                            Graphics desenho = Graphics.FromImage(imgMult);
+                            for (int i = 0; i < valor; i++)
+                            {
+                                desenho.DrawImage(cropped, i * cropped.Width , 0);
+                            }
+
+                            Bitmap imgFinal = (Bitmap)ImagemService.ResizeImage(imgMult, 1000, 1200);
+                            pictureBox.BackgroundImage = imgFinal;
+                        }
+                        else
+                        {
+                            Bitmap imgMult = new Bitmap(cropped.Width, valor * cropped.Height);
+                            Graphics desenho = Graphics.FromImage(imgMult);
+                            for (int i = 0; i < valor; i++)
+                            {
+                                desenho.DrawImage(cropped, 0, i * cropped.Height);
+                            }
+
+                            Bitmap imgFinal = (Bitmap)ImagemService.ResizeImage(imgMult, 1000, 1200);
+                            pictureBox.BackgroundImage = imgFinal;
+                        }
+                    }
                 }
                 catch { btnDesfazer.PerformClick(); }
             }
@@ -383,15 +423,5 @@ namespace Trabalho_Mercado_Online.Views
             }
         }
         #endregion
-
-
-
-
-
-
-
-
-
-
     }
 }

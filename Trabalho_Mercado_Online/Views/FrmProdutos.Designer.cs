@@ -30,10 +30,12 @@ namespace Trabalho_Mercado_Online.Views
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProdutos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnBuscarCategoria1 = new System.Windows.Forms.Button();
+            this.btnBuscarCategoria2 = new System.Windows.Forms.Button();
             this.btnBuscarCategoria3 = new System.Windows.Forms.Button();
             this.chkFaltaEditar = new System.Windows.Forms.CheckBox();
             this.btnAbrirProdutos = new System.Windows.Forms.Button();
@@ -66,8 +68,7 @@ namespace Trabalho_Mercado_Online.Views
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
-            this.btnBuscarCategoria2 = new System.Windows.Forms.Button();
-            this.btnBuscarCategoria1 = new System.Windows.Forms.Button();
+            this.chkEditado = new System.Windows.Forms.CheckBox();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -76,6 +77,7 @@ namespace Trabalho_Mercado_Online.Views
             // panelMain
             // 
             this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelMain.Controls.Add(this.chkEditado);
             this.panelMain.Controls.Add(this.btnBuscarCategoria1);
             this.panelMain.Controls.Add(this.btnBuscarCategoria2);
             this.panelMain.Controls.Add(this.btnBuscarCategoria3);
@@ -115,6 +117,38 @@ namespace Trabalho_Mercado_Online.Views
             this.panelMain.Size = new System.Drawing.Size(897, 648);
             this.panelMain.TabIndex = 3;
             // 
+            // btnBuscarCategoria1
+            // 
+            this.btnBuscarCategoria1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnBuscarCategoria1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarCategoria1.FlatAppearance.BorderSize = 0;
+            this.btnBuscarCategoria1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCategoria1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBuscarCategoria1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnBuscarCategoria1.Location = new System.Drawing.Point(264, 102);
+            this.btnBuscarCategoria1.Name = "btnBuscarCategoria1";
+            this.btnBuscarCategoria1.Size = new System.Drawing.Size(27, 27);
+            this.btnBuscarCategoria1.TabIndex = 60;
+            this.btnBuscarCategoria1.Text = "...";
+            this.btnBuscarCategoria1.UseVisualStyleBackColor = false;
+            this.btnBuscarCategoria1.Click += new System.EventHandler(this.btnBuscarCategoria1_Click);
+            // 
+            // btnBuscarCategoria2
+            // 
+            this.btnBuscarCategoria2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.btnBuscarCategoria2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarCategoria2.FlatAppearance.BorderSize = 0;
+            this.btnBuscarCategoria2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCategoria2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBuscarCategoria2.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnBuscarCategoria2.Location = new System.Drawing.Point(558, 103);
+            this.btnBuscarCategoria2.Name = "btnBuscarCategoria2";
+            this.btnBuscarCategoria2.Size = new System.Drawing.Size(27, 27);
+            this.btnBuscarCategoria2.TabIndex = 59;
+            this.btnBuscarCategoria2.Text = "...";
+            this.btnBuscarCategoria2.UseVisualStyleBackColor = false;
+            this.btnBuscarCategoria2.Click += new System.EventHandler(this.btnBuscarCategoria2_Click);
+            // 
             // btnBuscarCategoria3
             // 
             this.btnBuscarCategoria3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -136,7 +170,7 @@ namespace Trabalho_Mercado_Online.Views
             this.chkFaltaEditar.AutoSize = true;
             this.chkFaltaEditar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkFaltaEditar.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkFaltaEditar.Location = new System.Drawing.Point(548, 73);
+            this.chkFaltaEditar.Location = new System.Drawing.Point(523, 73);
             this.chkFaltaEditar.Name = "chkFaltaEditar";
             this.chkFaltaEditar.Size = new System.Drawing.Size(85, 18);
             this.chkFaltaEditar.TabIndex = 55;
@@ -315,7 +349,7 @@ namespace Trabalho_Mercado_Online.Views
             this.chkIgualaProduto.AutoSize = true;
             this.chkIgualaProduto.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkIgualaProduto.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkIgualaProduto.Location = new System.Drawing.Point(437, 73);
+            this.chkIgualaProduto.Location = new System.Drawing.Point(417, 73);
             this.chkIgualaProduto.Name = "chkIgualaProduto";
             this.chkIgualaProduto.Size = new System.Drawing.Size(105, 18);
             this.chkIgualaProduto.TabIndex = 41;
@@ -341,7 +375,7 @@ namespace Trabalho_Mercado_Online.Views
             this.chkSemCategoria.AutoSize = true;
             this.chkSemCategoria.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkSemCategoria.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkSemCategoria.Location = new System.Drawing.Point(236, 73);
+            this.chkSemCategoria.Location = new System.Drawing.Point(227, 73);
             this.chkSemCategoria.Name = "chkSemCategoria";
             this.chkSemCategoria.Size = new System.Drawing.Size(107, 18);
             this.chkSemCategoria.TabIndex = 39;
@@ -354,7 +388,7 @@ namespace Trabalho_Mercado_Online.Views
             this.chkPromocao.AutoSize = true;
             this.chkPromocao.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkPromocao.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkPromocao.Location = new System.Drawing.Point(349, 73);
+            this.chkPromocao.Location = new System.Drawing.Point(334, 73);
             this.chkPromocao.Name = "chkPromocao";
             this.chkPromocao.Size = new System.Drawing.Size(82, 18);
             this.chkPromocao.TabIndex = 38;
@@ -507,35 +541,35 @@ namespace Trabalho_Mercado_Online.Views
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AllowUserToResizeColumns = false;
             this.dataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(224)))), ((int)(((byte)(246)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.MidnightBlue;
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(224)))), ((int)(((byte)(246)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.MidnightBlue;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView.ColumnHeadersHeight = 40;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Cyan;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Cyan;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView.EnableHeadersVisualStyles = false;
             this.dataGridView.Location = new System.Drawing.Point(12, 149);
@@ -574,37 +608,18 @@ namespace Trabalho_Mercado_Online.Views
             // 
             this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
             // 
-            // btnBuscarCategoria2
+            // chkEditado
             // 
-            this.btnBuscarCategoria2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.btnBuscarCategoria2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarCategoria2.FlatAppearance.BorderSize = 0;
-            this.btnBuscarCategoria2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarCategoria2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnBuscarCategoria2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnBuscarCategoria2.Location = new System.Drawing.Point(558, 103);
-            this.btnBuscarCategoria2.Name = "btnBuscarCategoria2";
-            this.btnBuscarCategoria2.Size = new System.Drawing.Size(27, 27);
-            this.btnBuscarCategoria2.TabIndex = 59;
-            this.btnBuscarCategoria2.Text = "...";
-            this.btnBuscarCategoria2.UseVisualStyleBackColor = false;
-            this.btnBuscarCategoria2.Click += new System.EventHandler(this.btnBuscarCategoria2_Click);
-            // 
-            // btnBuscarCategoria1
-            // 
-            this.btnBuscarCategoria1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.btnBuscarCategoria1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarCategoria1.FlatAppearance.BorderSize = 0;
-            this.btnBuscarCategoria1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarCategoria1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnBuscarCategoria1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnBuscarCategoria1.Location = new System.Drawing.Point(264, 102);
-            this.btnBuscarCategoria1.Name = "btnBuscarCategoria1";
-            this.btnBuscarCategoria1.Size = new System.Drawing.Size(27, 27);
-            this.btnBuscarCategoria1.TabIndex = 60;
-            this.btnBuscarCategoria1.Text = "...";
-            this.btnBuscarCategoria1.UseVisualStyleBackColor = false;
-            this.btnBuscarCategoria1.Click += new System.EventHandler(this.btnBuscarCategoria1_Click);
+            this.chkEditado.AutoSize = true;
+            this.chkEditado.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chkEditado.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.chkEditado.Location = new System.Drawing.Point(611, 73);
+            this.chkEditado.Name = "chkEditado";
+            this.chkEditado.Size = new System.Drawing.Size(66, 18);
+            this.chkEditado.TabIndex = 61;
+            this.chkEditado.Text = "Editado";
+            this.chkEditado.UseVisualStyleBackColor = true;
+            this.chkEditado.CheckedChanged += new System.EventHandler(this.chkEditado_CheckedChanged);
             // 
             // FrmProdutos
             // 
@@ -665,5 +680,6 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.Button btnBuscarCategoria3;
         private System.Windows.Forms.Button btnBuscarCategoria1;
         private System.Windows.Forms.Button btnBuscarCategoria2;
+        private System.Windows.Forms.CheckBox chkEditado;
     }
 }

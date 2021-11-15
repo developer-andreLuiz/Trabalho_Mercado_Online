@@ -32,6 +32,9 @@ namespace Trabalho_Mercado_Online.Views
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPesquisarImagem));
             this.panelMain = new System.Windows.Forms.Panel();
+            this.rbCima = new System.Windows.Forms.RadioButton();
+            this.rbLado = new System.Windows.Forms.RadioButton();
+            this.nUD = new System.Windows.Forms.NumericUpDown();
             this.btnDesfazer = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -51,6 +54,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnFechar = new System.Windows.Forms.Button();
             this.timerImagens = new System.Windows.Forms.Timer(this.components);
             this.panelMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +62,9 @@ namespace Trabalho_Mercado_Online.Views
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.White;
+            this.panelMain.Controls.Add(this.rbCima);
+            this.panelMain.Controls.Add(this.rbLado);
+            this.panelMain.Controls.Add(this.nUD);
             this.panelMain.Controls.Add(this.btnDesfazer);
             this.panelMain.Controls.Add(this.btnEditar);
             this.panelMain.Controls.Add(this.btnLimpar);
@@ -81,6 +88,48 @@ namespace Trabalho_Mercado_Online.Views
             this.panelMain.Size = new System.Drawing.Size(897, 648);
             this.panelMain.TabIndex = 0;
             // 
+            // rbCima
+            // 
+            this.rbCima.AutoSize = true;
+            this.rbCima.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rbCima.Location = new System.Drawing.Point(834, 327);
+            this.rbCima.Name = "rbCima";
+            this.rbCima.Size = new System.Drawing.Size(55, 20);
+            this.rbCima.TabIndex = 575;
+            this.rbCima.Text = "Cima";
+            this.rbCima.UseVisualStyleBackColor = true;
+            // 
+            // rbLado
+            // 
+            this.rbLado.AutoSize = true;
+            this.rbLado.Checked = true;
+            this.rbLado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rbLado.Location = new System.Drawing.Point(775, 327);
+            this.rbLado.Name = "rbLado";
+            this.rbLado.Size = new System.Drawing.Size(53, 20);
+            this.rbLado.TabIndex = 574;
+            this.rbLado.TabStop = true;
+            this.rbLado.Text = "Lado";
+            this.rbLado.UseVisualStyleBackColor = true;
+            // 
+            // nUD
+            // 
+            this.nUD.BackColor = System.Drawing.Color.White;
+            this.nUD.Location = new System.Drawing.Point(689, 321);
+            this.nUD.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nUD.Name = "nUD";
+            this.nUD.Size = new System.Drawing.Size(71, 26);
+            this.nUD.TabIndex = 573;
+            this.nUD.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // btnDesfazer
             // 
             this.btnDesfazer.BackColor = System.Drawing.Color.White;
@@ -90,7 +139,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnDesfazer.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDesfazer.ForeColor = System.Drawing.Color.Black;
             this.btnDesfazer.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_dispose;
-            this.btnDesfazer.Location = new System.Drawing.Point(689, 322);
+            this.btnDesfazer.Location = new System.Drawing.Point(689, 353);
             this.btnDesfazer.Name = "btnDesfazer";
             this.btnDesfazer.Size = new System.Drawing.Size(45, 37);
             this.btnDesfazer.TabIndex = 570;
@@ -108,7 +157,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnEditar.ForeColor = System.Drawing.Color.Black;
             this.btnEditar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_editImage;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(740, 322);
+            this.btnEditar.Location = new System.Drawing.Point(740, 353);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(149, 37);
             this.btnEditar.TabIndex = 568;
@@ -255,7 +304,7 @@ namespace Trabalho_Mercado_Online.Views
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(689, 362);
+            this.label1.Location = new System.Drawing.Point(689, 393);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 14);
             this.label1.TabIndex = 103;
@@ -340,6 +389,7 @@ namespace Trabalho_Mercado_Online.Views
             this.Text = "FrmPesquisarImagem";
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
@@ -367,5 +417,8 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.Timer timerImagens;
         private System.Windows.Forms.Button btnDesfazer;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.RadioButton rbCima;
+        private System.Windows.Forms.RadioButton rbLado;
+        private System.Windows.Forms.NumericUpDown nUD;
     }
 }
