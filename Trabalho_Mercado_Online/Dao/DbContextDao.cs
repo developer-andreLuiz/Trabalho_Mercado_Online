@@ -33,7 +33,7 @@ namespace Trabalho_Mercado_Online.DAO
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseMySql("server=108.179.252.18;port=3306;database=merca467_mercado_online;uid=merca467_sistema;pwd=sistemavalendo;sslmode=none;connect timeout=30", Microsoft.EntityFrameworkCore.ServerVersion.Parse("5.6.41-mysql"));
+                optionsBuilder.UseMySql("server=dbmercado.mysql.database.azure.com;port=3306;database=db_mercado_online;uid=root_andre;pwd=SistemaValendo1;sslmode=none;connect timeout=30", Microsoft.EntityFrameworkCore.ServerVersion.Parse("5.6.41-mysql"));
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

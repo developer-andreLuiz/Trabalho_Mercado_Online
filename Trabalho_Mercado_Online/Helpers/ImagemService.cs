@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Text;
@@ -103,5 +104,6 @@ namespace Trabalho_Mercado_Online.Helpers
             Bitmap imgFinal = new Bitmap(ImgLocal, new Size(larguraImg, alturaImg));
             return imgFinal;
         }
+      
     }
 }

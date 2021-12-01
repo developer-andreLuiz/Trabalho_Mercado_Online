@@ -755,7 +755,6 @@ namespace Trabalho_Mercado_Online.Views
                 txtVendaMargem.Text = "0,00";
             }
         }
-
         //Margem Promoção
         private void txtPromocao_Leave(object sender, EventArgs e)
         {
@@ -792,7 +791,6 @@ namespace Trabalho_Mercado_Online.Views
                 txtPromocaoMargem.Text = "0,00";
             }
         }
-
         //Datagrid
         private void dataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -819,8 +817,6 @@ namespace Trabalho_Mercado_Online.Views
                 }
             }
         }
-       
-
         //Pesquisa
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
@@ -901,7 +897,6 @@ namespace Trabalho_Mercado_Online.Views
                 btnPesquisar.PerformClick();
             }
         }
-
         //Voz
         private void btnOuvir_Click(object sender, EventArgs e)
         {
@@ -910,8 +905,6 @@ namespace Trabalho_Mercado_Online.Views
                 Falar();
             }
         }
-
-
         //Passagem de Produtos
         private void btnPrimeiroRegistro_Click(object sender, EventArgs e)
         {
@@ -1083,8 +1076,6 @@ namespace Trabalho_Mercado_Online.Views
                 }
             }
         }
-
-
         #endregion
 
         private void lblPeso_Click(object sender, EventArgs e)

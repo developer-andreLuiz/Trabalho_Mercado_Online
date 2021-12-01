@@ -91,7 +91,7 @@ namespace Trabalho_Mercado_Online.Helpers
         }
         public static string CapturarPeso()
         {
-            string txt = string.Empty;
+            string txt = "00000";
             try
             {
                 if (PortaAberta)

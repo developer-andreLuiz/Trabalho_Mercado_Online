@@ -212,6 +212,10 @@ namespace Trabalho_Mercado_Online.Views
                     if (pictureBox.BackgroundImage!=null)
                     {
                         pictureBox.BackgroundImage.Save(sf.FileName);
+                        chkRotEsquerda.Checked = false;
+                        chkRotDireita.Checked = false;
+                        nUD.Value = 1;
+
                     }
                 }
             }
@@ -324,6 +328,8 @@ namespace Trabalho_Mercado_Online.Views
                 CarregarImagens();
             }
         }
+     
+        
         //Edição Imagem
         private void pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
@@ -358,6 +364,20 @@ namespace Trabalho_Mercado_Online.Views
                 }
             }
         }
+        private void chkRotEsquerda_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkRotEsquerda.Checked)
+            {
+                chkRotDireita.Checked = false;
+            }
+        }
+        private void chkRotDireita_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkRotDireita.Checked)
+            {
+                chkRotEsquerda.Checked = false;
+            }
+        }
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (pictureBox.BackgroundImage != null && retangulo.Width != 0 && retangulo.Height != 0)
@@ -365,19 +385,32 @@ namespace Trabalho_Mercado_Online.Views
                 try
                 {
 
-
+                    //numero de x que o picturebox é menor que o original
                     int multplicador = ImagemOriginal.Height / pictureBox.Height;
-                    Bitmap bitmap = new Bitmap(ImagemOriginal);
+                    
+                    //novo bitmap com imagem sem edição
+                    Bitmap bitmapOriginal = new Bitmap(ImagemOriginal);
+                    
+                    //retangulo de seleção para corte
                     Rectangle rect = new Rectangle();
                     rect.Location = new Point(retangulo.Location.X * multplicador, retangulo.Location.Y * multplicador);
                     rect.Width = retangulo.Width * multplicador;
                     rect.Height = retangulo.Height * multplicador;
                     retangulo = new Rectangle();
-                    Bitmap cropped = bitmap.Clone(rect, bitmap.PixelFormat);
-                    if (nUD.Value==1)
-                    {
+                    
+                    Bitmap bitmapCortado = bitmapOriginal.Clone(rect, bitmapOriginal.PixelFormat);
 
-                        Bitmap imgFinal = (Bitmap)ImagemService.ResizeImage(cropped, 1000, 1200);
+                    if (chkRotEsquerda.Checked)
+                    {
+                        bitmapCortado.RotateFlip(RotateFlipType.Rotate270FlipNone);
+                    }
+                    if (chkRotDireita.Checked)
+                    {
+                        bitmapCortado.RotateFlip(RotateFlipType.Rotate90FlipNone);
+                    }
+                    if (nUD.Value == 1)
+                    {
+                        Bitmap imgFinal = (Bitmap)ImagemService.ResizeImage(bitmapCortado, 1000, 1200);
                         pictureBox.BackgroundImage = imgFinal;
                     }
                     else
@@ -386,11 +419,11 @@ namespace Trabalho_Mercado_Online.Views
                         if (rbLado.Checked)
                         {
 
-                            Bitmap imgMult = new Bitmap(valor*cropped.Width, cropped.Height);
+                            Bitmap imgMult = new Bitmap(valor * bitmapCortado.Width, bitmapCortado.Height);
                             Graphics desenho = Graphics.FromImage(imgMult);
                             for (int i = 0; i < valor; i++)
                             {
-                                desenho.DrawImage(cropped, i * cropped.Width , 0);
+                                desenho.DrawImage(bitmapCortado, i * bitmapCortado.Width, 0);
                             }
 
                             Bitmap imgFinal = (Bitmap)ImagemService.ResizeImage(imgMult, 1000, 1200);
@@ -398,11 +431,11 @@ namespace Trabalho_Mercado_Online.Views
                         }
                         else
                         {
-                            Bitmap imgMult = new Bitmap(cropped.Width, valor * cropped.Height);
+                            Bitmap imgMult = new Bitmap(bitmapCortado.Width, valor * bitmapCortado.Height);
                             Graphics desenho = Graphics.FromImage(imgMult);
                             for (int i = 0; i < valor; i++)
                             {
-                                desenho.DrawImage(cropped, 0, i * cropped.Height);
+                                desenho.DrawImage(bitmapCortado, 0, i * bitmapCortado.Height);
                             }
 
                             Bitmap imgFinal = (Bitmap)ImagemService.ResizeImage(imgMult, 1000, 1200);
@@ -420,8 +453,13 @@ namespace Trabalho_Mercado_Online.Views
                 Bitmap b = new Bitmap(ImagemOriginal);
                 pictureBox.BackgroundImage = b;
                 retangulo = new Rectangle();
+                chkRotEsquerda.Checked = false;
+                chkRotDireita.Checked = false;
+                nUD.Value = 1;
             }
         }
         #endregion
+
+       
     }
 }

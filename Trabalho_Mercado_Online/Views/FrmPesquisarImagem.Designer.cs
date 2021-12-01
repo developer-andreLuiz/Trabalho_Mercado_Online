@@ -32,9 +32,16 @@ namespace Trabalho_Mercado_Online.Views
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPesquisarImagem));
             this.panelMain = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.chkRotDireita = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.chkRotEsquerda = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.nUD = new System.Windows.Forms.NumericUpDown();
             this.rbCima = new System.Windows.Forms.RadioButton();
             this.rbLado = new System.Windows.Forms.RadioButton();
-            this.nUD = new System.Windows.Forms.NumericUpDown();
             this.btnDesfazer = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -54,6 +61,8 @@ namespace Trabalho_Mercado_Online.Views
             this.btnFechar = new System.Windows.Forms.Button();
             this.timerImagens = new System.Windows.Forms.Timer(this.components);
             this.panelMain.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -62,9 +71,9 @@ namespace Trabalho_Mercado_Online.Views
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.White;
-            this.panelMain.Controls.Add(this.rbCima);
-            this.panelMain.Controls.Add(this.rbLado);
-            this.panelMain.Controls.Add(this.nUD);
+            this.panelMain.Controls.Add(this.panel3);
+            this.panelMain.Controls.Add(this.label3);
+            this.panelMain.Controls.Add(this.panel1);
             this.panelMain.Controls.Add(this.btnDesfazer);
             this.panelMain.Controls.Add(this.btnEditar);
             this.panelMain.Controls.Add(this.btnLimpar);
@@ -88,13 +97,112 @@ namespace Trabalho_Mercado_Online.Views
             this.panelMain.Size = new System.Drawing.Size(897, 648);
             this.panelMain.TabIndex = 0;
             // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.chkRotDireita);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.chkRotEsquerda);
+            this.panel3.Location = new System.Drawing.Point(689, 407);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 49);
+            this.panel3.TabIndex = 579;
+            // 
+            // chkRotDireita
+            // 
+            this.chkRotDireita.AutoSize = true;
+            this.chkRotDireita.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chkRotDireita.Location = new System.Drawing.Point(120, 17);
+            this.chkRotDireita.Name = "chkRotDireita";
+            this.chkRotDireita.Size = new System.Drawing.Size(68, 20);
+            this.chkRotDireita.TabIndex = 580;
+            this.chkRotDireita.Text = "Direita";
+            this.chkRotDireita.UseVisualStyleBackColor = true;
+            this.chkRotDireita.CheckedChanged += new System.EventHandler(this.chkRotDireita_CheckedChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 14);
+            this.label9.TabIndex = 579;
+            this.label9.Text = "Girar";
+            // 
+            // chkRotEsquerda
+            // 
+            this.chkRotEsquerda.AutoSize = true;
+            this.chkRotEsquerda.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chkRotEsquerda.Location = new System.Drawing.Point(15, 17);
+            this.chkRotEsquerda.Name = "chkRotEsquerda";
+            this.chkRotEsquerda.Size = new System.Drawing.Size(85, 20);
+            this.chkRotEsquerda.TabIndex = 578;
+            this.chkRotEsquerda.Text = "Esquerda";
+            this.chkRotEsquerda.UseVisualStyleBackColor = true;
+            this.chkRotEsquerda.CheckedChanged += new System.EventHandler(this.chkRotEsquerda_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(804, 337);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 14);
+            this.label3.TabIndex = 577;
+            this.label3.Text = "Edição Imagem";
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.nUD);
+            this.panel1.Controls.Add(this.rbCima);
+            this.panel1.Controls.Add(this.rbLado);
+            this.panel1.Location = new System.Drawing.Point(689, 354);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 49);
+            this.panel1.TabIndex = 576;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 14);
+            this.label8.TabIndex = 578;
+            this.label8.Text = "Duplicar";
+            // 
+            // nUD
+            // 
+            this.nUD.BackColor = System.Drawing.Color.White;
+            this.nUD.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nUD.Location = new System.Drawing.Point(3, 17);
+            this.nUD.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nUD.Name = "nUD";
+            this.nUD.Size = new System.Drawing.Size(58, 26);
+            this.nUD.TabIndex = 573;
+            this.nUD.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // rbCima
             // 
             this.rbCima.AutoSize = true;
-            this.rbCima.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbCima.Location = new System.Drawing.Point(834, 327);
+            this.rbCima.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rbCima.Location = new System.Drawing.Point(130, 19);
             this.rbCima.Name = "rbCima";
-            this.rbCima.Size = new System.Drawing.Size(55, 20);
+            this.rbCima.Size = new System.Drawing.Size(58, 20);
             this.rbCima.TabIndex = 575;
             this.rbCima.Text = "Cima";
             this.rbCima.UseVisualStyleBackColor = true;
@@ -103,32 +211,14 @@ namespace Trabalho_Mercado_Online.Views
             // 
             this.rbLado.AutoSize = true;
             this.rbLado.Checked = true;
-            this.rbLado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbLado.Location = new System.Drawing.Point(775, 327);
+            this.rbLado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rbLado.Location = new System.Drawing.Point(67, 19);
             this.rbLado.Name = "rbLado";
-            this.rbLado.Size = new System.Drawing.Size(53, 20);
+            this.rbLado.Size = new System.Drawing.Size(57, 20);
             this.rbLado.TabIndex = 574;
             this.rbLado.TabStop = true;
             this.rbLado.Text = "Lado";
             this.rbLado.UseVisualStyleBackColor = true;
-            // 
-            // nUD
-            // 
-            this.nUD.BackColor = System.Drawing.Color.White;
-            this.nUD.Location = new System.Drawing.Point(689, 321);
-            this.nUD.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nUD.Name = "nUD";
-            this.nUD.Size = new System.Drawing.Size(71, 26);
-            this.nUD.TabIndex = 573;
-            this.nUD.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // btnDesfazer
             // 
@@ -139,7 +229,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnDesfazer.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDesfazer.ForeColor = System.Drawing.Color.Black;
             this.btnDesfazer.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_dispose;
-            this.btnDesfazer.Location = new System.Drawing.Point(689, 353);
+            this.btnDesfazer.Location = new System.Drawing.Point(689, 461);
             this.btnDesfazer.Name = "btnDesfazer";
             this.btnDesfazer.Size = new System.Drawing.Size(45, 37);
             this.btnDesfazer.TabIndex = 570;
@@ -157,7 +247,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnEditar.ForeColor = System.Drawing.Color.Black;
             this.btnEditar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_editImage;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(740, 353);
+            this.btnEditar.Location = new System.Drawing.Point(740, 461);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(149, 37);
             this.btnEditar.TabIndex = 568;
@@ -304,7 +394,7 @@ namespace Trabalho_Mercado_Online.Views
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(689, 393);
+            this.label1.Location = new System.Drawing.Point(691, 319);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 14);
             this.label1.TabIndex = 103;
@@ -389,6 +479,10 @@ namespace Trabalho_Mercado_Online.Views
             this.Text = "FrmPesquisarImagem";
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
@@ -420,5 +514,16 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.RadioButton rbCima;
         private System.Windows.Forms.RadioButton rbLado;
         private System.Windows.Forms.NumericUpDown nUD;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.CheckBox chkRotEsquerda;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox chkRotDireita;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -5,4 +5,7 @@ tamanho img categoria 550x310
 
 
 Atualizar o Banco
+azure
+Server="dbmercado.mysql.database.azure.com";UserID = "root_andre";Password="SistemaValendo1";Database="db_mercado_online";SslMode=none;
+hostgator
 Scaffold-DbContext "Server=108.179.252.18; Port= 3306; Database=merca467_mercado_online; Uid=merca467_sistema; Pwd=sistemavalendo; SslMode = none; Connect Timeout = 30;" Pomelo.EntityFrameworkCore.MySql -OutputDir Models -f
