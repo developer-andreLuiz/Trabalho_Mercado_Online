@@ -16,6 +16,9 @@
     <Compile Update="Views\FrmCategorias_Nivel_3.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\FrmEncarte.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\FrmInicio.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -213,6 +213,16 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icone_grid_Image {
+            get {
+                object obj = ResourceManager.GetObject("icone_grid_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icone_img {
             get {
                 object obj = ResourceManager.GetObject("icone_img", resourceCulture);

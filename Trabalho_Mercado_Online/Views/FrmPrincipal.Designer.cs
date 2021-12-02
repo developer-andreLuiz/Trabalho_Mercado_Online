@@ -41,6 +41,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnAccess = new System.Windows.Forms.Button();
             this.panelFerramentasSubMenu = new System.Windows.Forms.Panel();
             this.btnImagens = new System.Windows.Forms.Button();
+            this.btnEncarte = new System.Windows.Forms.Button();
             this.btnFerramentas = new System.Windows.Forms.Button();
             this.panelBasedeDadosSubMenu = new System.Windows.Forms.Panel();
             this.btnCategoriasNivel3 = new System.Windows.Forms.Button();
@@ -132,7 +133,7 @@ namespace Trabalho_Mercado_Online.Views
             this.panelAccessSubMenu.Controls.Add(this.btnProdutosAccess);
             this.panelAccessSubMenu.Controls.Add(this.btnAlimentarProdutos);
             this.panelAccessSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAccessSubMenu.Location = new System.Drawing.Point(0, 458);
+            this.panelAccessSubMenu.Location = new System.Drawing.Point(0, 503);
             this.panelAccessSubMenu.Name = "panelAccessSubMenu";
             this.panelAccessSubMenu.Size = new System.Drawing.Size(200, 95);
             this.panelAccessSubMenu.TabIndex = 9;
@@ -189,7 +190,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnAccess.ForeColor = System.Drawing.Color.White;
             this.btnAccess.Image = ((System.Drawing.Image)(resources.GetObject("btnAccess.Image")));
             this.btnAccess.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccess.Location = new System.Drawing.Point(0, 408);
+            this.btnAccess.Location = new System.Drawing.Point(0, 453);
             this.btnAccess.Name = "btnAccess";
             this.btnAccess.Size = new System.Drawing.Size(200, 50);
             this.btnAccess.TabIndex = 8;
@@ -203,10 +204,11 @@ namespace Trabalho_Mercado_Online.Views
             // 
             this.panelFerramentasSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
             this.panelFerramentasSubMenu.Controls.Add(this.btnImagens);
+            this.panelFerramentasSubMenu.Controls.Add(this.btnEncarte);
             this.panelFerramentasSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelFerramentasSubMenu.Location = new System.Drawing.Point(0, 358);
             this.panelFerramentasSubMenu.Name = "panelFerramentasSubMenu";
-            this.panelFerramentasSubMenu.Size = new System.Drawing.Size(200, 50);
+            this.panelFerramentasSubMenu.Size = new System.Drawing.Size(200, 95);
             this.panelFerramentasSubMenu.TabIndex = 7;
             // 
             // btnImagens
@@ -219,16 +221,37 @@ namespace Trabalho_Mercado_Online.Views
             this.btnImagens.ForeColor = System.Drawing.Color.White;
             this.btnImagens.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_img;
             this.btnImagens.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImagens.Location = new System.Drawing.Point(0, 0);
+            this.btnImagens.Location = new System.Drawing.Point(0, 45);
             this.btnImagens.Name = "btnImagens";
             this.btnImagens.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnImagens.Size = new System.Drawing.Size(200, 45);
-            this.btnImagens.TabIndex = 4;
+            this.btnImagens.TabIndex = 5;
             this.btnImagens.Text = "Imagens";
             this.btnImagens.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnImagens.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImagens.UseVisualStyleBackColor = false;
             this.btnImagens.Click += new System.EventHandler(this.btnImagens_Click);
+            // 
+            // btnEncarte
+            // 
+            this.btnEncarte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
+            this.btnEncarte.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEncarte.FlatAppearance.BorderSize = 0;
+            this.btnEncarte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEncarte.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEncarte.ForeColor = System.Drawing.Color.White;
+            this.btnEncarte.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_grid_Image;
+            this.btnEncarte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEncarte.Location = new System.Drawing.Point(0, 0);
+            this.btnEncarte.Name = "btnEncarte";
+            this.btnEncarte.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnEncarte.Size = new System.Drawing.Size(200, 45);
+            this.btnEncarte.TabIndex = 4;
+            this.btnEncarte.Text = "Encarte";
+            this.btnEncarte.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEncarte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEncarte.UseVisualStyleBackColor = false;
+            this.btnEncarte.Click += new System.EventHandler(this.btnEncarte_Click);
             // 
             // btnFerramentas
             // 
@@ -489,6 +512,7 @@ namespace Trabalho_Mercado_Online.Views
         public System.Windows.Forms.Label lblFuncionario;
         private System.Windows.Forms.Button btnProdutosAccess;
         private System.Windows.Forms.Button btnAlimentarProdutos;
+        private System.Windows.Forms.Button btnEncarte;
         private System.Windows.Forms.Button btnImagens;
     }
 }

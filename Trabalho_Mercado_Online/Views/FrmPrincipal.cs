@@ -252,7 +252,12 @@ namespace Trabalho_Mercado_Online.Views
             openChildForm(new FrmProdutosAccess());
         }
 
-        
+        private void btnEncarte_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FrmEncarte());
+        }
+
+
 
         //Botoes de Sair
         private void btnSair_Click(object sender, EventArgs e)
