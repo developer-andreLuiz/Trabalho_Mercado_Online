@@ -9,18 +9,18 @@ namespace Trabalho_Mercado_Online.DAO
 {
     class ProdutosCategoriaDAO
     {
-        public static ProdutosCategoria Get(int id)
+        public static ProdutosCategorium Get(int id)
         {
-            ProdutosCategoria obj = new ProdutosCategoria();
+            ProdutosCategorium obj = new ProdutosCategorium();
             using (var banco = new DBContextDAO())
             {
                 obj = banco.ProdutosCategoria.AsNoTracking().FirstOrDefault(x => x.Id == id);
             }
             return obj;
         }
-        public static List<ProdutosCategoria> GetAll()
+        public static List<ProdutosCategorium> GetAll()
         {
-            List<ProdutosCategoria> Lista = new List<ProdutosCategoria>();
+            List<ProdutosCategorium> Lista = new List<ProdutosCategorium>();
             try
             {
                 using (var banco = new DBContextDAO())
@@ -33,7 +33,7 @@ namespace Trabalho_Mercado_Online.DAO
            
             return Lista;
         }
-        public static bool Insert(ProdutosCategoria obj)
+        public static bool Insert(ProdutosCategorium obj)
         {
             int retorno = 0;
             using (var banco = new DBContextDAO())
@@ -50,7 +50,7 @@ namespace Trabalho_Mercado_Online.DAO
                 return false;
             }
         }
-        public static bool Update(ProdutosCategoria obj)
+        public static bool Update(ProdutosCategorium obj)
         {
             int retorno = 0;
             using (var banco = new DBContextDAO())
@@ -67,7 +67,7 @@ namespace Trabalho_Mercado_Online.DAO
                 return false;
             }
         }
-        public static bool Delete(ProdutosCategoria obj)
+        public static bool Delete(ProdutosCategorium obj)
         {
             int retorno = 0;
             using (var banco = new DBContextDAO())

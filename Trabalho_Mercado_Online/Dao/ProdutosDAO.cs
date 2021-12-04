@@ -10,18 +10,18 @@ namespace Trabalho_Mercado_Online.DAO
 {
     class ProdutosDAO
     {
-        public static Produtos Get(int id)
+        public static Produto Get(int id)
         {
-            Produtos obj = new Produtos();
+            Produto obj = new Produto();
             using (var banco = new DBContextDAO())
             {
                 obj = banco.Produtos.AsNoTracking().FirstOrDefault(x => x.Id == id);
             }
             return obj;
         }
-        public static List<Produtos> GetAll()
+        public static List<Produto> GetAll()
         {
-            List<Produtos> Lista = new List<Produtos>();
+            List<Produto> Lista = new List<Produto>();
             try
             {
                 using (var banco = new DBContextDAO())
@@ -34,7 +34,7 @@ namespace Trabalho_Mercado_Online.DAO
             
             return Lista;
         }
-        public static Produtos Insert(Produtos obj)
+        public static Produto Insert(Produto obj)
         {
             using (var banco = new DBContextDAO())
             {
@@ -43,7 +43,7 @@ namespace Trabalho_Mercado_Online.DAO
             }
             return obj;
         }
-        public static Produtos Update(Produtos obj)
+        public static Produto Update(Produto obj)
         {
             using (var banco = new DBContextDAO())
             {
@@ -52,7 +52,7 @@ namespace Trabalho_Mercado_Online.DAO
             }
             return obj;
         }
-        public static bool Delete(Produtos obj)
+        public static bool Delete(Produto obj)
         {
             int retorno = 0;
             using (var banco = new DBContextDAO())

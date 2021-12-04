@@ -11,12 +11,12 @@ namespace Trabalho_Mercado_Online.Controllers
 {
     class ProdutosController
     {
-        public static List<Produtos> GetAll()
+        public static List<Produto> GetAll()
         {
-            List<Produtos> Lista = ProdutosDAO.GetAll();
+            List<Produto> Lista = ProdutosDAO.GetAll();
             return Lista;
         }
-        public static Produtos Gravar(Produtos obj)
+        public static Produto Gravar(Produto obj)
         {
             if (obj.Id > 0)
             {
@@ -25,7 +25,7 @@ namespace Trabalho_Mercado_Online.Controllers
 
                 if (obj.IgualaProduto>0)
                 {
-                    List<Produtos> ListaIguala = ProdutosDAO.GetAll().FindAll(x=>x.IgualaProduto==obj.IgualaProduto);
+                    List<Produto> ListaIguala = ProdutosDAO.GetAll().FindAll(x=>x.IgualaProduto==obj.IgualaProduto);
                     foreach (var item in ListaIguala)
                     {
                         item.ValorVenda = obj.ValorVenda;
@@ -47,7 +47,7 @@ namespace Trabalho_Mercado_Online.Controllers
             }
             return obj;
         }
-        public static bool Deletar(Produtos obj)
+        public static bool Deletar(Produto obj)
         {
             bool r = true;
 

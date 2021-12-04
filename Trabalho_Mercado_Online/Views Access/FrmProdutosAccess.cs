@@ -18,7 +18,7 @@ namespace Trabalho_Mercado_Online.Views_Access
         #region Funções
         void AtualizarProduto()
         {
-            Global.Listas.Produtos = ProdutosController.GetAll();
+            Global.Listas.Produto = ProdutosController.GetAll();
             Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
         }
         void Filtrar()

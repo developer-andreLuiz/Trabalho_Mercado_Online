@@ -111,7 +111,7 @@ namespace Trabalho_Mercado_Online.Views_Access
         void AtualizarListas()
         {
 
-            Global.Listas.Produtos = ProdutosController.GetAll();
+            Global.Listas.Produto = ProdutosController.GetAll();
             Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
         }
         public void Filtrar()
@@ -476,9 +476,9 @@ namespace Trabalho_Mercado_Online.Views_Access
                    
                     //Todos os Codigo deste produto
                     var listacodigosproduto = Lista_Codigos_Barras.FindAll(x=>x.Codigo.Equals(produto_access.Codigo.ToString()));
-                    var pesquisaProduto = Global.Listas.Produtos.FindAll(x=>x.CodigoLoja.Equals(produtoselecionado));
-                    
-                    Produtos produto_Online = new Produtos();
+                    var pesquisaProduto = Global.Listas.Produto.FindAll(x=>x.CodigoLoja.Equals(produtoselecionado));
+
+                    Produto produto_Online = new Produto();
                     //inserir produto
                     if (pesquisaProduto.Count==0)
                     {
@@ -505,7 +505,7 @@ namespace Trabalho_Mercado_Online.Views_Access
                         produto_Online.Informacao = string.Empty;
 
                         produto_Online=ProdutosController.Gravar(produto_Online);
-                        Global.Listas.Produtos.Add(produto_Online);
+                        Global.Listas.Produto.Add(produto_Online);
                     }
                     else
                     {

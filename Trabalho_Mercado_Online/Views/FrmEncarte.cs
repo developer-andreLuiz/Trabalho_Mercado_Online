@@ -24,14 +24,6 @@ namespace Trabalho_Mercado_Online.Views
         }
         #endregion
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtProduto_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

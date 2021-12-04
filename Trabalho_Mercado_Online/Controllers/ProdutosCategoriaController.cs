@@ -10,12 +10,12 @@ namespace Trabalho_Mercado_Online.Controllers
 {
     class ProdutosCategoriaController
     {
-        public static List<ProdutosCategoria> GetAll()
+        public static List<ProdutosCategorium> GetAll()
         {
-            List<ProdutosCategoria> Lista = ProdutosCategoriaDAO.GetAll();
+            List<ProdutosCategorium> Lista = ProdutosCategoriaDAO.GetAll();
             return Lista;
         }
-        public static ProdutosCategoria Gravar(ProdutosCategoria obj)
+        public static ProdutosCategorium Gravar(ProdutosCategorium obj)
         {
             if (obj.Id > 0)
             {
@@ -27,7 +27,7 @@ namespace Trabalho_Mercado_Online.Controllers
             }
             return obj;
         }
-        public static bool Deletar(ProdutosCategoria obj)
+        public static bool Deletar(ProdutosCategorium obj)
         {
             bool r = false;
             try

@@ -30,7 +30,6 @@ namespace Trabalho_Mercado_Online.DAO
                 }
             }
             catch { }
-            
             return Lista;
         }
         public static CategoriasNivel1 Insert(CategoriasNivel1 obj)

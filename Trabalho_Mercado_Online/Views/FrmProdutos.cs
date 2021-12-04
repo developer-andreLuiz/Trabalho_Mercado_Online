@@ -44,7 +44,7 @@ namespace Trabalho_Mercado_Online.Views
         public void Filtrar()
         {
             List<ProdutosDataGrid> ListaGrid = new List<ProdutosDataGrid>();
-            List<Produtos> ListaProdutos = new List<Produtos>();
+            List<Produto> ListaProdutos = new List<Produto>();
 
             bool descricao = !String.IsNullOrEmpty(txtDescricao.Text);
             bool promocao = chkPromocao.Checked;
@@ -59,7 +59,7 @@ namespace Trabalho_Mercado_Online.Views
             bool categoriaNivel2 = chkCategoriaNivel2.Checked;
             bool categoriaNivel3 = chkCategoriaNivel3.Checked;
             //Sem Filtro
-            ListaProdutos.AddRange(Global.Listas.Produtos);
+            ListaProdutos.AddRange(Global.Listas.Produto);
 
             if (descricao)
             {
@@ -95,7 +95,7 @@ namespace Trabalho_Mercado_Online.Views
             {
                 foreach (var item in Global.Listas.ProdutosCategoria)
                 {
-                    Produtos p = new Produtos();
+                    Produto p = new Produto();
                     p = ListaProdutos.Find(x => x.Id == item.CodigoProduto);
                     ListaProdutos.Remove(p);
                 }
@@ -108,7 +108,7 @@ namespace Trabalho_Mercado_Online.Views
                     {
                         int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
                         var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel1 == valor1);
-                        List<Produtos> ListaBase = new List<Produtos>();
+                        List<Produto> ListaBase = new List<Produto>();
                         ListaBase.AddRange(ListaProdutos);
                         foreach (var item in ListaBase)
                         {
@@ -128,7 +128,7 @@ namespace Trabalho_Mercado_Online.Views
                         int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
                         int valor2 = int.Parse(cbNivel2.SelectedValue.ToString());
                         var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == valor2);
-                        List<Produtos> ListaBase = new List<Produtos>();
+                        List<Produto> ListaBase = new List<Produto>();
                         ListaBase.AddRange(ListaProdutos);
                         foreach (var item in ListaBase)
                         {
@@ -146,7 +146,7 @@ namespace Trabalho_Mercado_Online.Views
                     {
                         int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
                         var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == 0 && x.CategoriaNivel3 == 0);
-                        List<Produtos> ListaBase = new List<Produtos>();
+                        List<Produto> ListaBase = new List<Produto>();
                         ListaBase.AddRange(ListaProdutos);
                         foreach (var item in ListaBase)
                         {
@@ -169,7 +169,7 @@ namespace Trabalho_Mercado_Online.Views
                         int valor2 = int.Parse(cbNivel2.SelectedValue.ToString());
                         int valor3 = int.Parse(cbNivel3.SelectedValue.ToString());
                         var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == valor2 && x.CategoriaNivel3 == valor3);
-                        List<Produtos> ListaBase = new List<Produtos>();
+                        List<Produto> ListaBase = new List<Produto>();
                         ListaBase.AddRange(ListaProdutos);
                         foreach (var item in ListaBase)
                         {
@@ -190,7 +190,7 @@ namespace Trabalho_Mercado_Online.Views
                         int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
                         int valor2 = int.Parse(cbNivel2.SelectedValue.ToString());
                         var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == valor2 && x.CategoriaNivel3 == 0);
-                        List<Produtos> ListaBase = new List<Produtos>();
+                        List<Produto> ListaBase = new List<Produto>();
                         ListaBase.AddRange(ListaProdutos);
                         foreach (var item in ListaBase)
                         {
@@ -282,12 +282,12 @@ namespace Trabalho_Mercado_Online.Views
         public void FiltrarCategorias(int categoria)
         {
             List<ProdutosDataGrid> ListaGrid = new List<ProdutosDataGrid>();
-            List<Produtos> ListaProdutos = new List<Produtos>();
+            List<Produto> ListaProdutos = new List<Produto>();
            
 
 
             //Sem Filtro
-            ListaProdutos.AddRange(Global.Listas.Produtos);
+            ListaProdutos.AddRange(Global.Listas.Produto);
            
             if (categoria==1)
             {
@@ -295,7 +295,7 @@ namespace Trabalho_Mercado_Online.Views
                 {
                     int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
                     var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel1 == valor1);
-                    List<Produtos> ListaBase = new List<Produtos>();
+                    List<Produto> ListaBase = new List<Produto>();
                     ListaBase.AddRange(ListaProdutos);
                     foreach (var item in ListaBase)
                     {
@@ -314,7 +314,7 @@ namespace Trabalho_Mercado_Online.Views
                    
                     int valor2 = int.Parse(cbNivel2.SelectedValue.ToString());
                     var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel2 == valor2);
-                    List<Produtos> ListaBase = new List<Produtos>();
+                    List<Produto> ListaBase = new List<Produto>();
                     ListaBase.AddRange(ListaProdutos);
                     foreach (var item in ListaBase)
                     {
@@ -333,7 +333,7 @@ namespace Trabalho_Mercado_Online.Views
 
                     int valor3 = int.Parse(cbNivel3.SelectedValue.ToString());
                     var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel3 == valor3);
-                    List<Produtos> ListaBase = new List<Produtos>();
+                    List<Produto> ListaBase = new List<Produto>();
                     ListaBase.AddRange(ListaProdutos);
                     foreach (var item in ListaBase)
                     {
@@ -429,7 +429,7 @@ namespace Trabalho_Mercado_Online.Views
         //Listas
         public void AtualizarListas()
         {
-            Global.Listas.Produtos = ProdutosController.GetAll();
+            Global.Listas.Produto = ProdutosController.GetAll();
             Global.Listas.ProdutosCategoria = ProdutosCategoriaController.GetAll();
             Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
             Global.Listas.CategoriasNivel1 = CategoriasNivel1Controller.GetAll();
@@ -599,7 +599,7 @@ namespace Trabalho_Mercado_Online.Views
         //Buttons
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            openChildForm(new FrmProduto(new Produtos(),new List<int>()));
+            openChildForm(new FrmProduto(new Produto(),new List<int>()));
         }
         private void btnLimparPromocoes_Click(object sender, EventArgs e)
         {
@@ -611,11 +611,11 @@ namespace Trabalho_Mercado_Online.Views
                     var valor = dataGridView.SelectedRows[i].Cells[0].Value;
 
                     int id = int.Parse(valor.ToString());
-                    Produtos p = Global.Listas.Produtos.Find(x => x.Id == id);
+                    Produto p = Global.Listas.Produto.Find(x => x.Id == id);
                     p.ValorPromocao = 0;
                     ProdutosController.Gravar(p);
                 }
-                Global.Listas.Produtos = ProdutosController.GetAll();
+                Global.Listas.Produto = ProdutosController.GetAll();
                 Filtrar();
                 MessageBox.Show("Promoções Apagadas");
             }
@@ -675,10 +675,10 @@ namespace Trabalho_Mercado_Online.Views
                         var valor = dataGridView.SelectedRows[i].Cells[0].Value;
 
                         int id = int.Parse(valor.ToString());
-                        ProdutosCategoria p = Global.Listas.ProdutosCategoria.Find(x => x.CodigoProduto == id && x.CategoriaNivel1 == nivel1 && x.CategoriaNivel2 == nivel2 && x.CategoriaNivel3 == nivel3);
+                        ProdutosCategorium p = Global.Listas.ProdutosCategoria.Find(x => x.CodigoProduto == id && x.CategoriaNivel1 == nivel1 && x.CategoriaNivel2 == nivel2 && x.CategoriaNivel3 == nivel3);
                         if (p == null)
                         {
-                            p = new ProdutosCategoria();
+                            p = new ProdutosCategorium();
                             p.Id = 0;
                             p.CodigoProduto = id;
                             p.CategoriaNivel1 = nivel1;
@@ -755,7 +755,7 @@ namespace Trabalho_Mercado_Online.Views
                         int id = int.Parse(valor.ToString());
 
 
-                        ProdutosCategoria p = Global.Listas.ProdutosCategoria.Find(x => x.CodigoProduto == id && x.CategoriaNivel1 == nivel1 && x.CategoriaNivel2 == nivel2 && x.CategoriaNivel3 == nivel3);
+                        ProdutosCategorium p = Global.Listas.ProdutosCategoria.Find(x => x.CodigoProduto == id && x.CategoriaNivel1 == nivel1 && x.CategoriaNivel2 == nivel2 && x.CategoriaNivel3 == nivel3);
                         if (p != null)
                         {
                             ProdutosCategoriaController.Deletar(p);
@@ -828,7 +828,7 @@ namespace Trabalho_Mercado_Online.Views
 
 
 
-                openChildForm(new FrmProduto(new Produtos(), lista));
+                openChildForm(new FrmProduto(new Produto(), lista));
             }
             else
             {
@@ -846,7 +846,7 @@ namespace Trabalho_Mercado_Online.Views
             catch { }
             if (id > 0)
             {
-                openChildForm(new FrmProduto(Global.Listas.Produtos.Find(x => x.Id == id),new List<int>()));
+                openChildForm(new FrmProduto(Global.Listas.Produto.Find(x => x.Id == id),new List<int>()));
             }
         }
         private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -890,7 +890,7 @@ namespace Trabalho_Mercado_Online.Views
                             ProdutosCodigoBarra p = Global.Listas.ProdutosCodigoBarra.Find(x => x.CodigoBarra.Equals(txt));
                             if (p != null)
                             {
-                                openChildForm(new FrmProduto(Global.Listas.Produtos.Find(x => x.Id == p.CodigoProduto),new List<int>()));
+                                openChildForm(new FrmProduto(Global.Listas.Produto.Find(x => x.Id == p.CodigoProduto),new List<int>()));
                             }
                             else
                             {
@@ -901,7 +901,7 @@ namespace Trabalho_Mercado_Online.Views
                         else
                         {
                             int valor = int.Parse(txt);
-                            Produtos p = Global.Listas.Produtos.Find(x => x.Id == valor);
+                            Produto p = Global.Listas.Produto.Find(x => x.Id == valor);
                             if (p != null)
                             {
                                 openChildForm(new FrmProduto(p, new List<int>()));

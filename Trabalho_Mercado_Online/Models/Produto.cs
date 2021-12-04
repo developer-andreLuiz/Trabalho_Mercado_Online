@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Trabalho_Mercado_Online.Models
 {
-    public partial class Produtos
+    public partial class Produto
     {
         public int Id { get; set; }
         public string Descricao { get; set; }

@@ -1,41 +1,45 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Trabalho_Mercado_Online.Models;
 
 #nullable disable
 
-namespace Trabalho_Mercado_Online.DAO
+namespace Trabalho_Mercado_Online.Models
 {
-    public partial class DBContextDAO:DbContext
+    public partial class DBContextDAO : DbContext
     {
         public DBContextDAO()
         {
         }
-        public DBContextDAO(DbContextOptions<DBContextDAO> options) : base(options)
-        {
 
+        public DBContextDAO(DbContextOptions<DBContextDAO> options)
+            : base(options)
+        {
         }
+
         public virtual DbSet<Bairro> Bairros { get; set; }
         public virtual DbSet<Carrinho> Carrinhos { get; set; }
         public virtual DbSet<CategoriasNivel1> CategoriasNivel1s { get; set; }
         public virtual DbSet<CategoriasNivel2> CategoriasNivel2s { get; set; }
         public virtual DbSet<CategoriasNivel3> CategoriasNivel3s { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
+        public virtual DbSet<Encarte> Encartes { get; set; }
         public virtual DbSet<Estado> Estados { get; set; }
         public virtual DbSet<LocaisEntrega> LocaisEntregas { get; set; }
         public virtual DbSet<Municipio> Municipios { get; set; }
-        public virtual DbSet<Produtos> Produtos { get; set; }
-        public virtual DbSet<ProdutosCategoria> ProdutosCategoria { get; set; }
+        public virtual DbSet<Produto> Produtos { get; set; }
+        public virtual DbSet<ProdutosCategorium> ProdutosCategoria { get; set; }
         public virtual DbSet<ProdutosCodigoBarra> ProdutosCodigoBarras { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseMySql("server=dbmercado.mysql.database.azure.com;port=3306;database=db_mercado_online;uid=root_andre;pwd=SistemaValendo1;sslmode=none;connect timeout=30", Microsoft.EntityFrameworkCore.ServerVersion.Parse("5.6.41-mysql"));
+                optionsBuilder.UseMySql("server=dbmercado.mysql.database.azure.com;userid=root_andre;password=SistemaValendo1;database=db_mercado_online;sslmode=none;connect timeout=30", Microsoft.EntityFrameworkCore.ServerVersion.Parse("5.7.32-mysql"));
             }
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasCharSet("utf8")
@@ -270,6 +274,119 @@ namespace Trabalho_Mercado_Online.DAO
                     .HasComment("saldo do cliente");
             });
 
+            modelBuilder.Entity<Encarte>(entity =>
+            {
+                entity.ToTable("encarte");
+
+                entity.Property(e => e.Id)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("id");
+
+                entity.Property(e => e.Img1)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img1");
+
+                entity.Property(e => e.Img10)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img10");
+
+                entity.Property(e => e.Img11)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img11");
+
+                entity.Property(e => e.Img12)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img12");
+
+                entity.Property(e => e.Img13)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img13");
+
+                entity.Property(e => e.Img14)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img14");
+
+                entity.Property(e => e.Img15)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img15");
+
+                entity.Property(e => e.Img16)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img16");
+
+                entity.Property(e => e.Img17)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img17");
+
+                entity.Property(e => e.Img18)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img18");
+
+                entity.Property(e => e.Img2)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img2");
+
+                entity.Property(e => e.Img3)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img3");
+
+                entity.Property(e => e.Img4)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img4");
+
+                entity.Property(e => e.Img5)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img5");
+
+                entity.Property(e => e.Img6)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img6");
+
+                entity.Property(e => e.Img7)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img7");
+
+                entity.Property(e => e.Img8)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img8");
+
+                entity.Property(e => e.Img9)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img9");
+
+                entity.Property(e => e.Nome)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("nome");
+
+                entity.Property(e => e.Quantidade)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("quantidade");
+
+                entity.Property(e => e.Validade)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("validade");
+            });
+
             modelBuilder.Entity<Estado>(entity =>
             {
                 entity.ToTable("estados");
@@ -353,7 +470,7 @@ namespace Trabalho_Mercado_Online.DAO
                     .HasComment("nome do municipio");
             });
 
-            modelBuilder.Entity<Produtos>(entity =>
+            modelBuilder.Entity<Produto>(entity =>
             {
                 entity.ToTable("produtos");
 
@@ -445,7 +562,7 @@ namespace Trabalho_Mercado_Online.DAO
                     .HasComment("30 - caixa volume =100 (cabe 3 na caixa)volume do produto\n");
             });
 
-            modelBuilder.Entity<ProdutosCategoria>(entity =>
+            modelBuilder.Entity<ProdutosCategorium>(entity =>
             {
                 entity.ToTable("produtos_categoria");
 
@@ -506,6 +623,7 @@ namespace Trabalho_Mercado_Online.DAO
 
             OnModelCreatingPartial(modelBuilder);
         }
+
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

@@ -41,9 +41,6 @@ D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\M
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Mercado Online.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Mercado Online.pdb
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmProduto.resources
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\MMLib.Core.dll
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\MMLib.Extensions.dll
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.csproj.AssemblyReference.cache
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\System.CodeDom.dll
@@ -71,3 +68,5 @@ D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\S
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\System.Diagnostics.PerformanceCounter.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Data.OleDb.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmEncarte.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmPesquisarImagem.resources

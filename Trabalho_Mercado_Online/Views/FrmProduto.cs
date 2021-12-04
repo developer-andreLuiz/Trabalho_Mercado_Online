@@ -51,7 +51,7 @@ namespace Trabalho_Mercado_Online.Views
         }
 
         //Dados
-        Retorno CapturarDados(Produtos obj)
+        Retorno CapturarDados(Produto obj)
         {
             Retorno retorno = new Retorno();
 
@@ -197,7 +197,7 @@ namespace Trabalho_Mercado_Online.Views
 
             return retorno;
         }
-        void ExibirDados(Produtos obj)
+        void ExibirDados(Produto obj)
         {
             Limpar();
             lblId.Text = obj.Id.ToString();
@@ -299,7 +299,7 @@ namespace Trabalho_Mercado_Online.Views
         string RetornoUltimoIguala()
         {
             int r = 0;
-            foreach (var item in Global.Listas.Produtos)
+            foreach (var item in Global.Listas.Produto)
             {
                 if (item.IgualaProduto>r)
                 {
@@ -484,7 +484,7 @@ namespace Trabalho_Mercado_Online.Views
         #endregion
 
         #region Eventos 
-        public FrmProduto(Produtos obj,List<int>ListaIdLocal)
+        public FrmProduto(Produto obj,List<int>ListaIdLocal)
         {
             InitializeComponent();
             AberturaForm();
@@ -494,7 +494,7 @@ namespace Trabalho_Mercado_Online.Views
             {
                 ListaId.AddRange(ListaIdLocal);
                 ListaId.Sort((x,y) => x.CompareTo(y));
-                Produtos p = Global.Listas.Produtos.Find(x=>x.Id==ListaId[0]);
+                Produto p = Global.Listas.Produto.Find(x=>x.Id==ListaId[0]);
                 lblListaItens.Visible = true;
                 lblListaItens.Text = ListaId.Count+ " Itens na Lista";
                 ExibirDados(p);
@@ -546,7 +546,7 @@ namespace Trabalho_Mercado_Online.Views
         }
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            Produtos p = new Produtos();
+            Produto p = new Produto();
             ProdutosCodigoBarra pCB = new ProdutosCodigoBarra();
 
             var retorno = CapturarDados(p);
@@ -573,7 +573,7 @@ namespace Trabalho_Mercado_Online.Views
                     }
                 }
                 
-                Global.Listas.Produtos = ProdutosController.GetAll();
+                Global.Listas.Produto = ProdutosController.GetAll();
                
                 ExibirDados(p);
                 BtnGravarLayout();
@@ -594,16 +594,16 @@ namespace Trabalho_Mercado_Online.Views
                 {
                     AberturaForm();
                     Limpar();
-                    if (Global.Listas.Produtos.Count>0)
+                    if (Global.Listas.Produto.Count>0)
                     {
                         if (ultimoProduto>0)
                         {
-                            var p = Global.Listas.Produtos.Find(x => x.Id == ultimoProduto);
+                            var p = Global.Listas.Produto.Find(x => x.Id == ultimoProduto);
                             ExibirDados(p);
                         }
                         else
                         {
-                            var p = Global.Listas.Produtos[0];
+                            var p = Global.Listas.Produto[0];
                             ExibirDados(p);
                         }
                     }
@@ -620,7 +620,7 @@ namespace Trabalho_Mercado_Online.Views
                         dialog = MessageBox.Show("ATENÇÃO! Tem Certeza? O Registro será Deletado.", "Perigo!", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
                         if (dialog == DialogResult.Yes)
                         {
-                            var p = Global.Listas.Produtos.Find(x => x.Id == int.Parse(lblId.Text));
+                            var p = Global.Listas.Produto.Find(x => x.Id == int.Parse(lblId.Text));
                             ProdutosController.Deletar(p);
                             BlobStorage.Deletar("produtos", p.Id.ToString());
 
@@ -643,14 +643,14 @@ namespace Trabalho_Mercado_Online.Views
                             {
                                 ProdutosCodigoBarraController.Deletar(item);
                             }
-                            Global.Listas.Produtos = ProdutosController.GetAll();
+                            Global.Listas.Produto = ProdutosController.GetAll();
                             Global.Listas.ProdutosCategoria = ProdutosCategoriaController.GetAll();
                             Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
                             Limpar();
                             AberturaForm();
-                            if (Global.Listas.Produtos.Count > 0)
+                            if (Global.Listas.Produto.Count > 0)
                             {
-                                ExibirDados(Global.Listas.Produtos[0]);
+                                ExibirDados(Global.Listas.Produto[0]);
                             }
                             MessageBox.Show("Atualizado", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -839,7 +839,7 @@ namespace Trabalho_Mercado_Online.Views
                     {
                         Limpar();
                         AberturaForm();
-                        var produto = Global.Listas.Produtos.Find(x => x.Id == pCodigoBarra.CodigoProduto);
+                        var produto = Global.Listas.Produto.Find(x => x.Id == pCodigoBarra.CodigoProduto);
                         ExibirDados(produto);
                     }
                 }
@@ -856,7 +856,7 @@ namespace Trabalho_Mercado_Online.Views
                     if (int.TryParse(txtPesquisar.Text, out int v1))
                     {
                         int codigo = int.Parse(txtPesquisar.Text);
-                        var produto = Global.Listas.Produtos.Find(x => x.Id == codigo);
+                        var produto = Global.Listas.Produto.Find(x => x.Id == codigo);
                         if (produto != null)
                         {
                             bool continuar = true;
@@ -917,10 +917,10 @@ namespace Trabalho_Mercado_Online.Views
                     continuar = false;
                 }
             }
-            if (continuar && Global.Listas.Produtos.Count>0)
+            if (continuar && Global.Listas.Produto.Count>0)
             {
-                var ListaProdutos = new List<Produtos>();
-                ListaProdutos.AddRange(Global.Listas.Produtos);
+                var ListaProdutos = new List<Produto>();
+                ListaProdutos.AddRange(Global.Listas.Produto);
                 ListaProdutos.Sort((x,y)=>x.Id.CompareTo(y.Id));
                 Limpar();
                 AberturaForm();
@@ -945,10 +945,10 @@ namespace Trabalho_Mercado_Online.Views
                     continuar = false;
                 }
             }
-            if (continuar && Global.Listas.Produtos.Count > 0)
+            if (continuar && Global.Listas.Produto.Count > 0)
             {
-                var ListaProdutos = new List<Produtos>();
-                ListaProdutos.AddRange(Global.Listas.Produtos);
+                var ListaProdutos = new List<Produto>();
+                ListaProdutos.AddRange(Global.Listas.Produto);
                 ListaProdutos.Sort((x, y) => x.Id.CompareTo(y.Id));
                 int idAtual = int.Parse(lblId.Text);
                 Limpar();
@@ -1001,10 +1001,10 @@ namespace Trabalho_Mercado_Online.Views
                     continuar = false;
                 }
             }
-            if (continuar && Global.Listas.Produtos.Count > 0)
+            if (continuar && Global.Listas.Produto.Count > 0)
             {
-                var ListaProdutos = new List<Produtos>();
-                ListaProdutos.AddRange(Global.Listas.Produtos);
+                var ListaProdutos = new List<Produto>();
+                ListaProdutos.AddRange(Global.Listas.Produto);
                 ListaProdutos.Sort((x, y) => x.Id.CompareTo(y.Id));
                 int idAtual = int.Parse(lblId.Text);
                 Limpar();
@@ -1057,11 +1057,11 @@ namespace Trabalho_Mercado_Online.Views
                     continuar = false;
                 }
             }
-            if (continuar && Global.Listas.Produtos.Count > 0)
+            if (continuar && Global.Listas.Produto.Count > 0)
             {
 
-                var ListaProdutos = new List<Produtos>();
-                ListaProdutos.AddRange(Global.Listas.Produtos);
+                var ListaProdutos = new List<Produto>();
+                ListaProdutos.AddRange(Global.Listas.Produto);
                 ListaProdutos.Sort((x, y) => x.Id.CompareTo(y.Id));
                 Limpar();
                 AberturaForm();
