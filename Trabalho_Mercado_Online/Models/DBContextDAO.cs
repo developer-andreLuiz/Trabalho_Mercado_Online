@@ -24,6 +24,7 @@ namespace Trabalho_Mercado_Online.Models
         public virtual DbSet<CategoriasNivel3> CategoriasNivel3s { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<Encarte> Encartes { get; set; }
+        public virtual DbSet<EncarteItem> EncarteItems { get; set; }
         public virtual DbSet<Estado> Estados { get; set; }
         public virtual DbSet<LocaisEntrega> LocaisEntregas { get; set; }
         public virtual DbSet<Municipio> Municipios { get; set; }
@@ -282,109 +283,47 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("int(11)")
                     .HasColumnName("id");
 
-                entity.Property(e => e.Img1)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("img1");
-
-                entity.Property(e => e.Img10)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("img10");
-
-                entity.Property(e => e.Img11)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("img11");
-
-                entity.Property(e => e.Img12)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("img12");
-
-                entity.Property(e => e.Img13)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("img13");
-
-                entity.Property(e => e.Img14)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("img14");
-
-                entity.Property(e => e.Img15)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("img15");
-
-                entity.Property(e => e.Img16)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("img16");
-
-                entity.Property(e => e.Img17)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("img17");
-
-                entity.Property(e => e.Img18)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("img18");
-
-                entity.Property(e => e.Img2)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("img2");
-
-                entity.Property(e => e.Img3)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("img3");
-
-                entity.Property(e => e.Img4)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("img4");
-
-                entity.Property(e => e.Img5)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("img5");
-
-                entity.Property(e => e.Img6)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("img6");
-
-                entity.Property(e => e.Img7)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("img7");
-
-                entity.Property(e => e.Img8)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("img8");
-
-                entity.Property(e => e.Img9)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("img9");
-
                 entity.Property(e => e.Nome)
                     .IsRequired()
                     .HasMaxLength(255)
                     .HasColumnName("nome");
 
-                entity.Property(e => e.Quantidade)
-                    .HasColumnType("int(11)")
-                    .HasColumnName("quantidade");
-
                 entity.Property(e => e.Validade)
                     .IsRequired()
                     .HasMaxLength(255)
                     .HasColumnName("validade");
+            });
+
+            modelBuilder.Entity<EncarteItem>(entity =>
+            {
+                entity.ToTable("encarte_item");
+
+                entity.Property(e => e.Id)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("id");
+
+                entity.Property(e => e.IdEncarte)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("id_encarte");
+
+                entity.Property(e => e.Img)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("img");
+
+                entity.Property(e => e.Pos)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("pos");
+
+                entity.Property(e => e.Produto)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("produto");
+
+                entity.Property(e => e.Valor)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("valor");
             });
 
             modelBuilder.Entity<Estado>(entity =>
