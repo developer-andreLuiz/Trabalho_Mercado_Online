@@ -111,7 +111,7 @@ namespace Trabalho_Mercado_Online.Views_Access
         void AtualizarListas()
         {
 
-            Global.Listas.Produto = ProdutosController.GetAll();
+            Global.Listas.Produto = ProdutoController.GetAll();
             Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
         }
         public void Filtrar()
@@ -504,7 +504,7 @@ namespace Trabalho_Mercado_Online.Views_Access
                         produto_Online.Validade = true;
                         produto_Online.Informacao = string.Empty;
 
-                        produto_Online=ProdutosController.Gravar(produto_Online);
+                        produto_Online=ProdutoController.Gravar(produto_Online);
                         Global.Listas.Produto.Add(produto_Online);
                     }
                     else

@@ -9,11 +9,11 @@ using Trabalho_Mercado_Online.Models;
 
 namespace Trabalho_Mercado_Online.Controllers
 {
-    class ProdutosController
+    class ProdutoController
     {
         public static List<Produto> GetAll()
         {
-            List<Produto> Lista = ProdutosDAO.GetAll();
+            List<Produto> Lista = ProdutoDAO.GetAll();
             return Lista;
         }
         public static Produto Gravar(Produto obj)
@@ -21,11 +21,11 @@ namespace Trabalho_Mercado_Online.Controllers
             if (obj.Id > 0)
             {
                 obj.Img = @"https://aplicativo.blob.core.windows.net/produtos/" + obj.Id + ".jpg";
-                obj = ProdutosDAO.Update(obj);
+                obj = ProdutoDAO.Update(obj);
 
                 if (obj.IgualaProduto>0)
                 {
-                    List<Produto> ListaIguala = ProdutosDAO.GetAll().FindAll(x=>x.IgualaProduto==obj.IgualaProduto);
+                    List<Produto> ListaIguala = ProdutoDAO.GetAll().FindAll(x=>x.IgualaProduto==obj.IgualaProduto);
                     foreach (var item in ListaIguala)
                     {
                         item.ValorVenda = obj.ValorVenda;
@@ -36,13 +36,13 @@ namespace Trabalho_Mercado_Online.Controllers
                         item.Gramatura = obj.Gramatura;
                         item.Embalagem = obj.Embalagem;
 
-                        ProdutosDAO.Update(item);
+                        ProdutoDAO.Update(item);
                     }
                 }
             }
             else
             {
-                obj = ProdutosDAO.Insert(obj);
+                obj = ProdutoDAO.Insert(obj);
                 obj = Gravar(obj);
             }
             return obj;
@@ -53,7 +53,7 @@ namespace Trabalho_Mercado_Online.Controllers
 
             try
             {
-                ProdutosDAO.Delete(obj);
+                ProdutoDAO.Delete(obj);
             }
             catch { r = false; }
 

@@ -429,7 +429,7 @@ namespace Trabalho_Mercado_Online.Views
         //Listas
         public void AtualizarListas()
         {
-            Global.Listas.Produto = ProdutosController.GetAll();
+            Global.Listas.Produto = ProdutoController.GetAll();
             Global.Listas.ProdutosCategoria = ProdutosCategoriaController.GetAll();
             Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
             Global.Listas.CategoriasNivel1 = CategoriasNivel1Controller.GetAll();
@@ -613,9 +613,9 @@ namespace Trabalho_Mercado_Online.Views
                     int id = int.Parse(valor.ToString());
                     Produto p = Global.Listas.Produto.Find(x => x.Id == id);
                     p.ValorPromocao = 0;
-                    ProdutosController.Gravar(p);
+                    ProdutoController.Gravar(p);
                 }
-                Global.Listas.Produto = ProdutosController.GetAll();
+                Global.Listas.Produto = ProdutoController.GetAll();
                 Filtrar();
                 MessageBox.Show("Promoções Apagadas");
             }

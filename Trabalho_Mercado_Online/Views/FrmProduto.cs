@@ -552,7 +552,7 @@ namespace Trabalho_Mercado_Online.Views
             var retorno = CapturarDados(p);
             if (retorno.Evento)
             {
-                p = ProdutosController.Gravar(p);
+                p = ProdutoController.Gravar(p);
                 BlobStorage.Upload("produtos",p.Id.ToString(),pathImagem);
 
                 if (novo)
@@ -573,7 +573,7 @@ namespace Trabalho_Mercado_Online.Views
                     }
                 }
                 
-                Global.Listas.Produto = ProdutosController.GetAll();
+                Global.Listas.Produto = ProdutoController.GetAll();
                
                 ExibirDados(p);
                 BtnGravarLayout();
@@ -621,7 +621,7 @@ namespace Trabalho_Mercado_Online.Views
                         if (dialog == DialogResult.Yes)
                         {
                             var p = Global.Listas.Produto.Find(x => x.Id == int.Parse(lblId.Text));
-                            ProdutosController.Deletar(p);
+                            ProdutoController.Deletar(p);
                             BlobStorage.Deletar("produtos", p.Id.ToString());
 
                             if (ListaId.Count>0)
@@ -643,7 +643,7 @@ namespace Trabalho_Mercado_Online.Views
                             {
                                 ProdutosCodigoBarraController.Deletar(item);
                             }
-                            Global.Listas.Produto = ProdutosController.GetAll();
+                            Global.Listas.Produto = ProdutoController.GetAll();
                             Global.Listas.ProdutosCategoria = ProdutosCategoriaController.GetAll();
                             Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
                             Limpar();
@@ -685,7 +685,11 @@ namespace Trabalho_Mercado_Online.Views
         private void btnImagensOnline_Click(object sender, EventArgs e)
         {
             pathImagem = string.Empty;
-            openChildForm(new FrmPesquisarImagem(this, txtDescricao.Text,pictureBox.ImageLocation));
+            openChildForm(new FrmPesquisarImagem(this));
+        }
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
         //Margem Venda
         private void txtCusto_Leave(object sender, EventArgs e)
@@ -1087,6 +1091,6 @@ namespace Trabalho_Mercado_Online.Views
             catch { }
         }
 
-        
+       
     }
 }

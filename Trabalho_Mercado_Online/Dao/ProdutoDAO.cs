@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Trabalho_Mercado_Online.DAO
 {
-    class ProdutosDAO
+    class ProdutoDAO
     {
         public static Produto Get(int id)
         {

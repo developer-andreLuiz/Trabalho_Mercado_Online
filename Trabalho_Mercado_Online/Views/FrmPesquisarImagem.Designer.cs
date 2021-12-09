@@ -340,7 +340,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnSelecionar.Name = "btnSelecionar";
             this.btnSelecionar.Size = new System.Drawing.Size(197, 50);
             this.btnSelecionar.TabIndex = 108;
-            this.btnSelecionar.Text = "    Selecionar";
+            this.btnSelecionar.Text = "       Salvar";
             this.btnSelecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSelecionar.UseVisualStyleBackColor = false;
             this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Net;
 using System.Text;
 
 namespace Trabalho_Mercado_Online.Helpers
@@ -76,7 +77,30 @@ namespace Trabalho_Mercado_Online.Helpers
            
 
         }
-        
+        public static Bitmap ImagemUrl(string url,int largura, int altura)
+        {
+            try
+            {
+
+                WebRequest request = WebRequest.Create(url);
+                WebResponse response = request.GetResponse();
+                Stream responseStream = response.GetResponseStream();
+                Bitmap bitmap2 = new Bitmap(responseStream);
+                Bitmap bitmap3 = (Bitmap)ImagemService.ResizeImage(bitmap2, 1000, 1200);
+
+                request.Abort();
+                response.Close();
+                response.Dispose();
+                responseStream.Dispose();
+                bitmap2.Dispose();
+
+                return bitmap3;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         static Image DiminuirImage(Image ImgLocal, int LarguraLocal, int AlturaLocal)
         {
             int larguraImg = ImgLocal.Width;

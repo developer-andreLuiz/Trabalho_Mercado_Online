@@ -16,7 +16,11 @@ namespace Trabalho_Mercado_Online.Views
     public partial class FrmPesquisarImagem : Form
     {
         #region Variaveis
-        FrmProduto frmProduto;
+        //formulario para passar imagem para produto
+        FrmProduto frmProduto = null;
+        //formulario para passar imagem para encarte
+        FrmEncarte frmEncarte = null;
+        
         WebBrowser Navegador = new WebBrowser();
         List<UrlService> ListaUrls = new List<UrlService>();
         Bitmap ImagemOriginal;
@@ -76,30 +80,6 @@ namespace Trabalho_Mercado_Online.Views
             panelImagens.VerticalScroll.Value = vertical;
             panelImagens.AutoScrollPosition = scrolled;
         }
-        Bitmap ImagemUrl(string url)
-        {
-            try
-            {
-               
-                WebRequest request = WebRequest.Create(url);
-                WebResponse response = request.GetResponse();
-                Stream responseStream = response.GetResponseStream();
-                Bitmap bitmap2 = new Bitmap(responseStream);
-                Bitmap bitmap3 = (Bitmap)ImagemService.ResizeImage(bitmap2,1000,1200);
-
-                request.Abort();
-                response.Close();
-                response.Dispose();
-                responseStream.Dispose();
-                bitmap2.Dispose();
-
-                return bitmap3;
-            }
-            catch
-            {
-                return null;
-            }
-        }
         void BaixarImagens20Imagens()
         {
             int max = 0;
@@ -110,7 +90,7 @@ namespace Trabalho_Mercado_Online.Views
                     break;
                 }
                 item.Verificada = true;
-                item.Img = ImagemUrl(item.Url);
+                item.Img = ImagemService.ImagemUrl(item.Url, 1000, 1200);
               
                 if (item.Img!=null)
                 {
@@ -132,7 +112,7 @@ namespace Trabalho_Mercado_Online.Views
                     break;
                 }
                 item.Verificada = true;
-                item.Img = ImagemUrl(item.Url);
+                item.Img = ImagemService.ImagemUrl(item.Url, 1000, 1200);
                 if (item.Img != null)
                 {
                     max++;
@@ -146,31 +126,39 @@ namespace Trabalho_Mercado_Online.Views
         #endregion
 
         #region Eventos
-        public FrmPesquisarImagem(FrmProduto frm, string txt, string imgTemp)
+        public FrmPesquisarImagem(FrmProduto frm)
         {
             InitializeComponent();
             Global.FinalizarThread();
+            panelImagens.MouseWheel += panelImagens_MouseWheel;
+            InitNavegador();
+            
             frmProduto = frm;
-            txtProduto.Text = txt;
-            panelImagens.MouseWheel += panelImagens_MouseWheel;
-            panelImagens.MouseWheel += panelImagens_MouseWheel;
-            if (imgTemp!=null)
+            txtProduto.Text = frm.txtDescricao.Text;
+            string imgTemp = frm.pictureBox.ImageLocation;
+            if (imgTemp != null)
             {
-                ImagemOriginal = ImagemUrl(imgTemp);
-                if (ImagemOriginal!=null)
+                ImagemOriginal = ImagemService.ImagemUrl(imgTemp, 1000, 1200);
+                if (ImagemOriginal != null)
                 {
                     Bitmap b = new Bitmap(ImagemOriginal);
                     pictureBox.BackgroundImage = b;
                 }
-               
             }
+        }
+        public FrmPesquisarImagem(FrmEncarte frm)
+        {
+            InitializeComponent();
+            Global.FinalizarThread();
+            panelImagens.MouseWheel += panelImagens_MouseWheel;
             InitNavegador();
+            frmEncarte = frm;
+          
         }
         public FrmPesquisarImagem()
         {
             InitializeComponent();
             Global.FinalizarThread();
-            btnSelecionar.Text = "   Exportar";
             panelImagens.MouseWheel += panelImagens_MouseWheel;
             InitNavegador();
         }
@@ -178,7 +166,14 @@ namespace Trabalho_Mercado_Online.Views
         {
             Button btn = (Button)sender;
             ImagemOriginal = new Bitmap(btn.BackgroundImage);
-            pictureBox.BackgroundImage = btn.BackgroundImage;
+            if (frmEncarte==null)
+            {
+                pictureBox.BackgroundImage = btn.BackgroundImage;
+            }
+            else
+            {
+               
+            }
         }
         private void btnFechar_Click(object sender, EventArgs e)
         {
@@ -186,39 +181,48 @@ namespace Trabalho_Mercado_Online.Views
         }
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
-            if (btnSelecionar.Text.Equals("    Selecionar"))
+            if (pictureBox.BackgroundImage != null)
             {
-                if (pictureBox.BackgroundImage != null)
+                //Apenas baixar imagem
+                if (frmProduto == null && frmEncarte == null)
                 {
-                    frmProduto.pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
-                    frmProduto.pictureBox.Image = null;
-                    frmProduto.pictureBox.BackgroundImage = null;
-                    ImagemService.SaveImg(pictureBox.BackgroundImage);
-                    frmProduto.pathImagem = System.IO.Directory.GetCurrentDirectory() + "\\Image.jpg";
-                    frmProduto.pictureBox.ImageLocation = frmProduto.pathImagem;
-
-                    this.Close();
-                }
-            }
-            else
-            {
-                
-                SaveFileDialog sf = new SaveFileDialog();
-                sf.Filter = "jpg(*.jpg)|*.jpg";
-                sf.Title = "Salvar um arquivo de imagem";
-                sf.FileName = txtProduto.Text;
-                if (sf.ShowDialog() == DialogResult.OK)
-                {
-                    if (pictureBox.BackgroundImage!=null)
+                    SaveFileDialog sf = new SaveFileDialog();
+                    sf.Filter = "jpg(*.jpg)|*.jpg";
+                    sf.Title = "Salvar um arquivo de imagem";
+                    sf.FileName = txtProduto.Text;
+                    if (sf.ShowDialog() == DialogResult.OK)
                     {
                         pictureBox.BackgroundImage.Save(sf.FileName);
                         chkRotEsquerda.Checked = false;
                         chkRotDireita.Checked = false;
                         nUD.Value = 1;
-
                     }
                 }
+                else
+                {
+                    //Produto
+                    if (frmProduto != null)
+                    {
+                        frmProduto.pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+                        frmProduto.pictureBox.Image = null;
+                        frmProduto.pictureBox.BackgroundImage = null;
+                        ImagemService.SaveImg(pictureBox.BackgroundImage);
+                        frmProduto.pathImagem = System.IO.Directory.GetCurrentDirectory() + "\\Image.jpg";
+                        frmProduto.pictureBox.ImageLocation = frmProduto.pathImagem;
+                        this.Close();
+                    }
+                    //Encarte
+                    if (frmEncarte != null)
+                    {
+                       
+                        this.Close();
+                    }
+
+
+
+                }
             }
+             
             Global.FinalizarThread();
         }
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -384,33 +388,48 @@ namespace Trabalho_Mercado_Online.Views
             {
                 try
                 {
-
+                    int larguraF = ImagemOriginal.Width;
+                    int AlturaF = ImagemOriginal.Height;
+                   
+                    
                     //numero de x que o picturebox é menor que o original
-                    int multplicador = ImagemOriginal.Height / pictureBox.Height;
+                    double multplicadorx = (double)ImagemOriginal.Width / pictureBox.Width;
+                    double multplicadory = (double)ImagemOriginal.Height / pictureBox.Height;
                     
                     //novo bitmap com imagem sem edição
-                    Bitmap bitmapOriginal = new Bitmap(ImagemOriginal);
+                    Bitmap bitmapOriginal = new Bitmap(pictureBox.BackgroundImage);
                     
                     //retangulo de seleção para corte
                     Rectangle rect = new Rectangle();
-                    rect.Location = new Point(retangulo.Location.X * multplicador, retangulo.Location.Y * multplicador);
-                    rect.Width = retangulo.Width * multplicador;
-                    rect.Height = retangulo.Height * multplicador;
+                    double RecX = retangulo.Location.X * multplicadorx;
+                    double RecY = retangulo.Location.Y * multplicadory;
+                    rect.Location = new Point((int)RecX,(int)RecY);
+
+                    double RecWid = retangulo.Width * multplicadorx;
+                    double RecHei = retangulo.Height * multplicadory;
+
+                    rect.Width = (int)RecWid;
+                    rect.Height = (int)RecHei;
                     retangulo = new Rectangle();
-                    
+
                     Bitmap bitmapCortado = bitmapOriginal.Clone(rect, bitmapOriginal.PixelFormat);
+
+
+
+                   
 
                     if (chkRotEsquerda.Checked)
                     {
                         bitmapCortado.RotateFlip(RotateFlipType.Rotate270FlipNone);
                     }
+                    chkRotEsquerda.Checked = false;
                     if (chkRotDireita.Checked)
                     {
                         bitmapCortado.RotateFlip(RotateFlipType.Rotate90FlipNone);
                     }
                     if (nUD.Value == 1)
                     {
-                        Bitmap imgFinal = (Bitmap)ImagemService.ResizeImage(bitmapCortado, 1000, 1200);
+                        Bitmap imgFinal = (Bitmap)ImagemService.ResizeImage(bitmapCortado, larguraF, AlturaF);
                         pictureBox.BackgroundImage = imgFinal;
                     }
                     else
@@ -426,7 +445,8 @@ namespace Trabalho_Mercado_Online.Views
                                 desenho.DrawImage(bitmapCortado, i * bitmapCortado.Width, 0);
                             }
 
-                            Bitmap imgFinal = (Bitmap)ImagemService.ResizeImage(imgMult, 1000, 1200);
+                            Bitmap imgFinal = (Bitmap)ImagemService.ResizeImage(imgMult, larguraF, AlturaF);
+                          
                             pictureBox.BackgroundImage = imgFinal;
                         }
                         else
@@ -438,10 +458,13 @@ namespace Trabalho_Mercado_Online.Views
                                 desenho.DrawImage(bitmapCortado, 0, i * bitmapCortado.Height);
                             }
 
-                            Bitmap imgFinal = (Bitmap)ImagemService.ResizeImage(imgMult, 1000, 1200);
+                            Bitmap imgFinal = (Bitmap)ImagemService.ResizeImage(imgMult, larguraF, AlturaF);
                             pictureBox.BackgroundImage = imgFinal;
                         }
                     }
+                    chkRotEsquerda.Checked = false;
+                    chkRotDireita.Checked = false;
+                    nUD.Value = 1;
                 }
                 catch { btnDesfazer.PerformClick(); }
             }

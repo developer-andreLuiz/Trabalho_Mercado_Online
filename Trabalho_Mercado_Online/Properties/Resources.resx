@@ -127,14 +127,11 @@
   <data name="icone_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_grid_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_grid_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconse_sum_database" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\iconse_sum_database.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icone_dispose" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_dispose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icone_editImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_editImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icone_products" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_products.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -162,6 +159,9 @@
   </data>
   <data name="icone_category1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_category1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icone_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icone_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Categoria" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Categoria.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,14 +196,14 @@
   <data name="Icone_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Icone_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icone_editImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icone_editImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icone_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconse_sum_database" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\iconse_sum_database.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icone_grid_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icone_grid_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icone_database" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_database.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -213,5 +213,8 @@
   </data>
   <data name="icone_products_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_products_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icone_close_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icone_close_edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

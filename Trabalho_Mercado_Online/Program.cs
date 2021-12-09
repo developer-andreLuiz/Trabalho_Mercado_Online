@@ -19,6 +19,9 @@ namespace Trabalho_Mercado_Online
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+
+          
             Global.Listas = new ListasBanco();
             Application.Run(new FrmPrincipal());
         }
