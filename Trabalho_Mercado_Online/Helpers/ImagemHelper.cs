@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Trabalho_Mercado_Online.Helpers
 {
-    static class ImagemService
+    static class ImagemHelper
     {
         public static Image ResizeImage(Image ImgLocal, int LarguraLocal, int AlturaLocal)
         {
@@ -86,7 +86,7 @@ namespace Trabalho_Mercado_Online.Helpers
                 WebResponse response = request.GetResponse();
                 Stream responseStream = response.GetResponseStream();
                 Bitmap bitmap2 = new Bitmap(responseStream);
-                Bitmap bitmap3 = (Bitmap)ImagemService.ResizeImage(bitmap2, 1000, 1200);
+                Bitmap bitmap3 = (Bitmap)ImagemHelper.ResizeImage(bitmap2, 1000, 1200);
 
                 request.Abort();
                 response.Close();

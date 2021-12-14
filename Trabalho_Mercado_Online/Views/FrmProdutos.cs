@@ -43,7 +43,7 @@ namespace Trabalho_Mercado_Online.Views
         //Filtro
         public void Filtrar()
         {
-            List<ProdutosDataGrid> ListaGrid = new List<ProdutosDataGrid>();
+            List<ProdutosDataGrid_Model> ListaGrid = new List<ProdutosDataGrid_Model>();
             List<Produto> ListaProdutos = new List<Produto>();
 
             bool descricao = !String.IsNullOrEmpty(txtDescricao.Text);
@@ -63,11 +63,11 @@ namespace Trabalho_Mercado_Online.Views
 
             if (descricao)
             {
-                string txt = StringService.FormatarStringMaiusculo(txtDescricao.Text);
+                string txt = StringHelper.FormatarStringMaiusculo(txtDescricao.Text);
                 var listTxt = txt.Split(" ");
                 foreach (var item in listTxt)
                 {
-                    var lt = ListaProdutos.FindAll(x => StringService.FormatarStringMaiusculo(x.Descricao).Contains(item, StringComparison.InvariantCultureIgnoreCase));
+                    var lt = ListaProdutos.FindAll(x => StringHelper.FormatarStringMaiusculo(x.Descricao).Contains(item, StringComparison.InvariantCultureIgnoreCase));
                     ListaProdutos = lt;
                 }
             }
@@ -208,7 +208,7 @@ namespace Trabalho_Mercado_Online.Views
             #region Formatação dos Dados Grid
             foreach (var obj in ListaProdutos)
             {
-                ProdutosDataGrid produtosDataGrid = new ProdutosDataGrid();
+                ProdutosDataGrid_Model produtosDataGrid = new ProdutosDataGrid_Model();
                 produtosDataGrid.Id = obj.Id.ToString();
                 produtosDataGrid.Descricao = obj.Descricao + " " + obj.Gramatura + " " + obj.Embalagem;
                 produtosDataGrid.Iguala = obj.IgualaProduto.ToString();
@@ -281,7 +281,7 @@ namespace Trabalho_Mercado_Online.Views
         }
         public void FiltrarCategorias(int categoria)
         {
-            List<ProdutosDataGrid> ListaGrid = new List<ProdutosDataGrid>();
+            List<ProdutosDataGrid_Model> ListaGrid = new List<ProdutosDataGrid_Model>();
             List<Produto> ListaProdutos = new List<Produto>();
            
 
@@ -353,7 +353,7 @@ namespace Trabalho_Mercado_Online.Views
             #region Formatação dos Dados Grid
             foreach (var obj in ListaProdutos)
             {
-                ProdutosDataGrid produtosDataGrid = new ProdutosDataGrid();
+                ProdutosDataGrid_Model produtosDataGrid = new ProdutosDataGrid_Model();
                 produtosDataGrid.Id = obj.Id.ToString();
                 produtosDataGrid.Descricao = obj.Descricao + " " + obj.Gramatura + " " + obj.Embalagem;
                 produtosDataGrid.Iguala = obj.IgualaProduto.ToString();

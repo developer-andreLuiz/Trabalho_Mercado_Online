@@ -8,7 +8,7 @@ using System.Configuration;
 using System.IO;
 namespace Trabalho_Mercado_Online.Helpers
 {
-    class BlobStorage
+    class BlobStorageHelper
     {
         static string conexao = "DefaultEndpointsProtocol=https;AccountName=aplicativo;AccountKey=96sAG8n4AbME4aiJwlRNq1ECtl/I7tKXpPYn37w8YO3pY+I3l5tccWh+CUmG7rqSulrwSqrm42o8e5g7JrNK8w==;EndpointSuffix=core.windows.net";
         string chave = "96sAG8n4AbME4aiJwlRNq1ECtl/I7tKXpPYn37w8YO3pY+I3l5tccWh+CUmG7rqSulrwSqrm42o8e5g7JrNK8w==";

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Trabalho_Mercado_Online.Helpers
 {
-    class Balanca
+    class BalancaHelper
     {
         /// <summary>
         /// Configura e abre a porta serial

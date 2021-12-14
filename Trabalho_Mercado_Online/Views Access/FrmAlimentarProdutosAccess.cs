@@ -116,7 +116,7 @@ namespace Trabalho_Mercado_Online.Views_Access
         }
         public void Filtrar()
         {
-            List<ProdutosDataGrid> ListaGrid = new List<ProdutosDataGrid>();
+            List<ProdutosDataGrid_Model> ListaGrid = new List<ProdutosDataGrid_Model>();
             List<ProdutoAccess> ListaProdutoAccess = new List<ProdutoAccess>();
 
             bool descricao = !String.IsNullOrEmpty(txtDescricao.Text);
@@ -138,11 +138,11 @@ namespace Trabalho_Mercado_Online.Views_Access
 
             if (descricao)
             {
-                string txt = StringService.FormatarStringMaiusculo(txtDescricao.Text);
+                string txt = StringHelper.FormatarStringMaiusculo(txtDescricao.Text);
                 var listTxt = txt.Split(" ");
                 foreach (var item in listTxt)
                 {
-                    var lt = ListaProdutoAccess.FindAll(x => StringService.FormatarStringMaiusculo(x.Descricao).Contains(item, StringComparison.InvariantCultureIgnoreCase));
+                    var lt = ListaProdutoAccess.FindAll(x => StringHelper.FormatarStringMaiusculo(x.Descricao).Contains(item, StringComparison.InvariantCultureIgnoreCase));
                     ListaProdutoAccess = lt;
                 }
             }
@@ -215,7 +215,7 @@ namespace Trabalho_Mercado_Online.Views_Access
             #region Formatação dos Dados Grid
             foreach (var obj in ListaProdutoAccess)
             {
-                ProdutosDataGrid produtosDataGrid = new ProdutosDataGrid();
+                ProdutosDataGrid_Model produtosDataGrid = new ProdutosDataGrid_Model();
                 produtosDataGrid.Id = obj.Codigo.ToString();
                 produtosDataGrid.Descricao = obj.Descricao +" *"+obj.quantidade_vendida;
                 produtosDataGrid.Iguala = obj.iguala.ToString();

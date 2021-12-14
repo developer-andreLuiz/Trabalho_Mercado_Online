@@ -111,9 +111,9 @@ namespace Trabalho_Mercado_Online.Views
             pictureBox.ImageLocation = obj.Img;
             CmdExibir = false;
         }
-        Retorno CapturarDados(CategoriasNivel2 obj)
+        RetornoHelper CapturarDados(CategoriasNivel2 obj)
         {
-            Retorno retorno = new Retorno();
+            RetornoHelper retorno = new RetornoHelper();
             obj.Id = int.Parse(lblId.Text);
             if (txtNome.Text.Length > 0)
             {
@@ -334,8 +334,8 @@ namespace Trabalho_Mercado_Online.Views
             {
                 pathImagem = open.FileName;
                 Image img = Image.FromFile(pathImagem);
-                Image ImgNewSize = ImagemService.ResizeImage(img, 550, 310);
-                ImagemService.SaveImg(ImgNewSize);
+                Image ImgNewSize = ImagemHelper.ResizeImage(img, 550, 310);
+                ImagemHelper.SaveImg(ImgNewSize);
 
                 pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
                 pictureBox.Image = null;
@@ -371,7 +371,7 @@ namespace Trabalho_Mercado_Online.Views
                 obj = CategoriasNivel2Controller.Gravar(obj);
                 if (pathImagem.Length > 0)
                 {
-                    BlobStorage.Upload("categoriasnivel2", obj.Id.ToString(), pathImagem);
+                    BlobStorageHelper.Upload("categoriasnivel2", obj.Id.ToString(), pathImagem);
                 }
                 Limpar();
                 Global.AtualizarCategorasNivel2();
@@ -432,14 +432,14 @@ namespace Trabalho_Mercado_Online.Views
 
                             //Deletar em Categoria Nivel 2
                             CategoriasNivel2Controller.Deletar(cat);
-                            BlobStorage.Deletar("categoriasnivel2", cat.Id.ToString());
+                            BlobStorageHelper.Deletar("categoriasnivel2", cat.Id.ToString());
 
                             //Deletar em Categoria Nivel 3
                             var ListaNivel3 = Global.Listas.CategoriasNivel3.FindAll(x => x.CategoriaNivel2 == cat.Id);
                             foreach (var item in ListaNivel3)
                             {
                                 CategoriasNivel3Controller.Deletar(item);
-                                BlobStorage.Deletar("categoriasnivel3", item.Id.ToString());
+                                BlobStorageHelper.Deletar("categoriasnivel3", item.Id.ToString());
                             }
 
                             //Deletar em Produto Categoria

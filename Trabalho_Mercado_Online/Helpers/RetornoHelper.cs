@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Trabalho_Mercado_Online.Helpers
 {
-    public class Retorno
+    public class RetornoHelper
     {
         public String Mensagem { get; set; }
         public bool Evento { get; set; }
-        public Retorno()
+        public RetornoHelper()
         {
             Mensagem = string.Empty;
             Evento = true;

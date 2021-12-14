@@ -14,7 +14,7 @@ namespace Trabalho_Mercado_Online.Views
     public partial class FrmEncarte : Form
     {
         #region Variaveis
-        //3508 x 4961 tamanho A3  PanelBase 8.5x menor
+       
         List<Encarte> ListaEncarte = new List<Encarte>();
         List<EncarteItem> ListaEncarteItens = new List<EncarteItem>();
         private Form activeForm = null;
@@ -75,6 +75,13 @@ namespace Trabalho_Mercado_Online.Views
             InitializeComponent();
             OpenForm();
         }
+        private void btnImagensOnline_Click(object sender, EventArgs e)
+        {
+            Bitmap ImgTop = (Bitmap)ImagemHelper.ResizeImage(new Bitmap("C:\\Users\\Public\\Pictures\\top.jpg"), 3508, 1014);
+            picEncarte.BackgroundImage = EncarteHelper.EncarteFrente(ImgTop,DateTime.Now.ToShortDateString());
+        }
         #endregion
+
+
     }
 }

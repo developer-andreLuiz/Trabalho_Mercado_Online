@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Trabalho_Mercado_Online.Helpers
 {
-    class CodigoDeBarraGrid
+    class CodigoDeBarraGrid_Model
     {
         public int id { get; set; }
         public string codigoBarra { get; set; }

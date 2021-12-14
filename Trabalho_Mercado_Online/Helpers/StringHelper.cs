@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace Trabalho_Mercado_Online.Helpers
 {
-    class StringService
+    class StringHelper
     {
         public static string FormatarStringMaiusculo(string str)
         {
@@ -54,6 +54,19 @@ namespace Trabalho_Mercado_Online.Helpers
                                 RegexOptions.None, TimeSpan.FromSeconds(1.5));
 
             return str.Trim().ToLower();
+        }
+        public static string CentralizarString(string str,int max)
+        {
+            string retorno = str;
+            int espaco = (max - retorno.Length) / 2;
+            string espacamento = string.Empty;
+            for (int i = 0; i < espaco; i++)
+            {
+                espacamento += "  ";
+            }
+            retorno = espacamento + retorno;
+
+            return retorno.ToUpper();
         }
     }
 }

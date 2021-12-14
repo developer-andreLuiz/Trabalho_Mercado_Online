@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Trabalho_Mercado_Online.Helpers
 {
-    class ProdutosDataGrid
+    class ProdutosDataGrid_Model
     {
 
         public string Id { get; set; }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Trabalho_Mercado_Online.Helpers
 {
-    class UrlService
+    class UrlHelper
     {
         public string Url { get; set; }
         public bool Verificada { get; set; }
@@ -13,7 +13,7 @@ namespace Trabalho_Mercado_Online.Helpers
         public bool Exibida { get; set; }
 
 
-        public UrlService(string url)
+        public UrlHelper(string url)
         {
             Url = url;
             Verificada = false;

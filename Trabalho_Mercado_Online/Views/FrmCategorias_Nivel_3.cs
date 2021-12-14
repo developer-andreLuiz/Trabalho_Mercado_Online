@@ -123,9 +123,9 @@ namespace Trabalho_Mercado_Online.Views
             pictureBox.ImageLocation = obj.Img;
             CmdExibir = false;
         }
-        Retorno CapturarDados(CategoriasNivel3 obj)
+        RetornoHelper CapturarDados(CategoriasNivel3 obj)
         {
-            Retorno retorno = new Retorno();
+            RetornoHelper retorno = new RetornoHelper();
             obj.Id = int.Parse(lblId.Text);
             if (txtNome.Text.Length > 0)
             {
@@ -380,8 +380,8 @@ namespace Trabalho_Mercado_Online.Views
             {
                 pathImagem = open.FileName;
                 Image img = Image.FromFile(pathImagem);
-                Image ImgNewSize = ImagemService.ResizeImage(img, 550, 310);
-                ImagemService.SaveImg(ImgNewSize);
+                Image ImgNewSize = ImagemHelper.ResizeImage(img, 550, 310);
+                ImagemHelper.SaveImg(ImgNewSize);
 
                 pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
                 pictureBox.Image = null;
@@ -417,7 +417,7 @@ namespace Trabalho_Mercado_Online.Views
                 obj = CategoriasNivel3Controller.Gravar(obj);
                 if (pathImagem.Length > 0)
                 {
-                    BlobStorage.Upload("categoriasnivel3", obj.Id.ToString(), pathImagem);
+                    BlobStorageHelper.Upload("categoriasnivel3", obj.Id.ToString(), pathImagem);
                 }
                 Limpar();
                 Global.AtualizarCategorasNivel3();
@@ -477,7 +477,7 @@ namespace Trabalho_Mercado_Online.Views
 
                             //Deletar em Categoria Nivel 3
                             CategoriasNivel3Controller.Deletar(cat);
-                            BlobStorage.Deletar("categoriasnivel3", cat.Id.ToString());
+                            BlobStorageHelper.Deletar("categoriasnivel3", cat.Id.ToString());
 
                             //Deletar em Produto Categoria
                             var ListaProdutoCategoria = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel3 == cat.Id);

@@ -51,9 +51,9 @@ namespace Trabalho_Mercado_Online.Views
         }
 
         //Dados
-        Retorno CapturarDados(Produto obj)
+        RetornoHelper CapturarDados(Produto obj)
         {
-            Retorno retorno = new Retorno();
+            RetornoHelper retorno = new RetornoHelper();
 
             obj.Id = int.Parse(lblId.Text);
             if (txtDescricao.Text.Length > 0)
@@ -286,12 +286,12 @@ namespace Trabalho_Mercado_Online.Views
         }
         void CarregarGrid(int id_Local)
         {
-            var lista = new List<CodigoDeBarraGrid>();
+            var lista = new List<CodigoDeBarraGrid_Model>();
             var listaCodigos = Global.Listas.ProdutosCodigoBarra.FindAll(x => x.CodigoProduto == id_Local);
 
             foreach (var item in listaCodigos)
             {
-                lista.Add(new CodigoDeBarraGrid { id = item.Id, codigoBarra = item.CodigoBarra });
+                lista.Add(new CodigoDeBarraGrid_Model { id = item.Id, codigoBarra = item.CodigoBarra });
             }
             dataGridView.DataSource = lista;
             dataGridView.Columns[0].Width = 50;
@@ -479,7 +479,7 @@ namespace Trabalho_Mercado_Online.Views
             pictureBox.Image = null;
             pictureBox.BackgroundImage = null;
             
-            dataGridView.DataSource = new List<CodigoDeBarraGrid>();
+            dataGridView.DataSource = new List<CodigoDeBarraGrid_Model>();
         }
         #endregion
 
@@ -553,7 +553,7 @@ namespace Trabalho_Mercado_Online.Views
             if (retorno.Evento)
             {
                 p = ProdutoController.Gravar(p);
-                BlobStorage.Upload("produtos",p.Id.ToString(),pathImagem);
+                BlobStorageHelper.Upload("produtos",p.Id.ToString(),pathImagem);
 
                 if (novo)
                 {
@@ -622,7 +622,7 @@ namespace Trabalho_Mercado_Online.Views
                         {
                             var p = Global.Listas.Produto.Find(x => x.Id == int.Parse(lblId.Text));
                             ProdutoController.Deletar(p);
-                            BlobStorage.Deletar("produtos", p.Id.ToString());
+                            BlobStorageHelper.Deletar("produtos", p.Id.ToString());
 
                             if (ListaId.Count>0)
                             {
@@ -672,8 +672,8 @@ namespace Trabalho_Mercado_Online.Views
             {
                 pathImagem = open.FileName;
                 Image img = Image.FromFile(pathImagem);
-                Image ImgNewSize = ImagemService.ResizeImage(img, 1000, 1200);
-                ImagemService.SaveImg(ImgNewSize);
+                Image ImgNewSize = ImagemHelper.ResizeImage(img, 1000, 1200);
+                ImagemHelper.SaveImg(ImgNewSize);
                 
                 pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
                 pictureBox.Image = null;
@@ -1086,7 +1086,7 @@ namespace Trabalho_Mercado_Online.Views
         {
             try
             {
-                lblPeso.Text = Balanca.Peso();
+                lblPeso.Text = BalancaHelper.Peso();
             }
             catch { }
         }
