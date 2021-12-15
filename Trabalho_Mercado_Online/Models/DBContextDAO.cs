@@ -288,6 +288,11 @@ namespace Trabalho_Mercado_Online.Models
                     .HasMaxLength(255)
                     .HasColumnName("nome");
 
+                entity.Property(e => e.Tipo)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("tipo");
+
                 entity.Property(e => e.Validade)
                     .IsRequired()
                     .HasMaxLength(255)
@@ -310,10 +315,6 @@ namespace Trabalho_Mercado_Online.Models
                     .IsRequired()
                     .HasMaxLength(255)
                     .HasColumnName("img");
-
-                entity.Property(e => e.Pos)
-                    .HasColumnType("int(11)")
-                    .HasColumnName("pos");
 
                 entity.Property(e => e.Produto)
                     .IsRequired()

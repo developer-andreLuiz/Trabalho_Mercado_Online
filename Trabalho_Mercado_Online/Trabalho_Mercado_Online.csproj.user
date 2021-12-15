@@ -7,6 +7,9 @@
     <Compile Update="Views Access\FrmProdutosAccess.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\FrmEncartePreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\FrmCategorias_Nivel_1.cs">
       <SubType>Form</SubType>
     </Compile>

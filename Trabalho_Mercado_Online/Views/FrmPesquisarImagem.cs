@@ -142,7 +142,7 @@ namespace Trabalho_Mercado_Online.Views
                 if (ImagemOriginal != null)
                 {
                     Bitmap b = new Bitmap(ImagemOriginal);
-                    pictureBox.BackgroundImage = b;
+                    pictureBoxImagem.BackgroundImage = b;
                 }
             }
         }
@@ -151,6 +151,8 @@ namespace Trabalho_Mercado_Online.Views
             InitializeComponent();
             Global.FinalizarThread();
             panelImagens.MouseWheel += panelImagens_MouseWheel;
+            pictureBoxImagem.Size = new Size(200,179);
+            txtProduto.Text = frm.txtNomeProduto.Text;
             InitNavegador();
             frmEncarte = frm;
           
@@ -162,26 +164,29 @@ namespace Trabalho_Mercado_Online.Views
             panelImagens.MouseWheel += panelImagens_MouseWheel;
             InitNavegador();
         }
-        private void btn_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            ImagemOriginal = new Bitmap(btn.BackgroundImage);
-            if (frmEncarte==null)
-            {
-                pictureBox.BackgroundImage = btn.BackgroundImage;
-            }
-            else
-            {
-               
-            }
-        }
-        private void btnFechar_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        private void btn_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            
+            if (frmEncarte==null)
+            {
+                ImagemOriginal = new Bitmap(btn.BackgroundImage);
+                pictureBoxImagem.BackgroundImage = btn.BackgroundImage;
+            }
+            else
+            {
+                ImagemOriginal = (Bitmap)ImagemHelper.ResizeImage(btn.BackgroundImage, 660, 610);
+                pictureBoxImagem.BackgroundImage = ImagemHelper.ResizeImage(btn.BackgroundImage,660,610);
+            }
+        }
+        
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
-            if (pictureBox.BackgroundImage != null)
+            if (pictureBoxImagem.BackgroundImage != null)
             {
                 //Apenas baixar imagem
                 if (frmProduto == null && frmEncarte == null)
@@ -192,7 +197,7 @@ namespace Trabalho_Mercado_Online.Views
                     sf.FileName = txtProduto.Text;
                     if (sf.ShowDialog() == DialogResult.OK)
                     {
-                        pictureBox.BackgroundImage.Save(sf.FileName);
+                        pictureBoxImagem.BackgroundImage.Save(sf.FileName);
                         chkRotEsquerda.Checked = false;
                         chkRotDireita.Checked = false;
                         nUD.Value = 1;
@@ -206,7 +211,7 @@ namespace Trabalho_Mercado_Online.Views
                         frmProduto.pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
                         frmProduto.pictureBox.Image = null;
                         frmProduto.pictureBox.BackgroundImage = null;
-                        ImagemHelper.SaveImg(pictureBox.BackgroundImage);
+                        ImagemHelper.SaveImg(pictureBoxImagem.BackgroundImage);
                         frmProduto.pathImagem = System.IO.Directory.GetCurrentDirectory() + "\\Image.jpg";
                         frmProduto.pictureBox.ImageLocation = frmProduto.pathImagem;
                         this.Close();
@@ -214,7 +219,7 @@ namespace Trabalho_Mercado_Online.Views
                     //Encarte
                     if (frmEncarte != null)
                     {
-                       
+                        frmEncarte.picProduto.BackgroundImage = pictureBoxImagem.BackgroundImage;
                         this.Close();
                     }
 
@@ -337,7 +342,7 @@ namespace Trabalho_Mercado_Online.Views
         //Edição Imagem
         private void pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            if (pictureBox.BackgroundImage != null)
+            if (pictureBoxImagem.BackgroundImage != null)
             {
                 RectStartPoint = e.Location;
                 Invalidate();
@@ -346,21 +351,21 @@ namespace Trabalho_Mercado_Online.Views
         }
         private void pictureBox_MouseMove(object sender, MouseEventArgs e)
         {
-            if (pictureBox.BackgroundImage != null)
+            if (pictureBoxImagem.BackgroundImage != null)
             {
                 if (e.Button == MouseButtons.Left)
                 {
                     Point tempEndPoint = e.Location;
                     retangulo.Location = new Point(Math.Min(RectStartPoint.X, tempEndPoint.X), Math.Min(RectStartPoint.Y, tempEndPoint.Y));
                     retangulo.Size = new Size(Math.Abs(RectStartPoint.X - tempEndPoint.X), Math.Abs(RectStartPoint.Y - tempEndPoint.Y));
-                    pictureBox.Invalidate();
+                    pictureBoxImagem.Invalidate();
                 }
             }
 
         }
         private void pictureBox_Paint(object sender, PaintEventArgs e)
         {
-            if (pictureBox.BackgroundImage != null)
+            if (pictureBoxImagem.BackgroundImage != null)
             {
                 if (retangulo != null && retangulo.Width > 0 && retangulo.Height > 0)
                 {
@@ -384,7 +389,7 @@ namespace Trabalho_Mercado_Online.Views
         }
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (pictureBox.BackgroundImage != null && retangulo.Width != 0 && retangulo.Height != 0)
+            if (pictureBoxImagem.BackgroundImage != null && retangulo.Width != 0 && retangulo.Height != 0)
             {
                 try
                 {
@@ -393,11 +398,11 @@ namespace Trabalho_Mercado_Online.Views
                    
                     
                     //numero de x que o picturebox é menor que o original
-                    double multplicadorx = (double)ImagemOriginal.Width / pictureBox.Width;
-                    double multplicadory = (double)ImagemOriginal.Height / pictureBox.Height;
+                    double multplicadorx = (double)ImagemOriginal.Width / pictureBoxImagem.Width;
+                    double multplicadory = (double)ImagemOriginal.Height / pictureBoxImagem.Height;
                     
                     //novo bitmap com imagem sem edição
-                    Bitmap bitmapOriginal = new Bitmap(pictureBox.BackgroundImage);
+                    Bitmap bitmapOriginal = new Bitmap(pictureBoxImagem.BackgroundImage);
                     
                     //retangulo de seleção para corte
                     Rectangle rect = new Rectangle();
@@ -430,7 +435,7 @@ namespace Trabalho_Mercado_Online.Views
                     if (nUD.Value == 1)
                     {
                         Bitmap imgFinal = (Bitmap)ImagemHelper.ResizeImage(bitmapCortado, larguraF, AlturaF);
-                        pictureBox.BackgroundImage = imgFinal;
+                        pictureBoxImagem.BackgroundImage = imgFinal;
                     }
                     else
                     {
@@ -447,7 +452,7 @@ namespace Trabalho_Mercado_Online.Views
 
                             Bitmap imgFinal = (Bitmap)ImagemHelper.ResizeImage(imgMult, larguraF, AlturaF);
                           
-                            pictureBox.BackgroundImage = imgFinal;
+                            pictureBoxImagem.BackgroundImage = imgFinal;
                         }
                         else
                         {
@@ -459,7 +464,7 @@ namespace Trabalho_Mercado_Online.Views
                             }
 
                             Bitmap imgFinal = (Bitmap)ImagemHelper.ResizeImage(imgMult, larguraF, AlturaF);
-                            pictureBox.BackgroundImage = imgFinal;
+                            pictureBoxImagem.BackgroundImage = imgFinal;
                         }
                     }
                     chkRotEsquerda.Checked = false;
@@ -471,16 +476,17 @@ namespace Trabalho_Mercado_Online.Views
         }
         private void btnDesfazer_Click(object sender, EventArgs e)
         {
-            if (pictureBox.BackgroundImage != null)
+            if (pictureBoxImagem.BackgroundImage != null)
             {
                 Bitmap b = new Bitmap(ImagemOriginal);
-                pictureBox.BackgroundImage = b;
+                pictureBoxImagem.BackgroundImage = b;
                 retangulo = new Rectangle();
                 chkRotEsquerda.Checked = false;
                 chkRotDireita.Checked = false;
                 nUD.Value = 1;
             }
         }
+
         #endregion
 
        

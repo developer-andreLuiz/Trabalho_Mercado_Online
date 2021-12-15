@@ -6,6 +6,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Trabalho_Mercado_Online.Helpers
 {
@@ -86,7 +87,7 @@ namespace Trabalho_Mercado_Online.Helpers
                 WebResponse response = request.GetResponse();
                 Stream responseStream = response.GetResponseStream();
                 Bitmap bitmap2 = new Bitmap(responseStream);
-                Bitmap bitmap3 = (Bitmap)ImagemHelper.ResizeImage(bitmap2, 1000, 1200);
+                Bitmap bitmap3 = (Bitmap)ImagemHelper.ResizeImage(bitmap2, largura, altura);
 
                 request.Abort();
                 response.Close();

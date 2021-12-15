@@ -30,7 +30,6 @@ namespace Trabalho_Mercado_Online.Views
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPesquisarImagem));
             this.panelMain = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.chkRotDireita = new System.Windows.Forms.CheckBox();
@@ -55,22 +54,23 @@ namespace Trabalho_Mercado_Online.Views
             this.lblTotalLista = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.pictureBoxImagem = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtProduto = new System.Windows.Forms.TextBox();
-            this.btnFechar = new System.Windows.Forms.Button();
             this.timerImagens = new System.Windows.Forms.Timer(this.components);
+            this.btnClose = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.White;
+            this.panelMain.Controls.Add(this.btnClose);
             this.panelMain.Controls.Add(this.panel3);
             this.panelMain.Controls.Add(this.label3);
             this.panelMain.Controls.Add(this.panel1);
@@ -87,10 +87,9 @@ namespace Trabalho_Mercado_Online.Views
             this.panelMain.Controls.Add(this.lblTotalLista);
             this.panelMain.Controls.Add(this.label4);
             this.panelMain.Controls.Add(this.label1);
-            this.panelMain.Controls.Add(this.pictureBox);
+            this.panelMain.Controls.Add(this.pictureBoxImagem);
             this.panelMain.Controls.Add(this.label2);
             this.panelMain.Controls.Add(this.txtProduto);
-            this.panelMain.Controls.Add(this.btnFechar);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
@@ -259,7 +258,7 @@ namespace Trabalho_Mercado_Online.Views
             // btnLimpar
             // 
             this.btnLimpar.BackColor = System.Drawing.Color.White;
-            this.btnLimpar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpar.BackgroundImage")));
+            this.btnLimpar.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icone_close;
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnLimpar.FlatAppearance.BorderSize = 0;
@@ -269,9 +268,9 @@ namespace Trabalho_Mercado_Online.Views
             this.btnLimpar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLimpar.ForeColor = System.Drawing.Color.White;
             this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpar.Location = new System.Drawing.Point(647, 72);
+            this.btnLimpar.Location = new System.Drawing.Point(650, 76);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(40, 40);
+            this.btnLimpar.Size = new System.Drawing.Size(34, 32);
             this.btnLimpar.TabIndex = 561;
             this.btnLimpar.TabStop = false;
             this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -400,18 +399,18 @@ namespace Trabalho_Mercado_Online.Views
             this.label1.TabIndex = 103;
             this.label1.Text = "Visualização Imagem";
             // 
-            // pictureBox
+            // pictureBoxImagem
             // 
-            this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Location = new System.Drawing.Point(689, 76);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(200, 240);
-            this.pictureBox.TabIndex = 102;
-            this.pictureBox.TabStop = false;
-            this.pictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox_Paint);
-            this.pictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
-            this.pictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseMove);
+            this.pictureBoxImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxImagem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxImagem.Location = new System.Drawing.Point(689, 76);
+            this.pictureBoxImagem.Name = "pictureBoxImagem";
+            this.pictureBoxImagem.Size = new System.Drawing.Size(200, 240);
+            this.pictureBoxImagem.TabIndex = 102;
+            this.pictureBoxImagem.TabStop = false;
+            this.pictureBoxImagem.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox_Paint);
+            this.pictureBoxImagem.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
+            this.pictureBoxImagem.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseMove);
             // 
             // label2
             // 
@@ -435,33 +434,33 @@ namespace Trabalho_Mercado_Online.Views
             this.txtProduto.TabIndex = 1;
             this.txtProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProduto_KeyPress);
             // 
-            // btnFechar
-            // 
-            this.btnFechar.BackColor = System.Drawing.Color.White;
-            this.btnFechar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFechar.BackgroundImage")));
-            this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFechar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnFechar.FlatAppearance.BorderSize = 0;
-            this.btnFechar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnFechar.ForeColor = System.Drawing.Color.White;
-            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFechar.Location = new System.Drawing.Point(844, 2);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(50, 50);
-            this.btnFechar.TabIndex = 94;
-            this.btnFechar.TabStop = false;
-            this.btnFechar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFechar.UseVisualStyleBackColor = false;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
             // timerImagens
             // 
             this.timerImagens.Enabled = true;
             this.timerImagens.Interval = 1000;
             this.timerImagens.Tick += new System.EventHandler(this.timerImagens_Tick);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icone_close;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(855, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(34, 32);
+            this.btnClose.TabIndex = 580;
+            this.btnClose.TabStop = false;
+            this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // FrmPesquisarImagem
             // 
@@ -485,7 +484,7 @@ namespace Trabalho_Mercado_Online.Views
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -493,7 +492,6 @@ namespace Trabalho_Mercado_Online.Views
         #endregion
 
         private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.TextBox txtProduto;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblItensGrid;
@@ -501,7 +499,7 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.Label lblTotalLista;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.PictureBox pictureBoxImagem;
         private System.Windows.Forms.Button btnSelecionar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
@@ -525,5 +523,6 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.CheckBox chkRotDireita;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnClose;
     }
 }

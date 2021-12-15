@@ -19,7 +19,14 @@ namespace Trabalho_Mercado_Online.Helpers
             }
             set 
             {
-                _nome = StringHelper.CentralizarString(value,28);
+                if (value.Length>0)
+                {
+                    _nome = StringHelper.CentralizarString(value, 28).ToUpper();
+                }
+                else
+                {
+                    _nome = value;
+                }
             } 
         }
         public string Valor 
@@ -30,7 +37,15 @@ namespace Trabalho_Mercado_Online.Helpers
             }
             set
             {
-                _valor = StringHelper.CentralizarString(value, 6);
+                if (value.Length > 0)
+                {
+                    _valor = StringHelper.CentralizarString(value, 6);
+                }
+                else
+                {
+                    _valor = value;
+                }
+                    
             }
         }
         public Bitmap Img
@@ -44,6 +59,10 @@ namespace Trabalho_Mercado_Online.Helpers
                 if (value!=null)
                 {
                     _img = (Bitmap)ImagemHelper.ResizeImage(value, 660, 610);
+                }
+                else
+                {
+                    _img = value;
                 }
                 
             }
