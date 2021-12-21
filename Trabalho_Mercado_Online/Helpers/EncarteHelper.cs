@@ -7,7 +7,7 @@ namespace Trabalho_Mercado_Online.Helpers
 {
     class EncarteHelper
     {
-        public static Bitmap EncarteFrente(Bitmap ImgTop, String DtValidade,List<EncarteItemHelper>ListaProdutosLocal)
+        public static Bitmap EncarteFrente(Bitmap ImgTop, String DtValidade,List<EncarteItemHelper>ListaProdutosLocal, SolidBrush solid)
         {
             Point A3 = new Point(3508, 4961);
             Bitmap Encarte = new Bitmap(A3.X, A3.Y);
@@ -48,7 +48,7 @@ namespace Trabalho_Mercado_Online.Helpers
             Graphics desenho = Graphics.FromImage(Encarte);
             desenho.Clear(Color.White);
             desenho.DrawImage(ImgTop, 0, 0, ImgTop.Width, ImgTop.Height);
-            desenho.FillRectangle(new SolidBrush(Color.Red), new Rectangle(0,4765,3508,197));
+            desenho.FillRectangle(solid, new Rectangle(0,4765,3508,197));
             desenho.DrawString($"OFERTAS VÁLIDAS ATÉ O DIA {DtValidade} OU ENQUANTO DURAREM NOSSOS ESTOQUES", fontTxt, new SolidBrush(Color.White), 40, 4830);
 
             for (int i = 0; i < ListaProdutosLocal.Count; i++)
@@ -61,7 +61,7 @@ namespace Trabalho_Mercado_Online.Helpers
                 {
                     desenho.DrawString(encarteItemHelper.Nome, fontProduto, new SolidBrush(Color.Black), Lt_Pos_Img[i].X, Lt_Pos_Img[i].Y - 80);
                     desenho.DrawImage(encarteItemHelper.Img, Lt_Pos_Img[i].X, Lt_Pos_Img[i].Y, encarteItemHelper.Img.Width, encarteItemHelper.Img.Height);
-                    desenho.FillRectangle(new SolidBrush(Color.FromArgb(255, 255, 0, 0)), new Rectangle(Lt_Pos_Img[i].X + 390, Lt_Pos_Img[i].Y + 470, 270, 140));
+                    desenho.FillRectangle(solid, new Rectangle(Lt_Pos_Img[i].X + 390, Lt_Pos_Img[i].Y + 470, 270, 140));
                     desenho.DrawString(encarteItemHelper.Valor, fontPreco, new SolidBrush(Color.White), Lt_Pos_Img[i].X + 375, Lt_Pos_Img[i].Y + 500);
                 }
             }
@@ -72,7 +72,7 @@ namespace Trabalho_Mercado_Online.Helpers
             Encarte.Save("C:\\Users\\Public\\Pictures\\F.jpg");
             return Encarte;
         }
-        public static Bitmap EncarteVerso(Bitmap ImgBoT, String DtValidade, List<EncarteItemHelper> ListaProdutosLocal)
+        public static Bitmap EncarteVerso(Bitmap ImgBoT, String DtValidade, List<EncarteItemHelper> ListaProdutosLocal, SolidBrush solid)
         {
             Point A3 = new Point(3508, 4961);
             Bitmap Encarte = new Bitmap(A3.X, A3.Y);
@@ -112,7 +112,8 @@ namespace Trabalho_Mercado_Online.Helpers
             Graphics desenho = Graphics.FromImage(Encarte);
             desenho.Clear(Color.White);
             desenho.DrawImage(ImgBoT, 0, 3947, ImgBoT.Width, ImgBoT.Height);
-            desenho.FillRectangle(new SolidBrush(Color.Red), new Rectangle(0, 0, 3508, 197));
+            //Valor Mudar cor
+            desenho.FillRectangle(solid, new Rectangle(0, 0, 3508, 197));
             desenho.DrawString($"OFERTAS VÁLIDAS ATÉ O DIA {DtValidade} OU ENQUANTO DURAREM NOSSOS ESTOQUES", fontTxt, new SolidBrush(Color.White), 40, 65);
 
             for (int i = 0; i < ListaProdutosLocal.Count; i++)
@@ -125,7 +126,8 @@ namespace Trabalho_Mercado_Online.Helpers
                 {
                     desenho.DrawString(encarteItemHelper.Nome, fontProduto, new SolidBrush(Color.Black), Lt_Pos_Img[i].X, Lt_Pos_Img[i].Y - 80);
                     desenho.DrawImage(encarteItemHelper.Img, Lt_Pos_Img[i].X, Lt_Pos_Img[i].Y, encarteItemHelper.Img.Width, encarteItemHelper.Img.Height);
-                    desenho.FillRectangle(new SolidBrush(Color.FromArgb(255, 255, 0, 0)), new Rectangle(Lt_Pos_Img[i].X + 390, Lt_Pos_Img[i].Y + 470, 270, 140));
+                    //Valor Mudar cor
+                    desenho.FillRectangle(solid, new Rectangle(Lt_Pos_Img[i].X + 390, Lt_Pos_Img[i].Y + 470, 270, 140));
                     desenho.DrawString(encarteItemHelper.Valor, fontPreco, new SolidBrush(Color.White), Lt_Pos_Img[i].X + 375, Lt_Pos_Img[i].Y + 500);
                 }
             }

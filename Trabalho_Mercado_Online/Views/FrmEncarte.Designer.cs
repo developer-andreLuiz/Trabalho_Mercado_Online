@@ -34,44 +34,43 @@ namespace Trabalho_Mercado_Online.Views
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.btnImg19 = new System.Windows.Forms.Panel();
-            this.btnImg17 = new System.Windows.Forms.Panel();
-            this.btnImg18 = new System.Windows.Forms.Panel();
-            this.btnImg16 = new System.Windows.Forms.Panel();
-            this.btnImg15 = new System.Windows.Forms.Panel();
-            this.btnImg13 = new System.Windows.Forms.Panel();
-            this.btnImg14 = new System.Windows.Forms.Panel();
-            this.btnImg12 = new System.Windows.Forms.Panel();
-            this.btnImg11 = new System.Windows.Forms.Panel();
-            this.btnImg7 = new System.Windows.Forms.Panel();
-            this.btnImg9 = new System.Windows.Forms.Panel();
-            this.btnImg5 = new System.Windows.Forms.Panel();
-            this.btnImg10 = new System.Windows.Forms.Panel();
-            this.btnImg6 = new System.Windows.Forms.Panel();
-            this.btnImg8 = new System.Windows.Forms.Panel();
-            this.btnImg4 = new System.Windows.Forms.Panel();
-            this.btnImg3 = new System.Windows.Forms.Panel();
-            this.btnImg2 = new System.Windows.Forms.Panel();
-            this.btnImg1 = new System.Windows.Forms.Panel();
-            this.btnImg0 = new System.Windows.Forms.Panel();
+            this.rbGeral = new System.Windows.Forms.RadioButton();
+            this.rbFinaldeSemana = new System.Windows.Forms.RadioButton();
+            this.rbAcougue = new System.Windows.Forms.RadioButton();
+            this.rbBiscoito = new System.Windows.Forms.RadioButton();
+            this.rbSacolao = new System.Windows.Forms.RadioButton();
+            this.pnlImg19 = new System.Windows.Forms.Panel();
+            this.pnlImg17 = new System.Windows.Forms.Panel();
+            this.pnlImg18 = new System.Windows.Forms.Panel();
+            this.pnlImg16 = new System.Windows.Forms.Panel();
+            this.pnlImg15 = new System.Windows.Forms.Panel();
+            this.pnlImg13 = new System.Windows.Forms.Panel();
+            this.pnlImg14 = new System.Windows.Forms.Panel();
+            this.pnlImg12 = new System.Windows.Forms.Panel();
+            this.pnlImg11 = new System.Windows.Forms.Panel();
+            this.pnlImg7 = new System.Windows.Forms.Panel();
+            this.pnlImg9 = new System.Windows.Forms.Panel();
+            this.pnlImg5 = new System.Windows.Forms.Panel();
+            this.pnlImg10 = new System.Windows.Forms.Panel();
+            this.pnlImg6 = new System.Windows.Forms.Panel();
+            this.pnlImg8 = new System.Windows.Forms.Panel();
+            this.pnlImg4 = new System.Windows.Forms.Panel();
+            this.pnlImg3 = new System.Windows.Forms.Panel();
+            this.pnlImg2 = new System.Windows.Forms.Panel();
+            this.pnlImg1 = new System.Windows.Forms.Panel();
+            this.pnlImg0 = new System.Windows.Forms.Panel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.lblId = new System.Windows.Forms.Label();
             this.btnCancelarEncarte = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnDeletar = new System.Windows.Forms.Button();
+            this.btnDeletarEncarte = new System.Windows.Forms.Button();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.btnDeletarProduto = new System.Windows.Forms.Button();
             this.btnConfirmarProduto = new System.Windows.Forms.Button();
             this.btnEditarEncarte = new System.Windows.Forms.Button();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.cbTipo = new System.Windows.Forms.ComboBox();
+            this.cbFrente = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnNovoEncarte = new System.Windows.Forms.Button();
             this.btnSalvarEncarte = new System.Windows.Forms.Button();
@@ -95,44 +94,43 @@ namespace Trabalho_Mercado_Online.Views
             // 
             // panelMain
             // 
-            this.panelMain.Controls.Add(this.radioButton5);
-            this.panelMain.Controls.Add(this.radioButton4);
-            this.panelMain.Controls.Add(this.radioButton3);
-            this.panelMain.Controls.Add(this.radioButton2);
-            this.panelMain.Controls.Add(this.radioButton1);
-            this.panelMain.Controls.Add(this.btnImg19);
-            this.panelMain.Controls.Add(this.btnImg17);
-            this.panelMain.Controls.Add(this.btnImg18);
-            this.panelMain.Controls.Add(this.btnImg16);
-            this.panelMain.Controls.Add(this.btnImg15);
-            this.panelMain.Controls.Add(this.btnImg13);
-            this.panelMain.Controls.Add(this.btnImg14);
-            this.panelMain.Controls.Add(this.btnImg12);
-            this.panelMain.Controls.Add(this.btnImg11);
-            this.panelMain.Controls.Add(this.btnImg7);
-            this.panelMain.Controls.Add(this.btnImg9);
-            this.panelMain.Controls.Add(this.btnImg5);
-            this.panelMain.Controls.Add(this.btnImg10);
-            this.panelMain.Controls.Add(this.btnImg6);
-            this.panelMain.Controls.Add(this.btnImg8);
-            this.panelMain.Controls.Add(this.btnImg4);
-            this.panelMain.Controls.Add(this.btnImg3);
-            this.panelMain.Controls.Add(this.btnImg2);
-            this.panelMain.Controls.Add(this.btnImg1);
-            this.panelMain.Controls.Add(this.btnImg0);
+            this.panelMain.Controls.Add(this.rbGeral);
+            this.panelMain.Controls.Add(this.rbFinaldeSemana);
+            this.panelMain.Controls.Add(this.rbAcougue);
+            this.panelMain.Controls.Add(this.rbBiscoito);
+            this.panelMain.Controls.Add(this.rbSacolao);
+            this.panelMain.Controls.Add(this.pnlImg19);
+            this.panelMain.Controls.Add(this.pnlImg17);
+            this.panelMain.Controls.Add(this.pnlImg18);
+            this.panelMain.Controls.Add(this.pnlImg16);
+            this.panelMain.Controls.Add(this.pnlImg15);
+            this.panelMain.Controls.Add(this.pnlImg13);
+            this.panelMain.Controls.Add(this.pnlImg14);
+            this.panelMain.Controls.Add(this.pnlImg12);
+            this.panelMain.Controls.Add(this.pnlImg11);
+            this.panelMain.Controls.Add(this.pnlImg7);
+            this.panelMain.Controls.Add(this.pnlImg9);
+            this.panelMain.Controls.Add(this.pnlImg5);
+            this.panelMain.Controls.Add(this.pnlImg10);
+            this.panelMain.Controls.Add(this.pnlImg6);
+            this.panelMain.Controls.Add(this.pnlImg8);
+            this.panelMain.Controls.Add(this.pnlImg4);
+            this.panelMain.Controls.Add(this.pnlImg3);
+            this.panelMain.Controls.Add(this.pnlImg2);
+            this.panelMain.Controls.Add(this.pnlImg1);
+            this.panelMain.Controls.Add(this.pnlImg0);
             this.panelMain.Controls.Add(this.dataGridView);
-            this.panelMain.Controls.Add(this.lblId);
             this.panelMain.Controls.Add(this.btnCancelarEncarte);
             this.panelMain.Controls.Add(this.label9);
             this.panelMain.Controls.Add(this.label8);
             this.panelMain.Controls.Add(this.label6);
-            this.panelMain.Controls.Add(this.btnDeletar);
+            this.panelMain.Controls.Add(this.btnDeletarEncarte);
             this.panelMain.Controls.Add(this.txtPesquisar);
             this.panelMain.Controls.Add(this.btnDeletarProduto);
             this.panelMain.Controls.Add(this.btnConfirmarProduto);
             this.panelMain.Controls.Add(this.btnEditarEncarte);
             this.panelMain.Controls.Add(this.dateTimePicker);
-            this.panelMain.Controls.Add(this.cbTipo);
+            this.panelMain.Controls.Add(this.cbFrente);
             this.panelMain.Controls.Add(this.label7);
             this.panelMain.Controls.Add(this.btnNovoEncarte);
             this.panelMain.Controls.Add(this.btnSalvarEncarte);
@@ -154,267 +152,271 @@ namespace Trabalho_Mercado_Online.Views
             this.panelMain.Size = new System.Drawing.Size(897, 648);
             this.panelMain.TabIndex = 0;
             // 
-            // radioButton5
+            // rbGeral
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Checked = true;
-            this.radioButton5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.radioButton5.ForeColor = System.Drawing.Color.Black;
-            this.radioButton5.Location = new System.Drawing.Point(15, 238);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(54, 18);
-            this.radioButton5.TabIndex = 55668;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Geral";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.rbGeral.AutoSize = true;
+            this.rbGeral.Checked = true;
+            this.rbGeral.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rbGeral.ForeColor = System.Drawing.Color.Black;
+            this.rbGeral.Location = new System.Drawing.Point(15, 238);
+            this.rbGeral.Name = "rbGeral";
+            this.rbGeral.Size = new System.Drawing.Size(54, 18);
+            this.rbGeral.TabIndex = 55668;
+            this.rbGeral.TabStop = true;
+            this.rbGeral.Text = "Geral";
+            this.rbGeral.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // rbFinaldeSemana
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.radioButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.radioButton4.Location = new System.Drawing.Point(297, 238);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(114, 18);
-            this.radioButton4.TabIndex = 55667;
-            this.radioButton4.Text = "Final de Semana";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rbFinaldeSemana.AutoSize = true;
+            this.rbFinaldeSemana.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rbFinaldeSemana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.rbFinaldeSemana.Location = new System.Drawing.Point(297, 238);
+            this.rbFinaldeSemana.Name = "rbFinaldeSemana";
+            this.rbFinaldeSemana.Size = new System.Drawing.Size(114, 18);
+            this.rbFinaldeSemana.TabIndex = 55667;
+            this.rbFinaldeSemana.Text = "Final de Semana";
+            this.rbFinaldeSemana.UseVisualStyleBackColor = true;
+            this.rbFinaldeSemana.CheckedChanged += new System.EventHandler(this.rbFinaldeSemana_CheckedChanged);
             // 
-            // radioButton3
+            // rbAcougue
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.radioButton3.ForeColor = System.Drawing.Color.Red;
-            this.radioButton3.Location = new System.Drawing.Point(217, 238);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(74, 18);
-            this.radioButton3.TabIndex = 55666;
-            this.radioButton3.Text = "Açougue";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbAcougue.AutoSize = true;
+            this.rbAcougue.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rbAcougue.ForeColor = System.Drawing.Color.Red;
+            this.rbAcougue.Location = new System.Drawing.Point(217, 238);
+            this.rbAcougue.Name = "rbAcougue";
+            this.rbAcougue.Size = new System.Drawing.Size(74, 18);
+            this.rbAcougue.TabIndex = 55666;
+            this.rbAcougue.Text = "Açougue";
+            this.rbAcougue.UseVisualStyleBackColor = true;
+            this.rbAcougue.CheckedChanged += new System.EventHandler(this.rbAcougue_CheckedChanged);
             // 
-            // radioButton2
+            // rbBiscoito
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.radioButton2.ForeColor = System.Drawing.Color.DarkSalmon;
-            this.radioButton2.Location = new System.Drawing.Point(142, 238);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(69, 18);
-            this.radioButton2.TabIndex = 55665;
-            this.radioButton2.Text = "Biscoito";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbBiscoito.AutoSize = true;
+            this.rbBiscoito.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rbBiscoito.ForeColor = System.Drawing.Color.DarkSalmon;
+            this.rbBiscoito.Location = new System.Drawing.Point(142, 238);
+            this.rbBiscoito.Name = "rbBiscoito";
+            this.rbBiscoito.Size = new System.Drawing.Size(69, 18);
+            this.rbBiscoito.TabIndex = 55665;
+            this.rbBiscoito.Text = "Biscoito";
+            this.rbBiscoito.UseVisualStyleBackColor = true;
+            this.rbBiscoito.CheckedChanged += new System.EventHandler(this.rbBiscoito_CheckedChanged);
             // 
-            // radioButton1
+            // rbSacolao
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.radioButton1.ForeColor = System.Drawing.Color.Green;
-            this.radioButton1.Location = new System.Drawing.Point(70, 238);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(67, 18);
-            this.radioButton1.TabIndex = 55664;
-            this.radioButton1.Text = "Sacolão";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbSacolao.AutoSize = true;
+            this.rbSacolao.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rbSacolao.ForeColor = System.Drawing.Color.Green;
+            this.rbSacolao.Location = new System.Drawing.Point(70, 238);
+            this.rbSacolao.Name = "rbSacolao";
+            this.rbSacolao.Size = new System.Drawing.Size(67, 18);
+            this.rbSacolao.TabIndex = 55664;
+            this.rbSacolao.Text = "Sacolão";
+            this.rbSacolao.UseVisualStyleBackColor = true;
+            this.rbSacolao.CheckedChanged += new System.EventHandler(this.rbSacolao_CheckedChanged);
             // 
-            // btnImg19
+            // pnlImg19
             // 
-            this.btnImg19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg19.Location = new System.Drawing.Point(594, 591);
-            this.btnImg19.Name = "btnImg19";
-            this.btnImg19.Size = new System.Drawing.Size(45, 45);
-            this.btnImg19.TabIndex = 55662;
-            this.btnImg19.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg19.Location = new System.Drawing.Point(594, 591);
+            this.pnlImg19.Name = "pnlImg19";
+            this.pnlImg19.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg19.TabIndex = 55662;
+            this.pnlImg19.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg17
+            // pnlImg17
             // 
-            this.btnImg17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg17.Location = new System.Drawing.Point(485, 591);
-            this.btnImg17.Name = "btnImg17";
-            this.btnImg17.Size = new System.Drawing.Size(45, 45);
-            this.btnImg17.TabIndex = 55660;
-            this.btnImg17.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg17.Location = new System.Drawing.Point(485, 591);
+            this.pnlImg17.Name = "pnlImg17";
+            this.pnlImg17.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg17.TabIndex = 55660;
+            this.pnlImg17.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg18
+            // pnlImg18
             // 
-            this.btnImg18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg18.Location = new System.Drawing.Point(539, 591);
-            this.btnImg18.Name = "btnImg18";
-            this.btnImg18.Size = new System.Drawing.Size(45, 45);
-            this.btnImg18.TabIndex = 55663;
-            this.btnImg18.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg18.Location = new System.Drawing.Point(539, 591);
+            this.pnlImg18.Name = "pnlImg18";
+            this.pnlImg18.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg18.TabIndex = 55663;
+            this.pnlImg18.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg16
+            // pnlImg16
             // 
-            this.btnImg16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg16.Location = new System.Drawing.Point(429, 591);
-            this.btnImg16.Name = "btnImg16";
-            this.btnImg16.Size = new System.Drawing.Size(45, 45);
-            this.btnImg16.TabIndex = 55661;
-            this.btnImg16.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg16.Location = new System.Drawing.Point(429, 591);
+            this.pnlImg16.Name = "pnlImg16";
+            this.pnlImg16.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg16.TabIndex = 55661;
+            this.pnlImg16.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg15
+            // pnlImg15
             // 
-            this.btnImg15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg15.Location = new System.Drawing.Point(597, 519);
-            this.btnImg15.Name = "btnImg15";
-            this.btnImg15.Size = new System.Drawing.Size(45, 45);
-            this.btnImg15.TabIndex = 55658;
-            this.btnImg15.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg15.Location = new System.Drawing.Point(597, 519);
+            this.pnlImg15.Name = "pnlImg15";
+            this.pnlImg15.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg15.TabIndex = 55658;
+            this.pnlImg15.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg13
+            // pnlImg13
             // 
-            this.btnImg13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg13.Location = new System.Drawing.Point(488, 519);
-            this.btnImg13.Name = "btnImg13";
-            this.btnImg13.Size = new System.Drawing.Size(45, 45);
-            this.btnImg13.TabIndex = 55656;
-            this.btnImg13.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg13.Location = new System.Drawing.Point(488, 519);
+            this.pnlImg13.Name = "pnlImg13";
+            this.pnlImg13.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg13.TabIndex = 55656;
+            this.pnlImg13.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg14
+            // pnlImg14
             // 
-            this.btnImg14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg14.Location = new System.Drawing.Point(542, 519);
-            this.btnImg14.Name = "btnImg14";
-            this.btnImg14.Size = new System.Drawing.Size(45, 45);
-            this.btnImg14.TabIndex = 55659;
-            this.btnImg14.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg14.Location = new System.Drawing.Point(542, 519);
+            this.pnlImg14.Name = "pnlImg14";
+            this.pnlImg14.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg14.TabIndex = 55659;
+            this.pnlImg14.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg12
+            // pnlImg12
             // 
-            this.btnImg12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg12.Location = new System.Drawing.Point(432, 519);
-            this.btnImg12.Name = "btnImg12";
-            this.btnImg12.Size = new System.Drawing.Size(45, 45);
-            this.btnImg12.TabIndex = 55657;
-            this.btnImg12.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg12.Location = new System.Drawing.Point(432, 519);
+            this.pnlImg12.Name = "pnlImg12";
+            this.pnlImg12.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg12.TabIndex = 55657;
+            this.pnlImg12.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg11
+            // pnlImg11
             // 
-            this.btnImg11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg11.Location = new System.Drawing.Point(597, 445);
-            this.btnImg11.Name = "btnImg11";
-            this.btnImg11.Size = new System.Drawing.Size(45, 45);
-            this.btnImg11.TabIndex = 55654;
-            this.btnImg11.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg11.Location = new System.Drawing.Point(597, 445);
+            this.pnlImg11.Name = "pnlImg11";
+            this.pnlImg11.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg11.TabIndex = 55654;
+            this.pnlImg11.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg7
+            // pnlImg7
             // 
-            this.btnImg7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg7.Location = new System.Drawing.Point(597, 375);
-            this.btnImg7.Name = "btnImg7";
-            this.btnImg7.Size = new System.Drawing.Size(45, 45);
-            this.btnImg7.TabIndex = 55650;
-            this.btnImg7.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg7.Location = new System.Drawing.Point(597, 375);
+            this.pnlImg7.Name = "pnlImg7";
+            this.pnlImg7.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg7.TabIndex = 55650;
+            this.pnlImg7.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg9
+            // pnlImg9
             // 
-            this.btnImg9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg9.Location = new System.Drawing.Point(488, 445);
-            this.btnImg9.Name = "btnImg9";
-            this.btnImg9.Size = new System.Drawing.Size(45, 45);
-            this.btnImg9.TabIndex = 55652;
-            this.btnImg9.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg9.Location = new System.Drawing.Point(488, 445);
+            this.pnlImg9.Name = "pnlImg9";
+            this.pnlImg9.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg9.TabIndex = 55652;
+            this.pnlImg9.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg5
+            // pnlImg5
             // 
-            this.btnImg5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg5.Location = new System.Drawing.Point(488, 375);
-            this.btnImg5.Name = "btnImg5";
-            this.btnImg5.Size = new System.Drawing.Size(45, 45);
-            this.btnImg5.TabIndex = 55649;
-            this.btnImg5.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg5.Location = new System.Drawing.Point(488, 375);
+            this.pnlImg5.Name = "pnlImg5";
+            this.pnlImg5.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg5.TabIndex = 55649;
+            this.pnlImg5.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg10
+            // pnlImg10
             // 
-            this.btnImg10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg10.Location = new System.Drawing.Point(542, 445);
-            this.btnImg10.Name = "btnImg10";
-            this.btnImg10.Size = new System.Drawing.Size(45, 45);
-            this.btnImg10.TabIndex = 55655;
-            this.btnImg10.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg10.Location = new System.Drawing.Point(542, 445);
+            this.pnlImg10.Name = "pnlImg10";
+            this.pnlImg10.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg10.TabIndex = 55655;
+            this.pnlImg10.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg6
+            // pnlImg6
             // 
-            this.btnImg6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg6.Location = new System.Drawing.Point(542, 375);
-            this.btnImg6.Name = "btnImg6";
-            this.btnImg6.Size = new System.Drawing.Size(45, 45);
-            this.btnImg6.TabIndex = 55651;
-            this.btnImg6.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg6.Location = new System.Drawing.Point(542, 375);
+            this.pnlImg6.Name = "pnlImg6";
+            this.pnlImg6.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg6.TabIndex = 55651;
+            this.pnlImg6.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg8
+            // pnlImg8
             // 
-            this.btnImg8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg8.Location = new System.Drawing.Point(432, 445);
-            this.btnImg8.Name = "btnImg8";
-            this.btnImg8.Size = new System.Drawing.Size(45, 45);
-            this.btnImg8.TabIndex = 55653;
-            this.btnImg8.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg8.Location = new System.Drawing.Point(432, 445);
+            this.pnlImg8.Name = "pnlImg8";
+            this.pnlImg8.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg8.TabIndex = 55653;
+            this.pnlImg8.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg4
+            // pnlImg4
             // 
-            this.btnImg4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg4.Location = new System.Drawing.Point(432, 375);
-            this.btnImg4.Name = "btnImg4";
-            this.btnImg4.Size = new System.Drawing.Size(45, 45);
-            this.btnImg4.TabIndex = 55649;
-            this.btnImg4.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg4.Location = new System.Drawing.Point(432, 375);
+            this.pnlImg4.Name = "pnlImg4";
+            this.pnlImg4.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg4.TabIndex = 55649;
+            this.pnlImg4.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg3
+            // pnlImg3
             // 
-            this.btnImg3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg3.Location = new System.Drawing.Point(597, 306);
-            this.btnImg3.Name = "btnImg3";
-            this.btnImg3.Size = new System.Drawing.Size(45, 45);
-            this.btnImg3.TabIndex = 55649;
-            this.btnImg3.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg3.Location = new System.Drawing.Point(597, 306);
+            this.pnlImg3.Name = "pnlImg3";
+            this.pnlImg3.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg3.TabIndex = 55649;
+            this.pnlImg3.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg2
+            // pnlImg2
             // 
-            this.btnImg2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg2.Location = new System.Drawing.Point(542, 306);
-            this.btnImg2.Name = "btnImg2";
-            this.btnImg2.Size = new System.Drawing.Size(45, 45);
-            this.btnImg2.TabIndex = 55649;
-            this.btnImg2.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg2.Location = new System.Drawing.Point(542, 306);
+            this.pnlImg2.Name = "pnlImg2";
+            this.pnlImg2.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg2.TabIndex = 55649;
+            this.pnlImg2.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg1
+            // pnlImg1
             // 
-            this.btnImg1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg1.Location = new System.Drawing.Point(488, 306);
-            this.btnImg1.Name = "btnImg1";
-            this.btnImg1.Size = new System.Drawing.Size(45, 45);
-            this.btnImg1.TabIndex = 55649;
-            this.btnImg1.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg1.Location = new System.Drawing.Point(488, 306);
+            this.pnlImg1.Name = "pnlImg1";
+            this.pnlImg1.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg1.TabIndex = 55649;
+            this.pnlImg1.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
-            // btnImg0
+            // pnlImg0
             // 
-            this.btnImg0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImg0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnImg0.Location = new System.Drawing.Point(432, 306);
-            this.btnImg0.Name = "btnImg0";
-            this.btnImg0.Size = new System.Drawing.Size(45, 45);
-            this.btnImg0.TabIndex = 55648;
-            this.btnImg0.Click += new System.EventHandler(this.btnImg_Click);
+            this.pnlImg0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImg0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlImg0.Location = new System.Drawing.Point(432, 306);
+            this.pnlImg0.Name = "pnlImg0";
+            this.pnlImg0.Size = new System.Drawing.Size(45, 45);
+            this.pnlImg0.TabIndex = 55648;
+            this.pnlImg0.DoubleClick += new System.EventHandler(this.pnlImg_DoubleClick);
             // 
             // dataGridView
             // 
@@ -464,17 +466,6 @@ namespace Trabalho_Mercado_Online.Views
             this.dataGridView.Size = new System.Drawing.Size(399, 266);
             this.dataGridView.TabIndex = 55647;
             this.dataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentDoubleClick);
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblId.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblId.Location = new System.Drawing.Point(104, 77);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(13, 14);
-            this.lblId.TabIndex = 55646;
-            this.lblId.Text = "0";
             // 
             // btnCancelarEncarte
             // 
@@ -527,27 +518,27 @@ namespace Trabalho_Mercado_Online.Views
             this.label6.TabIndex = 55622;
             this.label6.Text = "Pesquisar";
             // 
-            // btnDeletar
+            // btnDeletarEncarte
             // 
-            this.btnDeletar.BackColor = System.Drawing.Color.White;
-            this.btnDeletar.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icone_close;
-            this.btnDeletar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnDeletar.FlatAppearance.BorderSize = 0;
-            this.btnDeletar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeletar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDeletar.ForeColor = System.Drawing.Color.White;
-            this.btnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeletar.Location = new System.Drawing.Point(379, 331);
-            this.btnDeletar.Name = "btnDeletar";
-            this.btnDeletar.Size = new System.Drawing.Size(32, 32);
-            this.btnDeletar.TabIndex = 55621;
-            this.btnDeletar.TabStop = false;
-            this.btnDeletar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDeletar.UseVisualStyleBackColor = false;
-            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
+            this.btnDeletarEncarte.BackColor = System.Drawing.Color.White;
+            this.btnDeletarEncarte.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icone_close;
+            this.btnDeletarEncarte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDeletarEncarte.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDeletarEncarte.FlatAppearance.BorderSize = 0;
+            this.btnDeletarEncarte.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnDeletarEncarte.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnDeletarEncarte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeletarEncarte.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDeletarEncarte.ForeColor = System.Drawing.Color.White;
+            this.btnDeletarEncarte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeletarEncarte.Location = new System.Drawing.Point(379, 331);
+            this.btnDeletarEncarte.Name = "btnDeletarEncarte";
+            this.btnDeletarEncarte.Size = new System.Drawing.Size(32, 32);
+            this.btnDeletarEncarte.TabIndex = 55621;
+            this.btnDeletarEncarte.TabStop = false;
+            this.btnDeletarEncarte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDeletarEncarte.UseVisualStyleBackColor = false;
+            this.btnDeletarEncarte.Click += new System.EventHandler(this.btnDeletarEncarte_Click);
             // 
             // txtPesquisar
             // 
@@ -558,6 +549,7 @@ namespace Trabalho_Mercado_Online.Views
             this.txtPesquisar.Name = "txtPesquisar";
             this.txtPesquisar.Size = new System.Drawing.Size(361, 32);
             this.txtPesquisar.TabIndex = 55620;
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisar_TextChanged);
             // 
             // btnDeletarProduto
             // 
@@ -624,23 +616,23 @@ namespace Trabalho_Mercado_Online.Views
             this.dateTimePicker.TabIndex = 55586;
             this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
-            // cbTipo
+            // cbFrente
             // 
-            this.cbTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbTipo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbTipo.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.cbTipo.FormattingEnabled = true;
-            this.cbTipo.Items.AddRange(new object[] {
-            "FRENTE",
-            "VERSO"});
-            this.cbTipo.Location = new System.Drawing.Point(15, 199);
-            this.cbTipo.Name = "cbTipo";
-            this.cbTipo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbTipo.Size = new System.Drawing.Size(396, 32);
-            this.cbTipo.TabIndex = 55585;
-            this.cbTipo.SelectedIndexChanged += new System.EventHandler(this.cbTipo_SelectedIndexChanged);
+            this.cbFrente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.cbFrente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFrente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbFrente.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbFrente.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.cbFrente.FormattingEnabled = true;
+            this.cbFrente.Items.AddRange(new object[] {
+            "VERSO",
+            "FRENTE"});
+            this.cbFrente.Location = new System.Drawing.Point(15, 199);
+            this.cbFrente.Name = "cbFrente";
+            this.cbFrente.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cbFrente.Size = new System.Drawing.Size(396, 32);
+            this.cbFrente.TabIndex = 55585;
+            this.cbFrente.SelectedIndexChanged += new System.EventHandler(this.cbTipo_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -845,44 +837,43 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.Button btnSalvarEncarte;
         private System.Windows.Forms.Button btnNovoEncarte;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cbTipo;
+        private System.Windows.Forms.ComboBox cbFrente;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Button btnEditarEncarte;
         private System.Windows.Forms.Button btnDeletarProduto;
         private System.Windows.Forms.Button btnConfirmarProduto;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnDeletar;
+        private System.Windows.Forms.Button btnDeletarEncarte;
         public System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnCancelarEncarte;
         public System.Windows.Forms.PictureBox picProduto;
-        private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.Panel btnImg0;
-        private System.Windows.Forms.Panel btnImg7;
-        private System.Windows.Forms.Panel btnImg5;
-        private System.Windows.Forms.Panel btnImg6;
-        private System.Windows.Forms.Panel btnImg4;
-        private System.Windows.Forms.Panel btnImg3;
-        private System.Windows.Forms.Panel btnImg2;
-        private System.Windows.Forms.Panel btnImg1;
-        private System.Windows.Forms.Panel btnImg19;
-        private System.Windows.Forms.Panel btnImg17;
-        private System.Windows.Forms.Panel btnImg18;
-        private System.Windows.Forms.Panel btnImg16;
-        private System.Windows.Forms.Panel btnImg15;
-        private System.Windows.Forms.Panel btnImg13;
-        private System.Windows.Forms.Panel btnImg14;
-        private System.Windows.Forms.Panel btnImg12;
-        private System.Windows.Forms.Panel btnImg11;
-        private System.Windows.Forms.Panel btnImg9;
-        private System.Windows.Forms.Panel btnImg10;
-        private System.Windows.Forms.Panel btnImg8;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.Panel pnlImg0;
+        private System.Windows.Forms.Panel pnlImg7;
+        private System.Windows.Forms.Panel pnlImg5;
+        private System.Windows.Forms.Panel pnlImg6;
+        private System.Windows.Forms.Panel pnlImg4;
+        private System.Windows.Forms.Panel pnlImg3;
+        private System.Windows.Forms.Panel pnlImg2;
+        private System.Windows.Forms.Panel pnlImg1;
+        private System.Windows.Forms.Panel pnlImg19;
+        private System.Windows.Forms.Panel pnlImg17;
+        private System.Windows.Forms.Panel pnlImg18;
+        private System.Windows.Forms.Panel pnlImg16;
+        private System.Windows.Forms.Panel pnlImg15;
+        private System.Windows.Forms.Panel pnlImg13;
+        private System.Windows.Forms.Panel pnlImg14;
+        private System.Windows.Forms.Panel pnlImg12;
+        private System.Windows.Forms.Panel pnlImg11;
+        private System.Windows.Forms.Panel pnlImg9;
+        private System.Windows.Forms.Panel pnlImg10;
+        private System.Windows.Forms.Panel pnlImg8;
+        private System.Windows.Forms.RadioButton rbFinaldeSemana;
+        private System.Windows.Forms.RadioButton rbAcougue;
+        private System.Windows.Forms.RadioButton rbBiscoito;
+        private System.Windows.Forms.RadioButton rbSacolao;
+        private System.Windows.Forms.RadioButton rbGeral;
     }
 }
