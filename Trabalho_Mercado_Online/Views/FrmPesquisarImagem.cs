@@ -161,6 +161,7 @@ namespace Trabalho_Mercado_Online.Views
         {
             InitializeComponent();
             Global.FinalizarThread();
+            pictureBoxImagem.Size = new Size(200, 179);
             panelImagens.MouseWheel += panelImagens_MouseWheel;
             InitNavegador();
         }
@@ -172,7 +173,7 @@ namespace Trabalho_Mercado_Online.Views
         {
             Button btn = (Button)sender;
             
-            if (frmEncarte==null)
+            if (frmProduto!=null)
             {
                 ImagemOriginal = new Bitmap(btn.BackgroundImage);
                 pictureBoxImagem.BackgroundImage = btn.BackgroundImage;
@@ -219,6 +220,21 @@ namespace Trabalho_Mercado_Online.Views
                     //Encarte
                     if (frmEncarte != null)
                     {
+                        DialogResult dialog = MessageBox.Show("Deseja Salvar Esta Imagem?", "Salvar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dialog == DialogResult.Yes)
+                        {
+                            SaveFileDialog sf = new SaveFileDialog();
+                            sf.Filter = "jpg(*.jpg)|*.jpg";
+                            sf.Title = "Salvar um arquivo de imagem";
+                            sf.FileName = txtProduto.Text;
+                            if (sf.ShowDialog() == DialogResult.OK)
+                            {
+                                pictureBoxImagem.BackgroundImage.Save(sf.FileName);
+                                chkRotEsquerda.Checked = false;
+                                chkRotDireita.Checked = false;
+                                nUD.Value = 1;
+                            }
+                        }
                         frmEncarte.picProduto.BackgroundImage = pictureBoxImagem.BackgroundImage;
                         this.Close();
                     }
@@ -227,7 +243,6 @@ namespace Trabalho_Mercado_Online.Views
 
                 }
             }
-             
             Global.FinalizarThread();
         }
         private void btnPesquisar_Click(object sender, EventArgs e)

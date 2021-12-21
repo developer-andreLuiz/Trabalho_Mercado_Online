@@ -10,6 +10,7 @@ namespace Trabalho_Mercado_Online.Models
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Validade { get; set; }
-        public string Tipo { get; set; }
+        public int Tipo { get; set; }
+        public int Frente { get; set; }
     }
 }

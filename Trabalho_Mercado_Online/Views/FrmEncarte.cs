@@ -20,8 +20,18 @@ namespace Trabalho_Mercado_Online.Views
         List<Encarte> ListaEncarte_Banco = EncarteController.GetAll();
         List<EncarteItem> ListaEncarteItens_Banco = EncarteItemController.GetAll();
         List<EncarteItemHelper> ListaProdutos = new List<EncarteItemHelper>();
-        Bitmap ImgBot = ImagemHelper.ImagemUrl("https://aplicativo.blob.core.windows.net/encarte/bot.jpg", 3508, 1014);
-        Bitmap ImgTop = ImagemHelper.ImagemUrl("https://aplicativo.blob.core.windows.net/encarte/top.jpg", 3508, 1014);
+        
+        Bitmap ImgTop1 = ImagemHelper.ImagemUrl("https://aplicativo.blob.core.windows.net/encarte/top1.jpg", 3508, 1014);
+        Bitmap ImgTop2 = ImagemHelper.ImagemUrl("https://aplicativo.blob.core.windows.net/encarte/top2.jpg", 3508, 1014);
+        Bitmap ImgTop3 = ImagemHelper.ImagemUrl("https://aplicativo.blob.core.windows.net/encarte/top3.jpg", 3508, 1014);
+        Bitmap ImgTop4 = ImagemHelper.ImagemUrl("https://aplicativo.blob.core.windows.net/encarte/top4.jpg", 3508, 1014);
+        Bitmap ImgTop5 = ImagemHelper.ImagemUrl("https://aplicativo.blob.core.windows.net/encarte/top5.jpg", 3508, 1014);
+        
+        Bitmap ImgBot1 = ImagemHelper.ImagemUrl("https://aplicativo.blob.core.windows.net/encarte/bot1.jpg", 3508, 1014);
+        Bitmap ImgBot2 = ImagemHelper.ImagemUrl("https://aplicativo.blob.core.windows.net/encarte/bot2.jpg", 3508, 1014);
+        Bitmap ImgBot3 = ImagemHelper.ImagemUrl("https://aplicativo.blob.core.windows.net/encarte/bot3.jpg", 3508, 1014);
+        Bitmap ImgBot4 = ImagemHelper.ImagemUrl("https://aplicativo.blob.core.windows.net/encarte/bot4.jpg", 3508, 1014);
+        Bitmap ImgBot5 = ImagemHelper.ImagemUrl("https://aplicativo.blob.core.windows.net/encarte/bot5.jpg", 3508, 1014);
         //
         private Form activeForm = null;
         #endregion
@@ -161,7 +171,6 @@ namespace Trabalho_Mercado_Online.Views
             btnImg18.BackgroundImage = null;
             btnImg19.BackgroundImage = null;
         }
-
         void AlimentarListaVazia()
         {
             ListaProdutos = new List<EncarteItemHelper>();
@@ -192,19 +201,19 @@ namespace Trabalho_Mercado_Online.Views
                 encarteItem.Img = ImagemHelper.ImagemUrl(item.Img, 660, 610);
                 ListaProdutos.Add(encarteItem);
 
-                Button btn = (Button)this.Controls.Find("btnImg" + b, true)[0];
+                Panel btn = (Panel)this.Controls.Find("btnImg" + b, true)[0];
                 btn.BackgroundImage = encarteItem.Img;
                 b++;
 
             }
-            if (encarte.Tipo.Equals("FRENTE DO ENCARTE"))
+            if (encarte.Tipo.Equals("FRENTE"))
             {
-                picEncarte.BackgroundImage = EncarteHelper.EncarteFrente(ImgTop, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
+                picEncarte.BackgroundImage = EncarteHelper.EncarteFrente(ImgTop1, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
                 cbTipo.SelectedIndex = 0;
             }
             else
             {
-                picEncarte.BackgroundImage = EncarteHelper.EncarteVerso(ImgBot, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
+                picEncarte.BackgroundImage = EncarteHelper.EncarteVerso(ImgBot1, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
                 cbTipo.SelectedIndex = 1;
             }
 
@@ -234,11 +243,11 @@ namespace Trabalho_Mercado_Online.Views
 
             if (cbTipo.SelectedIndex==0)
             {
-                picEncarte.BackgroundImage = EncarteHelper.EncarteFrente(ImgTop, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
+                picEncarte.BackgroundImage = EncarteHelper.EncarteFrente(ImgTop1, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
             }
             else
             {
-                picEncarte.BackgroundImage = EncarteHelper.EncarteVerso(ImgBot, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
+                picEncarte.BackgroundImage = EncarteHelper.EncarteVerso(ImgBot1, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
             }
            
         }
@@ -277,11 +286,11 @@ namespace Trabalho_Mercado_Online.Views
                 {
                     if (cbTipo.SelectedIndex == 0)
                     {
-                        ((Image)EncarteHelper.EncarteFrente(ImgTop, dateTimePicker.Value.ToShortDateString(), ListaProdutos)).Save(sf.FileName);
+                        ((Image)EncarteHelper.EncarteFrente(ImgTop1, dateTimePicker.Value.ToShortDateString(), ListaProdutos)).Save(sf.FileName);
                     }
                     else
                     {
-                        ((Image)EncarteHelper.EncarteVerso(ImgBot, dateTimePicker.Value.ToShortDateString(), ListaProdutos)).Save(sf.FileName);
+                        ((Image)EncarteHelper.EncarteVerso(ImgBot1, dateTimePicker.Value.ToShortDateString(), ListaProdutos)).Save(sf.FileName);
                     }
                 }
                 //banco de dados 
@@ -289,7 +298,7 @@ namespace Trabalho_Mercado_Online.Views
                 {
                     Encarte encarte = new Encarte();
                     encarte.Nome = txtNomeEncarte.Text.ToUpper();
-                    encarte.Tipo = cbTipo.Text.ToUpper();
+                    //encarte.Tipo = cbTipo.Text.ToUpper();
                     encarte.Validade = dateTimePicker.Value.ToShortDateString();
                     encarte = EncarteController.Gravar(encarte);
 
@@ -333,11 +342,11 @@ namespace Trabalho_Mercado_Online.Views
             {
                 if (cbTipo.SelectedIndex == 0)
                 {
-                    picEncarte.BackgroundImage = EncarteHelper.EncarteFrente(ImgTop, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
+                    picEncarte.BackgroundImage = EncarteHelper.EncarteFrente(ImgTop1, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
                 }
                 else
                 {
-                    picEncarte.BackgroundImage = EncarteHelper.EncarteVerso(ImgBot, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
+                    picEncarte.BackgroundImage = EncarteHelper.EncarteVerso(ImgBot1, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
                 }
             }
                 
@@ -348,26 +357,49 @@ namespace Trabalho_Mercado_Online.Views
             {
                 if (cbTipo.SelectedIndex == 0)
                 {
-                    picEncarte.BackgroundImage = EncarteHelper.EncarteFrente(ImgTop, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
+                    picEncarte.BackgroundImage = EncarteHelper.EncarteFrente(ImgTop1, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
                 }
                 else
                 {
-                    picEncarte.BackgroundImage = EncarteHelper.EncarteVerso(ImgBot, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
+                    picEncarte.BackgroundImage = EncarteHelper.EncarteVerso(ImgBot1, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
                 }
             }
            
         }
         private void btnImg_Click(object sender, EventArgs e)
         {
-            posLista = int.Parse(((Button)sender).Name.Replace("btnImg", ""));
+            posLista = int.Parse(((Panel)sender).Name.Replace("btnImg", ""));
            
             if (ListaProdutos.Count > posLista)
             {
+
                 txtNomeProduto.Text = ListaProdutos[posLista].Nome;
                 txtValorProduto.Text = ListaProdutos[posLista].Valor;
                 picProduto.BackgroundImage = ListaProdutos[posLista].Img;
                 InterfaceProduto(true);
                 txtNomeProduto.Focus();
+                DialogResult dialog = MessageBox.Show("Buscar Imagem Pc ?", "Local de Buscar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.Yes)
+                {
+                    using (OpenFileDialog open = new OpenFileDialog())
+                    {
+                        open.Filter = "Image Files(*.jpg;*.png;)|*.jpg;*.png";
+                        if (open.ShowDialog() == DialogResult.OK)
+                        {
+                            Image img = Image.FromFile(open.FileName);
+                            Image ImgNewSize = ImagemHelper.ResizeImage(img, 660, 610);
+
+
+
+                            picProduto.BackgroundImage = null;
+                            picProduto.BackgroundImage = ImgNewSize;
+                            txtNomeProduto.Text = open.SafeFileName.Replace(".jpg", "");
+
+                        }
+                    }
+                }
+                
+
             }
         }
         private void btnConfirmarProduto_Click(object sender, EventArgs e)
@@ -378,7 +410,7 @@ namespace Trabalho_Mercado_Online.Views
                 item.Nome = txtNomeProduto.Text;
                 item.Valor = txtValorProduto.Text;
                 item.Img = (Bitmap)picProduto.BackgroundImage;
-                Button btn = (Button)this.Controls.Find("btnImg"+posLista, true)[0];
+                Panel btn = (Panel)this.Controls.Find("btnImg"+posLista, true)[0];
 
                 btn.BackgroundImage = picProduto.BackgroundImage;
                 ListaProdutos[posLista] = item;
@@ -388,11 +420,11 @@ namespace Trabalho_Mercado_Online.Views
                 picProduto.BackgroundImage = null;
                 if (cbTipo.SelectedIndex == 0)
                 {
-                    picEncarte.BackgroundImage = EncarteHelper.EncarteFrente(ImgTop, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
+                    picEncarte.BackgroundImage = EncarteHelper.EncarteFrente(ImgTop1, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
                 }
                 else
                 {
-                    picEncarte.BackgroundImage = EncarteHelper.EncarteVerso(ImgBot, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
+                    picEncarte.BackgroundImage = EncarteHelper.EncarteVerso(ImgBot1, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
                 }
 
             }
@@ -406,7 +438,7 @@ namespace Trabalho_Mercado_Online.Views
             ListaProdutos[posLista].Nome = string.Empty;
             ListaProdutos[posLista].Valor = string.Empty;
             ListaProdutos[posLista].Img = null;
-            Button btn = (Button)this.Controls.Find("btnImg" + posLista, true)[0];
+            Panel btn = (Panel)this.Controls.Find("btnImg" + posLista, true)[0];
             btn.BackgroundImage = null;
             InterfaceProduto(false);
             txtNomeProduto.Text = string.Empty;
@@ -414,40 +446,16 @@ namespace Trabalho_Mercado_Online.Views
             picProduto.BackgroundImage = null;
             if (cbTipo.SelectedIndex == 0)
             {
-                picEncarte.BackgroundImage = EncarteHelper.EncarteFrente(ImgTop, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
+                picEncarte.BackgroundImage = EncarteHelper.EncarteFrente(ImgTop1, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
             }
             else
             {
-                picEncarte.BackgroundImage = EncarteHelper.EncarteVerso(ImgBot, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
+                picEncarte.BackgroundImage = EncarteHelper.EncarteVerso(ImgBot1, dateTimePicker.Value.ToShortDateString(), ListaProdutos);
             }
         }
         private void picProduto_DoubleClick(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Buscar Imagem da Internet ?", "Local de Buscar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialog == DialogResult.No)
-            {
-                OpenFileDialog open = new OpenFileDialog();
-                open.Filter = "Image Files(*.jpg;*.png;)|*.jpg;*.png";
-                if (open.ShowDialog() == DialogResult.OK)
-                {
-                    Image img = Image.FromFile(open.FileName);
-                    Image ImgNewSize = ImagemHelper.ResizeImage(img, 660, 610);
-
-
-
-                    picProduto.BackgroundImage = null;
-                    picProduto.BackgroundImage = ImgNewSize;
-                    
-                }
-            }
-            else
-            {
-                openChildForm(new FrmPesquisarImagem(this));
-            }
-
-
-
-
+            openChildForm(new FrmPesquisarImagem(this));
         }
         private void picEncarte_DoubleClick(object sender, EventArgs e)
         {
@@ -480,7 +488,8 @@ namespace Trabalho_Mercado_Online.Views
             encarte.Id = int.Parse(dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
             encarte.Nome = dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
             encarte.Validade = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-            encarte.Tipo = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+            encarte.Tipo = int.Parse(dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString());
+            encarte.Frente = int.Parse(dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString());
 
             Novo = false;
             Editar = false;
@@ -498,6 +507,20 @@ namespace Trabalho_Mercado_Online.Views
             btnEditarEncarte.Enabled = true;
             btnCancelarEncarte.Enabled = false;
             btnSalvarEncarte.Enabled = false;
+        }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count>0)
+            {
+
+                Encarte encarte = new Encarte();
+                encarte.Id = int.Parse(dataGridView.SelectedRows[0].Cells[0].Value.ToString());
+                encarte.Nome = dataGridView.SelectedRows[0].Cells[2].Value.ToString();
+                encarte.Validade = dataGridView.SelectedRows[0].Cells[2].Value.ToString();
+                //encarte.Tipo = dataGridView.SelectedRows[0].Cells[3].Value.ToString();
+
+            }
         }
     }
 }

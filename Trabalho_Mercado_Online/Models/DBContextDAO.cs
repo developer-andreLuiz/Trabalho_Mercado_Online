@@ -283,14 +283,17 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("int(11)")
                     .HasColumnName("id");
 
+                entity.Property(e => e.Frente)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("frente");
+
                 entity.Property(e => e.Nome)
                     .IsRequired()
                     .HasMaxLength(255)
                     .HasColumnName("nome");
 
                 entity.Property(e => e.Tipo)
-                    .IsRequired()
-                    .HasMaxLength(255)
+                    .HasColumnType("int(11)")
                     .HasColumnName("tipo");
 
                 entity.Property(e => e.Validade)
