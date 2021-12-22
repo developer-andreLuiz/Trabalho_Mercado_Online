@@ -623,12 +623,20 @@ namespace Trabalho_Mercado_Online.Views
                             var p = Global.Listas.Produto.Find(x => x.Id == int.Parse(lblId.Text));
                             ProdutoController.Deletar(p);
                             BlobStorageHelper.Deletar("produtos", p.Id.ToString());
-
+                            btnFechar.Visible = false;
+                            btnFechar.Enabled = false;
+                            int index = 0;
                             if (ListaId.Count>0)
                             {
                                 var li = ListaId.FindAll(x => x == p.Id);
                                 if (li.Count>0)
                                 {
+                                    index = ListaId.FindIndex(x=>x==p.Id);
+                                    index--;
+                                    if (index<0)
+                                    {
+                                        index = 0;
+                                    }
                                     ListaId.Remove(p.Id);
                                 }
                             }
@@ -650,7 +658,20 @@ namespace Trabalho_Mercado_Online.Views
                             AberturaForm();
                             if (Global.Listas.Produto.Count > 0)
                             {
-                                ExibirDados(Global.Listas.Produto[0]);
+                                if (ListaId.Count > 0)
+                                {
+                                    lblListaItens.Visible = true;
+                                    lblListaItens.Text = ListaId.Count + " Itens na Lista";
+                                    
+
+                                    Produto pro = Global.Listas.Produto.Find(x => x.Id == ListaId[index]);
+                                    ExibirDados(pro);
+                                }
+                                else
+                                {
+                                    lblListaItens.Visible = false;
+                                    ExibirDados(Global.Listas.Produto[0]);
+                                }
                             }
                             MessageBox.Show("Atualizado", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }

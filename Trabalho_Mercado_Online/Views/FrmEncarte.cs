@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Trabalho_Mercado_Online.Models;
 using Trabalho_Mercado_Online.Controllers;
 using Trabalho_Mercado_Online.Helpers;
+using System.Threading;
 
 namespace Trabalho_Mercado_Online.Views
 {
@@ -485,6 +486,7 @@ namespace Trabalho_Mercado_Online.Views
                         if (item.Img != null)
                         {
                             ImagemHelper.SaveImg((Image)item.Img);
+                            Thread.Sleep(200);
                             string path = System.IO.Directory.GetCurrentDirectory() + "\\Image.jpg";
                             BlobStorageHelper.Upload("encarte", encarteItem.Id.ToString(), path);
                         }
@@ -649,6 +651,7 @@ namespace Trabalho_Mercado_Online.Views
             InterfaceProduto(false);
             InterfacePnlsProduto(false);
             ExibirEncarte(encarte);
+            MessageBox.Show("Encarte Baixado");
             btnNovoEncarte.Enabled = true;
             btnEditarEncarte.Enabled = true;
             btnCancelarEncarte.Enabled = false;

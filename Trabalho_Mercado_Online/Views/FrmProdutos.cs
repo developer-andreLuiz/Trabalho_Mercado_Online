@@ -11,6 +11,7 @@ using Trabalho_Mercado_Online.Controllers;
 using Trabalho_Mercado_Online.DAO;
 using System.Globalization;
 using System.Linq;
+using System.Drawing.Printing;
 
 namespace Trabalho_Mercado_Online.Views
 {
@@ -283,12 +284,46 @@ namespace Trabalho_Mercado_Online.Views
         {
             List<ProdutosDataGrid_Model> ListaGrid = new List<ProdutosDataGrid_Model>();
             List<Produto> ListaProdutos = new List<Produto>();
-           
+            bool descricao = !String.IsNullOrEmpty(txtDescricao.Text);
+            bool promocao = chkPromocao.Checked;
+            bool igualaProduto = chkIgualaProduto.Checked;
+            bool faltaEditar = chkFaltaEditar.Checked;
+            bool editado = chkEditado.Checked;
 
 
             //Sem Filtro
             ListaProdutos.AddRange(Global.Listas.Produto);
-           
+            if (descricao)
+            {
+                string txt = StringHelper.FormatarStringMaiusculo(txtDescricao.Text);
+                var listTxt = txt.Split(" ");
+                foreach (var item in listTxt)
+                {
+                    var lt = ListaProdutos.FindAll(x => StringHelper.FormatarStringMaiusculo(x.Descricao).Contains(item, StringComparison.InvariantCultureIgnoreCase));
+                    ListaProdutos = lt;
+                }
+            }
+            if (promocao)
+            {
+                var lt = ListaProdutos.FindAll(x => x.ValorPromocao > 0);
+                ListaProdutos = lt;
+            }
+            if (igualaProduto)
+            {
+                var lt = ListaProdutos.FindAll(x => x.IgualaProduto > 0);
+                ListaProdutos = lt;
+            }
+            if (faltaEditar)
+            {
+                var lt = ListaProdutos.FindAll(x => x.Peso.Equals("00000"));
+                ListaProdutos = lt;
+            }
+            if (editado)
+            {
+                var lt = ListaProdutos.FindAll(x => x.Peso.Equals("00000") == false);
+                ListaProdutos = lt;
+            }
+
             if (categoria==1)
             {
                 if (cbNivel1.SelectedValue != null)
@@ -345,11 +380,18 @@ namespace Trabalho_Mercado_Online.Views
                     }
                 }
             }
+           
+            
+            
+            
+            
+            
             if (chkFaltaEditar.Checked)
             {
                 var lt = ListaProdutos.FindAll(x => x.Peso.Equals("00000"));
                 ListaProdutos = lt;
             }
+
             #region Formatação dos Dados Grid
             foreach (var obj in ListaProdutos)
             {
@@ -803,6 +845,7 @@ namespace Trabalho_Mercado_Online.Views
         {
             List<int> lista = new List<int>();
             List<string> listaNome = new List<string>();
+            
             for (int i = 0; i < dataGridView.SelectedRows.Count; i++)
             {
                 var valor = dataGridView.SelectedRows[i].Cells[0].Value;
@@ -811,17 +854,30 @@ namespace Trabalho_Mercado_Online.Views
                 lista.Add(id);
                 listaNome.Add(nome.ToString());
             }
+            string[] textoParaImpressao = new string[listaNome.Count];
             if (lista.Count > 0)
             {
                 DialogResult dialog = MessageBox.Show("Deseja Imprimir Lista de Produtos","Imprimir",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                 if (dialog==DialogResult.Yes)
                 {
                     ListaImprimir = string.Empty;
-                    foreach (var item in listaNome)
+                    for (int i = 0; i < listaNome.Count; i++)
                     {
-                        ListaImprimir += Environment.NewLine + item;
+                        textoParaImpressao[i] =i+1+"-"+listaNome[i];
                     }
-                    printDocument.Print();
+
+                    PrintDocument doc = new ImprimirDocumentoHelper(textoParaImpressao);
+                    doc.PrintPage += this.Doc_PrintPage;
+                    PrintDialog dialogo = new PrintDialog();
+                    dialogo.Document = doc;
+
+
+
+                    //  Se o usuário clicar em OK , imprime o documento
+                    if (dialogo.ShowDialog() == DialogResult.OK)
+                    {
+                        doc.Print();
+                    }
                 }
 
 
@@ -833,6 +889,54 @@ namespace Trabalho_Mercado_Online.Views
             else
             {
                 MessageBox.Show("Nehum Produto Selecionado");
+            }
+        }
+        private void Doc_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            // Recupera o documento que enviou este evento.
+            ImprimirDocumentoHelper doc = (ImprimirDocumentoHelper)sender;
+
+            // Define a fonte e determina a altura da linha
+            using (Font fonte = new Font("Verdana", 10))
+            {
+                float alturaLinha = fonte.GetHeight(e.Graphics);
+
+                // Cria as variáveis para tratar a posição na página
+                float x = e.MarginBounds.Left;
+                float y = e.MarginBounds.Top;
+
+                // Incrementa o contador de página para refletir
+                // a página que esta sendo impressa
+                doc.NumeroPagina += 1;
+
+                // Imprime toda a informação que cabe na página
+                // O laço termina quando a próxima linha
+                // iria passar a borda da margem ou quando não
+                // houve mais linhas a imprimir
+                while ((y + alturaLinha) < e.MarginBounds.Bottom &&
+                  doc.Offset <= doc.Texto.GetUpperBound(0))
+                {
+                    e.Graphics.DrawString(doc.Texto[doc.Offset], fonte,
+                      Brushes.Black, x, y);
+
+                    // move para a proxima linha
+                    doc.Offset += 1;
+
+                    // Move uma linha para baixo (proxima linha)
+                    y += alturaLinha;
+                }
+
+                if (doc.Offset < doc.Texto.GetUpperBound(0))
+                {
+                    // Havendo ainda pelo menos mais uma página.
+                    // Sinaliza o evento para disparar novamente
+                    e.HasMorePages = true;
+                }
+                else
+                {
+                    // A impressão terminou
+                    doc.Offset = 0;
+                }
             }
         }
         //DataGrid
@@ -926,16 +1030,7 @@ namespace Trabalho_Mercado_Online.Views
         {
             if (cbNivel1.SelectedValue != null)
             {
-                chkCategoria.Checked = false;
-               
-                chkSemCategoria.Checked = false;
-                chkCategoriaNivel2.Checked = false;
-                chkCategoriaNivel3.Checked = false;
-                chkIgualaProduto.Checked = false;
-                chkPromocao.Checked = false;
-                txtDescricao.Text = string.Empty;
-                txtCodigoBarraCodigo.Text = string.Empty;
-                txtDescricao.Focus();
+                
                 FiltrarCategorias(1);
             }
                 
