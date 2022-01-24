@@ -21,6 +21,8 @@ namespace Trabalho_Mercado_Online.Views
         List<Encarte> ListaEncarte_Banco = EncarteController.GetAll();
         List<EncarteItem> ListaEncarteItens_Banco = EncarteItemController.GetAll();
         List<EncarteItemHelper> ListaProdutos = new List<EncarteItemHelper>();
+        List<Image> ListaImgTop = new List<Image>();
+        List<Image> ListaImgBot = new List<Image>();
         private Form activeForm = null;
         #endregion
 
@@ -50,22 +52,22 @@ namespace Trabalho_Mercado_Online.Views
         }
         void CarregarGrid()
         {
-            if (ListaEncarte_Banco.Count > 0)
+            List<Encarte> lista = new List<Encarte>();
+            lista.AddRange(ListaEncarte_Banco);
+            if (txtPesquisar.Text.Length > 0)
             {
-                List<Encarte> lista = new List<Encarte>();
-                lista.AddRange(ListaEncarte_Banco);
-                if (txtPesquisar.Text.Length > 0)
+                string txt = StringHelper.FormatarStringMaiusculo(txtPesquisar.Text);
+                var listTxt = txt.Split(" ");
+                foreach (var item in listTxt)
                 {
-                    string txt = StringHelper.FormatarStringMaiusculo(txtPesquisar.Text);
-                    var listTxt = txt.Split(" ");
-                    foreach (var item in listTxt)
-                    {
-                        var lt = lista.FindAll(x => StringHelper.FormatarStringMaiusculo(x.Nome).Contains(item, StringComparison.InvariantCultureIgnoreCase));
-                        lista = lt;
-                    }
+                    var lt = lista.FindAll(x => StringHelper.FormatarStringMaiusculo(x.Nome).Contains(item, StringComparison.InvariantCultureIgnoreCase));
+                    lista = lt;
                 }
-                dataGridView.DataSource = null;
-                dataGridView.DataSource = lista;
+            }
+            dataGridView.DataSource = null;
+            dataGridView.DataSource = lista;
+            if (lista.Count > 0)
+            {
                 dataGridView.Columns[0].Width = 30;
                 dataGridView.Columns[1].Width = 170;
                 dataGridView.Columns[2].Width = 70;
@@ -97,7 +99,8 @@ namespace Trabalho_Mercado_Online.Views
             
             //Encarte
             txtNomeEncarte.Text = string.Empty;
-            dateTimePicker.Value = DateTime.Now;
+            dateTimePickerData.Value = DateTime.Now;
+            dateTimePickerValidade.Value = DateTime.Now;
             cbFrente.SelectedIndex = 1;
             rbGeral.Enabled = true;
             rbSacolao.Enabled = false;
@@ -126,7 +129,7 @@ namespace Trabalho_Mercado_Online.Views
         void AlimentarListaVazia()
         {
             ListaProdutos = new List<EncarteItemHelper>();
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 24; i++)
             {
                 EncarteItemHelper item = new EncarteItemHelper();
                 item.Nome = string.Empty;
@@ -136,17 +139,16 @@ namespace Trabalho_Mercado_Online.Views
             }
         }
         void ExibirEncarte(Encarte encarte)
-        {
+        {   
             //Reseta Varivel
             posLista = 0;
 
             //Interface
             txtNomeEncarte.Text = encarte.Nome;
-            dateTimePicker.Value = Convert.ToDateTime(encarte.Validade);
+            dateTimePickerData.Value = Convert.ToDateTime(encarte.Data);
+            dateTimePickerValidade.Value = Convert.ToDateTime(encarte.Validade);
             cbFrente.SelectedIndex = encarte.Frente;
-            //Caminha Imagem
-            string PathTop = $"https://aplicativo.blob.core.windows.net/encarte/top{encarte.Tipo}.jpg";
-            string PathBot = $"https://aplicativo.blob.core.windows.net/encarte/bot{encarte.Tipo}.jpg";
+           
 
             //Banco de Dados
             var list = ListaEncarteItens_Banco.FindAll(x => x.IdEncarte == encarte.Id);
@@ -179,17 +181,19 @@ namespace Trabalho_Mercado_Online.Views
                 case 5: rbFinaldeSemana.Checked = true; solid = new SolidBrush(Color.FromArgb(49, 191, 253)); break;
             }
 
+            if (ListaImgBot.Count==0||ListaImgTop.Count==0)
+            {
+                return;
+            }
 
             //Define Verso
             if (encarte.Frente==1)
             {
-                Bitmap BitImg = ImagemHelper.ImagemUrl(PathTop,3508,1014);
-                picEncarte.BackgroundImage = EncarteHelper.EncarteFrente(BitImg, dateTimePicker.Value.ToShortDateString(), ListaProdutos, solid);
+                picEncarte.BackgroundImage = EncarteHelper.EncarteFrente((Bitmap)ListaImgTop[encarte.Tipo - 1], dateTimePickerData.Value.ToShortDateString(), dateTimePickerValidade.Value.ToShortDateString(), ListaProdutos, solid);
             }
             else
             {
-                Bitmap BitImg = ImagemHelper.ImagemUrl(PathBot, 3508, 1014);
-                picEncarte.BackgroundImage = EncarteHelper.EncarteVerso(BitImg, dateTimePicker.Value.ToShortDateString(), ListaProdutos, solid);
+                picEncarte.BackgroundImage = EncarteHelper.EncarteVerso((Bitmap)ListaImgBot[encarte.Tipo - 1], dateTimePickerData.Value.ToShortDateString(), dateTimePickerValidade.Value.ToShortDateString(), ListaProdutos, solid);
             }
 
         }
@@ -227,18 +231,20 @@ namespace Trabalho_Mercado_Online.Views
                 }
 
 
+                if (ListaImgBot.Count==0 || ListaImgTop.Count==0)
+                {
+                    return;
+                }
+               
 
-                string PathTop = $"https://aplicativo.blob.core.windows.net/encarte/top{valor}.jpg";
-                string PathBot = $"https://aplicativo.blob.core.windows.net/encarte/bot{valor}.jpg";
+                
                 if (cbFrente.SelectedIndex == 1)
                 {
-                    Bitmap BitImg = ImagemHelper.ImagemUrl(PathTop, 3508, 1014);
-                    picEncarte.BackgroundImage = EncarteHelper.EncarteFrente(BitImg, dateTimePicker.Value.ToShortDateString(), ListaProdutos, solid);
+                    picEncarte.BackgroundImage = EncarteHelper.EncarteFrente((Bitmap)ListaImgTop[valor-1], dateTimePickerData.Value.ToShortDateString(), dateTimePickerValidade.Value.ToShortDateString(), ListaProdutos, solid);
                 }
                 else
                 {
-                    Bitmap BitImg = ImagemHelper.ImagemUrl(PathBot, 3508, 1014);
-                    picEncarte.BackgroundImage = EncarteHelper.EncarteVerso(BitImg, dateTimePicker.Value.ToShortDateString(), ListaProdutos, solid);
+                    picEncarte.BackgroundImage = EncarteHelper.EncarteVerso((Bitmap)ListaImgBot[valor - 1], dateTimePickerData.Value.ToShortDateString(), dateTimePickerValidade.Value.ToShortDateString(), ListaProdutos, solid);
                 }
             }
         }
@@ -246,7 +252,8 @@ namespace Trabalho_Mercado_Online.Views
         void InterfaceEncarte(Boolean b)
         {
             txtNomeEncarte.Enabled = b;
-            dateTimePicker.Enabled = b;
+            dateTimePickerData.Enabled = b;
+            dateTimePickerValidade.Enabled = b;
             cbFrente.Enabled = b;
             rbGeral.Enabled = b;
             rbSacolao.Enabled = b;
@@ -285,6 +292,10 @@ namespace Trabalho_Mercado_Online.Views
             pnlImg17.Enabled = b;
             pnlImg18.Enabled = b;
             pnlImg19.Enabled = b;
+            pnlImg20.Enabled = b;
+            pnlImg21.Enabled = b;
+            pnlImg22.Enabled = b;
+            pnlImg23.Enabled = b;
             if (b==true)
             {
                 pnlImg0.BackColor = Color.FromArgb(223, 240, 254);
@@ -307,6 +318,10 @@ namespace Trabalho_Mercado_Online.Views
                 pnlImg17.BackColor = Color.FromArgb(223, 240, 254);
                 pnlImg18.BackColor = Color.FromArgb(223, 240, 254);
                 pnlImg19.BackColor = Color.FromArgb(223, 240, 254);
+                pnlImg20.BackColor = Color.FromArgb(223, 240, 254);
+                pnlImg21.BackColor = Color.FromArgb(223, 240, 254);
+                pnlImg22.BackColor = Color.FromArgb(223, 240, 254);
+                pnlImg23.BackColor = Color.FromArgb(223, 240, 254);
             }
             else
             {
@@ -330,6 +345,10 @@ namespace Trabalho_Mercado_Online.Views
                 pnlImg17.BackColor = Color.White;
                 pnlImg18.BackColor = Color.White;
                 pnlImg19.BackColor = Color.White;
+                pnlImg20.BackColor = Color.White;
+                pnlImg21.BackColor = Color.White;
+                pnlImg22.BackColor = Color.White;
+                pnlImg23.BackColor = Color.White;
             }
         }
         //Esta dentro de limpar
@@ -355,6 +374,41 @@ namespace Trabalho_Mercado_Online.Views
             pnlImg17.BackgroundImage = null;
             pnlImg18.BackgroundImage = null;
             pnlImg19.BackgroundImage = null;
+            pnlImg20.BackgroundImage = null;
+            pnlImg21.BackgroundImage = null;
+            pnlImg22.BackgroundImage = null;
+            pnlImg23.BackgroundImage = null;
+        }
+
+        //Baixar Imagem de Bot e Top
+        void BaixarImagensTopBot()
+        {
+           
+            Bitmap Top1 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/top1.jpg", 3508, 340);
+            Bitmap Top2 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/top2.jpg", 3508, 340);
+            Bitmap Top3 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/top3.jpg", 3508, 340);
+            Bitmap Top4 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/top4.jpg", 3508, 340);
+            Bitmap Top5 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/top5.jpg", 3508, 340);
+
+            Bitmap Bot1 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/bot1.jpg", 3508, 340);
+            Bitmap Bot2 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/bot2.jpg", 3508, 340);
+            Bitmap Bot3 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/bot3.jpg", 3508, 340);
+            Bitmap Bot4 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/bot4.jpg", 3508, 340);
+            Bitmap Bot5 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/bot5.jpg", 3508, 340);
+
+            ListaImgTop = new List<Image>();
+            ListaImgTop.Add(Top1);
+            ListaImgTop.Add(Top2);
+            ListaImgTop.Add(Top3);
+            ListaImgTop.Add(Top4);
+            ListaImgTop.Add(Top5);
+
+            ListaImgBot = new List<Image>();
+            ListaImgBot.Add(Bot1);
+            ListaImgBot.Add(Bot2);
+            ListaImgBot.Add(Bot3);
+            ListaImgBot.Add(Bot4);
+            ListaImgBot.Add(Bot5);
         }
         #endregion
 
@@ -364,6 +418,7 @@ namespace Trabalho_Mercado_Online.Views
         {
             InitializeComponent();
             OpenForm();
+            BaixarImagensTopBot();
         }
        
         //Botões
@@ -451,7 +506,8 @@ namespace Trabalho_Mercado_Online.Views
                     //inserido em tabela encarte
                     encarte = new Encarte();
                     encarte.Nome = txtNomeEncarte.Text.ToUpper();
-                    encarte.Validade = dateTimePicker.Value.ToShortDateString();
+                    encarte.Data = dateTimePickerData.Value.ToShortDateString();
+                    encarte.Validade = dateTimePickerValidade.Value.ToShortDateString();
                     encarte.Frente = cbFrente.SelectedIndex;
                     if (rbGeral.Checked)
                     {
@@ -475,32 +531,44 @@ namespace Trabalho_Mercado_Online.Views
                     }
                     encarte = EncarteController.Gravar(encarte);
 
-
+                    int count = 0;
                     foreach (var item in ListaProdutos)
                     {
+                        count++;
                         EncarteItem encarteItem = new EncarteItem();
                         encarteItem.IdEncarte = encarte.Id;
                         encarteItem.Produto = item.Nome;
                         encarteItem.Valor = item.Valor;
                         encarteItem = EncarteItemController.Gravar(encarteItem);
+                        
                         if (item.Img != null)
-                        {
-                            ImagemHelper.SaveImg((Image)item.Img);
+                        {   ImagemHelper.SaveImg((Image)item.Img, count.ToString());
                             Thread.Sleep(200);
-                            string path = System.IO.Directory.GetCurrentDirectory() + "\\Image.jpg";
+                            string path = System.IO.Directory.GetCurrentDirectory() + $"\\Image{count.ToString()}.jpg";
                             BlobStorageHelper.Upload("encarte", encarteItem.Id.ToString(), path);
                         }
                     }
 
-                    
+                    //Deletar Imagem Criadas
+                    count = 0;
+                    foreach (var item in ListaProdutos)
+                    {
+                        count++;
+                        ImagemHelper.DeleteImg(count.ToString());
+                    }
                 }
+               
                 Limpar();
                 AtualizarLista_Banco();
                 CarregarGrid();
                 InterfaceEncarte(false);
                 InterfaceProduto(false);
                 InterfacePnlsProduto(false);
-                ExibirEncarte(encarte);
+                if (banco)
+                {
+                    ExibirEncarte(encarte);
+                }
+                
                 btnNovoEncarte.Enabled = true;
                 btnEditarEncarte.Enabled = true;
                 btnCancelarEncarte.Enabled = false;
@@ -516,6 +584,10 @@ namespace Trabalho_Mercado_Online.Views
        
         //Interface
         private void dateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            AtualizarEncarte();
+        }
+        private void dateTimePickerData_ValueChanged(object sender, EventArgs e)
         {
             AtualizarEncarte();
         }
@@ -593,16 +665,19 @@ namespace Trabalho_Mercado_Online.Views
                 item.Nome = txtNomeProduto.Text;
                 item.Valor = txtValorProduto.Text;
                 item.Img = (Bitmap)picProduto.BackgroundImage;
+                
+               
                 Panel pnl = (Panel)this.Controls.Find("pnlImg" + posLista, true)[0];
-
+                
                 pnl.BackgroundImage = picProduto.BackgroundImage;
                 ListaProdutos[posLista] = item;
                 InterfaceProduto(false);
                 txtNomeProduto.Text = string.Empty;
                 txtValorProduto.Text = string.Empty;
                 picProduto.BackgroundImage = null;
-                AtualizarEncarte();
 
+                
+                AtualizarEncarte();
             }
             else
             {
@@ -638,24 +713,7 @@ namespace Trabalho_Mercado_Online.Views
         }
         private void dataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Encarte encarte = new Encarte();
-            encarte.Id = int.Parse(dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
-            encarte.Nome = dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
-            encarte.Validade = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-            encarte.Tipo = int.Parse(dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString());
-            encarte.Frente = int.Parse(dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString());
-            Novo = false;
-            Editar = false;
-            Limpar();
-            InterfaceEncarte(false);
-            InterfaceProduto(false);
-            InterfacePnlsProduto(false);
-            ExibirEncarte(encarte);
-            MessageBox.Show("Encarte Baixado");
-            btnNovoEncarte.Enabled = true;
-            btnEditarEncarte.Enabled = true;
-            btnCancelarEncarte.Enabled = false;
-            btnSalvarEncarte.Enabled = false;
+           
 
 
         }
@@ -666,39 +724,79 @@ namespace Trabalho_Mercado_Online.Views
                 DialogResult dialog = MessageBox.Show("Deseja Apagar este Encarte no Banco ?", "Banco de Dados", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
-                    Encarte encarte = new Encarte();
-                    encarte.Id = int.Parse(dataGridView.SelectedRows[0].Cells[0].Value.ToString());
-                    encarte.Nome = dataGridView.SelectedRows[0].Cells[1].Value.ToString();
-                    encarte.Validade = dataGridView.SelectedRows[0].Cells[2].Value.ToString();
-                    encarte.Tipo = int.Parse(dataGridView.SelectedRows[0].Cells[3].Value.ToString());
-                    encarte.Frente = int.Parse(dataGridView.SelectedRows[0].Cells[4].Value.ToString());
-                    var lista = ListaEncarteItens_Banco.FindAll(x => x.IdEncarte == encarte.Id);
-                    EncarteController.Deletar(encarte);
-                    foreach (var item in lista)
+                    try
                     {
-                        BlobStorageHelper.Deletar("encarte", item.Id.ToString());
-                        EncarteItemController.Deletar(item);
-                    }
-                    Novo = false;
-                    Editar = false;
-                    Limpar();
-                    
-                    InterfaceEncarte(false);
-                    InterfaceProduto(false);
-                    InterfacePnlsProduto(false);
-                    AlimentarListaVazia();
-                    btnNovoEncarte.Enabled = true;
-                    btnEditarEncarte.Enabled = true;
-                    btnCancelarEncarte.Enabled = false;
-                    btnSalvarEncarte.Enabled = false;
+                        Encarte encarte = new Encarte();
+                        encarte.Id = int.Parse(dataGridView.SelectedRows[0].Cells[0].Value.ToString());
+                        encarte.Nome = dataGridView.SelectedRows[0].Cells[1].Value.ToString();
+                        encarte.Data = dataGridView.SelectedRows[0].Cells[2].Value.ToString();
+                        encarte.Validade = dataGridView.SelectedRows[0].Cells[3].Value.ToString();
+                        encarte.Tipo = int.Parse(dataGridView.SelectedRows[0].Cells[4].Value.ToString());
+                        encarte.Frente = int.Parse(dataGridView.SelectedRows[0].Cells[5].Value.ToString());
+                        var lista = ListaEncarteItens_Banco.FindAll(x => x.IdEncarte == encarte.Id);
+                        EncarteController.Deletar(encarte);
+                        foreach (var item in lista)
+                        {
+                            BlobStorageHelper.Deletar("encarte", item.Id.ToString());
+                            EncarteItemController.Deletar(item);
+                        }
+                        Novo = false;
+                        Editar = false;
+                        Limpar();
 
-                    AtualizarLista_Banco();
-                    CarregarGrid();
-                    MessageBox.Show("Encarte Apagado");
+                        InterfaceEncarte(false);
+                        InterfaceProduto(false);
+                        InterfacePnlsProduto(false);
+                        AlimentarListaVazia();
+                        btnNovoEncarte.Enabled = true;
+                        btnEditarEncarte.Enabled = true;
+                        btnCancelarEncarte.Enabled = false;
+                        btnSalvarEncarte.Enabled = false;
+
+                        AtualizarLista_Banco();
+                        CarregarGrid();
+                        MessageBox.Show("Encarte Apagado");
+                    }
+                    catch { }
+
                 }
             }
         }
 
-       
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (!Novo && !Editar)
+                {
+                    Encarte encarte = new Encarte();
+                    encarte.Id = int.Parse(dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    encarte.Nome = dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    encarte.Data = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    encarte.Validade = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    encarte.Tipo = int.Parse(dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString());
+                    encarte.Frente = int.Parse(dataGridView.Rows[e.RowIndex].Cells[5].Value.ToString());
+                    Novo = false;
+                    Editar = false;
+                    Limpar();
+                    InterfaceEncarte(false);
+                    InterfaceProduto(false);
+                    InterfacePnlsProduto(false);
+                    ExibirEncarte(encarte);
+                    MessageBox.Show("Encarte Baixado");
+                    btnNovoEncarte.Enabled = true;
+                    btnEditarEncarte.Enabled = true;
+                    btnCancelarEncarte.Enabled = false;
+                    btnSalvarEncarte.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Esta em edição ou criação, finalize ou cancele antes de buscar um encarte");
+                }
+               
+            }
+            catch { }
+           
+        }
     }
 }

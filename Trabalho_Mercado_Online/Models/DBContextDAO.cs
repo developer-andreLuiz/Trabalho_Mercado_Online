@@ -258,7 +258,7 @@ namespace Trabalho_Mercado_Online.Models
                     .HasComment("endereço de entrega da compra");
 
                 entity.Property(e => e.Habilitado)
-                    .IsRequired()
+                    .HasColumnType("int(11)")
                     .HasColumnName("habilitado")
                     .HasDefaultValueSql("'1'")
                     .HasComment("status do cliente");
@@ -282,6 +282,11 @@ namespace Trabalho_Mercado_Online.Models
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
                     .HasColumnName("id");
+
+                entity.Property(e => e.Data)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("data");
 
                 entity.Property(e => e.Frente)
                     .HasColumnType("int(11)")

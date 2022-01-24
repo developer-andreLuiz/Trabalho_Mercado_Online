@@ -14,7 +14,7 @@ namespace Trabalho_Mercado_Online.Views
         public FrmEncartePreview(Bitmap Img)
         {
             InitializeComponent();
-            pictureBox.BackgroundImage = Img;
+            pictureBox1.BackgroundImage = Img;
         }
     }
 }

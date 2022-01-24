@@ -72,3 +72,4 @@ D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmEncarte.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.csproj.AssemblyReference.cache
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmEncartePreview.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.GeneratedMSBuildEditorConfig.editorconfig

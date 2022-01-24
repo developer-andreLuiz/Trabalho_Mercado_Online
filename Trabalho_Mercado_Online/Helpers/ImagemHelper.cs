@@ -62,6 +62,19 @@ namespace Trabalho_Mercado_Online.Helpers
             }
             catch { }
         }
+        public static void SaveImg(Image ImgLocal,string name)
+        {
+            try
+            {
+                string path = System.IO.Directory.GetCurrentDirectory() + $"\\Image{name}.jpg";
+                using (Bitmap bitmap = (Bitmap)ImgLocal)
+                {
+                    bitmap.Save(path, ImageFormat.Jpeg);
+                    bitmap.Dispose();
+                }
+            }
+            catch { }
+        }
         public static void DeleteImg()
         {
             try
@@ -78,6 +91,22 @@ namespace Trabalho_Mercado_Online.Helpers
            
 
         }
+        public static void DeleteImg(string name)
+        {
+            try
+            {
+                string path = System.IO.Directory.GetCurrentDirectory() + $"\\Image{name}.jpg";
+                bool result = File.Exists(path);
+                if (result == true)
+                {
+                    File.Delete(path);
+                }
+            }
+            catch { }
+
+
+        }
+      
         public static Bitmap ImagemUrl(string url,int largura, int altura)
         {
             try

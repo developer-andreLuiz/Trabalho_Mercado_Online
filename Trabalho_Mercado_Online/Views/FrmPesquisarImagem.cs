@@ -151,11 +151,20 @@ namespace Trabalho_Mercado_Online.Views
             InitializeComponent();
             Global.FinalizarThread();
             panelImagens.MouseWheel += panelImagens_MouseWheel;
-            pictureBoxImagem.Size = new Size(200,179);
-            txtProduto.Text = frm.txtNomeProduto.Text;
             InitNavegador();
             frmEncarte = frm;
-          
+            txtProduto.Text = frm.txtNomeProduto.Text;
+
+            pictureBoxImagem.Size = new Size(200,179);
+            if (frm.picProduto.BackgroundImage!=null)
+            {
+                ImagemOriginal = (Bitmap)frm.picProduto.BackgroundImage;
+                pictureBoxImagem.BackgroundImage = frm.picProduto.BackgroundImage;
+            }
+            
+
+
+
         }
         public FrmPesquisarImagem()
         {

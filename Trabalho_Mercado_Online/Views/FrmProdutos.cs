@@ -41,11 +41,15 @@ namespace Trabalho_Mercado_Online.Views
             ChildForm.Show();
         }
 
+
+       
         //Filtro
         public void Filtrar()
         {
             List<ProdutosDataGrid_Model> ListaGrid = new List<ProdutosDataGrid_Model>();
             List<Produto> ListaProdutos = new List<Produto>();
+
+
 
             bool descricao = !String.IsNullOrEmpty(txtDescricao.Text);
             bool promocao = chkPromocao.Checked;
@@ -544,7 +548,10 @@ namespace Trabalho_Mercado_Online.Views
                 ComboCategoriasNivel2();
                 if (chkCategoria.Checked)
                 {
-                    Filtrar();
+                    if (!chkTravarFiltro.Checked)
+                    {
+                        Filtrar();
+                    }
                 }
             }
         }
@@ -555,7 +562,10 @@ namespace Trabalho_Mercado_Online.Views
                 ComboCategoriasNivel3();
                 if (chkCategoria.Checked)
                 {
-                    Filtrar();
+                    if (!chkTravarFiltro.Checked)
+                    {
+                        Filtrar();
+                    }
                 }
             }
         }
@@ -565,23 +575,42 @@ namespace Trabalho_Mercado_Online.Views
             {
                 if (chkCategoria.Checked)
                 {
-                    Filtrar();
+                    if (!chkTravarFiltro.Checked)
+                    {
+                        Filtrar();
+                    }
                 }
             }
         }
 
         //Filtros
+        private void chkTravarFiltro_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!chkTravarFiltro.Checked)
+            {
+                Filtrar();
+            }
+        }
         private void txtDescricao_TextChanged(object sender, EventArgs e)
         {
-            Filtrar();
+            if (!chkTravarFiltro.Checked)
+            {
+                Filtrar();
+            }
         }
         private void chkPromocao_CheckedChanged(object sender, EventArgs e)
         {
-            Filtrar();
+            if (!chkTravarFiltro.Checked)
+            {
+                Filtrar();
+            }
         }
         private void chkIgualaProduto_CheckedChanged(object sender, EventArgs e)
         {
-            Filtrar();
+            if (!chkTravarFiltro.Checked)
+            {
+                Filtrar();
+            }
         }
         private void chkFaltaEditar_CheckedChanged(object sender, EventArgs e)
         {
@@ -589,7 +618,10 @@ namespace Trabalho_Mercado_Online.Views
             {
                 chkEditado.Checked = false;
             }
-            Filtrar();
+            if (!chkTravarFiltro.Checked)
+            {
+                Filtrar();
+            }
         }
         private void chkEditado_CheckedChanged(object sender, EventArgs e)
         {
@@ -597,7 +629,10 @@ namespace Trabalho_Mercado_Online.Views
             {
                 chkFaltaEditar.Checked = false;
             }
-            Filtrar();
+            if (!chkTravarFiltro.Checked)
+            {
+                Filtrar();
+            }
         }
         private void chkCategoria_CheckedChanged(object sender, EventArgs e)
         {
@@ -605,7 +640,11 @@ namespace Trabalho_Mercado_Online.Views
             {
                 chkSemCategoria.Checked = false;
             }
-            Filtrar();
+            if (!chkTravarFiltro.Checked)
+            {
+                Filtrar();
+            }
+           
         }
         private void chkSemCategoria_CheckedChanged(object sender, EventArgs e)
         {
@@ -613,7 +652,10 @@ namespace Trabalho_Mercado_Online.Views
             {
                 chkCategoria.Checked = false;
             }
-            Filtrar();
+            if (!chkTravarFiltro.Checked)
+            {
+                Filtrar();
+            }
         }
         private void chkCategoriaNivel2_CheckedChanged(object sender, EventArgs e)
         {
@@ -623,7 +665,10 @@ namespace Trabalho_Mercado_Online.Views
             }
             if (chkCategoria.Checked)
             {
-                Filtrar();
+                if (!chkTravarFiltro.Checked)
+                {
+                    Filtrar();
+                }
             }
         }
         private void chkCategoriaNivel3_CheckedChanged(object sender, EventArgs e)
@@ -634,7 +679,10 @@ namespace Trabalho_Mercado_Online.Views
             }
             if (chkCategoria.Checked)
             {
-                Filtrar();
+                if (!chkTravarFiltro.Checked)
+                {
+                    Filtrar();
+                }
             }
         }
 
@@ -731,7 +779,8 @@ namespace Trabalho_Mercado_Online.Views
 
                     }
                     Global.Listas.ProdutosCategoria = ProdutosCategoriaController.GetAll();
-                    Filtrar();
+                    //Filtrar();
+                    chkTravarFiltro.Checked = false;
                     MessageBox.Show("Atualizado");
                 }
             }
@@ -816,6 +865,7 @@ namespace Trabalho_Mercado_Online.Views
         }
         private void btnLimparFiltro_Click(object sender, EventArgs e)
         {
+            chkTravarFiltro.Checked = false;
             chkCategoria.Checked = false;
             chkFaltaEditar.Checked = false;
             chkEditado.Checked = false;
@@ -1079,8 +1129,9 @@ namespace Trabalho_Mercado_Online.Views
 
 
 
+
         #endregion
 
-       
+        
     }
 }
