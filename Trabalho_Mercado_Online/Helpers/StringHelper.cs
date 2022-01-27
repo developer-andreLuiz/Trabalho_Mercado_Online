@@ -58,6 +58,9 @@ namespace Trabalho_Mercado_Online.Helpers
         public static string CentralizarString(string str,int max)
         {
             string retorno = str;
+            
+            
+            
             int espaco = (max - retorno.Length) / 2;
             string espacamento = string.Empty;
             for (int i = 0; i < espaco; i++)

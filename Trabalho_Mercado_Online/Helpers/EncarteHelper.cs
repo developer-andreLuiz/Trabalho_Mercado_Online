@@ -19,7 +19,7 @@ namespace Trabalho_Mercado_Online.Helpers
             //x(235) + 790
             //y(1180) + 740
             int ajusteX = 0;
-            int ajusteY = -750;
+            int ajusteY = -740;
 
             //Fileira de 1-4
             Lt_Pos_Img.Add(new Point(240 + ajusteX, 1180 + ajusteY));
@@ -69,7 +69,7 @@ namespace Trabalho_Mercado_Online.Helpers
                 encarteItemHelper.Img = ListaProdutosLocal[i].Img;
                 if (encarteItemHelper.Nome.Length>0)
                 {
-                    desenho.DrawString(encarteItemHelper.Nome, fontProduto, new SolidBrush(Color.Black), Lt_Pos_Img[i].X, Lt_Pos_Img[i].Y - 80);
+                    desenho.DrawString(encarteItemHelper.Nome, fontProduto, new SolidBrush(Color.Black), Lt_Pos_Img[i].X, Lt_Pos_Img[i].Y - 90);
                     desenho.DrawImage(encarteItemHelper.Img, Lt_Pos_Img[i].X, Lt_Pos_Img[i].Y, encarteItemHelper.Img.Width, encarteItemHelper.Img.Height);
                     desenho.FillRectangle(solid, new Rectangle(Lt_Pos_Img[i].X + 390, Lt_Pos_Img[i].Y + 470, 270, 140));
                     desenho.DrawString(encarteItemHelper.Valor, fontPreco, new SolidBrush(Color.White), Lt_Pos_Img[i].X + 375, Lt_Pos_Img[i].Y + 500);
@@ -139,7 +139,7 @@ namespace Trabalho_Mercado_Online.Helpers
                 encarteItemHelper.Img = ListaProdutosLocal[i].Img;
                 if (encarteItemHelper.Nome.Length > 0)
                 {
-                    desenho.DrawString(encarteItemHelper.Nome, fontProduto, new SolidBrush(Color.Black), Lt_Pos_Img[i].X, Lt_Pos_Img[i].Y - 80);
+                    desenho.DrawString(encarteItemHelper.Nome, fontProduto, new SolidBrush(Color.Black), Lt_Pos_Img[i].X, Lt_Pos_Img[i].Y - 90);
                     desenho.DrawImage(encarteItemHelper.Img, Lt_Pos_Img[i].X, Lt_Pos_Img[i].Y, encarteItemHelper.Img.Width, encarteItemHelper.Img.Height);
                     //Valor Mudar cor
                     desenho.FillRectangle(solid, new Rectangle(Lt_Pos_Img[i].X + 390, Lt_Pos_Img[i].Y + 470, 270, 140));

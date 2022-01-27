@@ -21,7 +21,7 @@ namespace Trabalho_Mercado_Online.Helpers
             {
                 if (value.Length>0)
                 {
-                    _nome = StringHelper.CentralizarString(value, 28).ToUpper();
+                    _nome = value.ToUpper();
                 }
                 else
                 {

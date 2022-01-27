@@ -512,7 +512,7 @@ namespace Trabalho_Mercado_Online.Views
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
@@ -635,9 +635,9 @@ namespace Trabalho_Mercado_Online.Views
             this.btnDeletarProduto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDeletarProduto.ForeColor = System.Drawing.Color.White;
             this.btnDeletarProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeletarProduto.Location = new System.Drawing.Point(545, 185);
+            this.btnDeletarProduto.Location = new System.Drawing.Point(475, 202);
             this.btnDeletarProduto.Name = "btnDeletarProduto";
-            this.btnDeletarProduto.Size = new System.Drawing.Size(159, 33);
+            this.btnDeletarProduto.Size = new System.Drawing.Size(220, 33);
             this.btnDeletarProduto.TabIndex = 55599;
             this.btnDeletarProduto.TabStop = false;
             this.btnDeletarProduto.Text = "Deletar";
@@ -652,9 +652,9 @@ namespace Trabalho_Mercado_Online.Views
             this.btnConfirmarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmarProduto.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnConfirmarProduto.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmarProduto.Location = new System.Drawing.Point(545, 141);
+            this.btnConfirmarProduto.Location = new System.Drawing.Point(475, 162);
             this.btnConfirmarProduto.Name = "btnConfirmarProduto";
-            this.btnConfirmarProduto.Size = new System.Drawing.Size(159, 33);
+            this.btnConfirmarProduto.Size = new System.Drawing.Size(220, 33);
             this.btnConfirmarProduto.TabIndex = 55598;
             this.btnConfirmarProduto.TabStop = false;
             this.btnConfirmarProduto.Text = "Confirmar";
@@ -792,7 +792,7 @@ namespace Trabalho_Mercado_Online.Views
             // 
             this.picProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picProduto.Location = new System.Drawing.Point(710, 53);
+            this.picProduto.Location = new System.Drawing.Point(701, 70);
             this.picProduto.Name = "picProduto";
             this.picProduto.Size = new System.Drawing.Size(184, 165);
             this.picProduto.TabIndex = 55567;
@@ -815,7 +815,7 @@ namespace Trabalho_Mercado_Online.Views
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(545, 85);
+            this.label1.Location = new System.Drawing.Point(475, 117);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 14);
             this.label1.TabIndex = 589;
@@ -826,7 +826,7 @@ namespace Trabalho_Mercado_Online.Views
             this.txtValorProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtValorProduto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtValorProduto.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtValorProduto.Location = new System.Drawing.Point(545, 102);
+            this.txtValorProduto.Location = new System.Drawing.Point(475, 134);
             this.txtValorProduto.MaxLength = 6;
             this.txtValorProduto.Name = "txtValorProduto";
             this.txtValorProduto.Size = new System.Drawing.Size(159, 22);
@@ -837,7 +837,7 @@ namespace Trabalho_Mercado_Online.Views
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label2.Location = new System.Drawing.Point(545, 38);
+            this.label2.Location = new System.Drawing.Point(475, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 14);
             this.label2.TabIndex = 587;
@@ -848,10 +848,11 @@ namespace Trabalho_Mercado_Online.Views
             this.txtNomeProduto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNomeProduto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNomeProduto.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtNomeProduto.Location = new System.Drawing.Point(545, 53);
-            this.txtNomeProduto.MaxLength = 28;
+            this.txtNomeProduto.Location = new System.Drawing.Point(475, 69);
+            this.txtNomeProduto.MaxLength = 60;
+            this.txtNomeProduto.Multiline = true;
             this.txtNomeProduto.Name = "txtNomeProduto";
-            this.txtNomeProduto.Size = new System.Drawing.Size(159, 22);
+            this.txtNomeProduto.Size = new System.Drawing.Size(220, 45);
             this.txtNomeProduto.TabIndex = 586;
             // 
             // pictureBox1

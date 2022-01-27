@@ -662,11 +662,11 @@ namespace Trabalho_Mercado_Online.Views
             if (txtNomeProduto.Text.Trim().Length > 0 && txtValorProduto.Text.Trim().Length > 0 && picProduto.BackgroundImage != null)
             {
                 EncarteItemHelper item = new EncarteItemHelper();
+               
                 item.Nome = txtNomeProduto.Text;
                 item.Valor = txtValorProduto.Text;
                 item.Img = (Bitmap)picProduto.BackgroundImage;
                 
-               
                 Panel pnl = (Panel)this.Controls.Find("pnlImg" + posLista, true)[0];
                 
                 pnl.BackgroundImage = picProduto.BackgroundImage;
