@@ -178,7 +178,7 @@ namespace Trabalho_Mercado_Online.Views
                 case 2: rbSacolao.Checked = true; solid = new SolidBrush(Color.FromArgb(37, 171, 46)); break;
                 case 3: rbBiscoito.Checked = true; solid = new SolidBrush(Color.FromArgb(171, 100, 36)); break;
                 case 4: rbAcougue.Checked = true; solid = new SolidBrush(Color.FromArgb(254, 17, 0)); break;
-                case 5: rbFinaldeSemana.Checked = true; solid = new SolidBrush(Color.FromArgb(49, 191, 253)); break;
+                case 5: rbFinaldeSemana.Checked = true; solid = new SolidBrush(Color.FromArgb(4, 57, 74)); break;
             }
 
             if (ListaImgBot.Count==0||ListaImgTop.Count==0)
@@ -227,7 +227,7 @@ namespace Trabalho_Mercado_Online.Views
                 if (rbFinaldeSemana.Checked)
                 {
                     valor = 5;
-                    solid = new SolidBrush(Color.FromArgb(49, 191, 253));
+                    solid = new SolidBrush(Color.FromArgb(4, 57, 74));
                 }
 
 
