@@ -58,7 +58,7 @@ namespace Trabalho_Mercado_Online.Helpers
             desenho.Clear(Color.White);
             desenho.DrawImage(ImgTop, 0, 0, ImgTop.Width, ImgTop.Height);
             desenho.FillRectangle(solid, new Rectangle(0,4765,3508,197));
-            desenho.DrawString($"OFERTAS VÁLIDAS DE {DtInicio} ATÉ O DIA {DtValidade}  ENQUANTO DURAREM NOSSOS ESTOQUES", fontTxt, new SolidBrush(Color.White), 100, 4830);
+            desenho.DrawString($"OFERTAS VÁLIDAS DE {DtInicio} ATÉ O DIA {DtValidade}", fontTxt, new SolidBrush(Color.White), 800, 4830);
           
 
             for (int i = 0; i < ListaProdutosLocal.Count; i++)
@@ -129,7 +129,7 @@ namespace Trabalho_Mercado_Online.Helpers
             desenho.DrawImage(ImgBoT, 0, 4621, ImgBoT.Width, ImgBoT.Height);
             //Valor Mudar cor
             desenho.FillRectangle(solid, new Rectangle(0, 0, 3508, 197));
-            desenho.DrawString($"OFERTAS VÁLIDAS DE {DtInicio} ATÉ O DIA {DtValidade}  ENQUANTO DURAREM NOSSOS ESTOQUES", fontTxt, new SolidBrush(Color.White), 40, 65);
+            desenho.DrawString($"OFERTAS VÁLIDAS DE {DtInicio} ATÉ O DIA {DtValidade}", fontTxt, new SolidBrush(Color.White), 800, 65);
 
             for (int i = 0; i < ListaProdutosLocal.Count; i++)
             {

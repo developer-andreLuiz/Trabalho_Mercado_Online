@@ -384,17 +384,17 @@ namespace Trabalho_Mercado_Online.Views
         void BaixarImagensTopBot()
         {
            
-            Bitmap Top1 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/top1.jpg", 3508, 340);
-            Bitmap Top2 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/top2.jpg", 3508, 340);
-            Bitmap Top3 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/top3.jpg", 3508, 340);
-            Bitmap Top4 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/top4.jpg", 3508, 340);
-            Bitmap Top5 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/top5.jpg", 3508, 340);
+            Bitmap Top1 = ImagemHelper.ImagemUrl(@"https://mercadoonline.blob.core.windows.net/encarte/top1.jpg", 3508, 340);
+            Bitmap Top2 = ImagemHelper.ImagemUrl(@"https://mercadoonline.blob.core.windows.net/encarte/top2.jpg", 3508, 340);
+            Bitmap Top3 = ImagemHelper.ImagemUrl(@"https://mercadoonline.blob.core.windows.net/encarte/top3.jpg", 3508, 340);
+            Bitmap Top4 = ImagemHelper.ImagemUrl(@"https://mercadoonline.blob.core.windows.net/encarte/top4.jpg", 3508, 340);
+            Bitmap Top5 = ImagemHelper.ImagemUrl(@"https://mercadoonline.blob.core.windows.net/encarte/top5.jpg", 3508, 340);
 
-            Bitmap Bot1 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/bot1.jpg", 3508, 340);
-            Bitmap Bot2 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/bot2.jpg", 3508, 340);
-            Bitmap Bot3 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/bot3.jpg", 3508, 340);
-            Bitmap Bot4 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/bot4.jpg", 3508, 340);
-            Bitmap Bot5 = ImagemHelper.ImagemUrl(@"https://aplicativo.blob.core.windows.net/encarte/bot5.jpg", 3508, 340);
+            Bitmap Bot1 = ImagemHelper.ImagemUrl(@"https://mercadoonline.blob.core.windows.net/encarte/bot1.jpg", 3508, 340);
+            Bitmap Bot2 = ImagemHelper.ImagemUrl(@"https://mercadoonline.blob.core.windows.net/encarte/bot2.jpg", 3508, 340);
+            Bitmap Bot3 = ImagemHelper.ImagemUrl(@"https://mercadoonline.blob.core.windows.net/encarte/bot3.jpg", 3508, 340);
+            Bitmap Bot4 = ImagemHelper.ImagemUrl(@"https://mercadoonline.blob.core.windows.net/encarte/bot4.jpg", 3508, 340);
+            Bitmap Bot5 = ImagemHelper.ImagemUrl(@"https://mercadoonline.blob.core.windows.net/encarte/bot5.jpg", 3508, 340);
 
             ListaImgTop = new List<Image>();
             ListaImgTop.Add(Top1);
@@ -686,16 +686,24 @@ namespace Trabalho_Mercado_Online.Views
         }
         private void btnDeletarProduto_Click(object sender, EventArgs e)
         {
-            ListaProdutos[posLista].Nome = string.Empty;
-            ListaProdutos[posLista].Valor = string.Empty;
-            ListaProdutos[posLista].Img = null;
-            Panel pnl = (Panel)this.Controls.Find("pnlImg" + posLista, true)[0];
-            pnl.BackgroundImage = null;
-            InterfaceProduto(false);
-            txtNomeProduto.Text = string.Empty;
-            txtValorProduto.Text = string.Empty;
-            picProduto.BackgroundImage = null;
-            AtualizarEncarte();
+            try
+            {
+                ListaProdutos[posLista].Nome = string.Empty;
+                ListaProdutos[posLista].Valor = string.Empty;
+                ListaProdutos[posLista].Img = null;
+                Panel pnl = (Panel)this.Controls.Find("pnlImg" + posLista, true)[0];
+                pnl.BackgroundImage = null;
+                InterfaceProduto(false);
+                txtNomeProduto.Text = string.Empty;
+                txtValorProduto.Text = string.Empty;
+                picProduto.BackgroundImage = null;
+                AtualizarEncarte();
+            }
+            catch(Exception a)
+            {
+                MessageBox.Show(a.Message);
+            }
+            
         }
         private void picEncarte_DoubleClick(object sender, EventArgs e)
         {
