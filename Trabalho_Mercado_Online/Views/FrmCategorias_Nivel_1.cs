@@ -311,7 +311,7 @@ namespace Trabalho_Mercado_Online.Views
                 obj = CategoriasNivel1Controller.Gravar(obj);
                 if (pathImagem.Length>0)
                 {
-                    BlobStorageHelper.Upload("categoriasnivel1", obj.Id.ToString(), pathImagem);
+                    BlobStorageHelper.Upload("categoria-nivel-1", obj.Id.ToString(), pathImagem);
                 }
                 Limpar();
                 Global.AtualizarCategorasNivel1();
@@ -372,14 +372,14 @@ namespace Trabalho_Mercado_Online.Views
                             
                             //Deletar em Categoria Nivel 1
                             CategoriasNivel1Controller.Deletar(cat);
-                            BlobStorageHelper.Deletar("categoriasnivel1", cat.Id.ToString());
+                            BlobStorageHelper.Deletar("categoria-nivel-1", cat.Id.ToString());
 
                             //Deletar em Categoria Nivel 2
                             var ListaNivel2 = Global.Listas.CategoriasNivel2.FindAll(x => x.CategoriaNivel1 == cat.Id);
                             foreach (var item in ListaNivel2)
                             {
                                 CategoriasNivel2Controller.Deletar(item);
-                                BlobStorageHelper.Deletar("categoriasnivel2", item.Id.ToString());
+                                BlobStorageHelper.Deletar("categoria-nivel-2", item.Id.ToString());
                             }
 
                             //Deletar em Categoria Nivel 3
@@ -387,7 +387,7 @@ namespace Trabalho_Mercado_Online.Views
                             foreach (var item in ListaNivel3)
                             {
                                 CategoriasNivel3Controller.Deletar(item);
-                                BlobStorageHelper.Deletar("categoriasnivel3", item.Id.ToString());
+                                BlobStorageHelper.Deletar("categoria-nivel-3", item.Id.ToString());
                             }
 
                             //Deletar em Produto Categoria

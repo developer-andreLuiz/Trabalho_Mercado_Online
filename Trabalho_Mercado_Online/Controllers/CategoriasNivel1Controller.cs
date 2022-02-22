@@ -19,7 +19,7 @@ namespace Trabalho_Mercado_Online.Controllers
         {
             if (obj.Id > 0)
             {
-                obj.Img = @"https://aplicativo.blob.core.windows.net/categoriasnivel1/" + obj.Id + ".jpg";
+                obj.Img = @"https://mercadoonline.blob.core.windows.net/categoria-nivel-1/" + obj.Id + ".jpg";
                 obj = CategoriasNivel1DAO.Update(obj);
             }
             else

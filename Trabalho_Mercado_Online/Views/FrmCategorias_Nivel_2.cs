@@ -371,7 +371,7 @@ namespace Trabalho_Mercado_Online.Views
                 obj = CategoriasNivel2Controller.Gravar(obj);
                 if (pathImagem.Length > 0)
                 {
-                    BlobStorageHelper.Upload("categoriasnivel2", obj.Id.ToString(), pathImagem);
+                    BlobStorageHelper.Upload("categoria-nivel-2", obj.Id.ToString(), pathImagem);
                 }
                 Limpar();
                 Global.AtualizarCategorasNivel2();
@@ -432,14 +432,14 @@ namespace Trabalho_Mercado_Online.Views
 
                             //Deletar em Categoria Nivel 2
                             CategoriasNivel2Controller.Deletar(cat);
-                            BlobStorageHelper.Deletar("categoriasnivel2", cat.Id.ToString());
+                            BlobStorageHelper.Deletar("categoria-nivel-2", cat.Id.ToString());
 
                             //Deletar em Categoria Nivel 3
                             var ListaNivel3 = Global.Listas.CategoriasNivel3.FindAll(x => x.CategoriaNivel2 == cat.Id);
                             foreach (var item in ListaNivel3)
                             {
                                 CategoriasNivel3Controller.Deletar(item);
-                                BlobStorageHelper.Deletar("categoriasnivel3", item.Id.ToString());
+                                BlobStorageHelper.Deletar("categoria-nivel-3", item.Id.ToString());
                             }
 
                             //Deletar em Produto Categoria

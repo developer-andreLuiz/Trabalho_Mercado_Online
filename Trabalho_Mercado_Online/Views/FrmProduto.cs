@@ -553,7 +553,7 @@ namespace Trabalho_Mercado_Online.Views
             if (retorno.Evento)
             {
                 p = ProdutoController.Gravar(p);
-                BlobStorageHelper.Upload("produtos",p.Id.ToString(),pathImagem);
+                BlobStorageHelper.Upload("produto",p.Id.ToString(),pathImagem);
 
                 if (novo)
                 {
@@ -622,7 +622,7 @@ namespace Trabalho_Mercado_Online.Views
                         {
                             var p = Global.Listas.Produto.Find(x => x.Id == int.Parse(lblId.Text));
                             ProdutoController.Deletar(p);
-                            BlobStorageHelper.Deletar("produtos", p.Id.ToString());
+                            BlobStorageHelper.Deletar("produto", p.Id.ToString());
                             btnFechar.Visible = false;
                             btnFechar.Enabled = false;
                             int index = 0;

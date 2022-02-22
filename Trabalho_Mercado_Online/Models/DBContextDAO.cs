@@ -22,6 +22,7 @@ namespace Trabalho_Mercado_Online.Models
         public virtual DbSet<CategoriasNivel1> CategoriasNivel1s { get; set; }
         public virtual DbSet<CategoriasNivel2> CategoriasNivel2s { get; set; }
         public virtual DbSet<CategoriasNivel3> CategoriasNivel3s { get; set; }
+        public virtual DbSet<CategoriasNivel4> CategoriasNivel4s { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<Encarte> Encartes { get; set; }
         public virtual DbSet<EncarteItem> EncarteItems { get; set; }
@@ -37,7 +38,7 @@ namespace Trabalho_Mercado_Online.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseMySql("server=dbmercado.mysql.database.azure.com;userid=root_andre;password=SistemaValendo1;database=db_mercado_online;sslmode=none;connect timeout=30", Microsoft.EntityFrameworkCore.ServerVersion.Parse("5.7.32-mysql"));
+                optionsBuilder.UseMySql("server=bancodados-mercado.mysql.database.azure.com;userid=root_andre;password=SistemaValendo1;database=db_mercado_online;sslmode=none;connect timeout=30", Microsoft.EntityFrameworkCore.ServerVersion.Parse("5.7.32-mysql"));
             }
         }
 
@@ -204,6 +205,50 @@ namespace Trabalho_Mercado_Online.Models
                     .HasMaxLength(255)
                     .HasColumnName("nome")
                     .HasComment("nome da categoria nivel 3");
+
+                entity.Property(e => e.Ordem)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("ordem")
+                    .HasComment("ordem de exibição");
+            });
+
+            modelBuilder.Entity<CategoriasNivel4>(entity =>
+            {
+                entity.ToTable("categorias_nivel_4");
+
+                entity.HasComment("tabela com os dados da categoria nivel 4");
+
+                entity.Property(e => e.Id)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("id")
+                    .HasComment("chave primaria da categoria nivel 4");
+
+                entity.Property(e => e.CategoriaNivel1)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("categoria_nivel_1")
+                    .HasComment("referencia do codigo da categoria nivel 1");
+
+                entity.Property(e => e.CategoriaNivel2)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("categoria_nivel_2")
+                    .HasComment("referencia do codigo da categoria nivel 2");
+
+                entity.Property(e => e.CategoriaNivel3)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("categoria_nivel_3")
+                    .HasComment("referencia do codigo da categoria nivel 3");
+
+                entity.Property(e => e.Img)
+                    .IsRequired()
+                    .HasColumnType("text")
+                    .HasColumnName("img")
+                    .HasComment("url da imagem");
+
+                entity.Property(e => e.Nome)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("nome")
+                    .HasComment("nome da categoria nivel 4");
 
                 entity.Property(e => e.Ordem)
                     .HasColumnType("int(11)")
@@ -535,6 +580,11 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("int(11)")
                     .HasColumnName("categoria_nivel_3")
                     .HasComment("referecia a categoria nivel 3");
+
+                entity.Property(e => e.CategoriaNivel4)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("categoria_nivel_4")
+                    .HasComment("referecia a categoria nivel 4");
 
                 entity.Property(e => e.CodigoProduto)
                     .HasColumnType("int(11)")

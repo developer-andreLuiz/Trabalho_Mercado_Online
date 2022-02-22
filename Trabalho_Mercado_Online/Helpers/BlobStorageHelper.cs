@@ -10,17 +10,8 @@ namespace Trabalho_Mercado_Online.Helpers
 {
     class BlobStorageHelper
     {
-        static string conexao = "DefaultEndpointsProtocol=https;AccountName=aplicativo;AccountKey=96sAG8n4AbME4aiJwlRNq1ECtl/I7tKXpPYn37w8YO3pY+I3l5tccWh+CUmG7rqSulrwSqrm42o8e5g7JrNK8w==;EndpointSuffix=core.windows.net";
-        string chave = "96sAG8n4AbME4aiJwlRNq1ECtl/I7tKXpPYn37w8YO3pY+I3l5tccWh+CUmG7rqSulrwSqrm42o8e5g7JrNK8w==";
-
-        /* Nome dos conteiners
-         categoriasnivel1
-         categoriasnivel2
-         categoriasnivel3
-         produtos
-         
-         */
-
+        static string conexao = "DefaultEndpointsProtocol=https;AccountName=mercadoonline;AccountKey=MYYikySbsnSdc35De4TK/ps6vVHQuqukZR3fWcbL3Vf7E75FquylKltG9VvDE6eQtqD/9yYmW360+AStejyEgg==;EndpointSuffix=core.windows.net";
+        string chave = "MYYikySbsnSdc35De4TK/ps6vVHQuqukZR3fWcbL3Vf7E75FquylKltG9VvDE6eQtqD/9yYmW360+AStejyEgg==";
         public static void Upload(string conteinerLocal , string nomeImagemLocal, string pathLocal)
         {
             CloudStorageAccount account = CloudStorageAccount.Parse(conexao);
@@ -30,7 +21,6 @@ namespace Trabalho_Mercado_Online.Helpers
             CloudBlockBlob blob = container.GetBlockBlobReference(nomeImagemLocal+".jpg");
             blob.UploadFromFileAsync(pathLocal);
         }
-
         public static void Deletar(string conteinerLocal, string nomeImagemLocal)
         {
             CloudStorageAccount account = CloudStorageAccount.Parse(conexao);

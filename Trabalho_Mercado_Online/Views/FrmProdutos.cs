@@ -481,6 +481,8 @@ namespace Trabalho_Mercado_Online.Views
             Global.Listas.CategoriasNivel1 = CategoriasNivel1Controller.GetAll();
             Global.Listas.CategoriasNivel2 = CategoriasNivel2Controller.GetAll();
             Global.Listas.CategoriasNivel3 = CategoriasNivel3Controller.GetAll();
+
+            
         }
 
         //Combo Box

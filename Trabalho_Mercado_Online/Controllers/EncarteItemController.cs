@@ -19,7 +19,7 @@ namespace Trabalho_Mercado_Online.Controllers
         {
             if (obj.Id > 0)
             {
-                obj.Img = @"https://aplicativo.blob.core.windows.net/encarte/" + obj.Id + ".jpg";
+                obj.Img = @"https://mercadoonline.blob.core.windows.net/encarte/" + obj.Id + ".jpg";
                 obj = EncarteItemDAO.Update(obj);
             }
             else
