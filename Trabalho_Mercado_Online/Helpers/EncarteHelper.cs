@@ -10,7 +10,7 @@ namespace Trabalho_Mercado_Online.Helpers
         public static Bitmap EncarteFrente(Bitmap ImgTop, String DtInicio, String DtValidade,List<EncarteItemHelper>ListaProdutosLocal, SolidBrush solid)
         {
             Point A3 = new Point(3508, 4961);
-            Bitmap Encarte = new Bitmap(A3.X, A3.Y);
+            Bitmap Encarte = new Bitmap(A3.X, A3.Y,System.Drawing.Imaging.PixelFormat.Format16bppRgb555);
             List<Point> Lt_Pos_Img = new List<Point>();
             Font fontTxt = new Font("Bahnschrift", 55, FontStyle.Bold);
             Font fontProduto = new Font("Bahnschrift", 34, FontStyle.Bold);
@@ -82,7 +82,7 @@ namespace Trabalho_Mercado_Online.Helpers
         public static Bitmap EncarteVerso(Bitmap ImgBoT, String DtInicio, String DtValidade, List<EncarteItemHelper> ListaProdutosLocal, SolidBrush solid)
         {
             Point A3 = new Point(3508, 4961);
-            Bitmap Encarte = new Bitmap(A3.X, A3.Y);
+            Bitmap Encarte = new Bitmap(A3.X, A3.Y, System.Drawing.Imaging.PixelFormat.Format16bppRgb555);
             List<Point> Lt_Pos_Img = new List<Point>();
             Font fontTxt = new Font("Bahnschrift", 55, FontStyle.Bold);
             Font fontProduto = new Font("Bahnschrift", 34, FontStyle.Bold);

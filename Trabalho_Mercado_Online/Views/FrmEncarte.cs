@@ -385,6 +385,7 @@ namespace Trabalho_Mercado_Online.Views
         {
            
             Bitmap Top1 = ImagemHelper.ImagemUrl(@"https://mercadoonline.blob.core.windows.net/encarte/top1.jpg", 3508, 340);
+            
             Bitmap Top2 = ImagemHelper.ImagemUrl(@"https://mercadoonline.blob.core.windows.net/encarte/top2.jpg", 3508, 340);
             Bitmap Top3 = ImagemHelper.ImagemUrl(@"https://mercadoonline.blob.core.windows.net/encarte/top3.jpg", 3508, 340);
             Bitmap Top4 = ImagemHelper.ImagemUrl(@"https://mercadoonline.blob.core.windows.net/encarte/top4.jpg", 3508, 340);
@@ -659,30 +660,38 @@ namespace Trabalho_Mercado_Online.Views
         }
         private void btnConfirmarProduto_Click(object sender, EventArgs e)
         {
-            if (txtNomeProduto.Text.Trim().Length > 0 && txtValorProduto.Text.Trim().Length > 0 && picProduto.BackgroundImage != null)
+            try
             {
-                EncarteItemHelper item = new EncarteItemHelper();
-               
-                item.Nome = txtNomeProduto.Text;
-                item.Valor = txtValorProduto.Text;
-                item.Img = (Bitmap)picProduto.BackgroundImage;
-                
-                Panel pnl = (Panel)this.Controls.Find("pnlImg" + posLista, true)[0];
-                
-                pnl.BackgroundImage = picProduto.BackgroundImage;
-                ListaProdutos[posLista] = item;
-                InterfaceProduto(false);
-                txtNomeProduto.Text = string.Empty;
-                txtValorProduto.Text = string.Empty;
-                picProduto.BackgroundImage = null;
+                if (txtNomeProduto.Text.Trim().Length > 0 && txtValorProduto.Text.Trim().Length > 0 && picProduto.BackgroundImage != null)
+                {
+                    EncarteItemHelper item = new EncarteItemHelper();
 
-                
-                AtualizarEncarte();
+                    item.Nome = txtNomeProduto.Text;
+                    item.Valor = txtValorProduto.Text;
+                    item.Img = (Bitmap)picProduto.BackgroundImage;
+
+                    Panel pnl = (Panel)this.Controls.Find("pnlImg" + posLista, true)[0];
+
+                    pnl.BackgroundImage = picProduto.BackgroundImage;
+                    ListaProdutos[posLista] = item;
+                    InterfaceProduto(false);
+                    txtNomeProduto.Text = string.Empty;
+                    txtValorProduto.Text = string.Empty;
+                    picProduto.BackgroundImage = null;
+
+
+                    AtualizarEncarte();
+                }
+                else
+                {
+                    MessageBox.Show("Verifique os Dados (Nome/Valor/Imagem).", "Dados Faltando", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception a)
             {
-                MessageBox.Show("Verifique os Dados (Nome/Valor/Imagem).", "Dados Faltando", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(a.Message);
             }
+
         }
         private void btnDeletarProduto_Click(object sender, EventArgs e)
         {
@@ -805,6 +814,11 @@ namespace Trabalho_Mercado_Online.Views
             }
             catch { }
            
+        }
+
+        private void picProduto_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

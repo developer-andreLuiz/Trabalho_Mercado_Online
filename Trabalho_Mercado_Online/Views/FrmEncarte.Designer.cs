@@ -797,6 +797,7 @@ namespace Trabalho_Mercado_Online.Views
             this.picProduto.Size = new System.Drawing.Size(184, 165);
             this.picProduto.TabIndex = 55567;
             this.picProduto.TabStop = false;
+            this.picProduto.Click += new System.EventHandler(this.picProduto_Click);
             this.picProduto.DoubleClick += new System.EventHandler(this.picProduto_DoubleClick);
             // 
             // picEncarte

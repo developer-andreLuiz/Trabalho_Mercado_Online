@@ -15,7 +15,7 @@ namespace Trabalho_Mercado_Online.Helpers
         public static Image ResizeImage(Image ImgLocal, int LarguraLocal, int AlturaLocal)
         {
             Image img = new Bitmap(ImgLocal);
-            Bitmap imageFinal = new Bitmap(LarguraLocal, AlturaLocal);//tamanho da imagem
+            Bitmap imageFinal = new Bitmap(LarguraLocal, AlturaLocal, System.Drawing.Imaging.PixelFormat.Format16bppRgb555);//tamanho da imagem
             bool aumentar = false;
             bool diminuir = false;
             if (ImgLocal.Width > LarguraLocal || ImgLocal.Height > AlturaLocal)
