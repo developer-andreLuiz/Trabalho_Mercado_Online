@@ -97,7 +97,7 @@
               "version": "[3.1.10, 3.1.10]"
             },
             {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "name": "Microsoft.NETCore.App.Host.win-x86",
               "version": "[3.1.22, 3.1.22]"
             },
             {

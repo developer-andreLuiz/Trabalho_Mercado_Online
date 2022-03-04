@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5LrM4Aw6qtzkX6U+fCuOPhs+LaC8U4iVTDxKPOAqsPq/N5gJNvI1n2dwPwxFPC9+7XgvH1ttwvpnLd34HlswuQ==",
+  "dgSpecHash": "xsKQqfAiARTuKWUW3bmdA/wxc9wWagmBeAE717ZvimFvqsEqKpYbQUiB9loa2+7Ro0Jj6pNphfjBaCx+/w4A+w==",
   "success": true,
   "projectFilePath": "D:\\Git\\Trabalho_Mercado_Online\\Trabalho_Mercado_Online\\Trabalho_Mercado_Online.csproj",
   "expectedPackageFiles": [
@@ -121,10 +121,10 @@
     "C:\\Users\\Developer\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Developer\\.nuget\\packages\\unoffical.system.speech\\1.0.0\\unoffical.system.speech.1.0.0.nupkg.sha512",
     "C:\\Users\\Developer\\.nuget\\packages\\windowsazure.storage\\9.3.3\\windowsazure.storage.9.3.3.nupkg.sha512",
-    "C:\\Users\\Developer\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.22\\microsoft.netcore.app.host.win-x64.3.1.22.nupkg.sha512",
     "C:\\Users\\Developer\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
     "C:\\Users\\Developer\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\Developer\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+    "C:\\Users\\Developer\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\Developer\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\3.1.22\\microsoft.netcore.app.host.win-x86.3.1.22.nupkg.sha512"
   ],
   "logs": []
 }
