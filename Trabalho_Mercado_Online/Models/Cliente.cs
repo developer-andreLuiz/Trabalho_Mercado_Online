@@ -9,13 +9,11 @@ namespace Trabalho_Mercado_Online.Models
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public string Celular { get; set; }
+        public string Cpf { get; set; }
+        public DateTime? Nascimento { get; set; }
+        public string Telefone { get; set; }
+        public string AparelhoId { get; set; }
         public decimal Saldo { get; set; }
         public int Habilitado { get; set; }
-        public string CodigoEstado { get; set; }
-        public string CodigoMunicipio { get; set; }
-        public string CodigoBairro { get; set; }
-        public string Endereco { get; set; }
-        public string Complemento { get; set; }
     }
 }

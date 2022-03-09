@@ -22,7 +22,7 @@ namespace Trabalho_Mercado_Online
 
 
           
-            Global.Listas = new ListasBanco();
+            GlobalHelper.Listas = new ListasBancoHelper();
             Application.Run(new FrmPrincipal());
         }
     }

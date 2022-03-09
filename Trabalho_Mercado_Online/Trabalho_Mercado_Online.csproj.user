@@ -4,22 +4,22 @@
     <Compile Update="Helpers\ImprimirDocumentoHelper.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Views Access\FrmAlimentarProdutosAccess.cs">
+    <Compile Update="Views Access\FrmAlimentarProdutoAccess.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views Access\FrmProdutosAccess.cs">
+    <Compile Update="Views Access\FrmProdutoAccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\FrmCategoria_Nivel_2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\FrmEncartePreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\FrmCategorias_Nivel_1.cs">
+    <Compile Update="Views\FrmCategoria_Nivel_1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\FrmCategorias_Nivel_2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Views\FrmCategorias_Nivel_3.cs">
+    <Compile Update="Views\FrmCategoria_Nivel_3.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\FrmEncarte.cs">
@@ -45,7 +45,7 @@
     <EmbeddedResource Update="Properties\Resources.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views Access\FrmAlimentarProdutosAccess.resx">
+    <EmbeddedResource Update="Views Access\FrmAlimentarProdutoAccess.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

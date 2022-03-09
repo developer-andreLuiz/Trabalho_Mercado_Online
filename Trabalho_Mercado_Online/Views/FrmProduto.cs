@@ -153,7 +153,7 @@ namespace Trabalho_Mercado_Online.Views
                 }
                 if (txtCodigoBarra.Text.Length > 0)
                 {
-                    if (Global.Listas.ProdutosCodigoBarra.FindAll(x => x.CodigoBarra.Equals(txtCodigoBarra.Text.Trim())).Count > 0)
+                    if (GlobalHelper.Listas.ProdutoCodigoBarra.FindAll(x => x.CodigoBarra.Equals(txtCodigoBarra.Text.Trim())).Count > 0)
                     {
                         retorno.Evento = false;
                         retorno.Mensagem = "Codigo de Barra já Cadastrado";
@@ -174,7 +174,7 @@ namespace Trabalho_Mercado_Online.Views
             {
                 if (txtCodigoBarra.Text.Length > 0)
                 {
-                    if (Global.Listas.ProdutosCodigoBarra.FindAll(x => x.CodigoBarra.Equals(txtCodigoBarra.Text.Trim())).Count > 0)
+                    if (GlobalHelper.Listas.ProdutoCodigoBarra.FindAll(x => x.CodigoBarra.Equals(txtCodigoBarra.Text.Trim())).Count > 0)
                     {
                         retorno.Evento = false;
                         retorno.Mensagem = "Codigo de Barra já Cadastrado";
@@ -286,12 +286,12 @@ namespace Trabalho_Mercado_Online.Views
         }
         void CarregarGrid(int id_Local)
         {
-            var lista = new List<CodigoDeBarraGrid_Model>();
-            var listaCodigos = Global.Listas.ProdutosCodigoBarra.FindAll(x => x.CodigoProduto == id_Local);
+            var lista = new List<CodigoDeBarraGridHelper_Model>();
+            var listaCodigos = GlobalHelper.Listas.ProdutoCodigoBarra.FindAll(x => x.CodigoProduto == id_Local);
 
             foreach (var item in listaCodigos)
             {
-                lista.Add(new CodigoDeBarraGrid_Model { id = item.Id, codigoBarra = item.CodigoBarra });
+                lista.Add(new CodigoDeBarraGridHelper_Model { id = item.Id, codigoBarra = item.CodigoBarra });
             }
             dataGridView.DataSource = lista;
             dataGridView.Columns[0].Width = 50;
@@ -299,7 +299,7 @@ namespace Trabalho_Mercado_Online.Views
         string RetornoUltimoIguala()
         {
             int r = 0;
-            foreach (var item in Global.Listas.Produto)
+            foreach (var item in GlobalHelper.Listas.Produto)
             {
                 if (item.IgualaProduto>r)
                 {
@@ -479,7 +479,7 @@ namespace Trabalho_Mercado_Online.Views
             pictureBox.Image = null;
             pictureBox.BackgroundImage = null;
             
-            dataGridView.DataSource = new List<CodigoDeBarraGrid_Model>();
+            dataGridView.DataSource = new List<CodigoDeBarraGridHelper_Model>();
         }
         #endregion
 
@@ -494,7 +494,7 @@ namespace Trabalho_Mercado_Online.Views
             {
                 ListaId.AddRange(ListaIdLocal);
                 ListaId.Sort((x,y) => x.CompareTo(y));
-                Produto p = Global.Listas.Produto.Find(x=>x.Id==ListaId[0]);
+                Produto p = GlobalHelper.Listas.Produto.Find(x=>x.Id==ListaId[0]);
                 lblListaItens.Visible = true;
                 lblListaItens.Text = ListaId.Count+ " Itens na Lista";
                 ExibirDados(p);
@@ -547,7 +547,7 @@ namespace Trabalho_Mercado_Online.Views
         private void btnGravar_Click(object sender, EventArgs e)
         {
             Produto p = new Produto();
-            ProdutosCodigoBarra pCB = new ProdutosCodigoBarra();
+            ProdutoCodigoBarra pCB = new ProdutoCodigoBarra();
 
             var retorno = CapturarDados(p);
             if (retorno.Evento)
@@ -559,8 +559,8 @@ namespace Trabalho_Mercado_Online.Views
                 {
                     pCB.CodigoBarra = txtCodigoBarra.Text.Trim();
                     pCB.CodigoProduto = p.Id;
-                    ProdutosCodigoBarraController.Gravar(pCB);
-                    Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
+                    ProdutoCodigoBarraController.Gravar(pCB);
+                    GlobalHelper.Listas.ProdutoCodigoBarra = ProdutoCodigoBarraController.GetAll();
                 }
                 else
                 {
@@ -568,12 +568,12 @@ namespace Trabalho_Mercado_Online.Views
                     {
                         pCB.CodigoBarra = txtCodigoBarra.Text.Trim();
                         pCB.CodigoProduto = p.Id;
-                        ProdutosCodigoBarraController.Gravar(pCB);
-                        Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
+                        ProdutoCodigoBarraController.Gravar(pCB);
+                        GlobalHelper.Listas.ProdutoCodigoBarra = ProdutoCodigoBarraController.GetAll();
                     }
                 }
                 
-                Global.Listas.Produto = ProdutoController.GetAll();
+                GlobalHelper.Listas.Produto = ProdutoController.GetAll();
                
                 ExibirDados(p);
                 BtnGravarLayout();
@@ -594,16 +594,16 @@ namespace Trabalho_Mercado_Online.Views
                 {
                     AberturaForm();
                     Limpar();
-                    if (Global.Listas.Produto.Count>0)
+                    if (GlobalHelper.Listas.Produto.Count>0)
                     {
                         if (ultimoProduto>0)
                         {
-                            var p = Global.Listas.Produto.Find(x => x.Id == ultimoProduto);
+                            var p = GlobalHelper.Listas.Produto.Find(x => x.Id == ultimoProduto);
                             ExibirDados(p);
                         }
                         else
                         {
-                            var p = Global.Listas.Produto[0];
+                            var p = GlobalHelper.Listas.Produto[0];
                             ExibirDados(p);
                         }
                     }
@@ -620,7 +620,7 @@ namespace Trabalho_Mercado_Online.Views
                         dialog = MessageBox.Show("ATENÇÃO! Tem Certeza? O Registro será Deletado.", "Perigo!", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
                         if (dialog == DialogResult.Yes)
                         {
-                            var p = Global.Listas.Produto.Find(x => x.Id == int.Parse(lblId.Text));
+                            var p = GlobalHelper.Listas.Produto.Find(x => x.Id == int.Parse(lblId.Text));
                             ProdutoController.Deletar(p);
                             BlobStorageHelper.Deletar("produto", p.Id.ToString());
                             btnFechar.Visible = false;
@@ -640,23 +640,23 @@ namespace Trabalho_Mercado_Online.Views
                                     ListaId.Remove(p.Id);
                                 }
                             }
-                            var listaCategorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CodigoProduto == p.Id);
+                            var listaCategorias = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CodigoProduto == p.Id);
                             foreach (var item in listaCategorias)
                             {
-                                ProdutosCategoriaController.Deletar(item);
+                                ProdutoCategoriaController.Deletar(item);
                             }
 
-                            var listaCodigoBarra = Global.Listas.ProdutosCodigoBarra.FindAll(x => x.CodigoProduto == p.Id);
+                            var listaCodigoBarra = GlobalHelper.Listas.ProdutoCodigoBarra.FindAll(x => x.CodigoProduto == p.Id);
                             foreach (var item in listaCodigoBarra)
                             {
-                                ProdutosCodigoBarraController.Deletar(item);
+                                ProdutoCodigoBarraController.Deletar(item);
                             }
-                            Global.Listas.Produto = ProdutoController.GetAll();
-                            Global.Listas.ProdutosCategoria = ProdutosCategoriaController.GetAll();
-                            Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
+                            GlobalHelper.Listas.Produto = ProdutoController.GetAll();
+                            GlobalHelper.Listas.ProdutoCategoria = ProdutoCategoriaController.GetAll();
+                            GlobalHelper.Listas.ProdutoCodigoBarra = ProdutoCodigoBarraController.GetAll();
                             Limpar();
                             AberturaForm();
-                            if (Global.Listas.Produto.Count > 0)
+                            if (GlobalHelper.Listas.Produto.Count > 0)
                             {
                                 if (ListaId.Count > 0)
                                 {
@@ -664,13 +664,13 @@ namespace Trabalho_Mercado_Online.Views
                                     lblListaItens.Text = ListaId.Count + " Itens na Lista";
                                     
 
-                                    Produto pro = Global.Listas.Produto.Find(x => x.Id == ListaId[index]);
+                                    Produto pro = GlobalHelper.Listas.Produto.Find(x => x.Id == ListaId[index]);
                                     ExibirDados(pro);
                                 }
                                 else
                                 {
                                     lblListaItens.Visible = false;
-                                    ExibirDados(Global.Listas.Produto[0]);
+                                    ExibirDados(GlobalHelper.Listas.Produto[0]);
                                 }
                             }
                             MessageBox.Show("Atualizado", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -832,9 +832,9 @@ namespace Trabalho_Mercado_Online.Views
                     var dialog = MessageBox.Show("Deseja Deletar este Registro ?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dialog == DialogResult.Yes)
                     {
-                        var valor = Global.Listas.ProdutosCodigoBarra.Find(x => x.Id == id);
-                        ProdutosCodigoBarraController.Deletar(valor);
-                        Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
+                        var valor = GlobalHelper.Listas.ProdutoCodigoBarra.Find(x => x.Id == id);
+                        ProdutoCodigoBarraController.Deletar(valor);
+                        GlobalHelper.Listas.ProdutoCodigoBarra = ProdutoCodigoBarraController.GetAll();
                         int codigo_produto = int.Parse(lblId.Text);
                         CarregarGrid(codigo_produto);
                         MessageBox.Show("Atualizado", "Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -847,8 +847,8 @@ namespace Trabalho_Mercado_Online.Views
         {
             if (txtPesquisar.Text.Length > 5)
             {
-                ProdutosCodigoBarra pCodigoBarra = new ProdutosCodigoBarra();
-                pCodigoBarra = Global.Listas.ProdutosCodigoBarra.Find(x => x.CodigoBarra.Equals(txtPesquisar.Text));
+                ProdutoCodigoBarra pCodigoBarra = new ProdutoCodigoBarra();
+                pCodigoBarra = GlobalHelper.Listas.ProdutoCodigoBarra.Find(x => x.CodigoBarra.Equals(txtPesquisar.Text));
                 if (pCodigoBarra != null)
                 {
                     bool continuar = true;
@@ -864,7 +864,7 @@ namespace Trabalho_Mercado_Online.Views
                     {
                         Limpar();
                         AberturaForm();
-                        var produto = Global.Listas.Produto.Find(x => x.Id == pCodigoBarra.CodigoProduto);
+                        var produto = GlobalHelper.Listas.Produto.Find(x => x.Id == pCodigoBarra.CodigoProduto);
                         ExibirDados(produto);
                     }
                 }
@@ -881,7 +881,7 @@ namespace Trabalho_Mercado_Online.Views
                     if (int.TryParse(txtPesquisar.Text, out int v1))
                     {
                         int codigo = int.Parse(txtPesquisar.Text);
-                        var produto = Global.Listas.Produto.Find(x => x.Id == codigo);
+                        var produto = GlobalHelper.Listas.Produto.Find(x => x.Id == codigo);
                         if (produto != null)
                         {
                             bool continuar = true;
@@ -942,10 +942,10 @@ namespace Trabalho_Mercado_Online.Views
                     continuar = false;
                 }
             }
-            if (continuar && Global.Listas.Produto.Count>0)
+            if (continuar && GlobalHelper.Listas.Produto.Count>0)
             {
                 var ListaProdutos = new List<Produto>();
-                ListaProdutos.AddRange(Global.Listas.Produto);
+                ListaProdutos.AddRange(GlobalHelper.Listas.Produto);
                 ListaProdutos.Sort((x,y)=>x.Id.CompareTo(y.Id));
                 Limpar();
                 AberturaForm();
@@ -970,10 +970,10 @@ namespace Trabalho_Mercado_Online.Views
                     continuar = false;
                 }
             }
-            if (continuar && Global.Listas.Produto.Count > 0)
+            if (continuar && GlobalHelper.Listas.Produto.Count > 0)
             {
                 var ListaProdutos = new List<Produto>();
-                ListaProdutos.AddRange(Global.Listas.Produto);
+                ListaProdutos.AddRange(GlobalHelper.Listas.Produto);
                 ListaProdutos.Sort((x, y) => x.Id.CompareTo(y.Id));
                 int idAtual = int.Parse(lblId.Text);
                 Limpar();
@@ -1026,10 +1026,10 @@ namespace Trabalho_Mercado_Online.Views
                     continuar = false;
                 }
             }
-            if (continuar && Global.Listas.Produto.Count > 0)
+            if (continuar && GlobalHelper.Listas.Produto.Count > 0)
             {
                 var ListaProdutos = new List<Produto>();
-                ListaProdutos.AddRange(Global.Listas.Produto);
+                ListaProdutos.AddRange(GlobalHelper.Listas.Produto);
                 ListaProdutos.Sort((x, y) => x.Id.CompareTo(y.Id));
                 int idAtual = int.Parse(lblId.Text);
                 Limpar();
@@ -1082,11 +1082,11 @@ namespace Trabalho_Mercado_Online.Views
                     continuar = false;
                 }
             }
-            if (continuar && Global.Listas.Produto.Count > 0)
+            if (continuar && GlobalHelper.Listas.Produto.Count > 0)
             {
 
                 var ListaProdutos = new List<Produto>();
-                ListaProdutos.AddRange(Global.Listas.Produto);
+                ListaProdutos.AddRange(GlobalHelper.Listas.Produto);
                 ListaProdutos.Sort((x, y) => x.Id.CompareTo(y.Id));
                 Limpar();
                 AberturaForm();

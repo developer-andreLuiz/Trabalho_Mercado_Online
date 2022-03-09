@@ -261,9 +261,9 @@ namespace Trabalho_Mercado_Online.Access
 
         public class Itens_Vend
         {
-            static public List<Access_itens_Vend> GetAll()
+            static public List<Access_itens_Vend_Model> GetAll()
             {
-                List<Access_itens_Vend> listaFinal = new List<Access_itens_Vend>();
+                List<Access_itens_Vend_Model> listaFinal = new List<Access_itens_Vend_Model>();
                 string strgComando = "SELECT * FROM itens_Vend order by Codigo asc;";
                 OleDbCommand comando = new OleDbCommand(strgComando, conexao);
                 if (conexao.State == ConnectionState.Closed)
@@ -275,7 +275,7 @@ namespace Trabalho_Mercado_Online.Access
                 dataAdapter.Fill(dtLista);
                 foreach (DataRow dataRow in dtLista.Rows)
                 {
-                    Access_itens_Vend item = new Access_itens_Vend()
+                    Access_itens_Vend_Model item = new Access_itens_Vend_Model()
                     {
                         Codigo = int.Parse(dataRow["Codigo"].ToString()),
                         Quant = int.Parse(dataRow["Quant"].ToString())

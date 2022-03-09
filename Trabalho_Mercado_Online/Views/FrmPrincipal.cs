@@ -224,15 +224,15 @@ namespace Trabalho_Mercado_Online.Views
         }
         private void btnCategoriasNivel1_Click(object sender, EventArgs e)
         {
-            openChildForm(new FrmCategorias_Nivel_1());
+            openChildForm(new FrmCategoria_Nivel_1());
         }
         private void btnCategoriasNivel2_Click(object sender, EventArgs e)
         {
-            openChildForm(new FrmCategorias_Nivel_2());
+            openChildForm(new FrmCategoria_Nivel_2());
         }
         private void btnCategoriasNivel3_Click(object sender, EventArgs e)
         {
-            openChildForm(new FrmCategorias_Nivel_3());
+            openChildForm(new FrmCategoria_Nivel_3());
         }
 
         //Botoes do menu Ferramentas
@@ -244,12 +244,12 @@ namespace Trabalho_Mercado_Online.Views
         //Botoes do menu Access
         private void btnAlimentarProdutos_Click(object sender, EventArgs e)
         {
-            openChildForm(new FrmAlimentarProdutosAccess());
+            openChildForm(new FrmAlimentarProdutoAccess());
         }
 
         private void btnProdutosAccess_Click(object sender, EventArgs e)
         {
-            openChildForm(new FrmProdutosAccess());
+            openChildForm(new FrmProdutoAccess());
         }
 
         private void btnEncarte_Click(object sender, EventArgs e)
@@ -262,7 +262,7 @@ namespace Trabalho_Mercado_Online.Views
         //Botoes de Sair
         private void btnSair_Click(object sender, EventArgs e)
         {
-            Global.FinalizarThread();
+            GlobalHelper.FinalizarThread();
             Application.Exit();
         }
 

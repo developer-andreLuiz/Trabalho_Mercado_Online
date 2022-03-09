@@ -46,7 +46,7 @@ namespace Trabalho_Mercado_Online.Views
         //Filtro
         public void Filtrar()
         {
-            List<ProdutosDataGrid_Model> ListaGrid = new List<ProdutosDataGrid_Model>();
+            List<ProdutosDataGridHelper_Model> ListaGrid = new List<ProdutosDataGridHelper_Model>();
             List<Produto> ListaProdutos = new List<Produto>();
 
 
@@ -64,7 +64,7 @@ namespace Trabalho_Mercado_Online.Views
             bool categoriaNivel2 = chkCategoriaNivel2.Checked;
             bool categoriaNivel3 = chkCategoriaNivel3.Checked;
             //Sem Filtro
-            ListaProdutos.AddRange(Global.Listas.Produto);
+            ListaProdutos.AddRange(GlobalHelper.Listas.Produto);
 
             if (descricao)
             {
@@ -98,7 +98,7 @@ namespace Trabalho_Mercado_Online.Views
             }
             if (semCategoria)
             {
-                foreach (var item in Global.Listas.ProdutosCategoria)
+                foreach (var item in GlobalHelper.Listas.ProdutoCategoria)
                 {
                     Produto p = new Produto();
                     p = ListaProdutos.Find(x => x.Id == item.CodigoProduto);
@@ -112,7 +112,7 @@ namespace Trabalho_Mercado_Online.Views
                     if (cbNivel1.SelectedValue != null)
                     {
                         int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
-                        var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel1 == valor1);
+                        var ltCateorias = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == valor1);
                         List<Produto> ListaBase = new List<Produto>();
                         ListaBase.AddRange(ListaProdutos);
                         foreach (var item in ListaBase)
@@ -132,7 +132,7 @@ namespace Trabalho_Mercado_Online.Views
                     {
                         int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
                         int valor2 = int.Parse(cbNivel2.SelectedValue.ToString());
-                        var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == valor2);
+                        var ltCateorias = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == valor2);
                         List<Produto> ListaBase = new List<Produto>();
                         ListaBase.AddRange(ListaProdutos);
                         foreach (var item in ListaBase)
@@ -150,7 +150,7 @@ namespace Trabalho_Mercado_Online.Views
                     if (cbNivel1.SelectedValue != null)
                     {
                         int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
-                        var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == 0 && x.CategoriaNivel3 == 0);
+                        var ltCateorias = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == 0 && x.CategoriaNivel3 == 0);
                         List<Produto> ListaBase = new List<Produto>();
                         ListaBase.AddRange(ListaProdutos);
                         foreach (var item in ListaBase)
@@ -173,7 +173,7 @@ namespace Trabalho_Mercado_Online.Views
                         int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
                         int valor2 = int.Parse(cbNivel2.SelectedValue.ToString());
                         int valor3 = int.Parse(cbNivel3.SelectedValue.ToString());
-                        var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == valor2 && x.CategoriaNivel3 == valor3);
+                        var ltCateorias = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == valor2 && x.CategoriaNivel3 == valor3);
                         List<Produto> ListaBase = new List<Produto>();
                         ListaBase.AddRange(ListaProdutos);
                         foreach (var item in ListaBase)
@@ -194,7 +194,7 @@ namespace Trabalho_Mercado_Online.Views
                     {
                         int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
                         int valor2 = int.Parse(cbNivel2.SelectedValue.ToString());
-                        var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == valor2 && x.CategoriaNivel3 == 0);
+                        var ltCateorias = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == valor2 && x.CategoriaNivel3 == 0);
                         List<Produto> ListaBase = new List<Produto>();
                         ListaBase.AddRange(ListaProdutos);
                         foreach (var item in ListaBase)
@@ -213,7 +213,7 @@ namespace Trabalho_Mercado_Online.Views
             #region Formatação dos Dados Grid
             foreach (var obj in ListaProdutos)
             {
-                ProdutosDataGrid_Model produtosDataGrid = new ProdutosDataGrid_Model();
+                ProdutosDataGridHelper_Model produtosDataGrid = new ProdutosDataGridHelper_Model();
                 produtosDataGrid.Id = obj.Id.ToString();
                 produtosDataGrid.Descricao = obj.Descricao + " " + obj.Gramatura + " " + obj.Embalagem;
                 produtosDataGrid.Iguala = obj.IgualaProduto.ToString();
@@ -286,7 +286,7 @@ namespace Trabalho_Mercado_Online.Views
         }
         public void FiltrarCategorias(int categoria)
         {
-            List<ProdutosDataGrid_Model> ListaGrid = new List<ProdutosDataGrid_Model>();
+            List<ProdutosDataGridHelper_Model> ListaGrid = new List<ProdutosDataGridHelper_Model>();
             List<Produto> ListaProdutos = new List<Produto>();
             bool descricao = !String.IsNullOrEmpty(txtDescricao.Text);
             bool promocao = chkPromocao.Checked;
@@ -296,7 +296,7 @@ namespace Trabalho_Mercado_Online.Views
 
 
             //Sem Filtro
-            ListaProdutos.AddRange(Global.Listas.Produto);
+            ListaProdutos.AddRange(GlobalHelper.Listas.Produto);
             if (descricao)
             {
                 string txt = StringHelper.FormatarStringMaiusculo(txtDescricao.Text);
@@ -333,7 +333,7 @@ namespace Trabalho_Mercado_Online.Views
                 if (cbNivel1.SelectedValue != null)
                 {
                     int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
-                    var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel1 == valor1);
+                    var ltCateorias = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == valor1);
                     List<Produto> ListaBase = new List<Produto>();
                     ListaBase.AddRange(ListaProdutos);
                     foreach (var item in ListaBase)
@@ -352,7 +352,7 @@ namespace Trabalho_Mercado_Online.Views
                 {
                    
                     int valor2 = int.Parse(cbNivel2.SelectedValue.ToString());
-                    var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel2 == valor2);
+                    var ltCateorias = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel2 == valor2);
                     List<Produto> ListaBase = new List<Produto>();
                     ListaBase.AddRange(ListaProdutos);
                     foreach (var item in ListaBase)
@@ -371,7 +371,7 @@ namespace Trabalho_Mercado_Online.Views
                 {
 
                     int valor3 = int.Parse(cbNivel3.SelectedValue.ToString());
-                    var ltCateorias = Global.Listas.ProdutosCategoria.FindAll(x => x.CategoriaNivel3 == valor3);
+                    var ltCateorias = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel3 == valor3);
                     List<Produto> ListaBase = new List<Produto>();
                     ListaBase.AddRange(ListaProdutos);
                     foreach (var item in ListaBase)
@@ -399,7 +399,7 @@ namespace Trabalho_Mercado_Online.Views
             #region Formatação dos Dados Grid
             foreach (var obj in ListaProdutos)
             {
-                ProdutosDataGrid_Model produtosDataGrid = new ProdutosDataGrid_Model();
+                ProdutosDataGridHelper_Model produtosDataGrid = new ProdutosDataGridHelper_Model();
                 produtosDataGrid.Id = obj.Id.ToString();
                 produtosDataGrid.Descricao = obj.Descricao + " " + obj.Gramatura + " " + obj.Embalagem;
                 produtosDataGrid.Iguala = obj.IgualaProduto.ToString();
@@ -475,12 +475,12 @@ namespace Trabalho_Mercado_Online.Views
         //Listas
         public void AtualizarListas()
         {
-            Global.Listas.Produto = ProdutoController.GetAll();
-            Global.Listas.ProdutosCategoria = ProdutosCategoriaController.GetAll();
-            Global.Listas.ProdutosCodigoBarra = ProdutosCodigoBarraController.GetAll();
-            Global.Listas.CategoriasNivel1 = CategoriasNivel1Controller.GetAll();
-            Global.Listas.CategoriasNivel2 = CategoriasNivel2Controller.GetAll();
-            Global.Listas.CategoriasNivel3 = CategoriasNivel3Controller.GetAll();
+            GlobalHelper.Listas.Produto = ProdutoController.GetAll();
+            GlobalHelper.Listas.ProdutoCategoria = ProdutoCategoriaController.GetAll();
+            GlobalHelper.Listas.ProdutoCodigoBarra = ProdutoCodigoBarraController.GetAll();
+            GlobalHelper.Listas.CategoriaNivel1 = CategoriaNivel1Controller.GetAll();
+            GlobalHelper.Listas.CategoriaNivel2 = CategoriaNivel2Controller.GetAll();
+            GlobalHelper.Listas.CategoriaNivel3 = CategoriaNivel3Controller.GetAll();
 
             
         }
@@ -491,7 +491,7 @@ namespace Trabalho_Mercado_Online.Views
             cbNivel1.DataSource = null;
             cbNivel1.DisplayMember = "Nome";
             cbNivel1.ValueMember = "Id";
-            cbNivel1.DataSource = Global.Listas.CategoriasNivel1;
+            cbNivel1.DataSource = GlobalHelper.Listas.CategoriaNivel1;
 
         }
         void ComboCategoriasNivel2()
@@ -500,8 +500,8 @@ namespace Trabalho_Mercado_Online.Views
             if (cbNivel1.SelectedValue != null)
             {
                 int id_Nivel1 = int.Parse(cbNivel1.SelectedValue.ToString());
-                List<CategoriasNivel2> lista = new List<CategoriasNivel2>();
-                lista = Global.Listas.CategoriasNivel2.FindAll(x => x.CategoriaNivel1 == id_Nivel1);
+                List<CategoriaNivel2> lista = new List<CategoriaNivel2>();
+                lista = GlobalHelper.Listas.CategoriaNivel2.FindAll(x => x.CategoriaNivel1 == id_Nivel1);
                 cbNivel2.DisplayMember = "Nome";
                 cbNivel2.ValueMember = "Id";
                 cbNivel2.DataSource = lista;
@@ -515,8 +515,8 @@ namespace Trabalho_Mercado_Online.Views
             {
                 int id_Nivel1 = int.Parse(cbNivel1.SelectedValue.ToString());
                 int id_Nivel2 = int.Parse(cbNivel2.SelectedValue.ToString());
-                List<CategoriasNivel3> lista = new List<CategoriasNivel3>();
-                lista = Global.Listas.CategoriasNivel3.FindAll(x => x.CategoriaNivel1 == id_Nivel1 && x.CategoriaNivel2 == id_Nivel2);
+                List<CategoriaNivel3> lista = new List<CategoriaNivel3>();
+                lista = GlobalHelper.Listas.CategoriaNivel3.FindAll(x => x.CategoriaNivel1 == id_Nivel1 && x.CategoriaNivel2 == id_Nivel2);
                 cbNivel3.DisplayMember = "Nome";
                 cbNivel3.ValueMember = "Id";
                 cbNivel3.DataSource = lista;
@@ -703,11 +703,11 @@ namespace Trabalho_Mercado_Online.Views
                     var valor = dataGridView.SelectedRows[i].Cells[0].Value;
 
                     int id = int.Parse(valor.ToString());
-                    Produto p = Global.Listas.Produto.Find(x => x.Id == id);
+                    Produto p = GlobalHelper.Listas.Produto.Find(x => x.Id == id);
                     p.ValorPromocao = 0;
                     ProdutoController.Gravar(p);
                 }
-                Global.Listas.Produto = ProdutoController.GetAll();
+                GlobalHelper.Listas.Produto = ProdutoController.GetAll();
                 Filtrar();
                 MessageBox.Show("Promoções Apagadas");
             }
@@ -726,7 +726,7 @@ namespace Trabalho_Mercado_Online.Views
                 if (cbNivel1.SelectedValue != null)
                 {
                     nivel1 = int.Parse(cbNivel1.SelectedValue.ToString());
-                    Nome1 = Global.Listas.CategoriasNivel1.Find(x => x.Id == nivel1).Nome;
+                    Nome1 = GlobalHelper.Listas.CategoriaNivel1.Find(x => x.Id == nivel1).Nome;
                 }
             }
 
@@ -735,7 +735,7 @@ namespace Trabalho_Mercado_Online.Views
                 if (cbNivel2.SelectedValue != null)
                 {
                     nivel2 = int.Parse(cbNivel2.SelectedValue.ToString());
-                    Nome2 = Global.Listas.CategoriasNivel2.Find(x => x.Id == nivel2).Nome;
+                    Nome2 = GlobalHelper.Listas.CategoriaNivel2.Find(x => x.Id == nivel2).Nome;
                 }
             }
 
@@ -744,7 +744,7 @@ namespace Trabalho_Mercado_Online.Views
                 if (cbNivel3.SelectedValue != null)
                 {
                     nivel3 = int.Parse(cbNivel3.SelectedValue.ToString());
-                    Nome3 = Global.Listas.CategoriasNivel3.Find(x => x.Id == nivel3).Nome;
+                    Nome3 = GlobalHelper.Listas.CategoriaNivel3.Find(x => x.Id == nivel3).Nome;
                 }
             }
             bool Continuar = true;
@@ -767,20 +767,20 @@ namespace Trabalho_Mercado_Online.Views
                         var valor = dataGridView.SelectedRows[i].Cells[0].Value;
 
                         int id = int.Parse(valor.ToString());
-                        ProdutosCategorium p = Global.Listas.ProdutosCategoria.Find(x => x.CodigoProduto == id && x.CategoriaNivel1 == nivel1 && x.CategoriaNivel2 == nivel2 && x.CategoriaNivel3 == nivel3);
+                        ProdutoCategorium p = GlobalHelper.Listas.ProdutoCategoria.Find(x => x.CodigoProduto == id && x.CategoriaNivel1 == nivel1 && x.CategoriaNivel2 == nivel2 && x.CategoriaNivel3 == nivel3);
                         if (p == null)
                         {
-                            p = new ProdutosCategorium();
+                            p = new ProdutoCategorium();
                             p.Id = 0;
                             p.CodigoProduto = id;
                             p.CategoriaNivel1 = nivel1;
                             p.CategoriaNivel2 = nivel2;
                             p.CategoriaNivel3 = nivel3;
-                            ProdutosCategoriaController.Gravar(p);
+                            ProdutoCategoriaController.Gravar(p);
                         }
 
                     }
-                    Global.Listas.ProdutosCategoria = ProdutosCategoriaController.GetAll();
+                    GlobalHelper.Listas.ProdutoCategoria = ProdutoCategoriaController.GetAll();
                     //Filtrar();
                     chkTravarFiltro.Checked = false;
                     MessageBox.Show("Atualizado");
@@ -805,7 +805,7 @@ namespace Trabalho_Mercado_Online.Views
                 if (cbNivel1.SelectedValue != null)
                 {
                     nivel1 = int.Parse(cbNivel1.SelectedValue.ToString());
-                    Nome1 = Global.Listas.CategoriasNivel1.Find(x => x.Id == nivel1).Nome;
+                    Nome1 = GlobalHelper.Listas.CategoriaNivel1.Find(x => x.Id == nivel1).Nome;
                 }
             }
 
@@ -814,7 +814,7 @@ namespace Trabalho_Mercado_Online.Views
                 if (cbNivel2.SelectedValue != null)
                 {
                     nivel2 = int.Parse(cbNivel2.SelectedValue.ToString());
-                    Nome2 = Global.Listas.CategoriasNivel2.Find(x => x.Id == nivel2).Nome;
+                    Nome2 = GlobalHelper.Listas.CategoriaNivel2.Find(x => x.Id == nivel2).Nome;
                 }
             }
 
@@ -823,7 +823,7 @@ namespace Trabalho_Mercado_Online.Views
                 if (cbNivel3.SelectedValue != null)
                 {
                     nivel3 = int.Parse(cbNivel3.SelectedValue.ToString());
-                    Nome3 = Global.Listas.CategoriasNivel3.Find(x => x.Id == nivel3).Nome;
+                    Nome3 = GlobalHelper.Listas.CategoriaNivel3.Find(x => x.Id == nivel3).Nome;
                 }
             }
             bool Continuar = true;
@@ -848,14 +848,14 @@ namespace Trabalho_Mercado_Online.Views
                         int id = int.Parse(valor.ToString());
 
 
-                        ProdutosCategorium p = Global.Listas.ProdutosCategoria.Find(x => x.CodigoProduto == id && x.CategoriaNivel1 == nivel1 && x.CategoriaNivel2 == nivel2 && x.CategoriaNivel3 == nivel3);
+                        ProdutoCategorium p = GlobalHelper.Listas.ProdutoCategoria.Find(x => x.CodigoProduto == id && x.CategoriaNivel1 == nivel1 && x.CategoriaNivel2 == nivel2 && x.CategoriaNivel3 == nivel3);
                         if (p != null)
                         {
-                            ProdutosCategoriaController.Deletar(p);
+                            ProdutoCategoriaController.Deletar(p);
                         }
 
                     }
-                    Global.Listas.ProdutosCategoria = ProdutosCategoriaController.GetAll();
+                    GlobalHelper.Listas.ProdutoCategoria = ProdutoCategoriaController.GetAll();
                     Filtrar();
                     MessageBox.Show("Atualizado");
                 }
@@ -1002,7 +1002,7 @@ namespace Trabalho_Mercado_Online.Views
             catch { }
             if (id > 0)
             {
-                openChildForm(new FrmProduto(Global.Listas.Produto.Find(x => x.Id == id),new List<int>()));
+                openChildForm(new FrmProduto(GlobalHelper.Listas.Produto.Find(x => x.Id == id),new List<int>()));
             }
         }
         private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -1043,10 +1043,10 @@ namespace Trabalho_Mercado_Online.Views
                     {
                         if (txt.Length > 5)
                         {
-                            ProdutosCodigoBarra p = Global.Listas.ProdutosCodigoBarra.Find(x => x.CodigoBarra.Equals(txt));
+                            ProdutoCodigoBarra p = GlobalHelper.Listas.ProdutoCodigoBarra.Find(x => x.CodigoBarra.Equals(txt));
                             if (p != null)
                             {
-                                openChildForm(new FrmProduto(Global.Listas.Produto.Find(x => x.Id == p.CodigoProduto),new List<int>()));
+                                openChildForm(new FrmProduto(GlobalHelper.Listas.Produto.Find(x => x.Id == p.CodigoProduto),new List<int>()));
                             }
                             else
                             {
@@ -1057,7 +1057,7 @@ namespace Trabalho_Mercado_Online.Views
                         else
                         {
                             int valor = int.Parse(txt);
-                            Produto p = Global.Listas.Produto.Find(x => x.Id == valor);
+                            Produto p = GlobalHelper.Listas.Produto.Find(x => x.Id == valor);
                             if (p != null)
                             {
                                 openChildForm(new FrmProduto(p, new List<int>()));

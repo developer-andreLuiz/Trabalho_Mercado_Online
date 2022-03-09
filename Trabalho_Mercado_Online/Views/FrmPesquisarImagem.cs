@@ -85,7 +85,7 @@ namespace Trabalho_Mercado_Online.Views
             int max = 0;
             foreach (var item in ListaUrls.FindAll(x => x.Verificada == false))
             {
-                if (Global.Break_Thread)
+                if (GlobalHelper.Break_Thread)
                 {
                     break;
                 }
@@ -107,7 +107,7 @@ namespace Trabalho_Mercado_Online.Views
             int max = 8;
             foreach (var item in ListaUrls.FindAll(x => x.Verificada == false))
             {
-                if (Global.Break_Thread)
+                if (GlobalHelper.Break_Thread)
                 {
                     break;
                 }
@@ -129,7 +129,7 @@ namespace Trabalho_Mercado_Online.Views
         public FrmPesquisarImagem(FrmProduto frm)
         {
             InitializeComponent();
-            Global.FinalizarThread();
+            GlobalHelper.FinalizarThread();
             panelImagens.MouseWheel += panelImagens_MouseWheel;
             InitNavegador();
             
@@ -149,7 +149,7 @@ namespace Trabalho_Mercado_Online.Views
         public FrmPesquisarImagem(FrmEncarte frm)
         {
             InitializeComponent();
-            Global.FinalizarThread();
+            GlobalHelper.FinalizarThread();
             panelImagens.MouseWheel += panelImagens_MouseWheel;
             InitNavegador();
             frmEncarte = frm;
@@ -169,7 +169,7 @@ namespace Trabalho_Mercado_Online.Views
         public FrmPesquisarImagem()
         {
             InitializeComponent();
-            Global.FinalizarThread();
+            GlobalHelper.FinalizarThread();
             pictureBoxImagem.Size = new Size(200, 179);
             panelImagens.MouseWheel += panelImagens_MouseWheel;
             InitNavegador();
@@ -252,7 +252,7 @@ namespace Trabalho_Mercado_Online.Views
 
                 }
             }
-            Global.FinalizarThread();
+            GlobalHelper.FinalizarThread();
         }
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
@@ -274,8 +274,8 @@ namespace Trabalho_Mercado_Online.Views
                     url2 = url2 + "+" + item;
                 }
                 url = url1 + url2 + url3;
-                Global.FinalizarThread();
-                Global.Break_Thread = false;
+                GlobalHelper.FinalizarThread();
+                GlobalHelper.Break_Thread = false;
                 Navegador.Navigate(url);
             }
            
@@ -300,7 +300,7 @@ namespace Trabalho_Mercado_Online.Views
                 thread.IsBackground = true;
                 thread.Name = "Imagem";
                 thread.Start();
-                Global.Lista_Thread_Imagem.Add(thread);
+                GlobalHelper.Lista_Thread_Imagem.Add(thread);
             }
 
         }
@@ -314,7 +314,7 @@ namespace Trabalho_Mercado_Online.Views
                 thread.IsBackground = true;
                 thread.Name = "Imagem";
                 thread.Start();
-                Global.Lista_Thread_Imagem.Add(thread);
+                GlobalHelper.Lista_Thread_Imagem.Add(thread);
             }
         }
         private void Navegador_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -345,14 +345,14 @@ namespace Trabalho_Mercado_Online.Views
             thread.IsBackground = true;
             thread.Name = "Imagem";
             thread.Start();
-            Global.Lista_Thread_Imagem.Add(thread);
+            GlobalHelper.Lista_Thread_Imagem.Add(thread);
           
         }
       
         private void btnLimpar_Click(object sender, EventArgs e)
         {
            
-            Global.Break_Thread = true;
+            GlobalHelper.Break_Thread = true;
         }
         private void timerImagens_Tick(object sender, EventArgs e)
         {
