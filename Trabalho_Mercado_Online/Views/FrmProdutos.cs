@@ -264,6 +264,7 @@ namespace Trabalho_Mercado_Online.Views
                 btnRemover.Visible = true;
                 btnLimparPromocoes.Visible = true;
                 btnSelecionarTudo.Visible = true;
+                btnExibirCategoria.Visible = true;
                 lblSelecionados.Visible = true;
                 btnAbrirProdutos.Visible = true;
 
@@ -279,11 +280,13 @@ namespace Trabalho_Mercado_Online.Views
                 btnRemover.Visible = false;
                 btnLimparPromocoes.Visible = false;
                 btnSelecionarTudo.Visible = false;
+                btnExibirCategoria.Visible = false;
                 lblSelecionados.Visible = false;
                 btnAbrirProdutos.Visible = false;
             }
             #endregion
         }
+
         public void FiltrarCategorias(int categoria)
         {
             List<ProdutosDataGridHelper_Model> ListaGrid = new List<ProdutosDataGridHelper_Model>();
@@ -893,6 +896,125 @@ namespace Trabalho_Mercado_Online.Views
                 default: lblSelecionados.Text = $"{dataGridView.SelectedRows.Count} Selecionados"; break;
             }
         }
+        private void btnExibirCategoria_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.Rows.Count>0)
+            {
+                List<int> listId = new List<int>();
+                List<ProdutosCategoriaDataGridHelper_Model> ListaGrid = new List<ProdutosCategoriaDataGridHelper_Model>();
+                foreach (DataGridViewRow item in dataGridView.Rows)
+                {
+                    listId.Add(int.Parse(item.Cells[0].Value.ToString()));
+                }
+                foreach (var itemListId in listId)
+                {
+                    var listProdutoCategoria = GlobalHelper.Listas.ProdutoCategoria.FindAll(x=>x.CodigoProduto==itemListId);
+                    
+                    foreach (var itemProdutoCategoria in listProdutoCategoria)
+                    {
+                        ProdutosCategoriaDataGridHelper_Model p = new ProdutosCategoriaDataGridHelper_Model();
+                        p.Id = itemListId.ToString();
+                        var produto = GlobalHelper.Listas.Produto.Find(x => x.Id == itemListId);
+                        try
+                        {
+                            p.Descricao = produto.Descricao + " " + produto.Gramatura + " " + produto.Embalagem;
+
+                            try
+                            {
+                                p.Categoria_Nivel1 = GlobalHelper.Listas.CategoriaNivel1.Find(x => x.Id == itemProdutoCategoria.CategoriaNivel1).Nome;
+                            }
+                            catch
+                            {
+                                p.Categoria_Nivel1 = "";
+                            }
+                            
+                            try
+                            {
+                                p.Categoria_Nivel2 = GlobalHelper.Listas.CategoriaNivel2.Find(x => x.Id == itemProdutoCategoria.CategoriaNivel2).Nome;
+                            }
+                            catch
+                            {
+                                p.Categoria_Nivel2 = "";
+                            }
+                           
+                            try
+                            {
+                                p.Categoria_Nivel3 = GlobalHelper.Listas.CategoriaNivel3.Find(x => x.Id == itemProdutoCategoria.CategoriaNivel3).Nome;
+                            }
+                            catch
+                            {
+                                p.Categoria_Nivel3 = "";
+                            }
+                            
+                            ListaGrid.Add(p);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
+
+                dataGridView.DataSource = ListaGrid;
+
+
+                #region Formatação dos Dados Grid
+
+
+
+                switch (ListaGrid.Count)
+                {
+                    case 0: lblRegistros.Text = $"Sem Registro"; break;
+                    case 1: lblRegistros.Text = $"1 Registro"; break;
+                    default: lblRegistros.Text = $"{ListaGrid.Count} Registros"; break;
+                }
+                switch (dataGridView.SelectedRows.Count)
+                {
+                    case 0: lblSelecionados.Text = $"Nenhum Selecionado"; break;
+                    case 1: lblSelecionados.Text = $"1 Selecionado"; break;
+                    default: lblSelecionados.Text = $"{dataGridView.SelectedRows.Count} Selecionados"; break;
+                }
+                dataGridView.Columns[0].Width = 70;
+                dataGridView.Columns[1].Width = 350;
+                if (ListaGrid.Count > 0)
+                {
+                    btnAdicionar.Enabled = true;
+                    btnRemover.Enabled = true;
+                    btnLimparPromocoes.Enabled = true;
+                    btnAbrirProdutos.Enabled = true;
+
+                    btnAdicionar.Visible = true;
+                    btnRemover.Visible = true;
+                    btnLimparPromocoes.Visible = true;
+                    btnSelecionarTudo.Visible = true;
+                    lblSelecionados.Visible = true;
+                    btnAbrirProdutos.Visible = true;
+
+                }
+                else
+                {
+                    btnAdicionar.Enabled = false;
+                    btnRemover.Enabled = false;
+                    btnLimparPromocoes.Enabled = false;
+                    btnAbrirProdutos.Enabled = false;
+
+                    btnAdicionar.Visible = false;
+                    btnRemover.Visible = false;
+                    btnLimparPromocoes.Visible = false;
+                    btnSelecionarTudo.Visible = false;
+                    lblSelecionados.Visible = false;
+                    btnAbrirProdutos.Visible = false;
+                }
+                #endregion
+
+               
+            }
+
+
+
+
+
+        }
         private void btnAbrirProdutos_Click(object sender, EventArgs e)
         {
             List<int> lista = new List<int>();
@@ -1132,8 +1254,9 @@ namespace Trabalho_Mercado_Online.Views
 
 
 
+
         #endregion
 
-        
+       
     }
 }
