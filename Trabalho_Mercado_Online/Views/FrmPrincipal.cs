@@ -27,6 +27,7 @@ namespace Trabalho_Mercado_Online.Views
         {
             panelBasedeDadosSubMenu.Visible = false;
             panelFerramentasSubMenu.Visible = false;
+            panelArmazenamentoSubMenu.Visible = false;
             panelAccessSubMenu.Visible = false;
             panelMenuLateral.Focus();
         }
@@ -39,6 +40,10 @@ namespace Trabalho_Mercado_Online.Views
             if (panelFerramentasSubMenu.Visible)
             {
                 panelFerramentasSubMenu.Visible = false;
+            }
+            if (panelArmazenamentoSubMenu.Visible)
+            {
+                panelArmazenamentoSubMenu.Visible = false;
             }
             if (panelAccessSubMenu.Visible)
             {
@@ -95,6 +100,10 @@ namespace Trabalho_Mercado_Online.Views
         {
             ExibirMenu(panelFerramentasSubMenu);
 
+        }
+        private void btnArmazenamento_Click(object sender, EventArgs e)
+        {
+            ExibirMenu(panelArmazenamentoSubMenu);
         }
         private void btnAccess_Click(object sender, EventArgs e)
         {
@@ -236,9 +245,23 @@ namespace Trabalho_Mercado_Online.Views
         }
 
         //Botoes do menu Ferramentas
+        private void btnEncarte_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FrmEncarte());
+        }
         private void btnImagens_Click(object sender, EventArgs e)
         {
             openChildForm(new FrmPesquisarImagem());
+        }
+
+        //Botoes do menu Armazenamento
+        private void btnArmazenamentoLoja_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FrmArmazenamentoLoja());
+        }
+        private void btnArmazenamentoEstoque_Click(object sender, EventArgs e)
+        {
+
         }
 
         //Botoes do menu Access
@@ -246,16 +269,20 @@ namespace Trabalho_Mercado_Online.Views
         {
             openChildForm(new FrmAlimentarProdutoAccess());
         }
-
         private void btnProdutosAccess_Click(object sender, EventArgs e)
         {
             openChildForm(new FrmProdutoAccess());
         }
 
-        private void btnEncarte_Click(object sender, EventArgs e)
-        {
-            openChildForm(new FrmEncarte());
-        }
+       
+        
+        
+
+        
+
+       
+
+
 
 
 

@@ -50,12 +50,22 @@ D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\x86\Debug\netcoreapp3
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\x86\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\x86\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\bin\x86\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.csproj.AssemblyReference.cache
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Properties.Resources.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views_Access.FrmAlimentarProdutoAccess.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views_Access.FrmProdutoAccess.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmCategoria_Nivel_1.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmCategoria_Nivel_2.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmCategoria_Nivel_3.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmEncarte.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmEncartePreview.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmInicio.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmPesquisarImagem.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmPrincipal.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmProduto.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmProdutos.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.csproj.GenerateResource.cache
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.GeneratedMSBuildEditorConfig.editorconfig
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.AssemblyInfoInputs.cache
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.AssemblyInfo.cs
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.csproj.CoreCompileInputs.cache
@@ -63,13 +73,3 @@ D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Mercado Online.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Mercado Online.pdb
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.genruntimeconfig.cache
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmPesquisarImagem.resources
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmEncarte.resources
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmEncartePreview.resources
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.GeneratedMSBuildEditorConfig.editorconfig
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views_Access.FrmAlimentarProdutoAccess.resources
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views_Access.FrmProdutoAccess.resources
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmCategoria_Nivel_1.resources
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmCategoria_Nivel_2.resources
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.FrmCategoria_Nivel_3.resources
-D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.csproj.AssemblyReference.cache

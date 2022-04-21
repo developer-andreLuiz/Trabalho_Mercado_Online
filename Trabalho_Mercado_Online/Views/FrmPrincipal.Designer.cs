@@ -34,11 +34,19 @@ namespace Trabalho_Mercado_Online.Views
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panelLogoImagem = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblFuncionario = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnSair = new System.Windows.Forms.Button();
             this.panelMenuLateral = new System.Windows.Forms.Panel();
             this.panelAccessSubMenu = new System.Windows.Forms.Panel();
             this.btnProdutosAccess = new System.Windows.Forms.Button();
             this.btnAlimentarProdutos = new System.Windows.Forms.Button();
             this.btnAccess = new System.Windows.Forms.Button();
+            this.panelArmazenamentoSubMenu = new System.Windows.Forms.Panel();
+            this.btnArmazenamentoEstoque = new System.Windows.Forms.Button();
+            this.btnArmazenamentoLoja = new System.Windows.Forms.Button();
+            this.btnArmazenamento = new System.Windows.Forms.Button();
             this.panelFerramentasSubMenu = new System.Windows.Forms.Panel();
             this.btnImagens = new System.Windows.Forms.Button();
             this.btnEncarte = new System.Windows.Forms.Button();
@@ -50,16 +58,13 @@ namespace Trabalho_Mercado_Online.Views
             this.btnProdutos = new System.Windows.Forms.Button();
             this.btnBasedeDados = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.btnSair = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblFuncionario = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.panelMenuLateral.SuspendLayout();
             this.panelAccessSubMenu.SuspendLayout();
+            this.panelArmazenamentoSubMenu.SuspendLayout();
             this.panelFerramentasSubMenu.SuspendLayout();
             this.panelBasedeDadosSubMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -112,11 +117,71 @@ namespace Trabalho_Mercado_Online.Views
             this.panelMain.Size = new System.Drawing.Size(897, 648);
             this.panelMain.TabIndex = 1;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel1.Controls.Add(this.lblFuncionario);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.btnSair);
+            this.panel1.Location = new System.Drawing.Point(1, 575);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 74);
+            this.panel1.TabIndex = 3;
+            // 
+            // lblFuncionario
+            // 
+            this.lblFuncionario.AutoSize = true;
+            this.lblFuncionario.BackColor = System.Drawing.Color.Transparent;
+            this.lblFuncionario.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblFuncionario.ForeColor = System.Drawing.Color.White;
+            this.lblFuncionario.Location = new System.Drawing.Point(60, 55);
+            this.lblFuncionario.Name = "lblFuncionario";
+            this.lblFuncionario.Size = new System.Drawing.Size(123, 14);
+            this.lblFuncionario.TabIndex = 12;
+            this.lblFuncionario.Tag = "";
+            this.lblFuncionario.Text = "Nome do Funcionário";
+            this.lblFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(4, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 14);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Usuário :";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnSair
+            // 
+            this.btnSair.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnSair.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSair.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSair.ForeColor = System.Drawing.Color.White;
+            this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
+            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSair.Location = new System.Drawing.Point(0, 0);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(200, 50);
+            this.btnSair.TabIndex = 10;
+            this.btnSair.Text = "Sair";
+            this.btnSair.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
             // panelMenuLateral
             // 
             this.panelMenuLateral.BackColor = System.Drawing.Color.DodgerBlue;
             this.panelMenuLateral.Controls.Add(this.panelAccessSubMenu);
             this.panelMenuLateral.Controls.Add(this.btnAccess);
+            this.panelMenuLateral.Controls.Add(this.panelArmazenamentoSubMenu);
+            this.panelMenuLateral.Controls.Add(this.btnArmazenamento);
             this.panelMenuLateral.Controls.Add(this.panelFerramentasSubMenu);
             this.panelMenuLateral.Controls.Add(this.btnFerramentas);
             this.panelMenuLateral.Controls.Add(this.panelBasedeDadosSubMenu);
@@ -133,10 +198,10 @@ namespace Trabalho_Mercado_Online.Views
             this.panelAccessSubMenu.Controls.Add(this.btnProdutosAccess);
             this.panelAccessSubMenu.Controls.Add(this.btnAlimentarProdutos);
             this.panelAccessSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAccessSubMenu.Location = new System.Drawing.Point(0, 503);
+            this.panelAccessSubMenu.Location = new System.Drawing.Point(0, 648);
             this.panelAccessSubMenu.Name = "panelAccessSubMenu";
             this.panelAccessSubMenu.Size = new System.Drawing.Size(200, 95);
-            this.panelAccessSubMenu.TabIndex = 9;
+            this.panelAccessSubMenu.TabIndex = 15;
             // 
             // btnProdutosAccess
             // 
@@ -190,15 +255,88 @@ namespace Trabalho_Mercado_Online.Views
             this.btnAccess.ForeColor = System.Drawing.Color.White;
             this.btnAccess.Image = ((System.Drawing.Image)(resources.GetObject("btnAccess.Image")));
             this.btnAccess.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccess.Location = new System.Drawing.Point(0, 453);
+            this.btnAccess.Location = new System.Drawing.Point(0, 598);
             this.btnAccess.Name = "btnAccess";
             this.btnAccess.Size = new System.Drawing.Size(200, 50);
-            this.btnAccess.TabIndex = 8;
+            this.btnAccess.TabIndex = 14;
             this.btnAccess.Text = "Access";
             this.btnAccess.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAccess.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAccess.UseVisualStyleBackColor = false;
             this.btnAccess.Click += new System.EventHandler(this.btnAccess_Click);
+            // 
+            // panelArmazenamentoSubMenu
+            // 
+            this.panelArmazenamentoSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
+            this.panelArmazenamentoSubMenu.Controls.Add(this.btnArmazenamentoEstoque);
+            this.panelArmazenamentoSubMenu.Controls.Add(this.btnArmazenamentoLoja);
+            this.panelArmazenamentoSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelArmazenamentoSubMenu.Location = new System.Drawing.Point(0, 503);
+            this.panelArmazenamentoSubMenu.Name = "panelArmazenamentoSubMenu";
+            this.panelArmazenamentoSubMenu.Size = new System.Drawing.Size(200, 95);
+            this.panelArmazenamentoSubMenu.TabIndex = 11;
+            // 
+            // btnArmazenamentoEstoque
+            // 
+            this.btnArmazenamentoEstoque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
+            this.btnArmazenamentoEstoque.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnArmazenamentoEstoque.FlatAppearance.BorderSize = 0;
+            this.btnArmazenamentoEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnArmazenamentoEstoque.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnArmazenamentoEstoque.ForeColor = System.Drawing.Color.White;
+            this.btnArmazenamentoEstoque.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_depot;
+            this.btnArmazenamentoEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnArmazenamentoEstoque.Location = new System.Drawing.Point(0, 45);
+            this.btnArmazenamentoEstoque.Name = "btnArmazenamentoEstoque";
+            this.btnArmazenamentoEstoque.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnArmazenamentoEstoque.Size = new System.Drawing.Size(200, 45);
+            this.btnArmazenamentoEstoque.TabIndex = 5;
+            this.btnArmazenamentoEstoque.Text = "Estoque";
+            this.btnArmazenamentoEstoque.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnArmazenamentoEstoque.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnArmazenamentoEstoque.UseVisualStyleBackColor = false;
+            this.btnArmazenamentoEstoque.Click += new System.EventHandler(this.btnArmazenamentoEstoque_Click);
+            // 
+            // btnArmazenamentoLoja
+            // 
+            this.btnArmazenamentoLoja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
+            this.btnArmazenamentoLoja.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnArmazenamentoLoja.FlatAppearance.BorderSize = 0;
+            this.btnArmazenamentoLoja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnArmazenamentoLoja.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnArmazenamentoLoja.ForeColor = System.Drawing.Color.White;
+            this.btnArmazenamentoLoja.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_store;
+            this.btnArmazenamentoLoja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnArmazenamentoLoja.Location = new System.Drawing.Point(0, 0);
+            this.btnArmazenamentoLoja.Name = "btnArmazenamentoLoja";
+            this.btnArmazenamentoLoja.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnArmazenamentoLoja.Size = new System.Drawing.Size(200, 45);
+            this.btnArmazenamentoLoja.TabIndex = 4;
+            this.btnArmazenamentoLoja.Text = "Loja";
+            this.btnArmazenamentoLoja.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnArmazenamentoLoja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnArmazenamentoLoja.UseVisualStyleBackColor = false;
+            this.btnArmazenamentoLoja.Click += new System.EventHandler(this.btnArmazenamentoLoja_Click);
+            // 
+            // btnArmazenamento
+            // 
+            this.btnArmazenamento.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnArmazenamento.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnArmazenamento.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnArmazenamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnArmazenamento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnArmazenamento.ForeColor = System.Drawing.Color.White;
+            this.btnArmazenamento.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_warehouse;
+            this.btnArmazenamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnArmazenamento.Location = new System.Drawing.Point(0, 453);
+            this.btnArmazenamento.Name = "btnArmazenamento";
+            this.btnArmazenamento.Size = new System.Drawing.Size(200, 50);
+            this.btnArmazenamento.TabIndex = 10;
+            this.btnArmazenamento.Text = "Armazenamento";
+            this.btnArmazenamento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnArmazenamento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnArmazenamento.UseVisualStyleBackColor = false;
+            this.btnArmazenamento.Click += new System.EventHandler(this.btnArmazenamento_Click);
             // 
             // panelFerramentasSubMenu
             // 
@@ -381,7 +519,7 @@ namespace Trabalho_Mercado_Online.Views
             this.btnBasedeDados.Name = "btnBasedeDados";
             this.btnBasedeDados.Size = new System.Drawing.Size(200, 50);
             this.btnBasedeDados.TabIndex = 4;
-            this.btnBasedeDados.Text = "Base de Dados";
+            this.btnBasedeDados.Text = "Cadastros";
             this.btnBasedeDados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBasedeDados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBasedeDados.UseVisualStyleBackColor = false;
@@ -403,64 +541,6 @@ namespace Trabalho_Mercado_Online.Views
             this.panelLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseDown);
             this.panelLogo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelLogo_MouseMove);
             // 
-            // btnSair
-            // 
-            this.btnSair.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnSair.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSair.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
-            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSair.Location = new System.Drawing.Point(0, 0);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(200, 50);
-            this.btnSair.TabIndex = 10;
-            this.btnSair.Text = "Sair";
-            this.btnSair.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSair.UseVisualStyleBackColor = false;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel1.Controls.Add(this.lblFuncionario);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.btnSair);
-            this.panel1.Location = new System.Drawing.Point(1, 575);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 74);
-            this.panel1.TabIndex = 3;
-            // 
-            // lblFuncionario
-            // 
-            this.lblFuncionario.AutoSize = true;
-            this.lblFuncionario.BackColor = System.Drawing.Color.Transparent;
-            this.lblFuncionario.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFuncionario.ForeColor = System.Drawing.Color.White;
-            this.lblFuncionario.Location = new System.Drawing.Point(60, 55);
-            this.lblFuncionario.Name = "lblFuncionario";
-            this.lblFuncionario.Size = new System.Drawing.Size(123, 14);
-            this.lblFuncionario.TabIndex = 12;
-            this.lblFuncionario.Tag = "";
-            this.lblFuncionario.Text = "Nome do Funcionário";
-            this.lblFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(4, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 14);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Usuário :";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -477,14 +557,15 @@ namespace Trabalho_Mercado_Online.Views
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "Teste";
             this.Text = "Mercado Online";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panelMenuLateral.ResumeLayout(false);
             this.panelAccessSubMenu.ResumeLayout(false);
+            this.panelArmazenamentoSubMenu.ResumeLayout(false);
             this.panelFerramentasSubMenu.ResumeLayout(false);
             this.panelBasedeDadosSubMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -497,22 +578,26 @@ namespace Trabalho_Mercado_Online.Views
         private System.Windows.Forms.Panel panelMenuLateral;
         private System.Windows.Forms.Button btnBasedeDados;
         private System.Windows.Forms.Panel panelLogo;
+        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label lblFuncionario;
         private System.Windows.Forms.Panel panelBasedeDadosSubMenu;
         private System.Windows.Forms.Button btnCategoriasNivel3;
         private System.Windows.Forms.Button btnCategoriasNivel2;
         private System.Windows.Forms.Button btnCategoriasNivel1;
         private System.Windows.Forms.Button btnProdutos;
-        private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Panel panelAccessSubMenu;
-        private System.Windows.Forms.Button btnAccess;
+        private System.Windows.Forms.Panel panelArmazenamentoSubMenu;
+        private System.Windows.Forms.Button btnArmazenamentoEstoque;
+        private System.Windows.Forms.Button btnArmazenamentoLoja;
+        private System.Windows.Forms.Button btnArmazenamento;
         private System.Windows.Forms.Panel panelFerramentasSubMenu;
+        private System.Windows.Forms.Button btnImagens;
+        private System.Windows.Forms.Button btnEncarte;
         private System.Windows.Forms.Button btnFerramentas;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.Label lblFuncionario;
+        private System.Windows.Forms.Panel panelAccessSubMenu;
         private System.Windows.Forms.Button btnProdutosAccess;
         private System.Windows.Forms.Button btnAlimentarProdutos;
-        private System.Windows.Forms.Button btnEncarte;
-        private System.Windows.Forms.Button btnImagens;
+        private System.Windows.Forms.Button btnAccess;
     }
 }

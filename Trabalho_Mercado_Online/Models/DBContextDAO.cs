@@ -17,28 +17,28 @@ namespace Trabalho_Mercado_Online.Models
         {
         }
 
-        public virtual DbSet<Bairro> Bairros { get; set; }
         public virtual DbSet<Carrinho> Carrinhos { get; set; }
         public virtual DbSet<CategoriaNivel1> CategoriaNivel1s { get; set; }
         public virtual DbSet<CategoriaNivel2> CategoriaNivel2s { get; set; }
         public virtual DbSet<CategoriaNivel3> CategoriaNivel3s { get; set; }
         public virtual DbSet<CategoriaNivel4> CategoriaNivel4s { get; set; }
-        public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<Encarte> Encartes { get; set; }
         public virtual DbSet<EncarteItem> EncarteItems { get; set; }
-        public virtual DbSet<Estado> Estados { get; set; }
-        public virtual DbSet<LocalEntrega> LocalEntregas { get; set; }
-        public virtual DbSet<Municipio> Municipios { get; set; }
+        public virtual DbSet<LojaEstante> LojaEstantes { get; set; }
+        public virtual DbSet<LojaPrateleira> LojaPrateleiras { get; set; }
         public virtual DbSet<Produto> Produtos { get; set; }
         public virtual DbSet<ProdutoCategorium> ProdutoCategoria { get; set; }
         public virtual DbSet<ProdutoCodigoBarra> ProdutoCodigoBarras { get; set; }
+        public virtual DbSet<ProdutoLoja> ProdutoLojas { get; set; }
+        public virtual DbSet<Usuario> Usuarios { get; set; }
+        public virtual DbSet<UsuarioEndereco> UsuarioEnderecos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseMySql("server=bancodados-mercado.mysql.database.azure.com;userid=root_andre;password=SistemaValendo1;database=db_mercado_online;sslmode=none;connect timeout=30", Microsoft.EntityFrameworkCore.ServerVersion.Parse("5.7.32-mysql"));
+                optionsBuilder.UseMySql("server=bancodados-mercado.mysql.database.azure.com;userid=root_andre;password=SistemaValendo1;database=db_mercado_online;sslmode=none;connect timeout=30", Microsoft.EntityFrameworkCore.ServerVersion.Parse("5.7.37-mysql"));
             }
         }
 
@@ -46,42 +46,6 @@ namespace Trabalho_Mercado_Online.Models
         {
             modelBuilder.HasCharSet("utf8")
                 .UseCollation("utf8_unicode_ci");
-
-            modelBuilder.Entity<Bairro>(entity =>
-            {
-                entity.ToTable("bairro");
-
-                entity.HasComment("tabela com todos os bairros");
-
-                entity.Property(e => e.Id)
-                    .HasColumnType("int(11)")
-                    .HasColumnName("id")
-                    .HasComment("chave primaria da tabela ");
-
-                entity.Property(e => e.CodigoBairro)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("codigo_bairro")
-                    .HasComment("codigo do bairro");
-
-                entity.Property(e => e.CodigoEstado)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("codigo_estado")
-                    .HasComment("codigo do estado");
-
-                entity.Property(e => e.CodigoMunicipio)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("codigo_municipio")
-                    .HasComment("codigo do municipio");
-
-                entity.Property(e => e.NomeBairro)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("nome_bairro")
-                    .HasComment("nome do bairro");
-            });
 
             modelBuilder.Entity<Carrinho>(entity =>
             {
@@ -256,56 +220,6 @@ namespace Trabalho_Mercado_Online.Models
                     .HasComment("ordem de exibição");
             });
 
-            modelBuilder.Entity<Cliente>(entity =>
-            {
-                entity.ToTable("cliente");
-
-                entity.HasComment("tabela com informações dos clientes");
-
-                entity.Property(e => e.Id)
-                    .HasColumnType("int(11)")
-                    .HasColumnName("id")
-                    .HasComment("chave primaria da tabela e codigo de cada cliente");
-
-                entity.Property(e => e.AparelhoId)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("aparelho_id");
-
-                entity.Property(e => e.Cpf)
-                    .HasMaxLength(11)
-                    .HasColumnName("cpf")
-                    .HasComment("cpf do cliente");
-
-                entity.Property(e => e.Habilitado)
-                    .HasColumnType("int(11)")
-                    .HasColumnName("habilitado")
-                    .HasDefaultValueSql("'1'")
-                    .HasComment("status do cliente");
-
-                entity.Property(e => e.Nascimento)
-                    .HasColumnType("date")
-                    .HasColumnName("nascimento")
-                    .HasComment("Data de nascimento  do cliente");
-
-                entity.Property(e => e.Nome)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("nome")
-                    .HasComment("nome do cliente");
-
-                entity.Property(e => e.Saldo)
-                    .HasPrecision(2)
-                    .HasColumnName("saldo")
-                    .HasComment("saldo do cliente");
-
-                entity.Property(e => e.Telefone)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .HasColumnName("telefone")
-                    .HasComment("numero de telefone do cliente");
-            });
-
             modelBuilder.Entity<Encarte>(entity =>
             {
                 entity.ToTable("encarte");
@@ -366,87 +280,48 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnName("valor");
             });
 
-            modelBuilder.Entity<Estado>(entity =>
+            modelBuilder.Entity<LojaEstante>(entity =>
             {
-                entity.ToTable("estado");
+                entity.ToTable("loja_estante");
 
-                entity.HasComment("tabela com todos os estados ");
+                entity.HasIndex(e => e.Id, "id_UNIQUE")
+                    .IsUnique();
+
+                entity.Property(e => e.Id)
+                    .HasColumnType("int(11)")
+                    .ValueGeneratedNever()
+                    .HasColumnName("id")
+                    .HasComment("autonumerico chave primaria da tabela");
+
+                entity.Property(e => e.ProdutosVariados)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("produtos_variados")
+                    .HasComment("se os produtos não sao de higiene pessoal e perfumaria");
+            });
+
+            modelBuilder.Entity<LojaPrateleira>(entity =>
+            {
+                entity.ToTable("loja_prateleira");
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
                     .HasColumnName("id")
-                    .HasComment("chave primaria da tabela");
+                    .HasComment("autonumerico chave primaria da tabela");
 
-                entity.Property(e => e.CodigoEstado)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("codigo_estado")
-                    .HasComment("codigo do estado");
-
-                entity.Property(e => e.NomeEstado)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("nome_estado")
-                    .HasComment("nome do estado");
-            });
-
-            modelBuilder.Entity<LocalEntrega>(entity =>
-            {
-                entity.ToTable("local_entrega");
-
-                entity.HasComment("tabela com objetivo de informar as localidades com entrega disponivel");
-
-                entity.Property(e => e.Id)
+                entity.Property(e => e.Codigo)
                     .HasColumnType("int(11)")
-                    .HasColumnName("id");
+                    .HasColumnName("codigo")
+                    .HasComment("codigo para prateleira dentro da estante exemplo prateleira 10 da estante 2");
 
-                entity.Property(e => e.CodigoBairro)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("codigo_bairro")
-                    .HasComment("codigo do bairro");
-
-                entity.Property(e => e.CodigoEstado)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("codigo_estado")
-                    .HasComment("codigo do estado");
-
-                entity.Property(e => e.CodigoMunicipio)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("codigo_municipio")
-                    .HasComment("codigo do municipio");
-            });
-
-            modelBuilder.Entity<Municipio>(entity =>
-            {
-                entity.ToTable("municipio");
-
-                entity.HasComment("tabela com todos os municipio ");
-
-                entity.Property(e => e.Id)
+                entity.Property(e => e.EstanteLoja)
                     .HasColumnType("int(11)")
-                    .HasColumnName("id")
-                    .HasComment("chave primaria da tabela");
+                    .HasColumnName("estante_loja")
+                    .HasComment("id referente a estante na loja para venda online");
 
-                entity.Property(e => e.CodigoEstado)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("codigo_estado")
-                    .HasComment("codigo do estado");
-
-                entity.Property(e => e.CodigoMunicipio)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("codigo_municipio")
-                    .HasComment("codigo do municipio");
-
-                entity.Property(e => e.NomeMunicipio)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("nome_municipio")
-                    .HasComment("nome do municipio");
+                entity.Property(e => e.Livre)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("livre")
+                    .HasComment("livre  para armazenar mais itens");
             });
 
             modelBuilder.Entity<Produto>(entity =>
@@ -603,6 +478,154 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("int(11)")
                     .HasColumnName("codigo_produto")
                     .HasComment("referencia do codigo do produto");
+            });
+
+            modelBuilder.Entity<ProdutoLoja>(entity =>
+            {
+                entity.ToTable("produto_loja");
+
+                entity.Property(e => e.Id)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("id")
+                    .HasComment("autonumerico chave primaria da tabela");
+
+                entity.Property(e => e.ConferenciaBalanco)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("conferencia_balanco")
+                    .HasComment("marcar produto com balanço verificado após entrada na prateleira");
+
+                entity.Property(e => e.ConferenciaValidade)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("conferencia_validade")
+                    .HasComment("marcar produto com validade verificada após entrada na prateleira");
+
+                entity.Property(e => e.Entrada)
+                    .HasColumnType("datetime")
+                    .HasColumnName("entrada")
+                    .HasComment("data de entrada do produto");
+
+                entity.Property(e => e.Funcionario)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("funcionario")
+                    .HasComment("referencia id da tabela funcionario");
+
+                entity.Property(e => e.Prateleira)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("prateleira")
+                    .HasComment("referencia id da tabela loja_prateleira");
+
+                entity.Property(e => e.Produto)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("produto")
+                    .HasComment("referencia id da tabela produto");
+
+                entity.Property(e => e.Quantidade)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("quantidade")
+                    .HasComment("quantidade de itens do produto na prateleira");
+
+                entity.Property(e => e.Validade)
+                    .HasColumnType("datetime")
+                    .HasColumnName("validade")
+                    .HasComment("validade do produto");
+            });
+
+            modelBuilder.Entity<Usuario>(entity =>
+            {
+                entity.HasKey(e => new { e.Id, e.Telefone })
+                    .HasName("PRIMARY")
+                    .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
+
+                entity.ToTable("usuario");
+
+                entity.HasComment("tabela com informações dos usuarios");
+
+                entity.HasIndex(e => e.Telefone, "telefone_UNIQUE")
+                    .IsUnique();
+
+                entity.Property(e => e.Id)
+                    .HasColumnType("int(11)")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("id")
+                    .HasComment("chave primaria da tabela e codigo de cada cliente");
+
+                entity.Property(e => e.Telefone)
+                    .HasMaxLength(20)
+                    .HasColumnName("telefone")
+                    .HasComment("numero de telefone do cliente");
+
+                entity.Property(e => e.AparelhoId)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("aparelho_id");
+
+                entity.Property(e => e.Cpf)
+                    .HasMaxLength(11)
+                    .HasColumnName("cpf")
+                    .HasComment("cpf do cliente");
+
+                entity.Property(e => e.Habilitado)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("habilitado")
+                    .HasDefaultValueSql("'1'")
+                    .HasComment("status do cliente");
+
+                entity.Property(e => e.Img)
+                    .HasMaxLength(255)
+                    .HasColumnName("img");
+
+                entity.Property(e => e.Nascimento)
+                    .HasColumnType("datetime")
+                    .HasColumnName("nascimento")
+                    .HasComment("Data de nascimento  do cliente");
+
+                entity.Property(e => e.Nome)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("nome")
+                    .HasComment("nome do cliente");
+
+                entity.Property(e => e.Saldo)
+                    .HasPrecision(10, 2)
+                    .HasColumnName("saldo")
+                    .HasDefaultValueSql("'0.00'")
+                    .HasComment("saldo do cliente");
+            });
+
+            modelBuilder.Entity<UsuarioEndereco>(entity =>
+            {
+                entity.ToTable("usuario_endereco");
+
+                entity.Property(e => e.Id)
+                    .HasColumnType("int(11)")
+                    .ValueGeneratedNever()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.Cep)
+                    .HasMaxLength(255)
+                    .HasColumnName("cep");
+
+                entity.Property(e => e.Complemento)
+                    .HasMaxLength(255)
+                    .HasColumnName("complemento");
+
+                entity.Property(e => e.Endereco)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("endereco");
+
+                entity.Property(e => e.IdUsuario)
+                    .IsRequired()
+                    .HasMaxLength(45)
+                    .HasColumnName("id_usuario");
+
+                entity.Property(e => e.Principal)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("principal");
+
+                entity.Property(e => e.Referencia)
+                    .HasMaxLength(255)
+                    .HasColumnName("referencia");
             });
 
             OnModelCreatingPartial(modelBuilder);
