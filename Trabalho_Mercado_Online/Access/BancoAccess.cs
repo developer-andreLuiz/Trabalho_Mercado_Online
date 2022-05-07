@@ -11,9 +11,7 @@ namespace Trabalho_Mercado_Online.Access
     {
         public static string conexaoLocal = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source = C:\Banco_Dados\Soft.mdb;Jet OLEDB:Database Password ='Soft';";
         public static string conexaoRede = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source = \\MAINSERVIDOR-PC\Arquivos Sistema Valendo\Banco_Dados\Soft.mdb;Jet OLEDB:Database Password = 'Soft';";
-        public static OleDbConnection conexao = new OleDbConnection(conexaoLocal);
-       
-        
+        public static OleDbConnection conexao = new OleDbConnection(conexaoRede);
         public class Categoria
         {
             static public List<Access_categoria_Model> GetAll()
@@ -74,28 +72,20 @@ namespace Trabalho_Mercado_Online.Access
                 comando.ExecuteNonQuery();
             }
         }
-       
         public class Subcategoria
         {
             static public List<Access_subcategoria_Model> GetAll()
             {
                 List<Access_subcategoria_Model> listaFinal = new List<Access_subcategoria_Model>();
-
                 string strgComando = "SELECT * FROM subcategoria order by id_subcategoria asc ;";
                 OleDbCommand comando = new OleDbCommand(strgComando, conexao);
-
                 if (conexao.State == ConnectionState.Closed)
                 {
                     conexao.Open();
                 }
-
                 OleDbDataAdapter dataAdapter = new OleDbDataAdapter(comando);
-
                 DataTable dtLista = new DataTable();
-
                 dataAdapter.Fill(dtLista);
-
-
                 foreach (DataRow dataRow in dtLista.Rows)
                 {
                     Access_subcategoria_Model access_SubCategoria_Model = new Access_subcategoria_Model()
@@ -128,7 +118,6 @@ namespace Trabalho_Mercado_Online.Access
                 comando.Parameters.AddWithValue("id_categoria", accesaccess_SubCategoria_ModelLocal.id_categoria);
                 comando.Parameters.AddWithValue("id_subcategoria", accesaccess_SubCategoria_ModelLocal.id_subcategoria);
                 comando.ExecuteNonQuery();
-
             }
             static public void Delete(int idLocal)
             {
@@ -136,7 +125,6 @@ namespace Trabalho_Mercado_Online.Access
                 OleDbCommand comando = new OleDbCommand(comandoString, conexao);
                 comando.Parameters.AddWithValue("id_subcategoria", idLocal);
                 comando.ExecuteNonQuery();
-
             }
             static public void DeleteCategoria(int idLocal)
             {
@@ -146,7 +134,6 @@ namespace Trabalho_Mercado_Online.Access
                 comando.ExecuteNonQuery();
             }
         }
-
         public class Produtos
         {
             static public List<Access_Produtos_Model> GetAll()
@@ -154,7 +141,6 @@ namespace Trabalho_Mercado_Online.Access
                 List<Access_Produtos_Model> listaFinal = new List<Access_Produtos_Model>();
                 string strgComando = "SELECT * FROM Produtos order by Codigo asc;";
                 OleDbCommand comando = new OleDbCommand(strgComando, conexao);
-
                 if (conexao.State == ConnectionState.Closed)
                 {
                     conexao.Open();
@@ -167,7 +153,7 @@ namespace Trabalho_Mercado_Online.Access
                     Access_Produtos_Model access_produtos_Model = new Access_Produtos_Model()
                     {
                         Referencia = dataRow["Referencia"].ToString(),
-                        Descricao = dataRow["Descricao"].ToString(),
+                        Descricao = dataRow["Descricao"].ToString().Trim(),
                         embalagem = dataRow["embalagem"].ToString(),
                         CustoUnitario = dataRow["CustoUnitario"].ToString(),
                         ValorVenda = dataRow["ValorVenda"].ToString(),
@@ -211,10 +197,8 @@ namespace Trabalho_Mercado_Online.Access
                         codigoLocal = codigoLocal + ", '" + a + "'";
                     }
                 }
-
                 string comandoString = "update Produtos set categoria = '" + categoriaLocal + "', subcategoria = '" + subcategoriaLocal + "' where Codigo in (" + codigoLocal + ");";
                 OleDbCommand comando = new OleDbCommand(comandoString, conexao);
-                //  comando.Parameters.AddWithValue("Codigo", codigoLocal);
                 if (conexao.State == ConnectionState.Closed)
                 {
                     conexao.Open();
@@ -235,10 +219,8 @@ namespace Trabalho_Mercado_Online.Access
                         codigoLocal = codigoLocal + ", '" + a + "'";
                     }
                 }
-
                 string comandoString = "update Produtos set categoria = ' ', subcategoria = ' ' where Codigo in (" + codigoLocal + ");";
                 OleDbCommand comando = new OleDbCommand(comandoString, conexao);
-                //  comando.Parameters.AddWithValue("Codigo", codigoLocal);
                 if (conexao.State == ConnectionState.Closed)
                 {
                     conexao.Open();
@@ -256,9 +238,7 @@ namespace Trabalho_Mercado_Online.Access
                 }
                 comando.ExecuteNonQuery();
             }
-           
         }
-
         public class Itens_Vend
         {
             static public List<Access_itens_Vend_Model> GetAll()
@@ -309,7 +289,6 @@ namespace Trabalho_Mercado_Online.Access
                 comando.ExecuteNonQuery();
             }
         }
-
         public class Prod_Codigo
         {
             static public List<Access_Prod_Codigo_Model> GetAll()
@@ -317,7 +296,6 @@ namespace Trabalho_Mercado_Online.Access
                 List<Access_Prod_Codigo_Model> listaFinal = new List<Access_Prod_Codigo_Model>();
                 string strgComando = "SELECT * FROM Prod_Codigo order by Codigo asc;";
                 OleDbCommand comando = new OleDbCommand(strgComando, conexao);
-
                 if (conexao.State == ConnectionState.Closed)
                 {
                     conexao.Open();
@@ -339,8 +317,5 @@ namespace Trabalho_Mercado_Online.Access
                 return listaFinal;
             }
         }
-
-
-
     }
 }

@@ -53,25 +53,34 @@ namespace Trabalho_Mercado_Online.Models
 
                 entity.HasComment("tabela com os dados do carrinho dos clientes");
 
+                entity.HasIndex(e => e.Produto, "fk_carrinho_produto_idx");
+
+                entity.HasIndex(e => e.Usuario, "fk_carrinho_usuario_idx");
+
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
                     .HasColumnName("id")
                     .HasComment("chave primaria da tabela");
 
-                entity.Property(e => e.CodigoCliente)
+                entity.Property(e => e.Produto)
                     .HasColumnType("int(11)")
-                    .HasColumnName("codigo_cliente")
-                    .HasComment("referencia do codigo do cliente");
-
-                entity.Property(e => e.CodigoProduto)
-                    .HasColumnType("int(11)")
-                    .HasColumnName("codigo_produto")
-                    .HasComment("referencia do codigo do produto");
+                    .HasColumnName("produto")
+                    .HasComment("referencia ao id do produto");
 
                 entity.Property(e => e.Quantidade)
                     .HasColumnType("int(11)")
                     .HasColumnName("quantidade")
                     .HasComment("quantidade de itens do mesmo produto no carrinho");
+
+                entity.Property(e => e.Usuario)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("usuario")
+                    .HasComment("referencia ao id do usuario");
+
+                entity.HasOne(d => d.ProdutoNavigation)
+                    .WithMany(p => p.Carrinhos)
+                    .HasForeignKey(d => d.Produto)
+                    .HasConstraintName("fk_carrinho_produto");
             });
 
             modelBuilder.Entity<CategoriaNivel1>(entity =>
@@ -109,6 +118,8 @@ namespace Trabalho_Mercado_Online.Models
 
                 entity.HasComment("tabela com os dados da categoria nivel 2");
 
+                entity.HasIndex(e => e.CategoriaNivel1, "fk_categoria_nivel_1_idx");
+
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
                     .HasColumnName("id")
@@ -117,7 +128,7 @@ namespace Trabalho_Mercado_Online.Models
                 entity.Property(e => e.CategoriaNivel1)
                     .HasColumnType("int(11)")
                     .HasColumnName("categoria_nivel_1")
-                    .HasComment("referencia codigo da categoria nivel 1");
+                    .HasComment("referencia ao id da categoria nivel 1");
 
                 entity.Property(e => e.Img)
                     .IsRequired()
@@ -135,6 +146,11 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("int(11)")
                     .HasColumnName("ordem")
                     .HasComment("ordem de exibição");
+
+                entity.HasOne(d => d.CategoriaNivel1Navigation)
+                    .WithMany(p => p.CategoriaNivel2s)
+                    .HasForeignKey(d => d.CategoriaNivel1)
+                    .HasConstraintName("fk_categoria_nivel_2_categoria_nivel_1");
             });
 
             modelBuilder.Entity<CategoriaNivel3>(entity =>
@@ -142,6 +158,8 @@ namespace Trabalho_Mercado_Online.Models
                 entity.ToTable("categoria_nivel_3");
 
                 entity.HasComment("tabela com os dados da categoria nivel 3");
+
+                entity.HasIndex(e => e.CategoriaNivel2, "fk_categoria_nivel_2_idx");
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
@@ -151,12 +169,12 @@ namespace Trabalho_Mercado_Online.Models
                 entity.Property(e => e.CategoriaNivel1)
                     .HasColumnType("int(11)")
                     .HasColumnName("categoria_nivel_1")
-                    .HasComment("referencia do codigo da categoria nivel 1");
+                    .HasComment("referencia ao id da categoria nivel 1");
 
                 entity.Property(e => e.CategoriaNivel2)
                     .HasColumnType("int(11)")
                     .HasColumnName("categoria_nivel_2")
-                    .HasComment("referencia do codigo da categoria nivel 2");
+                    .HasComment("referencia ao id da categoria nivel 2");
 
                 entity.Property(e => e.Img)
                     .IsRequired()
@@ -174,6 +192,11 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("int(11)")
                     .HasColumnName("ordem")
                     .HasComment("ordem de exibição");
+
+                entity.HasOne(d => d.CategoriaNivel2Navigation)
+                    .WithMany(p => p.CategoriaNivel3s)
+                    .HasForeignKey(d => d.CategoriaNivel2)
+                    .HasConstraintName("fk_categoria_nivel_3_categoria_nivel_2");
             });
 
             modelBuilder.Entity<CategoriaNivel4>(entity =>
@@ -181,6 +204,8 @@ namespace Trabalho_Mercado_Online.Models
                 entity.ToTable("categoria_nivel_4");
 
                 entity.HasComment("tabela com os dados da categoria nivel 4");
+
+                entity.HasIndex(e => e.CategoriaNivel3, "fk_categoria_nivel_3_idx");
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
@@ -190,17 +215,17 @@ namespace Trabalho_Mercado_Online.Models
                 entity.Property(e => e.CategoriaNivel1)
                     .HasColumnType("int(11)")
                     .HasColumnName("categoria_nivel_1")
-                    .HasComment("referencia do codigo da categoria nivel 1");
+                    .HasComment("referencia ao id  da categoria nivel 1");
 
                 entity.Property(e => e.CategoriaNivel2)
                     .HasColumnType("int(11)")
                     .HasColumnName("categoria_nivel_2")
-                    .HasComment("referencia do codigo da categoria nivel 2");
+                    .HasComment("referencia ao id da categoria nivel 2");
 
                 entity.Property(e => e.CategoriaNivel3)
                     .HasColumnType("int(11)")
                     .HasColumnName("categoria_nivel_3")
-                    .HasComment("referencia do codigo da categoria nivel 3");
+                    .HasComment("referencia ao id da categoria nivel 3");
 
                 entity.Property(e => e.Img)
                     .IsRequired()
@@ -218,6 +243,11 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("int(11)")
                     .HasColumnName("ordem")
                     .HasComment("ordem de exibição");
+
+                entity.HasOne(d => d.CategoriaNivel3Navigation)
+                    .WithMany(p => p.CategoriaNivel4s)
+                    .HasForeignKey(d => d.CategoriaNivel3)
+                    .HasConstraintName("fk_categoria_nivel_4_categoria_nivel_3");
             });
 
             modelBuilder.Entity<Encarte>(entity =>
@@ -226,58 +256,74 @@ namespace Trabalho_Mercado_Online.Models
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
-                    .HasColumnName("id");
+                    .HasColumnName("id")
+                    .HasComment("chave primaria do encarte");
 
                 entity.Property(e => e.Data)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("data");
+                    .HasColumnType("date")
+                    .HasColumnName("data")
+                    .HasComment("data de criação do encarte");
 
                 entity.Property(e => e.Frente)
                     .HasColumnType("int(11)")
-                    .HasColumnName("frente");
+                    .HasColumnName("frente")
+                    .HasComment("decide se é frente ou verso");
 
                 entity.Property(e => e.Nome)
                     .IsRequired()
                     .HasMaxLength(255)
-                    .HasColumnName("nome");
+                    .HasColumnName("nome")
+                    .HasComment("nome do encarte");
 
                 entity.Property(e => e.Tipo)
                     .HasColumnType("int(11)")
-                    .HasColumnName("tipo");
+                    .HasColumnName("tipo")
+                    .HasComment("categoria do encarte ");
 
                 entity.Property(e => e.Validade)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("validade");
+                    .HasColumnType("date")
+                    .HasColumnName("validade")
+                    .HasComment("data de validade do encarte");
             });
 
             modelBuilder.Entity<EncarteItem>(entity =>
             {
                 entity.ToTable("encarte_item");
 
+                entity.HasIndex(e => e.Encarte, "fk_encarte_item_encarte_idx");
+
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
-                    .HasColumnName("id");
+                    .HasColumnName("id")
+                    .HasComment("chave primaria do encarte_item");
 
-                entity.Property(e => e.IdEncarte)
+                entity.Property(e => e.Encarte)
                     .HasColumnType("int(11)")
-                    .HasColumnName("id_encarte");
+                    .HasColumnName("encarte")
+                    .HasComment("id do encarte");
 
                 entity.Property(e => e.Img)
                     .IsRequired()
                     .HasMaxLength(255)
-                    .HasColumnName("img");
+                    .HasColumnName("img")
+                    .HasComment("url da imagem");
 
                 entity.Property(e => e.Produto)
                     .IsRequired()
                     .HasMaxLength(255)
-                    .HasColumnName("produto");
+                    .HasColumnName("produto")
+                    .HasComment("nome do produto");
 
                 entity.Property(e => e.Valor)
                     .IsRequired()
                     .HasMaxLength(255)
-                    .HasColumnName("valor");
+                    .HasColumnName("valor")
+                    .HasComment("valor do produto");
+
+                entity.HasOne(d => d.EncarteNavigation)
+                    .WithMany(p => p.EncarteItems)
+                    .HasForeignKey(d => d.Encarte)
+                    .HasConstraintName("fk_encarte_item_encarte");
             });
 
             modelBuilder.Entity<LojaEstante>(entity =>
@@ -291,17 +337,22 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("int(11)")
                     .ValueGeneratedNever()
                     .HasColumnName("id")
-                    .HasComment("autonumerico chave primaria da tabela");
+                    .HasComment("chave primaria da tabela loja_estante");
 
-                entity.Property(e => e.ProdutosVariados)
+                entity.Property(e => e.ProdutoVariado)
                     .HasColumnType("int(11)")
-                    .HasColumnName("produtos_variados")
+                    .HasColumnName("produto_variado")
                     .HasComment("se os produtos não sao de higiene pessoal e perfumaria");
             });
 
             modelBuilder.Entity<LojaPrateleira>(entity =>
             {
                 entity.ToTable("loja_prateleira");
+
+                entity.HasIndex(e => e.LojaEstante, "fk_loja_prateleira_idx");
+
+                entity.HasIndex(e => e.Id, "id_UNIQUE")
+                    .IsUnique();
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
@@ -311,17 +362,22 @@ namespace Trabalho_Mercado_Online.Models
                 entity.Property(e => e.Codigo)
                     .HasColumnType("int(11)")
                     .HasColumnName("codigo")
-                    .HasComment("codigo para prateleira dentro da estante exemplo prateleira 10 da estante 2");
-
-                entity.Property(e => e.EstanteLoja)
-                    .HasColumnType("int(11)")
-                    .HasColumnName("estante_loja")
-                    .HasComment("id referente a estante na loja para venda online");
+                    .HasComment("codigo da prateleira por estante \nexemplo \nestante 1 (loja_estante) prateleira 5 (codigo)\nestante 3 prateleira 5");
 
                 entity.Property(e => e.Livre)
                     .HasColumnType("int(11)")
                     .HasColumnName("livre")
                     .HasComment("livre  para armazenar mais itens");
+
+                entity.Property(e => e.LojaEstante)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("loja_estante")
+                    .HasComment("referente ao id de loja_estante");
+
+                entity.HasOne(d => d.LojaEstanteNavigation)
+                    .WithMany(p => p.LojaPrateleiras)
+                    .HasForeignKey(d => d.LojaEstante)
+                    .HasConstraintName("fk_loja_prateleira_loja_estante");
             });
 
             modelBuilder.Entity<Produto>(entity =>
@@ -333,30 +389,31 @@ namespace Trabalho_Mercado_Online.Models
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
                     .HasColumnName("id")
-                    .HasComment("autonumerico chave primaria da tabela");
+                    .HasComment("chave primaria da tabela produto");
 
                 entity.Property(e => e.CodigoLoja)
                     .IsRequired()
                     .HasMaxLength(255)
                     .HasColumnName("codigo_loja")
                     .HasDefaultValueSql("'0'")
-                    .HasComment("numero de codigo interno da loja\\n");
+                    .HasComment("codigo interno da loja access");
 
                 entity.Property(e => e.CustoUnitario)
+                    .HasPrecision(10, 2)
                     .HasColumnName("custo_unitario")
-                    .HasComment("valor de custo do produto\\\\n");
+                    .HasComment("valor de custo do produto");
 
                 entity.Property(e => e.Descricao)
                     .IsRequired()
                     .HasMaxLength(255)
                     .HasColumnName("descricao")
-                    .HasComment("nome do produto\n");
+                    .HasComment("nome do produto");
 
                 entity.Property(e => e.Embalagem)
                     .IsRequired()
                     .HasMaxLength(255)
                     .HasColumnName("embalagem")
-                    .HasComment("PCT - UND - CX - PESO\n");
+                    .HasComment("PCT - UND - CX - PESO");
 
                 entity.Property(e => e.Gramatura)
                     .IsRequired()
@@ -367,53 +424,55 @@ namespace Trabalho_Mercado_Online.Models
                 entity.Property(e => e.IgualaProduto)
                     .HasColumnType("int(11)")
                     .HasColumnName("iguala_produto")
-                    .HasComment("0 - 1 - 2 -3 \nserve para realizar alteração em produtos iguais");
+                    .HasComment("0 - 1 - 2 -3  serve para realizar alteração em produtos iguais");
 
                 entity.Property(e => e.Img)
                     .IsRequired()
                     .HasMaxLength(255)
                     .HasColumnName("img")
-                    .HasComment("url -jpg\n");
+                    .HasComment("url da imagem");
 
                 entity.Property(e => e.Informacao)
                     .IsRequired()
                     .HasColumnType("text")
                     .HasColumnName("informacao")
-                    .HasComment("informação nutricional do produto\n");
+                    .HasComment("informação nutricional do produto");
 
                 entity.Property(e => e.ItensCaixa)
                     .HasColumnType("int(11)")
                     .HasColumnName("itens_caixa")
-                    .HasComment("quantidade de produto  na caixa\n");
+                    .HasComment("quantidade de produto  na caixa");
 
                 entity.Property(e => e.Peso)
                     .IsRequired()
                     .HasMaxLength(5)
                     .HasColumnName("peso")
-                    .HasComment("01526 (01,526kg)\n");
+                    .HasComment("01526 (01,526kg)");
 
                 entity.Property(e => e.Pronuncia)
                     .IsRequired()
                     .HasMaxLength(255)
                     .HasColumnName("pronuncia")
-                    .HasComment("leitura da descrição\n");
+                    .HasComment("leitura da descrição");
 
                 entity.Property(e => e.Validade)
                     .HasColumnName("validade")
-                    .HasComment("se o produto é perecivel ou nao\n");
+                    .HasComment("se o produto é perecivel ou nao");
 
                 entity.Property(e => e.ValorPromocao)
+                    .HasPrecision(10, 2)
                     .HasColumnName("valor_promocao")
-                    .HasComment("valor de promoção do produto\\\\n");
+                    .HasComment("valor de promoção do produto");
 
                 entity.Property(e => e.ValorVenda)
+                    .HasPrecision(10, 2)
                     .HasColumnName("valor_venda")
-                    .HasComment("valor de venda do produto\\\\n");
+                    .HasComment("valor de venda do produto");
 
                 entity.Property(e => e.Volume)
                     .HasColumnType("int(11)")
                     .HasColumnName("volume")
-                    .HasComment("30 - caixa volume =100 (cabe 3 na caixa)volume do produto\n");
+                    .HasComment("30 - caixa volume =100 (cabe 3 na caixa)volume do produto");
             });
 
             modelBuilder.Entity<ProdutoCategorium>(entity =>
@@ -422,39 +481,81 @@ namespace Trabalho_Mercado_Online.Models
 
                 entity.HasComment("tabela com os dados dos produtos relacionando com as categorias");
 
+                entity.HasIndex(e => e.CategoriaNivel1, "fk_categoria_nivel_1_idx");
+
+                entity.HasIndex(e => e.CategoriaNivel2, "fk_categoria_nivel_2_idx");
+
+                entity.HasIndex(e => e.CategoriaNivel3, "fk_categoria_nivel_3_idx");
+
+                entity.HasIndex(e => e.CategoriaNivel4, "fk_categoria_nivel_4_idx");
+
+                entity.HasIndex(e => e.Produto, "fk_produto_categoria_produto_idx");
+
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
                     .HasColumnName("id")
-                    .HasComment("autonumerico chave primaria da tabela");
+                    .HasComment("chave primaria da tabela produto_categoria");
 
                 entity.Property(e => e.CategoriaNivel1)
                     .HasColumnType("int(11)")
                     .HasColumnName("categoria_nivel_1")
-                    .HasComment("referecia a categoria nivel 1");
+                    .HasComment("referecia ao id de categoria nivel 1");
 
                 entity.Property(e => e.CategoriaNivel2)
                     .HasColumnType("int(11)")
                     .HasColumnName("categoria_nivel_2")
-                    .HasComment("referecia a categoria nivel 2");
+                    .HasDefaultValueSql("'0'")
+                    .HasComment("referecia ao id de categoria nivel 2");
 
                 entity.Property(e => e.CategoriaNivel3)
                     .HasColumnType("int(11)")
                     .HasColumnName("categoria_nivel_3")
-                    .HasComment("referecia a categoria nivel 3");
+                    .HasDefaultValueSql("'0'")
+                    .HasComment("referecia ao id de categoria nivel 3");
 
                 entity.Property(e => e.CategoriaNivel4)
                     .HasColumnType("int(11)")
                     .HasColumnName("categoria_nivel_4")
-                    .HasComment("referecia a categoria nivel 4");
-
-                entity.Property(e => e.CodigoProduto)
-                    .HasColumnType("int(11)")
-                    .HasColumnName("codigo_produto")
-                    .HasComment("referencia ao codigo do produto");
+                    .HasDefaultValueSql("'0'")
+                    .HasComment("referecia ao id de categoria nivel 4");
 
                 entity.Property(e => e.Ordem)
                     .HasColumnType("int(11)")
-                    .HasColumnName("ordem");
+                    .HasColumnName("ordem")
+                    .HasComment("ordem de exibição");
+
+                entity.Property(e => e.Produto)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("produto")
+                    .HasComment("referencia ao id do produto");
+
+                entity.HasOne(d => d.CategoriaNivel1Navigation)
+                    .WithMany(p => p.ProdutoCategoria)
+                    .HasForeignKey(d => d.CategoriaNivel1)
+                    .HasConstraintName("fk_produto_categoria_categoria_nivel_1");
+
+                entity.HasOne(d => d.CategoriaNivel2Navigation)
+                    .WithMany(p => p.ProdutoCategoria)
+                    .HasForeignKey(d => d.CategoriaNivel2)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .HasConstraintName("fk_produto_categoria_categoria_nivel_2");
+
+                entity.HasOne(d => d.CategoriaNivel3Navigation)
+                    .WithMany(p => p.ProdutoCategoria)
+                    .HasForeignKey(d => d.CategoriaNivel3)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .HasConstraintName("fk_produto_categoria_categoria_nivel_3");
+
+                entity.HasOne(d => d.CategoriaNivel4Navigation)
+                    .WithMany(p => p.ProdutoCategoria)
+                    .HasForeignKey(d => d.CategoriaNivel4)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .HasConstraintName("fk_produto_categoria_categoria_nivel_4");
+
+                entity.HasOne(d => d.ProdutoNavigation)
+                    .WithMany(p => p.ProdutoCategoria)
+                    .HasForeignKey(d => d.Produto)
+                    .HasConstraintName("fk_produto_categoria_produto");
             });
 
             modelBuilder.Entity<ProdutoCodigoBarra>(entity =>
@@ -462,6 +563,8 @@ namespace Trabalho_Mercado_Online.Models
                 entity.ToTable("produto_codigo_barra");
 
                 entity.HasComment("tabela com dados dos codigos de barra relacionando com o codigo do produto");
+
+                entity.HasIndex(e => e.Produto, "fk_produto_idx");
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
@@ -474,20 +577,29 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnName("codigo_barra")
                     .HasComment("codigo de barra do produto");
 
-                entity.Property(e => e.CodigoProduto)
+                entity.Property(e => e.Produto)
                     .HasColumnType("int(11)")
-                    .HasColumnName("codigo_produto")
-                    .HasComment("referencia do codigo do produto");
+                    .HasColumnName("produto")
+                    .HasComment("referencia ao id de produto");
+
+                entity.HasOne(d => d.ProdutoNavigation)
+                    .WithMany(p => p.ProdutoCodigoBarras)
+                    .HasForeignKey(d => d.Produto)
+                    .HasConstraintName("fk_produto_codigo_barra_produto");
             });
 
             modelBuilder.Entity<ProdutoLoja>(entity =>
             {
                 entity.ToTable("produto_loja");
 
+                entity.HasIndex(e => e.Prateleira, "fk_produto_loja_prateleira_idx");
+
+                entity.HasIndex(e => e.Produto, "fk_produto_loja_produto_idx");
+
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
                     .HasColumnName("id")
-                    .HasComment("autonumerico chave primaria da tabela");
+                    .HasComment("chave primaria da tabela produto_loja");
 
                 entity.Property(e => e.ConferenciaBalanco)
                     .HasColumnType("int(11)")
@@ -512,12 +624,12 @@ namespace Trabalho_Mercado_Online.Models
                 entity.Property(e => e.Prateleira)
                     .HasColumnType("int(11)")
                     .HasColumnName("prateleira")
-                    .HasComment("referencia id da tabela loja_prateleira");
+                    .HasComment("referencia ao id da tabela loja_prateleira");
 
                 entity.Property(e => e.Produto)
                     .HasColumnType("int(11)")
                     .HasColumnName("produto")
-                    .HasComment("referencia id da tabela produto");
+                    .HasComment("referencia ao id da tabela produto");
 
                 entity.Property(e => e.Quantidade)
                     .HasColumnType("int(11)")
@@ -525,9 +637,19 @@ namespace Trabalho_Mercado_Online.Models
                     .HasComment("quantidade de itens do produto na prateleira");
 
                 entity.Property(e => e.Validade)
-                    .HasColumnType("datetime")
+                    .HasColumnType("date")
                     .HasColumnName("validade")
                     .HasComment("validade do produto");
+
+                entity.HasOne(d => d.PrateleiraNavigation)
+                    .WithMany(p => p.ProdutoLojas)
+                    .HasForeignKey(d => d.Prateleira)
+                    .HasConstraintName("fk_produto_loja_prateleira");
+
+                entity.HasOne(d => d.ProdutoNavigation)
+                    .WithMany(p => p.ProdutoLojas)
+                    .HasForeignKey(d => d.Produto)
+                    .HasConstraintName("fk_produto_loja_produto");
             });
 
             modelBuilder.Entity<Usuario>(entity =>
@@ -547,43 +669,44 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("int(11)")
                     .ValueGeneratedOnAdd()
                     .HasColumnName("id")
-                    .HasComment("chave primaria da tabela e codigo de cada cliente");
+                    .HasComment("chave primaria da tabela usuario");
 
                 entity.Property(e => e.Telefone)
                     .HasMaxLength(20)
                     .HasColumnName("telefone")
-                    .HasComment("numero de telefone do cliente");
+                    .HasComment("numero de telefone do usuario");
 
                 entity.Property(e => e.AparelhoId)
                     .IsRequired()
                     .HasMaxLength(255)
-                    .HasColumnName("aparelho_id");
+                    .HasColumnName("aparelho_id")
+                    .HasComment("id do dispositivo do usuario logado");
 
                 entity.Property(e => e.Cpf)
                     .HasMaxLength(11)
                     .HasColumnName("cpf")
-                    .HasComment("cpf do cliente");
+                    .HasComment("cpf do usuario");
 
                 entity.Property(e => e.Habilitado)
                     .HasColumnType("int(11)")
                     .HasColumnName("habilitado")
                     .HasDefaultValueSql("'1'")
-                    .HasComment("status do cliente");
+                    .HasComment("status do usuario");
 
                 entity.Property(e => e.Img)
                     .HasMaxLength(255)
                     .HasColumnName("img");
 
                 entity.Property(e => e.Nascimento)
-                    .HasColumnType("datetime")
+                    .HasColumnType("date")
                     .HasColumnName("nascimento")
-                    .HasComment("Data de nascimento  do cliente");
+                    .HasComment("Data de nascimento  do usuario");
 
                 entity.Property(e => e.Nome)
                     .IsRequired()
                     .HasMaxLength(255)
                     .HasColumnName("nome")
-                    .HasComment("nome do cliente");
+                    .HasComment("nome do usuario");
 
                 entity.Property(e => e.Saldo)
                     .HasPrecision(10, 2)
@@ -596,36 +719,45 @@ namespace Trabalho_Mercado_Online.Models
             {
                 entity.ToTable("usuario_endereco");
 
+                entity.HasIndex(e => e.Usuario, "fk_usuario_endereco_usuario_idx");
+
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
                     .ValueGeneratedNever()
-                    .HasColumnName("id");
+                    .HasColumnName("id")
+                    .HasComment("chave primaria da tabela usuario");
 
                 entity.Property(e => e.Cep)
+                    .IsRequired()
                     .HasMaxLength(255)
-                    .HasColumnName("cep");
+                    .HasColumnName("cep")
+                    .HasComment("cep do endereço cadastrado");
 
                 entity.Property(e => e.Complemento)
                     .HasMaxLength(255)
-                    .HasColumnName("complemento");
+                    .HasColumnName("complemento")
+                    .HasComment("complemento do endereço (opcional)");
 
                 entity.Property(e => e.Endereco)
                     .IsRequired()
                     .HasMaxLength(255)
-                    .HasColumnName("endereco");
-
-                entity.Property(e => e.IdUsuario)
-                    .IsRequired()
-                    .HasMaxLength(45)
-                    .HasColumnName("id_usuario");
+                    .HasColumnName("endereco")
+                    .HasComment("endereço do usuario");
 
                 entity.Property(e => e.Principal)
                     .HasColumnType("int(11)")
-                    .HasColumnName("principal");
+                    .HasColumnName("principal")
+                    .HasComment("verifica se o endereço é o principal");
 
                 entity.Property(e => e.Referencia)
                     .HasMaxLength(255)
-                    .HasColumnName("referencia");
+                    .HasColumnName("referencia")
+                    .HasComment("ponto de referencia do endereço (opcional)");
+
+                entity.Property(e => e.Usuario)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("usuario")
+                    .HasComment("referencia ao id de usuario");
             });
 
             OnModelCreatingPartial(modelBuilder);

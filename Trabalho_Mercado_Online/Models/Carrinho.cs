@@ -8,8 +8,10 @@ namespace Trabalho_Mercado_Online.Models
     public partial class Carrinho
     {
         public int Id { get; set; }
-        public int CodigoCliente { get; set; }
-        public int CodigoProduto { get; set; }
+        public int Usuario { get; set; }
+        public int Produto { get; set; }
         public int Quantidade { get; set; }
+
+        public virtual Produto ProdutoNavigation { get; set; }
     }
 }

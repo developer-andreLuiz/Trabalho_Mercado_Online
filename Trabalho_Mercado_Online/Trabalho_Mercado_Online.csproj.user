@@ -4,46 +4,43 @@
     <Compile Update="Helpers\ImprimirDocumentoHelper.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Views Access\FrmAlimentarProdutoAccess.cs">
+    <Compile Update="Views\Access\FrmAccessAlimentarProdutoAccess.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views Access\FrmProdutoAccess.cs">
+    <Compile Update="Views\Access\FrmAccessProdutosAccess.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\FrmEstruturaLoja.cs">
+    <Compile Update="Views\Armazenamento\FrmArmazenamentoLojaEstrutura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\FrmModelo.cs">
+    <Compile Update="Views\Dados\FrmDadosCategoria_Nivel_2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\FrmCategoria_Nivel_2.cs">
+    <Compile Update="Views\Ferramenta\FrmFerramentaEncartePreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\FrmEncartePreview.cs">
+    <Compile Update="Views\Dados\FrmDadosCategoria_Nivel_1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\FrmCategoria_Nivel_1.cs">
+    <Compile Update="Views\Dados\FrmDadosCategoria_Nivel_3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\FrmCategoria_Nivel_3.cs">
+    <Compile Update="Views\Ferramenta\FrmFerramentaEncarte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\FrmEncarte.cs">
+    <Compile Update="Views\Principal\FrmPrincipalInicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\FrmInicio.cs">
+    <Compile Update="Views\Ferramenta\FrmFerramentaPesquisarImagem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\FrmPesquisarImagem.cs">
+    <Compile Update="Views\Principal\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\FrmPrincipal.cs">
+    <Compile Update="Views\Dados\FrmDadosProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\FrmProduto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Views\FrmProdutos.cs">
+    <Compile Update="Views\Dados\FrmDadosProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -51,7 +48,7 @@
     <EmbeddedResource Update="Properties\Resources.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views Access\FrmAlimentarProdutoAccess.resx">
+    <EmbeddedResource Update="Views\Access\FrmAccessAlimentarProdutoAccess.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

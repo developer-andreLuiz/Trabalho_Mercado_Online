@@ -5,11 +5,16 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <AssemblyName>Mercado Online</AssemblyName>
-    <ApplicationIcon>Icone.ico</ApplicationIcon>
+    <ApplicationIcon>Images\Icone.ico</ApplicationIcon>
     <Platforms>AnyCPU;x86</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Images\Icone.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Cloud.Speech.V1" Version="2.8.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.10">
       <PrivateAssets>all</PrivateAssets>
@@ -32,7 +37,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="Views\FrmArmazenamentoLoja.cs">
+    <Compile Update="Views\Armazenamento\FrmArmazenamentoLojaProduto.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

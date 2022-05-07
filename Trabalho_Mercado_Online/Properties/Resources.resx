@@ -124,8 +124,14 @@
   <data name="icone_rubber" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_rubber.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icone_home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icone_home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icone_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icone_grid_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icone_grid_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icone_depot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_depot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -135,6 +141,9 @@
   </data>
   <data name="icone_barcode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_barcode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icone_editImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icone_editImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icone_products" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_products.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,6 +163,9 @@
   <data name="icone_category2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_category2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="background_Inicial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\background_Inicial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icone_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -165,9 +177,6 @@
   </data>
   <data name="icone_warehouse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_warehouse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icone_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Categoria" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Categoria.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,8 +196,11 @@
   <data name="icone_access" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_access.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_grid_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_grid_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icone_save_24x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icone_save_24x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icone_print" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icone_print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Produto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Produto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,8 +229,8 @@
   <data name="Icone_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Icone_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_editImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_editImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icone_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icone_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icone_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,7 +247,7 @@
   <data name="icone_products_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icone_products_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_print" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icone_microphone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icone_microphone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

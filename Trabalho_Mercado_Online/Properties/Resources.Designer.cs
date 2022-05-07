@@ -63,6 +63,16 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap background_Inicial {
+            get {
+                object obj = ResourceManager.GetObject("background_Inicial", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Categoria {
             get {
                 object obj = ResourceManager.GetObject("Categoria", resourceCulture);
@@ -233,6 +243,16 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icone_home {
+            get {
+                object obj = ResourceManager.GetObject("icone_home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icone_img {
             get {
                 object obj = ResourceManager.GetObject("icone_img", resourceCulture);
@@ -266,6 +286,16 @@ namespace Trabalho_Mercado_Online.Properties {
         internal static System.Drawing.Bitmap Icone_Main {
             get {
                 object obj = ResourceManager.GetObject("Icone_Main", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icone_microphone {
+            get {
+                object obj = ResourceManager.GetObject("icone_microphone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -326,6 +356,16 @@ namespace Trabalho_Mercado_Online.Properties {
         internal static System.Drawing.Bitmap icone_save {
             get {
                 object obj = ResourceManager.GetObject("icone_save", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icone_save_24x {
+            get {
+                object obj = ResourceManager.GetObject("icone_save_24x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

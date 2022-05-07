@@ -16,5 +16,8 @@ namespace Trabalho_Mercado_Online.Models
         public int Funcionario { get; set; }
         public int? ConferenciaValidade { get; set; }
         public int? ConferenciaBalanco { get; set; }
+
+        public virtual LojaPrateleira PrateleiraNavigation { get; set; }
+        public virtual Produto ProdutoNavigation { get; set; }
     }
 }

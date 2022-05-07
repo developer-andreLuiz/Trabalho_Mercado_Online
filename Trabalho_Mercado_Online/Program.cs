@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Trabalho_Mercado_Online.Helpers;
-using Trabalho_Mercado_Online.Views;
+using Trabalho_Mercado_Online.Views.Principal;
 
 namespace Trabalho_Mercado_Online
 {
