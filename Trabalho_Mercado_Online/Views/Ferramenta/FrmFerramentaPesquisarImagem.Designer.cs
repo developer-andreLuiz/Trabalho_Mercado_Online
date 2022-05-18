@@ -99,7 +99,7 @@ namespace Trabalho_Mercado_Online.Views.Ferramenta
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.White;
-            this.btnClose.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icone_close;
+            this.btnClose.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icon_close_30x30;
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnClose.FlatAppearance.BorderSize = 0;
@@ -249,7 +249,7 @@ namespace Trabalho_Mercado_Online.Views.Ferramenta
             this.btnDesfazer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesfazer.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDesfazer.ForeColor = System.Drawing.Color.Black;
-            this.btnDesfazer.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_dispose;
+            this.btnDesfazer.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_undo_30x30;
             this.btnDesfazer.Location = new System.Drawing.Point(689, 461);
             this.btnDesfazer.Name = "btnDesfazer";
             this.btnDesfazer.Size = new System.Drawing.Size(45, 37);
@@ -266,7 +266,7 @@ namespace Trabalho_Mercado_Online.Views.Ferramenta
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEditar.ForeColor = System.Drawing.Color.Black;
-            this.btnEditar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_editImage;
+            this.btnEditar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_edit_Image_30x30;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.Location = new System.Drawing.Point(740, 461);
             this.btnEditar.Name = "btnEditar";
@@ -280,7 +280,7 @@ namespace Trabalho_Mercado_Online.Views.Ferramenta
             // btnLimpar
             // 
             this.btnLimpar.BackColor = System.Drawing.Color.White;
-            this.btnLimpar.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icone_close;
+            this.btnLimpar.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icon_close_30x30;
             this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnLimpar.FlatAppearance.BorderSize = 0;
@@ -316,7 +316,7 @@ namespace Trabalho_Mercado_Online.Views.Ferramenta
             this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPesquisar.ForeColor = System.Drawing.Color.White;
-            this.btnPesquisar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_search;
+            this.btnPesquisar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_search_24x24;
             this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPesquisar.Location = new System.Drawing.Point(607, 76);
             this.btnPesquisar.Name = "btnPesquisar";
@@ -329,7 +329,7 @@ namespace Trabalho_Mercado_Online.Views.Ferramenta
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icone_img;
+            this.pictureBox1.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icon_img_30x30;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(18, 12);
             this.pictureBox1.Name = "pictureBox1";
@@ -355,7 +355,7 @@ namespace Trabalho_Mercado_Online.Views.Ferramenta
             this.btnSelecionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelecionar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSelecionar.ForeColor = System.Drawing.Color.White;
-            this.btnSelecionar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_send_file;
+            this.btnSelecionar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_send_file_40x40;
             this.btnSelecionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSelecionar.Location = new System.Drawing.Point(692, 578);
             this.btnSelecionar.Name = "btnSelecionar";

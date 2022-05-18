@@ -79,6 +79,9 @@ D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\T
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.Dados.FrmDadosCategoria_Nivel_1.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.Dados.FrmDadosCategoria_Nivel_2.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.Dados.FrmDadosCategoria_Nivel_3.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.Dados.FrmDadosFuncionario.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.Dados.FrmDadosFuncionarioCargo.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.Dados.FrmDadosFuncionarios.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.Dados.FrmDadosProduto.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.Dados.FrmDadosProdutos.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.Ferramenta.FrmFerramentaEncarte.resources

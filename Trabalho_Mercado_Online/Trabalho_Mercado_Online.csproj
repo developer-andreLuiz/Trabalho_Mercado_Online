@@ -5,12 +5,12 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <AssemblyName>Mercado Online</AssemblyName>
-    <ApplicationIcon>Images\Icone.ico</ApplicationIcon>
     <Platforms>AnyCPU;x86</Platforms>
+    <ApplicationIcon>Images\icon_software_245x256.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Images\Icone.ico" />
+    <Content Include="Images\icon_software_245x256.ico" />
   </ItemGroup>
 
   <ItemGroup>

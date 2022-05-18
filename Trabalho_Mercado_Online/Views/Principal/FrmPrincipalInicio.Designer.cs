@@ -41,7 +41,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             // 
             // panelMain
             // 
-            this.panelMain.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.background_Inicial;
+            this.panelMain.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.background_initial_900x648;
             this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelMain.Controls.Add(this.panelLogo);
             this.panelMain.Controls.Add(this.label5);
@@ -55,7 +55,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.Transparent;
-            this.panelLogo.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.Icone_Main;
+            this.panelLogo.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.image_software_1000x1044;
             this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelLogo.Location = new System.Drawing.Point(750, 700);
             this.panelLogo.Name = "panelLogo";
@@ -77,7 +77,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icone_home;
+            this.pictureBox1.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icon_home_40x40;
             this.pictureBox1.Location = new System.Drawing.Point(18, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);

@@ -43,6 +43,9 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.dadosCategoria1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dadosCategoria2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dadosCategoria3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dadosFuncionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dadosFuncionarioFuncionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dadosFuncionarioCargoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.armazenamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.armazenamentoLojaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.armazenamentoLojaProdutoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -164,10 +167,11 @@ namespace Trabalho_Mercado_Online.Views.Principal
             // 
             this.dadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dadosProdutoToolStripMenuItem,
-            this.dadosCategoriaToolStripMenuItem});
+            this.dadosCategoriaToolStripMenuItem,
+            this.dadosFuncionarioToolStripMenuItem});
             this.dadosToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dadosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.dadosToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_database;
+            this.dadosToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_database_40x40;
             this.dadosToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dadosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.dadosToolStripMenuItem.Name = "dadosToolStripMenuItem";
@@ -181,10 +185,10 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.dadosProdutoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
             this.dadosProdutoToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dadosProdutoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.dadosProdutoToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_products;
+            this.dadosProdutoToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_products_40x40;
             this.dadosProdutoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.dadosProdutoToolStripMenuItem.Name = "dadosProdutoToolStripMenuItem";
-            this.dadosProdutoToolStripMenuItem.Size = new System.Drawing.Size(176, 46);
+            this.dadosProdutoToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
             this.dadosProdutoToolStripMenuItem.Text = "Produto";
             this.dadosProdutoToolStripMenuItem.Click += new System.EventHandler(this.dadosProdutoToolStripMenuItem_Click);
             // 
@@ -197,20 +201,20 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.dadosCategoria3ToolStripMenuItem});
             this.dadosCategoriaToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dadosCategoriaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.dadosCategoriaToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_category3;
+            this.dadosCategoriaToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_category3_40x40;
             this.dadosCategoriaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.dadosCategoriaToolStripMenuItem.Name = "dadosCategoriaToolStripMenuItem";
-            this.dadosCategoriaToolStripMenuItem.Size = new System.Drawing.Size(176, 46);
+            this.dadosCategoriaToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
             this.dadosCategoriaToolStripMenuItem.Text = "Categoria";
             // 
             // dadosCategoria1ToolStripMenuItem
             // 
             this.dadosCategoria1ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
             this.dadosCategoria1ToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.dadosCategoria1ToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_category1;
+            this.dadosCategoria1ToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_category1_40x40;
             this.dadosCategoria1ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.dadosCategoria1ToolStripMenuItem.Name = "dadosCategoria1ToolStripMenuItem";
-            this.dadosCategoria1ToolStripMenuItem.Size = new System.Drawing.Size(153, 46);
+            this.dadosCategoria1ToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
             this.dadosCategoria1ToolStripMenuItem.Text = "Nivel 1";
             this.dadosCategoria1ToolStripMenuItem.Click += new System.EventHandler(this.dadosCategoria1ToolStripMenuItem_Click);
             // 
@@ -218,10 +222,10 @@ namespace Trabalho_Mercado_Online.Views.Principal
             // 
             this.dadosCategoria2ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
             this.dadosCategoria2ToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.dadosCategoria2ToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_category2;
+            this.dadosCategoria2ToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_category2_40x40;
             this.dadosCategoria2ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.dadosCategoria2ToolStripMenuItem.Name = "dadosCategoria2ToolStripMenuItem";
-            this.dadosCategoria2ToolStripMenuItem.Size = new System.Drawing.Size(153, 46);
+            this.dadosCategoria2ToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
             this.dadosCategoria2ToolStripMenuItem.Text = "Nivel 2";
             this.dadosCategoria2ToolStripMenuItem.Click += new System.EventHandler(this.dadosCategoria2ToolStripMenuItem_Click);
             // 
@@ -229,12 +233,48 @@ namespace Trabalho_Mercado_Online.Views.Principal
             // 
             this.dadosCategoria3ToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
             this.dadosCategoria3ToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.dadosCategoria3ToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_category3;
+            this.dadosCategoria3ToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_category3_40x40;
             this.dadosCategoria3ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.dadosCategoria3ToolStripMenuItem.Name = "dadosCategoria3ToolStripMenuItem";
-            this.dadosCategoria3ToolStripMenuItem.Size = new System.Drawing.Size(153, 46);
+            this.dadosCategoria3ToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
             this.dadosCategoria3ToolStripMenuItem.Text = "Nivel 3";
             this.dadosCategoria3ToolStripMenuItem.Click += new System.EventHandler(this.dadosCategoria3ToolStripMenuItem_Click);
+            // 
+            // dadosFuncionarioToolStripMenuItem
+            // 
+            this.dadosFuncionarioToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
+            this.dadosFuncionarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dadosFuncionarioFuncionarioToolStripMenuItem,
+            this.dadosFuncionarioCargoToolStripMenuItem});
+            this.dadosFuncionarioToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dadosFuncionarioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.dadosFuncionarioToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_employee_40x40;
+            this.dadosFuncionarioToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.dadosFuncionarioToolStripMenuItem.Name = "dadosFuncionarioToolStripMenuItem";
+            this.dadosFuncionarioToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.dadosFuncionarioToolStripMenuItem.Text = "Funcionario";
+            // 
+            // dadosFuncionarioFuncionarioToolStripMenuItem
+            // 
+            this.dadosFuncionarioFuncionarioToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
+            this.dadosFuncionarioFuncionarioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.dadosFuncionarioFuncionarioToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_employee_40x40;
+            this.dadosFuncionarioFuncionarioToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.dadosFuncionarioFuncionarioToolStripMenuItem.Name = "dadosFuncionarioFuncionarioToolStripMenuItem";
+            this.dadosFuncionarioFuncionarioToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.dadosFuncionarioFuncionarioToolStripMenuItem.Text = "Funcionario";
+            this.dadosFuncionarioFuncionarioToolStripMenuItem.Click += new System.EventHandler(this.dadosFuncionarioFuncionarioToolStripMenuItem_Click);
+            // 
+            // dadosFuncionarioCargoToolStripMenuItem
+            // 
+            this.dadosFuncionarioCargoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
+            this.dadosFuncionarioCargoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.dadosFuncionarioCargoToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_check_list_40x40;
+            this.dadosFuncionarioCargoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.dadosFuncionarioCargoToolStripMenuItem.Name = "dadosFuncionarioCargoToolStripMenuItem";
+            this.dadosFuncionarioCargoToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.dadosFuncionarioCargoToolStripMenuItem.Text = "Cargo";
+            this.dadosFuncionarioCargoToolStripMenuItem.Click += new System.EventHandler(this.dadosFuncionarioCargoToolStripMenuItem_Click);
             // 
             // armazenamentoToolStripMenuItem
             // 
@@ -243,7 +283,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.armazenamentoEstoqueToolStripMenuItem});
             this.armazenamentoToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.armazenamentoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.armazenamentoToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_warehouse;
+            this.armazenamentoToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_warehouse_40x40;
             this.armazenamentoToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.armazenamentoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.armazenamentoToolStripMenuItem.Name = "armazenamentoToolStripMenuItem";
@@ -259,7 +299,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.armazenamentoLojaProdutoToolStripMenuItem,
             this.armazenamentoLojaEstruturaToolStripMenuItem});
             this.armazenamentoLojaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.armazenamentoLojaToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_store;
+            this.armazenamentoLojaToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_store_40x40;
             this.armazenamentoLojaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.armazenamentoLojaToolStripMenuItem.Name = "armazenamentoLojaToolStripMenuItem";
             this.armazenamentoLojaToolStripMenuItem.Size = new System.Drawing.Size(166, 46);
@@ -269,7 +309,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             // 
             this.armazenamentoLojaProdutoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
             this.armazenamentoLojaProdutoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.armazenamentoLojaProdutoToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_products;
+            this.armazenamentoLojaProdutoToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_products_40x40;
             this.armazenamentoLojaProdutoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.armazenamentoLojaProdutoToolStripMenuItem.Name = "armazenamentoLojaProdutoToolStripMenuItem";
             this.armazenamentoLojaProdutoToolStripMenuItem.Size = new System.Drawing.Size(173, 46);
@@ -280,7 +320,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             // 
             this.armazenamentoLojaEstruturaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
             this.armazenamentoLojaEstruturaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.armazenamentoLojaEstruturaToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_access;
+            this.armazenamentoLojaEstruturaToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_access_40x40;
             this.armazenamentoLojaEstruturaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.armazenamentoLojaEstruturaToolStripMenuItem.Name = "armazenamentoLojaEstruturaToolStripMenuItem";
             this.armazenamentoLojaEstruturaToolStripMenuItem.Size = new System.Drawing.Size(173, 46);
@@ -294,7 +334,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.armazenamentoEstoqueProdutoToolStripMenuItem,
             this.armazenamentoEstoqueEstruturaToolStripMenuItem});
             this.armazenamentoEstoqueToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.armazenamentoEstoqueToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_depot;
+            this.armazenamentoEstoqueToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_depot_40x40;
             this.armazenamentoEstoqueToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.armazenamentoEstoqueToolStripMenuItem.Name = "armazenamentoEstoqueToolStripMenuItem";
             this.armazenamentoEstoqueToolStripMenuItem.Size = new System.Drawing.Size(166, 46);
@@ -304,7 +344,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             // 
             this.armazenamentoEstoqueProdutoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
             this.armazenamentoEstoqueProdutoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.armazenamentoEstoqueProdutoToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_products;
+            this.armazenamentoEstoqueProdutoToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_products_40x40;
             this.armazenamentoEstoqueProdutoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.armazenamentoEstoqueProdutoToolStripMenuItem.Name = "armazenamentoEstoqueProdutoToolStripMenuItem";
             this.armazenamentoEstoqueProdutoToolStripMenuItem.Size = new System.Drawing.Size(173, 46);
@@ -315,7 +355,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             // 
             this.armazenamentoEstoqueEstruturaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
             this.armazenamentoEstoqueEstruturaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.armazenamentoEstoqueEstruturaToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_access;
+            this.armazenamentoEstoqueEstruturaToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_access_40x40;
             this.armazenamentoEstoqueEstruturaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.armazenamentoEstoqueEstruturaToolStripMenuItem.Name = "armazenamentoEstoqueEstruturaToolStripMenuItem";
             this.armazenamentoEstoqueEstruturaToolStripMenuItem.Size = new System.Drawing.Size(173, 46);
@@ -330,7 +370,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.ferramentaImagemToolStripMenuItem});
             this.ferramentaToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ferramentaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.ferramentaToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_tools;
+            this.ferramentaToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_tools_40x40;
             this.ferramentaToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ferramentaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ferramentaToolStripMenuItem.Name = "ferramentaToolStripMenuItem";
@@ -343,7 +383,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             // 
             this.ferramentaEncarteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
             this.ferramentaEncarteToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.ferramentaEncarteToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_grid_Image;
+            this.ferramentaEncarteToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_grid_Image_40x40;
             this.ferramentaEncarteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ferramentaEncarteToolStripMenuItem.Name = "ferramentaEncarteToolStripMenuItem";
             this.ferramentaEncarteToolStripMenuItem.Size = new System.Drawing.Size(162, 46);
@@ -354,7 +394,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             // 
             this.ferramentaImagemToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
             this.ferramentaImagemToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.ferramentaImagemToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_img;
+            this.ferramentaImagemToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_img_30x30;
             this.ferramentaImagemToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ferramentaImagemToolStripMenuItem.Name = "ferramentaImagemToolStripMenuItem";
             this.ferramentaImagemToolStripMenuItem.Size = new System.Drawing.Size(162, 46);
@@ -369,7 +409,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.accessProdutoToolStripMenuItem});
             this.accessToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.accessToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.accessToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_access;
+            this.accessToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_access_40x40;
             this.accessToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.accessToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.accessToolStripMenuItem.Name = "accessToolStripMenuItem";
@@ -382,7 +422,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             // 
             this.accessAlimentarProdutoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
             this.accessAlimentarProdutoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.accessAlimentarProdutoToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.iconse_sum_database;
+            this.accessAlimentarProdutoToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_sum_database_40x40;
             this.accessAlimentarProdutoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.accessAlimentarProdutoToolStripMenuItem.Name = "accessAlimentarProdutoToolStripMenuItem";
             this.accessAlimentarProdutoToolStripMenuItem.Size = new System.Drawing.Size(240, 46);
@@ -393,7 +433,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             // 
             this.accessProdutoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
             this.accessProdutoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.accessProdutoToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_products;
+            this.accessProdutoToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_products_40x40;
             this.accessProdutoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.accessProdutoToolStripMenuItem.Name = "accessProdutoToolStripMenuItem";
             this.accessProdutoToolStripMenuItem.Size = new System.Drawing.Size(240, 46);
@@ -416,7 +456,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             // 
             // panelTopLogo
             // 
-            this.panelTopLogo.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.Icone_Main;
+            this.panelTopLogo.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.image_software_1000x1044;
             this.panelTopLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelTopLogo.Location = new System.Drawing.Point(11, 6);
             this.panelTopLogo.Name = "panelTopLogo";
@@ -527,5 +567,8 @@ namespace Trabalho_Mercado_Online.Views.Principal
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem dadosFuncionarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dadosFuncionarioFuncionarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dadosFuncionarioCargoToolStripMenuItem;
     }
 }

@@ -7,7 +7,7 @@ using Trabalho_Mercado_Online.Models;
 
 namespace Trabalho_Mercado_Online.Dao
 {
-    public  class LojaEstanteDAO
+    public class LojaEstanteDAO
     {
         public static LojaEstante Get(int id)
         {

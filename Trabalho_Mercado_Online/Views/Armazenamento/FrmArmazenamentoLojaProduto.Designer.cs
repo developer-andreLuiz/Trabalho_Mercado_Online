@@ -33,7 +33,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
             this.txtTeste = new System.Windows.Forms.TextBox();
-            this.btnTeste = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMain.SuspendLayout();
@@ -41,7 +40,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icone_store;
+            this.pictureBox1.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icon_store_40x40;
             this.pictureBox1.Location = new System.Drawing.Point(18, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);
@@ -67,7 +66,6 @@
             this.panelMain.Controls.Add(this.pictureBox1);
             this.panelMain.Controls.Add(this.txtTeste);
             this.panelMain.Controls.Add(this.label3);
-            this.panelMain.Controls.Add(this.btnTeste);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
@@ -85,23 +83,6 @@
             this.txtTeste.Size = new System.Drawing.Size(539, 117);
             this.txtTeste.TabIndex = 57;
             this.txtTeste.TextChanged += new System.EventHandler(this.txtInformacao_TextChanged);
-            // 
-            // btnTeste
-            // 
-            this.btnTeste.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnTeste.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnTeste.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTeste.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTeste.ForeColor = System.Drawing.Color.White;
-            this.btnTeste.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_microphone;
-            this.btnTeste.Location = new System.Drawing.Point(632, 103);
-            this.btnTeste.Name = "btnTeste";
-            this.btnTeste.Size = new System.Drawing.Size(44, 32);
-            this.btnTeste.TabIndex = 58;
-            this.btnTeste.TabStop = false;
-            this.btnTeste.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTeste.UseVisualStyleBackColor = false;
-            this.btnTeste.Click += new System.EventHandler(this.btnOuvir_Click);
             // 
             // contextMenuStrip1
             // 
@@ -133,7 +114,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.TextBox txtTeste;
-        private System.Windows.Forms.Button btnTeste;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

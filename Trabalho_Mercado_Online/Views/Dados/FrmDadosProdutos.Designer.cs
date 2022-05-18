@@ -128,7 +128,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnExibirCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExibirCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnExibirCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnExibirCategoria.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_list;
+            this.btnExibirCategoria.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_list_30x30;
             this.btnExibirCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExibirCategoria.Location = new System.Drawing.Point(366, 585);
             this.btnExibirCategoria.Name = "btnExibirCategoria";
@@ -233,7 +233,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnAbrirProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbrirProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAbrirProdutos.ForeColor = System.Drawing.Color.White;
-            this.btnAbrirProdutos.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_list;
+            this.btnAbrirProdutos.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_list_30x30;
             this.btnAbrirProdutos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAbrirProdutos.Location = new System.Drawing.Point(248, 586);
             this.btnAbrirProdutos.Name = "btnAbrirProdutos";

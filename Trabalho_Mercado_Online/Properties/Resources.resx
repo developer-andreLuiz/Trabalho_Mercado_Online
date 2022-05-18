@@ -118,136 +118,133 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="iconse_go_24_Editpx" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\iconse_go_24_Editpx.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_home_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_home_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_rubber" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_rubber.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_trash_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_trash_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_home" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_img_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_img_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_tools_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_tools_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_grid_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_grid_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_close_30x30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_close_30x30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_depot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_depot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_category3_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_category3_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_dispose" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_dispose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_barcode_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_barcode_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_barcode" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_barcode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_category1_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_category1_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_editImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_editImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_products_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_products_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_products" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_products.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="product" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\product.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_warehouse_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_warehouse_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_category3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_category3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_camera_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_camera_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_rubber_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_rubber_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_rack_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_rack_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_category2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_category2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_save_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_save_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background_Inicial" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\background_Inicial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_products_add_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_products_add_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_list_30x30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_list_30x30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_select_all" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_select_all.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_depot_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_depot_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_category1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_category1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_access_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_access_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_warehouse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_warehouse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="background_cell_phone_392x737" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\background_cell_phone_392x737.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Categoria" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Categoria.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_undo_30x30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_undo_30x30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_store" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_store.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_shelf_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_shelf_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_save" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="image_software_1000x1044" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\image_software_1000x1044.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_img30x30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_img30x30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_img_30x30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_img_30x30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_send_file" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_send_file.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_search_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_search_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_access" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_access.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_edit_Image_30x30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_edit_Image_30x30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_save_24x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_save_24x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_category2_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_category2_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_print" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_print_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_print_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Produto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Produto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_edit_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_edit_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_camera" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_camera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_store_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_store_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="celular Fundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\celular Fundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_exit_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_exit_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_shelf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_shelf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_send_file_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_send_file_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_rack" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_rack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_database_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_database_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconse_go_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\iconse_go_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_save_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_save_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_sound.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="background_initial_900x648" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\background_initial_900x648.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_desligar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_desligar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="image_category_550x310" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\image_category_550x310.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icone_Main" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Icone_Main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_grid_Image_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_grid_Image_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_add_26x26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_add_26x26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_sound_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_sound_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconse_sum_database" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\iconse_sum_database.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_select_all_30x30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_select_all_30x30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_database" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_database.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_sum_database_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_sum_database_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_tools" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_tools.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_check_list_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_check_list_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_products_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_products_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icone_microphone" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icone_microphone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_employee_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_employee_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

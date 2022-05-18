@@ -49,7 +49,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
             synthesizer.Volume = 100;
             synthesizer.Rate = 1;
         }
-
         //Dados
         RetornoHelper CapturarDados(Produto obj)
         {
@@ -308,7 +307,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
             }
             return r.ToString();
         }
-
         //Layout
         void AberturaForm()
         {
@@ -524,7 +522,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
                 }
             }
         }
-
         //Btns
         private void btnNovo_Click(object sender, EventArgs e)
         {
@@ -930,6 +927,15 @@ namespace Trabalho_Mercado_Online.Views.Dados
                 Falar();
             }
         }
+        //Peso
+        private void lblPeso_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblPeso.Text = BalancaHelper.Peso();
+            }
+            catch { }
+        }
         //Passagem de Produtos
         private void btnPrimeiroRegistro_Click(object sender, EventArgs e)
         {
@@ -959,7 +965,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
                 }
             }
         }
-        private void btnRegristroAnterior_Click(object sender, EventArgs e)
+        private void btnAnteriorRegristro_Click(object sender, EventArgs e)
         {
             bool continuar = true;
             if (novo || editar)
@@ -980,7 +986,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
                 AberturaForm();
                 if (ListaId.Count > 1)
                 {
-                    int indexAtual = ListaId.FindIndex(x=>x == idAtual);
+                    int indexAtual = ListaId.FindIndex(x => x == idAtual);
                     if (indexAtual > 0)
                     {
                         indexAtual--;
@@ -993,7 +999,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
                 }
                 else
                 {
-                    
+
                     if (idAtual > 0 == false)
                     {
                         ExibirDados(ListaProdutos[0]);
@@ -1102,16 +1108,5 @@ namespace Trabalho_Mercado_Online.Views.Dados
             }
         }
         #endregion
-
-        private void lblPeso_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                lblPeso.Text = BalancaHelper.Peso();
-            }
-            catch { }
-        }
-
-       
     }
 }

@@ -41,7 +41,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.lblListaItens = new System.Windows.Forms.Label();
             this.btnUltimoRegistro = new System.Windows.Forms.Button();
             this.btnProximoRegistro = new System.Windows.Forms.Button();
-            this.btnRegristroAnterior = new System.Windows.Forms.Button();
+            this.btnAnteriorRegristro = new System.Windows.Forms.Button();
             this.btnPrimeiroRegistro = new System.Windows.Forms.Button();
             this.lblUltimoIguala = new System.Windows.Forms.Label();
             this.lblPeso = new System.Windows.Forms.Label();
@@ -114,7 +114,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.panelMain.Controls.Add(this.lblListaItens);
             this.panelMain.Controls.Add(this.btnUltimoRegistro);
             this.panelMain.Controls.Add(this.btnProximoRegistro);
-            this.panelMain.Controls.Add(this.btnRegristroAnterior);
+            this.panelMain.Controls.Add(this.btnAnteriorRegristro);
             this.panelMain.Controls.Add(this.btnPrimeiroRegistro);
             this.panelMain.Controls.Add(this.lblUltimoIguala);
             this.panelMain.Controls.Add(this.lblPeso);
@@ -178,7 +178,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             // btnFechar
             // 
             this.btnFechar.BackColor = System.Drawing.Color.White;
-            this.btnFechar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFechar.BackgroundImage")));
+            this.btnFechar.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icon_close_30x30;
             this.btnFechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFechar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnFechar.FlatAppearance.BorderSize = 0;
@@ -188,9 +188,9 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnFechar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnFechar.ForeColor = System.Drawing.Color.White;
             this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFechar.Location = new System.Drawing.Point(844, 2);
+            this.btnFechar.Location = new System.Drawing.Point(846, 12);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(50, 50);
+            this.btnFechar.Size = new System.Drawing.Size(40, 40);
             this.btnFechar.TabIndex = 55565;
             this.btnFechar.TabStop = false;
             this.btnFechar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -214,7 +214,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnImagensOnline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImagensOnline.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnImagensOnline.ForeColor = System.Drawing.Color.White;
-            this.btnImagensOnline.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_img30x30;
+            this.btnImagensOnline.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_img_30x30;
             this.btnImagensOnline.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnImagensOnline.Location = new System.Drawing.Point(685, 518);
             this.btnImagensOnline.Margin = new System.Windows.Forms.Padding(0);
@@ -274,22 +274,22 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnProximoRegistro.UseVisualStyleBackColor = false;
             this.btnProximoRegistro.Click += new System.EventHandler(this.btnProximoRegistro_Click);
             // 
-            // btnRegristroAnterior
+            // btnAnteriorRegristro
             // 
-            this.btnRegristroAnterior.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnRegristroAnterior.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnRegristroAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegristroAnterior.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnRegristroAnterior.ForeColor = System.Drawing.Color.White;
-            this.btnRegristroAnterior.Location = new System.Drawing.Point(160, 540);
-            this.btnRegristroAnterior.Name = "btnRegristroAnterior";
-            this.btnRegristroAnterior.Size = new System.Drawing.Size(44, 32);
-            this.btnRegristroAnterior.TabIndex = 55559;
-            this.btnRegristroAnterior.TabStop = false;
-            this.btnRegristroAnterior.Text = "<";
-            this.btnRegristroAnterior.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegristroAnterior.UseVisualStyleBackColor = false;
-            this.btnRegristroAnterior.Click += new System.EventHandler(this.btnRegristroAnterior_Click);
+            this.btnAnteriorRegristro.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAnteriorRegristro.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnAnteriorRegristro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnteriorRegristro.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAnteriorRegristro.ForeColor = System.Drawing.Color.White;
+            this.btnAnteriorRegristro.Location = new System.Drawing.Point(160, 540);
+            this.btnAnteriorRegristro.Name = "btnAnteriorRegristro";
+            this.btnAnteriorRegristro.Size = new System.Drawing.Size(44, 32);
+            this.btnAnteriorRegristro.TabIndex = 55559;
+            this.btnAnteriorRegristro.TabStop = false;
+            this.btnAnteriorRegristro.Text = "<";
+            this.btnAnteriorRegristro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAnteriorRegristro.UseVisualStyleBackColor = false;
+            this.btnAnteriorRegristro.Click += new System.EventHandler(this.btnAnteriorRegristro_Click);
             // 
             // btnPrimeiroRegistro
             // 
@@ -398,7 +398,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnInserirImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInserirImagem.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnInserirImagem.ForeColor = System.Drawing.Color.White;
-            this.btnInserirImagem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_camera;
+            this.btnInserirImagem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_camera_24x24;
             this.btnInserirImagem.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnInserirImagem.Location = new System.Drawing.Point(790, 518);
             this.btnInserirImagem.Margin = new System.Windows.Forms.Padding(0);
@@ -419,7 +419,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeletar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDeletar.ForeColor = System.Drawing.Color.White;
-            this.btnDeletar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_trash;
+            this.btnDeletar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_trash_24x24;
             this.btnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeletar.Location = new System.Drawing.Point(742, 586);
             this.btnDeletar.Name = "btnDeletar";
@@ -439,7 +439,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNovo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNovo.ForeColor = System.Drawing.Color.White;
-            this.btnNovo.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_products_add;
+            this.btnNovo.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_products_add_40x40;
             this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNovo.Location = new System.Drawing.Point(295, 586);
             this.btnNovo.Name = "btnNovo";
@@ -458,7 +458,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_edit;
+            this.btnEditar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_edit_40x40;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.Location = new System.Drawing.Point(444, 586);
             this.btnEditar.Name = "btnEditar";
@@ -500,7 +500,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPesquisar.ForeColor = System.Drawing.Color.White;
-            this.btnPesquisar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_search;
+            this.btnPesquisar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_search_24x24;
             this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPesquisar.Location = new System.Drawing.Point(189, 604);
             this.btnPesquisar.Name = "btnPesquisar";
@@ -851,7 +851,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnOuvir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOuvir.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnOuvir.ForeColor = System.Drawing.Color.White;
-            this.btnOuvir.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_sound;
+            this.btnOuvir.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_sound_24x24;
             this.btnOuvir.Location = new System.Drawing.Point(611, 142);
             this.btnOuvir.Name = "btnOuvir";
             this.btnOuvir.Size = new System.Drawing.Size(44, 32);
@@ -958,7 +958,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnGravar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGravar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnGravar.ForeColor = System.Drawing.Color.White;
-            this.btnGravar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_save;
+            this.btnGravar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_save_40x40;
             this.btnGravar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGravar.Location = new System.Drawing.Point(593, 586);
             this.btnGravar.Name = "btnGravar";
@@ -1110,7 +1110,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
         private System.Windows.Forms.Label lblUltimoIguala;
         private System.Windows.Forms.Button btnUltimoRegistro;
         private System.Windows.Forms.Button btnProximoRegistro;
-        private System.Windows.Forms.Button btnRegristroAnterior;
+        private System.Windows.Forms.Button btnAnteriorRegristro;
         private System.Windows.Forms.Button btnPrimeiroRegistro;
         private System.Windows.Forms.Label lblListaItens;
         private System.Windows.Forms.Button btnImagensOnline;

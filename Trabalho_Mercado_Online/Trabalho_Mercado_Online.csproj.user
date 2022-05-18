@@ -16,6 +16,15 @@
     <Compile Update="Views\Dados\FrmDadosCategoria_Nivel_2.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Dados\FrmDadosFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Dados\FrmDadosFuncionarioCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Dados\FrmDadosFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Ferramenta\FrmFerramentaEncartePreview.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -63,9 +63,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap background_Inicial {
+        internal static System.Drawing.Bitmap background_cell_phone_392x737 {
             get {
-                object obj = ResourceManager.GetObject("background_Inicial", resourceCulture);
+                object obj = ResourceManager.GetObject("background_cell_phone_392x737", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Categoria {
+        internal static System.Drawing.Bitmap background_initial_900x648 {
             get {
-                object obj = ResourceManager.GetObject("Categoria", resourceCulture);
+                object obj = ResourceManager.GetObject("background_initial_900x648", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap celular_Fundo {
+        internal static System.Drawing.Bitmap icon_access_40x40 {
             get {
-                object obj = ResourceManager.GetObject("celular Fundo", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_access_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_access {
+        internal static System.Drawing.Bitmap icon_add_26x26 {
             get {
-                object obj = ResourceManager.GetObject("icone_access", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_add_26x26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_add {
+        internal static System.Drawing.Bitmap icon_barcode_24x24 {
             get {
-                object obj = ResourceManager.GetObject("icone_add", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_barcode_24x24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_barcode {
+        internal static System.Drawing.Bitmap icon_camera_24x24 {
             get {
-                object obj = ResourceManager.GetObject("icone_barcode", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_camera_24x24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_camera {
+        internal static System.Drawing.Bitmap icon_category1_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_camera", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_category1_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_category1 {
+        internal static System.Drawing.Bitmap icon_category2_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_category1", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_category2_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_category2 {
+        internal static System.Drawing.Bitmap icon_category3_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_category2", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_category3_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_category3 {
+        internal static System.Drawing.Bitmap icon_check_list_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_category3", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_check_list_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_close {
+        internal static System.Drawing.Bitmap icon_close_30x30 {
             get {
-                object obj = ResourceManager.GetObject("icone_close", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_close_30x30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_database {
+        internal static System.Drawing.Bitmap icon_database_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_database", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_database_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +183,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_depot {
+        internal static System.Drawing.Bitmap icon_depot_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_depot", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_depot_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +193,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_desligar {
+        internal static System.Drawing.Bitmap icon_edit_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_desligar", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_edit_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +203,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_dispose {
+        internal static System.Drawing.Bitmap icon_edit_Image_30x30 {
             get {
-                object obj = ResourceManager.GetObject("icone_dispose", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_edit_Image_30x30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +213,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_edit {
+        internal static System.Drawing.Bitmap icon_employee_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_edit", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_employee_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +223,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_editImage {
+        internal static System.Drawing.Bitmap icon_exit_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_editImage", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_exit_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +233,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_grid_Image {
+        internal static System.Drawing.Bitmap icon_grid_Image_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_grid_Image", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_grid_Image_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +243,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_home {
+        internal static System.Drawing.Bitmap icon_home_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_home", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_home_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,9 +253,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_img {
+        internal static System.Drawing.Bitmap icon_img_30x30 {
             get {
-                object obj = ResourceManager.GetObject("icone_img", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_img_30x30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +263,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_img30x30 {
+        internal static System.Drawing.Bitmap icon_img_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_img30x30", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_img_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,9 +273,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_list {
+        internal static System.Drawing.Bitmap icon_list_30x30 {
             get {
-                object obj = ResourceManager.GetObject("icone_list", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_list_30x30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +283,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Icone_Main {
+        internal static System.Drawing.Bitmap icon_print_40x40 {
             get {
-                object obj = ResourceManager.GetObject("Icone_Main", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_print_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,9 +293,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_microphone {
+        internal static System.Drawing.Bitmap icon_products_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_microphone", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_products_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,9 +303,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_print {
+        internal static System.Drawing.Bitmap icon_products_add_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_print", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_products_add_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,9 +313,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_products {
+        internal static System.Drawing.Bitmap icon_rack_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_products", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_rack_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,9 +323,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_products_add {
+        internal static System.Drawing.Bitmap icon_rubber_24x24 {
             get {
-                object obj = ResourceManager.GetObject("icone_products_add", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_rubber_24x24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,9 +333,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_rack {
+        internal static System.Drawing.Bitmap icon_save_24x24 {
             get {
-                object obj = ResourceManager.GetObject("icone_rack", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_save_24x24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,9 +343,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_rubber {
+        internal static System.Drawing.Bitmap icon_save_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_rubber", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_save_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,9 +353,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_save {
+        internal static System.Drawing.Bitmap icon_search_24x24 {
             get {
-                object obj = ResourceManager.GetObject("icone_save", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_search_24x24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,9 +363,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_save_24x {
+        internal static System.Drawing.Bitmap icon_select_all_30x30 {
             get {
-                object obj = ResourceManager.GetObject("icone_save_24x", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_select_all_30x30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -373,9 +373,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_search {
+        internal static System.Drawing.Bitmap icon_send_file_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_search", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_send_file_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,9 +383,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_select_all {
+        internal static System.Drawing.Bitmap icon_shelf_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_select_all", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_shelf_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -393,9 +393,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_send_file {
+        internal static System.Drawing.Bitmap icon_sound_24x24 {
             get {
-                object obj = ResourceManager.GetObject("icone_send_file", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_sound_24x24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,9 +403,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_shelf {
+        internal static System.Drawing.Bitmap icon_store_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_shelf", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_store_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,9 +413,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_sound {
+        internal static System.Drawing.Bitmap icon_sum_database_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_sound", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_sum_database_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,9 +423,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_store {
+        internal static System.Drawing.Bitmap icon_tools_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_store", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_tools_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -433,9 +433,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_tools {
+        internal static System.Drawing.Bitmap icon_trash_24x24 {
             get {
-                object obj = ResourceManager.GetObject("icone_tools", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_trash_24x24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -443,9 +443,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_trash {
+        internal static System.Drawing.Bitmap icon_undo_30x30 {
             get {
-                object obj = ResourceManager.GetObject("icone_trash", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_undo_30x30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -453,9 +453,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icone_warehouse {
+        internal static System.Drawing.Bitmap icon_warehouse_40x40 {
             get {
-                object obj = ResourceManager.GetObject("icone_warehouse", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_warehouse_40x40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -463,9 +463,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconse_go_24_Editpx {
+        internal static System.Drawing.Bitmap image_category_550x310 {
             get {
-                object obj = ResourceManager.GetObject("iconse_go_24_Editpx", resourceCulture);
+                object obj = ResourceManager.GetObject("image_category_550x310", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -473,9 +473,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconse_go_24px {
+        internal static System.Drawing.Bitmap image_software_1000x1044 {
             get {
-                object obj = ResourceManager.GetObject("iconse_go_24px", resourceCulture);
+                object obj = ResourceManager.GetObject("image_software_1000x1044", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -483,19 +483,9 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap iconse_sum_database {
+        internal static System.Drawing.Bitmap product {
             get {
-                object obj = ResourceManager.GetObject("iconse_sum_database", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Produto {
-            get {
-                object obj = ResourceManager.GetObject("Produto", resourceCulture);
+                object obj = ResourceManager.GetObject("product", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

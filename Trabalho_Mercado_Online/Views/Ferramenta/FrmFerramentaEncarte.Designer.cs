@@ -596,7 +596,7 @@ namespace Trabalho_Mercado_Online.Views.Ferramenta
             // btnDeletarEncarte
             // 
             this.btnDeletarEncarte.BackColor = System.Drawing.Color.White;
-            this.btnDeletarEncarte.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icone_close;
+            this.btnDeletarEncarte.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icon_close_30x30;
             this.btnDeletarEncarte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDeletarEncarte.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnDeletarEncarte.FlatAppearance.BorderSize = 0;
@@ -856,7 +856,7 @@ namespace Trabalho_Mercado_Online.Views.Ferramenta
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icone_grid_Image;
+            this.pictureBox1.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icon_grid_Image_40x40;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(15, 12);
             this.pictureBox1.Name = "pictureBox1";

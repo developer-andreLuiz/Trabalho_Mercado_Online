@@ -7,7 +7,6 @@ namespace Trabalho_Mercado_Online.Helpers
 {
     class ProdutosDataGridHelper_Model
     {
-
         public string Id { get; set; }
         public string Descricao { get; set; }
         public string Iguala { get; set; }
@@ -15,9 +14,5 @@ namespace Trabalho_Mercado_Online.Helpers
         public string Venda { get; set; }
         public string Promoção { get; set; }
         public string Margem { get; set; }
-      
-      
-
-
     }
 }

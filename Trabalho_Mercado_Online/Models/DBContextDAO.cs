@@ -24,6 +24,8 @@ namespace Trabalho_Mercado_Online.Models
         public virtual DbSet<CategoriaNivel4> CategoriaNivel4s { get; set; }
         public virtual DbSet<Encarte> Encartes { get; set; }
         public virtual DbSet<EncarteItem> EncarteItems { get; set; }
+        public virtual DbSet<Funcionario> Funcionarios { get; set; }
+        public virtual DbSet<FuncionarioCargo> FuncionarioCargos { get; set; }
         public virtual DbSet<LojaEstante> LojaEstantes { get; set; }
         public virtual DbSet<LojaPrateleira> LojaPrateleiras { get; set; }
         public virtual DbSet<Produto> Produtos { get; set; }
@@ -324,6 +326,100 @@ namespace Trabalho_Mercado_Online.Models
                     .WithMany(p => p.EncarteItems)
                     .HasForeignKey(d => d.Encarte)
                     .HasConstraintName("fk_encarte_item_encarte");
+            });
+
+            modelBuilder.Entity<Funcionario>(entity =>
+            {
+                entity.ToTable("funcionario");
+
+                entity.HasIndex(e => e.Cargo, "fk_cargo_idx");
+
+                entity.HasIndex(e => e.Senha, "senha_UNIQUE")
+                    .IsUnique();
+
+                entity.Property(e => e.Id)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("id")
+                    .HasComment("chave primaria da tabela produto");
+
+                entity.Property(e => e.Cargo)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("cargo")
+                    .HasComment("id da tabela funcionario_cargo");
+
+                entity.Property(e => e.Endereco)
+                    .HasMaxLength(255)
+                    .HasColumnName("endereco")
+                    .HasComment("endereço do funcionario");
+
+                entity.Property(e => e.Habilitado)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("habilitado")
+                    .HasComment("verifica se o funcionario esta ativo na empresa");
+
+                entity.Property(e => e.Informacao)
+                    .HasMaxLength(255)
+                    .HasColumnName("informacao")
+                    .HasComment("informação complementar sobre o funcionario");
+
+                entity.Property(e => e.Nivel)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("nivel")
+                    .HasComment("nivel de acesso");
+
+                entity.Property(e => e.Nome)
+                    .IsRequired()
+                    .HasMaxLength(255)
+                    .HasColumnName("nome")
+                    .HasComment("nome do funcionario");
+
+                entity.Property(e => e.Salario)
+                    .HasPrecision(10, 2)
+                    .HasColumnName("salario");
+
+                entity.Property(e => e.SalarioBonus)
+                    .HasPrecision(10, 2)
+                    .HasColumnName("salario_bonus");
+
+                entity.Property(e => e.Senha)
+                    .IsRequired()
+                    .HasMaxLength(45)
+                    .HasColumnName("senha")
+                    .HasComment("senha do funcionario");
+
+                entity.Property(e => e.Telefone)
+                    .IsRequired()
+                    .HasMaxLength(45)
+                    .HasColumnName("telefone")
+                    .HasComment("telefone do funcionaio");
+
+                entity.Property(e => e.ValeCompra)
+                    .HasPrecision(10, 2)
+                    .HasColumnName("vale_compra");
+
+                entity.HasOne(d => d.CargoNavigation)
+                    .WithMany(p => p.Funcionarios)
+                    .HasForeignKey(d => d.Cargo)
+                    .OnDelete(DeleteBehavior.SetNull)
+                    .HasConstraintName("fk_funcionario_cargo");
+            });
+
+            modelBuilder.Entity<FuncionarioCargo>(entity =>
+            {
+                entity.ToTable("funcionario_cargo");
+
+                entity.HasIndex(e => e.Nome, "nome_UNIQUE")
+                    .IsUnique();
+
+                entity.Property(e => e.Id)
+                    .HasColumnType("int(11)")
+                    .HasColumnName("id")
+                    .HasComment("chave primaria de funcionario_cargo");
+
+                entity.Property(e => e.Nome)
+                    .IsRequired()
+                    .HasColumnName("nome")
+                    .HasComment("nome do cargo do funcionario");
             });
 
             modelBuilder.Entity<LojaEstante>(entity =>

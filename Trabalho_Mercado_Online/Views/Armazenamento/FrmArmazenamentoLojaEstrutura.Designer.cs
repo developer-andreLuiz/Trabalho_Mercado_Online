@@ -141,7 +141,7 @@
             this.btnPrateleiraSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrateleiraSalvar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPrateleiraSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnPrateleiraSalvar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_save_24x;
+            this.btnPrateleiraSalvar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_save_24x24;
             this.btnPrateleiraSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrateleiraSalvar.Location = new System.Drawing.Point(784, 237);
             this.btnPrateleiraSalvar.Name = "btnPrateleiraSalvar";
@@ -159,9 +159,9 @@
             this.btnEstanteSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstanteSalvar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEstanteSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnEstanteSalvar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_save_24x;
+            this.btnEstanteSalvar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_save_24x24;
             this.btnEstanteSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstanteSalvar.Location = new System.Drawing.Point(351, 237);
+            this.btnEstanteSalvar.Location = new System.Drawing.Point(335, 237);
             this.btnEstanteSalvar.Name = "btnEstanteSalvar";
             this.btnEstanteSalvar.Size = new System.Drawing.Size(35, 35);
             this.btnEstanteSalvar.TabIndex = 55631;
@@ -172,7 +172,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icone_access;
+            this.pictureBox3.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icon_access_40x40;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(18, 12);
             this.pictureBox3.Name = "pictureBox3";
@@ -196,7 +196,7 @@
             this.chkEstanteProdutoVariado.AutoSize = true;
             this.chkEstanteProdutoVariado.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkEstanteProdutoVariado.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkEstanteProdutoVariado.Location = new System.Drawing.Point(80, 237);
+            this.chkEstanteProdutoVariado.Location = new System.Drawing.Point(64, 237);
             this.chkEstanteProdutoVariado.Name = "chkEstanteProdutoVariado";
             this.chkEstanteProdutoVariado.Size = new System.Drawing.Size(170, 23);
             this.chkEstanteProdutoVariado.TabIndex = 55628;
@@ -209,7 +209,7 @@
             this.nUPEstante.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nUPEstante.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nUPEstante.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.nUPEstante.Location = new System.Drawing.Point(80, 281);
+            this.nUPEstante.Location = new System.Drawing.Point(64, 281);
             this.nUPEstante.Maximum = new decimal(new int[] {
             99999,
             0,
@@ -237,9 +237,9 @@
             this.btnEstanteAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstanteAdicionar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEstanteAdicionar.ForeColor = System.Drawing.Color.White;
-            this.btnEstanteAdicionar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_edit;
+            this.btnEstanteAdicionar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_edit_40x40;
             this.btnEstanteAdicionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstanteAdicionar.Location = new System.Drawing.Point(80, 326);
+            this.btnEstanteAdicionar.Location = new System.Drawing.Point(64, 326);
             this.btnEstanteAdicionar.Name = "btnEstanteAdicionar";
             this.btnEstanteAdicionar.Size = new System.Drawing.Size(144, 50);
             this.btnEstanteAdicionar.TabIndex = 55626;
@@ -251,19 +251,19 @@
             // 
             // btnEstanteRemover
             // 
-            this.btnEstanteRemover.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnEstanteRemover.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnEstanteRemover.BackColor = System.Drawing.Color.Black;
+            this.btnEstanteRemover.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnEstanteRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstanteRemover.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEstanteRemover.ForeColor = System.Drawing.Color.White;
-            this.btnEstanteRemover.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_rubber;
+            this.btnEstanteRemover.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_trash_24x24;
             this.btnEstanteRemover.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstanteRemover.Location = new System.Drawing.Point(243, 326);
+            this.btnEstanteRemover.Location = new System.Drawing.Point(227, 326);
             this.btnEstanteRemover.Name = "btnEstanteRemover";
             this.btnEstanteRemover.Size = new System.Drawing.Size(144, 50);
             this.btnEstanteRemover.TabIndex = 55625;
             this.btnEstanteRemover.TabStop = false;
-            this.btnEstanteRemover.Text = "  Remover";
+            this.btnEstanteRemover.Text = "    Deletar";
             this.btnEstanteRemover.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEstanteRemover.UseVisualStyleBackColor = false;
             this.btnEstanteRemover.Click += new System.EventHandler(this.btnEstanteRemover_Click);
@@ -353,7 +353,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_print;
+            this.button1.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_print_40x40;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(580, 549);
             this.button1.Name = "button1";
@@ -408,7 +408,7 @@
             this.lblTotalGeralEstante.AutoSize = true;
             this.lblTotalGeralEstante.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTotalGeralEstante.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblTotalGeralEstante.Location = new System.Drawing.Point(222, 141);
+            this.lblTotalGeralEstante.Location = new System.Drawing.Point(206, 141);
             this.lblTotalGeralEstante.Name = "lblTotalGeralEstante";
             this.lblTotalGeralEstante.Size = new System.Drawing.Size(57, 16);
             this.lblTotalGeralEstante.TabIndex = 55611;
@@ -421,7 +421,7 @@
             this.btnPrateleiraAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrateleiraAdicionar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPrateleiraAdicionar.ForeColor = System.Drawing.Color.White;
-            this.btnPrateleiraAdicionar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_edit;
+            this.btnPrateleiraAdicionar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_edit_40x40;
             this.btnPrateleiraAdicionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrateleiraAdicionar.Location = new System.Drawing.Point(512, 326);
             this.btnPrateleiraAdicionar.Name = "btnPrateleiraAdicionar";
@@ -435,19 +435,19 @@
             // 
             // btnPrateleiraRemover
             // 
-            this.btnPrateleiraRemover.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnPrateleiraRemover.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnPrateleiraRemover.BackColor = System.Drawing.Color.Black;
+            this.btnPrateleiraRemover.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnPrateleiraRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrateleiraRemover.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPrateleiraRemover.ForeColor = System.Drawing.Color.White;
-            this.btnPrateleiraRemover.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_rubber;
+            this.btnPrateleiraRemover.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_trash_24x24;
             this.btnPrateleiraRemover.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrateleiraRemover.Location = new System.Drawing.Point(678, 326);
             this.btnPrateleiraRemover.Name = "btnPrateleiraRemover";
             this.btnPrateleiraRemover.Size = new System.Drawing.Size(144, 50);
             this.btnPrateleiraRemover.TabIndex = 55607;
             this.btnPrateleiraRemover.TabStop = false;
-            this.btnPrateleiraRemover.Text = "  Remover";
+            this.btnPrateleiraRemover.Text = "    Deletar";
             this.btnPrateleiraRemover.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPrateleiraRemover.UseVisualStyleBackColor = false;
             this.btnPrateleiraRemover.Click += new System.EventHandler(this.btnPrateleiraRemover_Click);
@@ -483,7 +483,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label14.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label14.Location = new System.Drawing.Point(80, 182);
+            this.label14.Location = new System.Drawing.Point(64, 182);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(130, 16);
             this.label14.TabIndex = 55596;
@@ -497,7 +497,7 @@
             this.cbEstante.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cbEstante.ForeColor = System.Drawing.Color.DodgerBlue;
             this.cbEstante.FormattingEnabled = true;
-            this.cbEstante.Location = new System.Drawing.Point(80, 199);
+            this.cbEstante.Location = new System.Drawing.Point(64, 199);
             this.cbEstante.Name = "cbEstante";
             this.cbEstante.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cbEstante.Size = new System.Drawing.Size(307, 32);
@@ -506,7 +506,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icone_rack;
+            this.pictureBox2.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icon_rack_40x40;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(512, 117);
             this.pictureBox2.Name = "pictureBox2";
@@ -527,9 +527,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icone_shelf;
+            this.pictureBox1.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icon_shelf_40x40;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(80, 117);
+            this.pictureBox1.Location = new System.Drawing.Point(64, 117);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);
             this.pictureBox1.TabIndex = 582;
@@ -540,7 +540,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(126, 128);
+            this.label5.Location = new System.Drawing.Point(110, 128);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 29);
             this.label5.TabIndex = 583;

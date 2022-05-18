@@ -101,7 +101,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImg.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnImg.ForeColor = System.Drawing.Color.White;
-            this.btnImg.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_camera;
+            this.btnImg.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_camera_24x24;
             this.btnImg.Location = new System.Drawing.Point(265, 163);
             this.btnImg.Name = "btnImg";
             this.btnImg.Size = new System.Drawing.Size(59, 31);
@@ -139,7 +139,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeletar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDeletar.ForeColor = System.Drawing.Color.White;
-            this.btnDeletar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_trash;
+            this.btnDeletar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_trash_24x24;
             this.btnDeletar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeletar.Location = new System.Drawing.Point(174, 585);
             this.btnDeletar.Name = "btnDeletar";
@@ -159,7 +159,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNovo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNovo.ForeColor = System.Drawing.Color.White;
-            this.btnNovo.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_products_add;
+            this.btnNovo.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_products_add_40x40;
             this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNovo.Location = new System.Drawing.Point(13, 522);
             this.btnNovo.Name = "btnNovo";
@@ -178,7 +178,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_edit;
+            this.btnEditar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_edit_40x40;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.Location = new System.Drawing.Point(174, 522);
             this.btnEditar.Name = "btnEditar";
@@ -197,7 +197,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnGravar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGravar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnGravar.ForeColor = System.Drawing.Color.White;
-            this.btnGravar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_save;
+            this.btnGravar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_save_40x40;
             this.btnGravar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGravar.Location = new System.Drawing.Point(13, 585);
             this.btnGravar.Name = "btnGravar";
@@ -287,7 +287,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icone_category3;
+            this.pictureBox1.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icon_category3_40x40;
             this.pictureBox1.Location = new System.Drawing.Point(13, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);
@@ -339,7 +339,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             // 
             // panel2
             // 
-            this.panel2.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.celular_Fundo;
+            this.panel2.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.background_cell_phone_392x737;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Controls.Add(this.btnAtualizarLista);
             this.panel2.Controls.Add(this.label7);

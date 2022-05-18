@@ -81,10 +81,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
                 get { return Color.SteelBlue; }
             }
         }
-
-      
         #endregion
-
         #region Eventos 
         
         //Inicio do Form
@@ -198,6 +195,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
         }
         
         //Botoes Form
+       
         //Inicio
         private void panelTopLogo_Click(object sender, EventArgs e)
         {
@@ -249,6 +247,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
         {
             openChildForm(new FrmDadosProdutos());
         }
+      
         private void dadosCategoria1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openChildForm(new FrmDadosCategoria_Nivel_1());
@@ -261,8 +260,18 @@ namespace Trabalho_Mercado_Online.Views.Principal
         {
             openChildForm(new FrmDadosCategoria_Nivel_3());
         }
+       
+        private void dadosFuncionarioFuncionarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FrmDadosFuncionarios());
+        }
+        private void dadosFuncionarioCargoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FrmDadosFuncionarioCargo());
+        }
 
         //Armazenamento
+        
         //Loja
         private void armazenamentoLojaProdutoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -301,7 +310,8 @@ namespace Trabalho_Mercado_Online.Views.Principal
         {
             openChildForm(new FrmAccessProdutosAccess());
         }
-      
+
+        
         //Sair
         private void btnSair_Click(object sender, EventArgs e)
         {
@@ -310,6 +320,5 @@ namespace Trabalho_Mercado_Online.Views.Principal
         }
 
         #endregion
-
     }
 }

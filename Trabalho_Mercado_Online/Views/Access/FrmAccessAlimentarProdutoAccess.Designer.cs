@@ -29,7 +29,6 @@ namespace Trabalho_Mercado_Online.Views.Access
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAccessAlimentarProdutoAccess));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -64,7 +63,7 @@ namespace Trabalho_Mercado_Online.Views.Access
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImage = global::Trabalho_Mercado_Online.Properties.Resources.icon_products_40x40;
             this.pictureBox1.Location = new System.Drawing.Point(50, 72);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);
@@ -78,7 +77,7 @@ namespace Trabalho_Mercado_Online.Views.Access
             this.btnSelecionarTudo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelecionarTudo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSelecionarTudo.ForeColor = System.Drawing.Color.White;
-            this.btnSelecionarTudo.Image = ((System.Drawing.Image)(resources.GetObject("btnSelecionarTudo.Image")));
+            this.btnSelecionarTudo.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_select_all_30x30;
             this.btnSelecionarTudo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSelecionarTudo.Location = new System.Drawing.Point(16, 588);
             this.btnSelecionarTudo.Name = "btnSelecionarTudo";
@@ -108,7 +107,7 @@ namespace Trabalho_Mercado_Online.Views.Access
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdicionar.ForeColor = System.Drawing.Color.White;
-            this.btnAdicionar.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionar.Image")));
+            this.btnAdicionar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_add_26x26;
             this.btnAdicionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdicionar.Location = new System.Drawing.Point(742, 586);
             this.btnAdicionar.Name = "btnAdicionar";
@@ -406,7 +405,7 @@ namespace Trabalho_Mercado_Online.Views.Access
             this.btnAtualizarCodigos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtualizarCodigos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAtualizarCodigos.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizarCodigos.Image = global::Trabalho_Mercado_Online.Properties.Resources.icone_barcode;
+            this.btnAtualizarCodigos.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_barcode_24x24;
             this.btnAtualizarCodigos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAtualizarCodigos.Location = new System.Drawing.Point(173, 588);
             this.btnAtualizarCodigos.Name = "btnAtualizarCodigos";
