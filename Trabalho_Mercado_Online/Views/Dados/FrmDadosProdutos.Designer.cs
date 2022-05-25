@@ -34,6 +34,9 @@ namespace Trabalho_Mercado_Online.Views.Dados
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnHabilitar = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.chkHabilitado = new System.Windows.Forms.CheckBox();
             this.btnExibirCategoria = new System.Windows.Forms.Button();
             this.chkTravarFiltro = new System.Windows.Forms.CheckBox();
             this.chkEditado = new System.Windows.Forms.CheckBox();
@@ -79,6 +82,9 @@ namespace Trabalho_Mercado_Online.Views.Dados
             // panelMain
             // 
             this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelMain.Controls.Add(this.btnHabilitar);
+            this.panelMain.Controls.Add(this.btnPrint);
+            this.panelMain.Controls.Add(this.chkHabilitado);
             this.panelMain.Controls.Add(this.btnExibirCategoria);
             this.panelMain.Controls.Add(this.chkTravarFiltro);
             this.panelMain.Controls.Add(this.chkEditado);
@@ -121,18 +127,65 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.panelMain.Size = new System.Drawing.Size(900, 648);
             this.panelMain.TabIndex = 3;
             // 
+            // btnHabilitar
+            // 
+            this.btnHabilitar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnHabilitar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnHabilitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHabilitar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnHabilitar.ForeColor = System.Drawing.Color.White;
+            this.btnHabilitar.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_check_list_40x40;
+            this.btnHabilitar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHabilitar.Location = new System.Drawing.Point(557, 586);
+            this.btnHabilitar.Name = "btnHabilitar";
+            this.btnHabilitar.Size = new System.Drawing.Size(105, 50);
+            this.btnHabilitar.TabIndex = 66;
+            this.btnHabilitar.Text = "Habilitar";
+            this.btnHabilitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHabilitar.UseVisualStyleBackColor = false;
+            this.btnHabilitar.Click += new System.EventHandler(this.btnHabilitar_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_print_24x24;
+            this.btnPrint.Location = new System.Drawing.Point(835, 553);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(47, 27);
+            this.btnPrint.TabIndex = 65;
+            this.btnPrint.Text = "...";
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // chkHabilitado
+            // 
+            this.chkHabilitado.AutoSize = true;
+            this.chkHabilitado.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chkHabilitado.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.chkHabilitado.Location = new System.Drawing.Point(695, 74);
+            this.chkHabilitado.Name = "chkHabilitado";
+            this.chkHabilitado.Size = new System.Drawing.Size(79, 18);
+            this.chkHabilitado.TabIndex = 64;
+            this.chkHabilitado.Text = "Habilitado";
+            this.chkHabilitado.UseVisualStyleBackColor = true;
+            this.chkHabilitado.CheckedChanged += new System.EventHandler(this.chkHabilitado_CheckedChanged);
+            // 
             // btnExibirCategoria
             // 
             this.btnExibirCategoria.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnExibirCategoria.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnExibirCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExibirCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnExibirCategoria.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnExibirCategoria.ForeColor = System.Drawing.Color.White;
             this.btnExibirCategoria.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_list_30x30;
             this.btnExibirCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExibirCategoria.Location = new System.Drawing.Point(366, 585);
+            this.btnExibirCategoria.Location = new System.Drawing.Point(339, 586);
             this.btnExibirCategoria.Name = "btnExibirCategoria";
-            this.btnExibirCategoria.Size = new System.Drawing.Size(112, 50);
+            this.btnExibirCategoria.Size = new System.Drawing.Size(105, 50);
             this.btnExibirCategoria.TabIndex = 63;
             this.btnExibirCategoria.Text = "Exibir Categoria";
             this.btnExibirCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -144,7 +197,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.chkTravarFiltro.AutoSize = true;
             this.chkTravarFiltro.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkTravarFiltro.ForeColor = System.Drawing.Color.Red;
-            this.chkTravarFiltro.Location = new System.Drawing.Point(148, 74);
+            this.chkTravarFiltro.Location = new System.Drawing.Point(89, 74);
             this.chkTravarFiltro.Name = "chkTravarFiltro";
             this.chkTravarFiltro.Size = new System.Drawing.Size(91, 18);
             this.chkTravarFiltro.TabIndex = 62;
@@ -157,7 +210,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.chkEditado.AutoSize = true;
             this.chkEditado.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkEditado.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkEditado.Location = new System.Drawing.Point(708, 74);
+            this.chkEditado.Location = new System.Drawing.Point(629, 74);
             this.chkEditado.Name = "chkEditado";
             this.chkEditado.Size = new System.Drawing.Size(66, 18);
             this.chkEditado.TabIndex = 61;
@@ -218,7 +271,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.chkFaltaEditar.AutoSize = true;
             this.chkFaltaEditar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkFaltaEditar.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkFaltaEditar.Location = new System.Drawing.Point(620, 74);
+            this.chkFaltaEditar.Location = new System.Drawing.Point(547, 74);
             this.chkFaltaEditar.Name = "chkFaltaEditar";
             this.chkFaltaEditar.Size = new System.Drawing.Size(85, 18);
             this.chkFaltaEditar.TabIndex = 55;
@@ -231,13 +284,13 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnAbrirProdutos.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnAbrirProdutos.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnAbrirProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbrirProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAbrirProdutos.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAbrirProdutos.ForeColor = System.Drawing.Color.White;
             this.btnAbrirProdutos.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_list_30x30;
             this.btnAbrirProdutos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAbrirProdutos.Location = new System.Drawing.Point(248, 586);
+            this.btnAbrirProdutos.Location = new System.Drawing.Point(230, 586);
             this.btnAbrirProdutos.Name = "btnAbrirProdutos";
-            this.btnAbrirProdutos.Size = new System.Drawing.Size(112, 50);
+            this.btnAbrirProdutos.Size = new System.Drawing.Size(105, 50);
             this.btnAbrirProdutos.TabIndex = 54;
             this.btnAbrirProdutos.Text = "Abrir Produtos";
             this.btnAbrirProdutos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -258,13 +311,13 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnSelecionarTudo.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSelecionarTudo.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnSelecionarTudo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecionarTudo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSelecionarTudo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSelecionarTudo.ForeColor = System.Drawing.Color.White;
             this.btnSelecionarTudo.Image = ((System.Drawing.Image)(resources.GetObject("btnSelecionarTudo.Image")));
             this.btnSelecionarTudo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelecionarTudo.Location = new System.Drawing.Point(130, 586);
+            this.btnSelecionarTudo.Location = new System.Drawing.Point(121, 586);
             this.btnSelecionarTudo.Name = "btnSelecionarTudo";
-            this.btnSelecionarTudo.Size = new System.Drawing.Size(112, 50);
+            this.btnSelecionarTudo.Size = new System.Drawing.Size(105, 50);
             this.btnSelecionarTudo.TabIndex = 52;
             this.btnSelecionarTudo.Text = "Selecionar Tudo";
             this.btnSelecionarTudo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -274,11 +327,11 @@ namespace Trabalho_Mercado_Online.Views.Dados
             // lblSelecionados
             // 
             this.lblSelecionados.AutoSize = true;
-            this.lblSelecionados.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSelecionados.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblSelecionados.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblSelecionados.Location = new System.Drawing.Point(781, 552);
+            this.lblSelecionados.Location = new System.Drawing.Point(388, 553);
             this.lblSelecionados.Name = "lblSelecionados";
-            this.lblSelecionados.Size = new System.Drawing.Size(90, 14);
+            this.lblSelecionados.Size = new System.Drawing.Size(104, 16);
             this.lblSelecionados.TabIndex = 51;
             this.lblSelecionados.Text = "0 Selecionados";
             this.lblSelecionados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -288,13 +341,13 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnCadastrar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCadastrar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCadastrar.ForeColor = System.Drawing.Color.White;
             this.btnCadastrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastrar.Image")));
             this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCadastrar.Location = new System.Drawing.Point(12, 586);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(112, 50);
+            this.btnCadastrar.Size = new System.Drawing.Size(105, 50);
             this.btnCadastrar.TabIndex = 50;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -328,13 +381,13 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnRemover.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnRemover.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRemover.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnRemover.ForeColor = System.Drawing.Color.White;
             this.btnRemover.Image = ((System.Drawing.Image)(resources.GetObject("btnRemover.Image")));
             this.btnRemover.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemover.Location = new System.Drawing.Point(770, 586);
+            this.btnRemover.Location = new System.Drawing.Point(777, 586);
             this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(112, 50);
+            this.btnRemover.Size = new System.Drawing.Size(105, 50);
             this.btnRemover.TabIndex = 46;
             this.btnRemover.Text = "Remover";
             this.btnRemover.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -346,13 +399,13 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnAdicionar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnAdicionar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdicionar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdicionar.ForeColor = System.Drawing.Color.White;
             this.btnAdicionar.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionar.Image")));
             this.btnAdicionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdicionar.Location = new System.Drawing.Point(652, 586);
+            this.btnAdicionar.Location = new System.Drawing.Point(667, 586);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(112, 50);
+            this.btnAdicionar.Size = new System.Drawing.Size(105, 50);
             this.btnAdicionar.TabIndex = 45;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -364,13 +417,13 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnLimparPromocoes.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnLimparPromocoes.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
             this.btnLimparPromocoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimparPromocoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLimparPromocoes.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLimparPromocoes.ForeColor = System.Drawing.Color.White;
             this.btnLimparPromocoes.Image = ((System.Drawing.Image)(resources.GetObject("btnLimparPromocoes.Image")));
             this.btnLimparPromocoes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimparPromocoes.Location = new System.Drawing.Point(484, 585);
+            this.btnLimparPromocoes.Location = new System.Drawing.Point(448, 586);
             this.btnLimparPromocoes.Name = "btnLimparPromocoes";
-            this.btnLimparPromocoes.Size = new System.Drawing.Size(112, 50);
+            this.btnLimparPromocoes.Size = new System.Drawing.Size(105, 50);
             this.btnLimparPromocoes.TabIndex = 44;
             this.btnLimparPromocoes.Text = "Limpar Promoções";
             this.btnLimparPromocoes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -384,9 +437,9 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.btnLimparFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimparFiltro.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLimparFiltro.ForeColor = System.Drawing.Color.White;
-            this.btnLimparFiltro.Location = new System.Drawing.Point(781, 69);
+            this.btnLimparFiltro.Location = new System.Drawing.Point(796, 69);
             this.btnLimparFiltro.Name = "btnLimparFiltro";
-            this.btnLimparFiltro.Size = new System.Drawing.Size(101, 27);
+            this.btnLimparFiltro.Size = new System.Drawing.Size(86, 27);
             this.btnLimparFiltro.TabIndex = 43;
             this.btnLimparFiltro.Text = "Limpar Filtro";
             this.btnLimparFiltro.UseVisualStyleBackColor = false;
@@ -397,7 +450,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.chkIgualaProduto.AutoSize = true;
             this.chkIgualaProduto.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkIgualaProduto.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkIgualaProduto.Location = new System.Drawing.Point(514, 74);
+            this.chkIgualaProduto.Location = new System.Drawing.Point(445, 74);
             this.chkIgualaProduto.Name = "chkIgualaProduto";
             this.chkIgualaProduto.Size = new System.Drawing.Size(105, 18);
             this.chkIgualaProduto.TabIndex = 41;
@@ -410,7 +463,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.chkCategoria.AutoSize = true;
             this.chkCategoria.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkCategoria.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkCategoria.Location = new System.Drawing.Point(245, 74);
+            this.chkCategoria.Location = new System.Drawing.Point(181, 74);
             this.chkCategoria.Name = "chkCategoria";
             this.chkCategoria.Size = new System.Drawing.Size(79, 18);
             this.chkCategoria.TabIndex = 40;
@@ -423,7 +476,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.chkSemCategoria.AutoSize = true;
             this.chkSemCategoria.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkSemCategoria.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkSemCategoria.Location = new System.Drawing.Point(324, 74);
+            this.chkSemCategoria.Location = new System.Drawing.Point(260, 74);
             this.chkSemCategoria.Name = "chkSemCategoria";
             this.chkSemCategoria.Size = new System.Drawing.Size(107, 18);
             this.chkSemCategoria.TabIndex = 39;
@@ -436,7 +489,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.chkPromocao.AutoSize = true;
             this.chkPromocao.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chkPromocao.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkPromocao.Location = new System.Drawing.Point(431, 74);
+            this.chkPromocao.Location = new System.Drawing.Point(367, 74);
             this.chkPromocao.Name = "chkPromocao";
             this.chkPromocao.Size = new System.Drawing.Size(82, 18);
             this.chkPromocao.TabIndex = 38;
@@ -563,13 +616,13 @@ namespace Trabalho_Mercado_Online.Views.Dados
             // lblRegistros
             // 
             this.lblRegistros.AutoSize = true;
-            this.lblRegistros.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblRegistros.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblRegistros.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblRegistros.Location = new System.Drawing.Point(12, 552);
+            this.lblRegistros.Location = new System.Drawing.Point(12, 553);
             this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(82, 14);
+            this.lblRegistros.Size = new System.Drawing.Size(76, 16);
             this.lblRegistros.TabIndex = 5;
-            this.lblRegistros.Text = "130 Registros";
+            this.lblRegistros.Text = "0 Registros";
             this.lblRegistros.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -625,7 +678,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowTemplate.Height = 50;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(870, 400);
+            this.dataGridView.Size = new System.Drawing.Size(870, 398);
             this.dataGridView.TabIndex = 3;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
@@ -718,5 +771,8 @@ namespace Trabalho_Mercado_Online.Views.Dados
         private System.Windows.Forms.CheckBox chkEditado;
         private System.Windows.Forms.CheckBox chkTravarFiltro;
         private System.Windows.Forms.Button btnExibirCategoria;
+        private System.Windows.Forms.CheckBox chkHabilitado;
+        private System.Windows.Forms.Button btnHabilitar;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

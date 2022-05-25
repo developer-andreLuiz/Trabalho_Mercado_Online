@@ -97,6 +97,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.label3 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.chkHabilitado = new System.Windows.Forms.CheckBox();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDVolume)).BeginInit();
@@ -108,6 +109,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.chkHabilitado);
             this.panelMain.Controls.Add(this.btnFechar);
             this.panelMain.Controls.Add(this.pictureBox1);
             this.panelMain.Controls.Add(this.btnImagensOnline);
@@ -530,7 +532,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.txtInformacao.Location = new System.Drawing.Point(110, 398);
             this.txtInformacao.Multiline = true;
             this.txtInformacao.Name = "txtInformacao";
-            this.txtInformacao.Size = new System.Drawing.Size(539, 117);
+            this.txtInformacao.Size = new System.Drawing.Size(545, 117);
             this.txtInformacao.TabIndex = 16;
             this.toolTip.SetToolTip(this.txtInformacao, "Nome do Produto");
             // 
@@ -551,7 +553,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.nUDVolume.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nUDVolume.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nUDVolume.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.nUDVolume.Location = new System.Drawing.Point(552, 352);
+            this.nUDVolume.Location = new System.Drawing.Point(558, 352);
             this.nUDVolume.Maximum = new decimal(new int[] {
             99999,
             0,
@@ -1028,6 +1030,19 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.lblId.TabIndex = 5555;
             this.lblId.Text = "0";
             // 
+            // chkHabilitado
+            // 
+            this.chkHabilitado.AutoSize = true;
+            this.chkHabilitado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chkHabilitado.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.chkHabilitado.Location = new System.Drawing.Point(573, 521);
+            this.chkHabilitado.Name = "chkHabilitado";
+            this.chkHabilitado.Size = new System.Drawing.Size(91, 20);
+            this.chkHabilitado.TabIndex = 55566;
+            this.chkHabilitado.TabStop = false;
+            this.chkHabilitado.Text = "Habilitado";
+            this.chkHabilitado.UseVisualStyleBackColor = true;
+            // 
             // FrmDadosProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -1118,5 +1133,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnFechar;
         public System.Windows.Forms.TextBox txtDescricao;
+        private System.Windows.Forms.CheckBox chkHabilitado;
     }
 }

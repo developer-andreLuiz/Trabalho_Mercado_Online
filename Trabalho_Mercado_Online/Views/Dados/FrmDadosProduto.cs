@@ -193,6 +193,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             obj.Volume = int.Parse(nUDVolume.Value.ToString());
             obj.Validade = chkValidade.Checked;
             obj.Informacao = txtInformacao.Text;
+            obj.Habilitado=chkHabilitado.Checked;
 
             return retorno;
         }
@@ -275,7 +276,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             nUDVolume.Value = obj.Volume;
 
             txtInformacao.Text = obj.Informacao;
-
+            chkHabilitado.Checked = obj.Habilitado;
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             
             pictureBox.ImageLocation = obj.Img;
@@ -337,6 +338,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             nUDItensCaixa.Enabled = false;
             nUDVolume.Enabled = false;
             txtInformacao.Enabled = false;
+            chkHabilitado.Enabled = false;  
             btnInserirImagem.Enabled = false;
             btnImagensOnline.Enabled = false;
             btnOuvir.Enabled = false;
@@ -366,6 +368,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             nUDItensCaixa.Enabled = false;
             nUDVolume.Enabled = false;
             txtInformacao.Enabled = false;
+            chkHabilitado.Enabled = false;
             btnInserirImagem.Enabled = false;
             btnImagensOnline.Enabled = false;
             btnOuvir.Enabled = false;
@@ -398,6 +401,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             nUDItensCaixa.Enabled = true;
             nUDVolume.Enabled = true;
             txtInformacao.Enabled = true;
+            chkHabilitado.Enabled = true;
             btnInserirImagem.Enabled = true;
             btnImagensOnline.Enabled = true;
             btnOuvir.Enabled = true;
@@ -430,7 +434,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             nUDItensCaixa.Enabled = true;
             nUDVolume.Enabled = true;
             txtInformacao.Enabled = true;
-           
+            chkHabilitado.Enabled = true;
             btnInserirImagem.Enabled = true;
             btnImagensOnline.Enabled = true;
             btnOuvir.Enabled = true;
@@ -468,7 +472,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             nUDVolume.Value = 0;
 
             txtInformacao.Text = string.Empty;
-
+            chkHabilitado.Checked=false;
             txtPesquisar.Text = string.Empty;
 
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;

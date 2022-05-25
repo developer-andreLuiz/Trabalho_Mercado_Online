@@ -159,7 +159,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             obj.Informacao = txtInformacao.Text.ToUpper().Trim();
             
             //habilitado
-            obj.Habilitado = chkHabilitado.Checked? 1:0;
+            obj.Habilitado = chkHabilitado.Checked;
 
 
             return retorno;
@@ -175,7 +175,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             txtSalario.Text = obj.Salario.ToString();
             txtSalarioBonus.Text = obj.SalarioBonus.ToString();
             txtValeCompra.Text = obj.ValeCompra.ToString();
-            chkHabilitado.Checked = obj.Habilitado == 1 ? true : false;
+            chkHabilitado.Checked = obj.Habilitado;
             txtTelefone.Text = obj.Telefone;
             txtEndereco.Text = obj.Endereco;
             txtInformacao.Text = obj.Informacao;

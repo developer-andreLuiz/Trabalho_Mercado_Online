@@ -14,5 +14,7 @@ namespace Trabalho_Mercado_Online.Models
         public int? Principal { get; set; }
         public string Complemento { get; set; }
         public string Referencia { get; set; }
+
+        public virtual Usuario UsuarioNavigation { get; set; }
     }
 }

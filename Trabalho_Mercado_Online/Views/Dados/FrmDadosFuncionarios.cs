@@ -89,12 +89,12 @@ namespace Trabalho_Mercado_Online.Views.Dados
           
             if (habilitado)
             {
-                var lt = ListaFuncionarioLocal.FindAll(x => x.Habilitado == 1);
+                var lt = ListaFuncionarioLocal.FindAll(x => x.Habilitado == true);
                 ListaFuncionarioLocal = lt;
             }
             else
             {
-                var lt = ListaFuncionarioLocal.FindAll(x => x.Habilitado == 0);
+                var lt = ListaFuncionarioLocal.FindAll(x => x.Habilitado == false);
                 ListaFuncionarioLocal = lt;
             }
             

@@ -31,6 +31,7 @@ namespace Trabalho_Mercado_Online.Models
         public int Volume { get; set; }
         public bool Validade { get; set; }
         public string Informacao { get; set; }
+        public bool Habilitado { get; set; }
 
         public virtual ICollection<Carrinho> Carrinhos { get; set; }
         public virtual ICollection<ProdutoCategorium> ProdutoCategoria { get; set; }

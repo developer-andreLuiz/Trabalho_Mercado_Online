@@ -83,6 +83,11 @@ namespace Trabalho_Mercado_Online.Models
                     .WithMany(p => p.Carrinhos)
                     .HasForeignKey(d => d.Produto)
                     .HasConstraintName("fk_carrinho_produto");
+
+                entity.HasOne(d => d.UsuarioNavigation)
+                    .WithMany(p => p.Carrinhos)
+                    .HasForeignKey(d => d.Usuario)
+                    .HasConstraintName("fk_carrinho_usuario");
             });
 
             modelBuilder.Entity<CategoriaNivel1>(entity =>
@@ -262,7 +267,7 @@ namespace Trabalho_Mercado_Online.Models
                     .HasComment("chave primaria do encarte");
 
                 entity.Property(e => e.Data)
-                    .HasColumnType("date")
+                    .HasColumnType("datetime")
                     .HasColumnName("data")
                     .HasComment("data de criação do encarte");
 
@@ -283,7 +288,7 @@ namespace Trabalho_Mercado_Online.Models
                     .HasComment("categoria do encarte ");
 
                 entity.Property(e => e.Validade)
-                    .HasColumnType("date")
+                    .HasColumnType("datetime")
                     .HasColumnName("validade")
                     .HasComment("data de validade do encarte");
             });
@@ -353,7 +358,6 @@ namespace Trabalho_Mercado_Online.Models
                     .HasComment("endereço do funcionario");
 
                 entity.Property(e => e.Habilitado)
-                    .HasColumnType("int(11)")
                     .HasColumnName("habilitado")
                     .HasComment("verifica se o funcionario esta ativo na empresa");
 
@@ -365,7 +369,7 @@ namespace Trabalho_Mercado_Online.Models
                 entity.Property(e => e.Nivel)
                     .HasColumnType("int(11)")
                     .HasColumnName("nivel")
-                    .HasComment("nivel de acesso");
+                    .HasComment("nivel de acesso\n\n1 Operação\n2 Supervisão\n3 Gerência\n4 Técnico\n5 Presidência");
 
                 entity.Property(e => e.Nome)
                     .IsRequired()
@@ -516,6 +520,8 @@ namespace Trabalho_Mercado_Online.Models
                     .HasMaxLength(255)
                     .HasColumnName("gramatura")
                     .HasComment("1,5L  - 50ml (sem espaço e maiusculo) kg - gr - lt - ml - und\n");
+
+                entity.Property(e => e.Habilitado).HasColumnName("habilitado");
 
                 entity.Property(e => e.IgualaProduto)
                     .HasColumnType("int(11)")
@@ -688,6 +694,8 @@ namespace Trabalho_Mercado_Online.Models
             {
                 entity.ToTable("produto_loja");
 
+                entity.HasIndex(e => e.Funcionario, "fk_produto_loja_funcionario_idx");
+
                 entity.HasIndex(e => e.Prateleira, "fk_produto_loja_prateleira_idx");
 
                 entity.HasIndex(e => e.Produto, "fk_produto_loja_produto_idx");
@@ -706,6 +714,10 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("int(11)")
                     .HasColumnName("conferencia_validade")
                     .HasComment("marcar produto com validade verificada após entrada na prateleira");
+
+                entity.Property(e => e.CustoUnitario)
+                    .HasPrecision(10, 2)
+                    .HasColumnName("custo_unitario");
 
                 entity.Property(e => e.Entrada)
                     .HasColumnType("datetime")
@@ -733,9 +745,15 @@ namespace Trabalho_Mercado_Online.Models
                     .HasComment("quantidade de itens do produto na prateleira");
 
                 entity.Property(e => e.Validade)
-                    .HasColumnType("date")
+                    .HasColumnType("datetime")
                     .HasColumnName("validade")
                     .HasComment("validade do produto");
+
+                entity.HasOne(d => d.FuncionarioNavigation)
+                    .WithMany(p => p.ProdutoLojas)
+                    .HasForeignKey(d => d.Funcionario)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_produto_loja_funcionario");
 
                 entity.HasOne(d => d.PrateleiraNavigation)
                     .WithMany(p => p.ProdutoLojas)
@@ -750,10 +768,6 @@ namespace Trabalho_Mercado_Online.Models
 
             modelBuilder.Entity<Usuario>(entity =>
             {
-                entity.HasKey(e => new { e.Id, e.Telefone })
-                    .HasName("PRIMARY")
-                    .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
-
                 entity.ToTable("usuario");
 
                 entity.HasComment("tabela com informações dos usuarios");
@@ -763,14 +777,8 @@ namespace Trabalho_Mercado_Online.Models
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
-                    .ValueGeneratedOnAdd()
                     .HasColumnName("id")
                     .HasComment("chave primaria da tabela usuario");
-
-                entity.Property(e => e.Telefone)
-                    .HasMaxLength(20)
-                    .HasColumnName("telefone")
-                    .HasComment("numero de telefone do usuario");
 
                 entity.Property(e => e.AparelhoId)
                     .IsRequired()
@@ -794,7 +802,7 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnName("img");
 
                 entity.Property(e => e.Nascimento)
-                    .HasColumnType("date")
+                    .HasColumnType("datetime")
                     .HasColumnName("nascimento")
                     .HasComment("Data de nascimento  do usuario");
 
@@ -809,6 +817,12 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnName("saldo")
                     .HasDefaultValueSql("'0.00'")
                     .HasComment("saldo do cliente");
+
+                entity.Property(e => e.Telefone)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .HasColumnName("telefone")
+                    .HasComment("numero de telefone do usuario");
             });
 
             modelBuilder.Entity<UsuarioEndereco>(entity =>
@@ -854,6 +868,11 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("int(11)")
                     .HasColumnName("usuario")
                     .HasComment("referencia ao id de usuario");
+
+                entity.HasOne(d => d.UsuarioNavigation)
+                    .WithMany(p => p.UsuarioEnderecos)
+                    .HasForeignKey(d => d.Usuario)
+                    .HasConstraintName("fk_usuario_endereco_usuario");
             });
 
             OnModelCreatingPartial(modelBuilder);

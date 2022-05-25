@@ -56,6 +56,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             bool igualaProduto = chkIgualaProduto.Checked;
             bool faltaEditar = chkFaltaEditar.Checked;
             bool editado = chkEditado.Checked;
+            bool habilitado = chkHabilitado.Checked;
 
             bool categoria = chkCategoria.Checked;
             bool semCategoria = chkSemCategoria.Checked;
@@ -94,6 +95,11 @@ namespace Trabalho_Mercado_Online.Views.Dados
             if (editado)
             {
                 var lt = ListaProdutos.FindAll(x => x.Peso.Equals("00000")==false);
+                ListaProdutos = lt;
+            }
+            if (habilitado)
+            {
+                var lt = ListaProdutos.FindAll(x => x.Habilitado == true);
                 ListaProdutos = lt;
             }
             if (semCategoria)
@@ -634,6 +640,13 @@ namespace Trabalho_Mercado_Online.Views.Dados
                 Filtrar();
             }
         }
+        private void chkHabilitado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!chkTravarFiltro.Checked)
+            {
+                Filtrar();
+            }
+        }
         private void chkCategoria_CheckedChanged(object sender, EventArgs e)
         {
             if (chkCategoria.Checked)
@@ -686,10 +699,164 @@ namespace Trabalho_Mercado_Online.Views.Dados
             }
         }
 
+
         //Buttons
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             openChildForm(new FrmDadosProduto(new Produto(),new List<int>()));
+        }
+        private void btnSelecionarTudo_Click(object sender, EventArgs e)
+        {
+            dataGridView.SelectAll();
+            switch (dataGridView.SelectedRows.Count)
+            {
+                case 0: lblSelecionados.Text = $"Nenhum Selecionado"; break;
+                case 1: lblSelecionados.Text = $"1 Selecionado"; break;
+                default: lblSelecionados.Text = $"{dataGridView.SelectedRows.Count} Selecionados"; break;
+            }
+        }
+        private void btnAbrirProdutos_Click(object sender, EventArgs e)
+        {
+            List<int> lista = new List<int>();
+            List<string> listaNome = new List<string>();
+            for (int i = 0; i < dataGridView.SelectedRows.Count; i++)
+            {
+                var valor = dataGridView.SelectedRows[i].Cells[0].Value;
+                var nome = dataGridView.SelectedRows[i].Cells[1].Value;
+                int id = int.Parse(valor.ToString());
+                lista.Add(id);
+                listaNome.Add(nome.ToString());
+            }
+           
+            if (lista.Count > 0)
+            {
+                openChildForm(new FrmDadosProduto(new Produto(), lista));
+            }
+            else
+            {
+                MessageBox.Show("Nehum Produto Selecionado");
+            }
+        }
+        private void btnExibirCategoria_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.Rows.Count > 0)
+            {
+                List<int> listId = new List<int>();
+                List<ProdutosCategoriaDataGridHelper_Model> ListaGrid = new List<ProdutosCategoriaDataGridHelper_Model>();
+
+                foreach (DataGridViewRow item in dataGridView.Rows)
+                {
+                    listId.Add(int.Parse(item.Cells[0].Value.ToString()));
+                }
+
+                foreach (var itemListId in listId)
+                {
+                    var listProdutoCategoria = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.Produto == itemListId);
+
+                    foreach (var itemProdutoCategoria in listProdutoCategoria)
+                    {
+                        ProdutosCategoriaDataGridHelper_Model p = new ProdutosCategoriaDataGridHelper_Model();
+                        p.Id = itemListId.ToString();
+                        var produto = GlobalHelper.Listas.Produto.Find(x => x.Id == itemListId);
+                        try
+                        {
+                            p.Descricao = produto.Descricao + " " + produto.Gramatura + " " + produto.Embalagem;
+
+                            try
+                            {
+                                p.Categoria_Nivel1 = GlobalHelper.Listas.CategoriaNivel1.Find(x => x.Id == itemProdutoCategoria.CategoriaNivel1).Nome;
+                            }
+                            catch
+                            {
+                                p.Categoria_Nivel1 = "";
+                            }
+
+                            try
+                            {
+                                p.Categoria_Nivel2 = GlobalHelper.Listas.CategoriaNivel2.Find(x => x.Id == itemProdutoCategoria.CategoriaNivel2).Nome;
+                            }
+                            catch
+                            {
+                                p.Categoria_Nivel2 = "";
+                            }
+
+                            try
+                            {
+                                p.Categoria_Nivel3 = GlobalHelper.Listas.CategoriaNivel3.Find(x => x.Id == itemProdutoCategoria.CategoriaNivel3).Nome;
+                            }
+                            catch
+                            {
+                                p.Categoria_Nivel3 = "";
+                            }
+
+                            ListaGrid.Add(p);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
+
+                dataGridView.DataSource = ListaGrid;
+
+
+                #region Formatação dos Dados Grid
+
+
+
+                switch (ListaGrid.Count)
+                {
+                    case 0: lblRegistros.Text = $"Sem Registro"; break;
+                    case 1: lblRegistros.Text = $"1 Registro"; break;
+                    default: lblRegistros.Text = $"{ListaGrid.Count} Registros"; break;
+                }
+                switch (dataGridView.SelectedRows.Count)
+                {
+                    case 0: lblSelecionados.Text = $"Nenhum Selecionado"; break;
+                    case 1: lblSelecionados.Text = $"1 Selecionado"; break;
+                    default: lblSelecionados.Text = $"{dataGridView.SelectedRows.Count} Selecionados"; break;
+                }
+                dataGridView.Columns[0].Width = 70;
+                dataGridView.Columns[1].Width = 350;
+                if (ListaGrid.Count > 0)
+                {
+                    btnAdicionar.Enabled = true;
+                    btnRemover.Enabled = true;
+                    btnLimparPromocoes.Enabled = true;
+                    btnAbrirProdutos.Enabled = true;
+
+                    btnAdicionar.Visible = true;
+                    btnRemover.Visible = true;
+                    btnLimparPromocoes.Visible = true;
+                    btnSelecionarTudo.Visible = true;
+                    lblSelecionados.Visible = true;
+                    btnAbrirProdutos.Visible = true;
+
+                }
+                else
+                {
+                    btnAdicionar.Enabled = false;
+                    btnRemover.Enabled = false;
+                    btnLimparPromocoes.Enabled = false;
+                    btnAbrirProdutos.Enabled = false;
+
+                    btnAdicionar.Visible = false;
+                    btnRemover.Visible = false;
+                    btnLimparPromocoes.Visible = false;
+                    btnSelecionarTudo.Visible = false;
+                    lblSelecionados.Visible = false;
+                    btnAbrirProdutos.Visible = false;
+                }
+                #endregion
+
+
+            }
+
+
+
+
+
         }
         private void btnLimparPromocoes_Click(object sender, EventArgs e)
         {
@@ -708,6 +875,74 @@ namespace Trabalho_Mercado_Online.Views.Dados
                 GlobalHelper.Listas.Produto = ProdutoController.GetAll();
                 Filtrar();
                 MessageBox.Show("Promoções Apagadas");
+            }
+        }
+        private void btnHabilitar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count>0)
+            {
+                DialogResult dialog = MessageBox.Show("Deseja Habilitar estes Produtos ?", "ATENÇÂO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.Yes)
+                {
+                    for (int i = 0; i < dataGridView.SelectedRows.Count; i++)
+                    {
+                        var valor = dataGridView.SelectedRows[i].Cells[0].Value;
+
+                        int id = int.Parse(valor.ToString());
+                        Produto p = GlobalHelper.Listas.Produto.Find(x => x.Id == id);
+                        p.Habilitado = true;
+                        ProdutoController.Gravar(p);
+                    }
+                    GlobalHelper.Listas.Produto = ProdutoController.GetAll();
+                    Filtrar();
+                    MessageBox.Show("Produtos Habilitados Apagadas");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Sem produto Selecionado","Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+           
+        }
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            List<int> lista = new List<int>();
+            List<string> listaNome = new List<string>();
+            for (int i = 0; i < dataGridView.SelectedRows.Count; i++)
+            {
+                var valor = dataGridView.SelectedRows[i].Cells[0].Value;
+                var nome = dataGridView.SelectedRows[i].Cells[1].Value;
+               
+                int id = int.Parse(valor.ToString());
+                lista.Add(id);
+                listaNome.Add(nome.ToString());
+            }
+            string[] textoParaImpressao = new string[listaNome.Count];
+            if (lista.Count > 0)
+            {
+                DialogResult dialog = MessageBox.Show("Deseja Imprimir Lista de Produtos", "Imprimir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialog == DialogResult.Yes)
+                {
+                    ListaImprimir = string.Empty;
+                    for (int i = 0; i < listaNome.Count; i++)
+                    {
+                        textoParaImpressao[i] = i + 1 + "-" + listaNome[i];
+                    }
+
+                    PrintDocument doc = new ImprimirDocumentoHelper(textoParaImpressao);
+                    doc.PrintPage += this.Doc_PrintPage;
+                    PrintDialog dialogo = new PrintDialog();
+                    dialogo.Document = doc;
+                    //  Se o usuário clicar em OK , imprime o documento
+                    if (dialogo.ShowDialog() == DialogResult.OK)
+                    {
+                        doc.Print();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nehum Produto Selecionado");
             }
         }
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -881,187 +1116,9 @@ namespace Trabalho_Mercado_Online.Views.Dados
             Filtrar();
 
         }
-        private void btnSelecionarTudo_Click(object sender, EventArgs e)
-        {
-            dataGridView.SelectAll();
-            switch (dataGridView.SelectedRows.Count)
-            {
-                case 0: lblSelecionados.Text = $"Nenhum Selecionado"; break;
-                case 1: lblSelecionados.Text = $"1 Selecionado"; break;
-                default: lblSelecionados.Text = $"{dataGridView.SelectedRows.Count} Selecionados"; break;
-            }
-        }
-        private void btnExibirCategoria_Click(object sender, EventArgs e)
-        {
-            if (dataGridView.Rows.Count>0)
-            {
-                List<int> listId = new List<int>();
-                List<ProdutosCategoriaDataGridHelper_Model> ListaGrid = new List<ProdutosCategoriaDataGridHelper_Model>();
-                
-                foreach (DataGridViewRow item in dataGridView.Rows)
-                {
-                    listId.Add(int.Parse(item.Cells[0].Value.ToString()));
-                }
-
-                foreach (var itemListId in listId)
-                {
-                    var listProdutoCategoria = GlobalHelper.Listas.ProdutoCategoria.FindAll(x=>x.Produto == itemListId);
-                    
-                    foreach (var itemProdutoCategoria in listProdutoCategoria)
-                    {
-                        ProdutosCategoriaDataGridHelper_Model p = new ProdutosCategoriaDataGridHelper_Model();
-                        p.Id = itemListId.ToString();
-                        var produto = GlobalHelper.Listas.Produto.Find(x => x.Id == itemListId);
-                        try
-                        {
-                            p.Descricao = produto.Descricao + " " + produto.Gramatura + " " + produto.Embalagem;
-
-                            try
-                            {
-                                p.Categoria_Nivel1 = GlobalHelper.Listas.CategoriaNivel1.Find(x => x.Id == itemProdutoCategoria.CategoriaNivel1).Nome;
-                            }
-                            catch
-                            {
-                                p.Categoria_Nivel1 = "";
-                            }
-                            
-                            try
-                            {
-                                p.Categoria_Nivel2 = GlobalHelper.Listas.CategoriaNivel2.Find(x => x.Id == itemProdutoCategoria.CategoriaNivel2).Nome;
-                            }
-                            catch
-                            {
-                                p.Categoria_Nivel2 = "";
-                            }
-                           
-                            try
-                            {
-                                p.Categoria_Nivel3 = GlobalHelper.Listas.CategoriaNivel3.Find(x => x.Id == itemProdutoCategoria.CategoriaNivel3).Nome;
-                            }
-                            catch
-                            {
-                                p.Categoria_Nivel3 = "";
-                            }
-                            
-                            ListaGrid.Add(p);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
-                    }
-                }
-
-                dataGridView.DataSource = ListaGrid;
-
-
-                #region Formatação dos Dados Grid
-
-
-
-                switch (ListaGrid.Count)
-                {
-                    case 0: lblRegistros.Text = $"Sem Registro"; break;
-                    case 1: lblRegistros.Text = $"1 Registro"; break;
-                    default: lblRegistros.Text = $"{ListaGrid.Count} Registros"; break;
-                }
-                switch (dataGridView.SelectedRows.Count)
-                {
-                    case 0: lblSelecionados.Text = $"Nenhum Selecionado"; break;
-                    case 1: lblSelecionados.Text = $"1 Selecionado"; break;
-                    default: lblSelecionados.Text = $"{dataGridView.SelectedRows.Count} Selecionados"; break;
-                }
-                dataGridView.Columns[0].Width = 70;
-                dataGridView.Columns[1].Width = 350;
-                if (ListaGrid.Count > 0)
-                {
-                    btnAdicionar.Enabled = true;
-                    btnRemover.Enabled = true;
-                    btnLimparPromocoes.Enabled = true;
-                    btnAbrirProdutos.Enabled = true;
-
-                    btnAdicionar.Visible = true;
-                    btnRemover.Visible = true;
-                    btnLimparPromocoes.Visible = true;
-                    btnSelecionarTudo.Visible = true;
-                    lblSelecionados.Visible = true;
-                    btnAbrirProdutos.Visible = true;
-
-                }
-                else
-                {
-                    btnAdicionar.Enabled = false;
-                    btnRemover.Enabled = false;
-                    btnLimparPromocoes.Enabled = false;
-                    btnAbrirProdutos.Enabled = false;
-
-                    btnAdicionar.Visible = false;
-                    btnRemover.Visible = false;
-                    btnLimparPromocoes.Visible = false;
-                    btnSelecionarTudo.Visible = false;
-                    lblSelecionados.Visible = false;
-                    btnAbrirProdutos.Visible = false;
-                }
-                #endregion
-
-               
-            }
-
-
-
-
-
-        }
-        private void btnAbrirProdutos_Click(object sender, EventArgs e)
-        {
-            List<int> lista = new List<int>();
-            List<string> listaNome = new List<string>();
-            
-            for (int i = 0; i < dataGridView.SelectedRows.Count; i++)
-            {
-                var valor = dataGridView.SelectedRows[i].Cells[0].Value;
-                var nome = dataGridView.SelectedRows[i].Cells[1].Value;
-                int id = int.Parse(valor.ToString());
-                lista.Add(id);
-                listaNome.Add(nome.ToString());
-            }
-            string[] textoParaImpressao = new string[listaNome.Count];
-            if (lista.Count > 0)
-            {
-                DialogResult dialog = MessageBox.Show("Deseja Imprimir Lista de Produtos","Imprimir",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-                if (dialog==DialogResult.Yes)
-                {
-                    ListaImprimir = string.Empty;
-                    for (int i = 0; i < listaNome.Count; i++)
-                    {
-                        textoParaImpressao[i] =i+1+"-"+listaNome[i];
-                    }
-
-                    PrintDocument doc = new ImprimirDocumentoHelper(textoParaImpressao);
-                    doc.PrintPage += this.Doc_PrintPage;
-                    PrintDialog dialogo = new PrintDialog();
-                    dialogo.Document = doc;
-
-
-
-                    //  Se o usuário clicar em OK , imprime o documento
-                    if (dialogo.ShowDialog() == DialogResult.OK)
-                    {
-                        doc.Print();
-                    }
-                }
-
-
-
-
-
-                openChildForm(new FrmDadosProduto(new Produto(), lista));
-            }
-            else
-            {
-                MessageBox.Show("Nehum Produto Selecionado");
-            }
-        }
+       
+       
+      
         private void Doc_PrintPage(object sender, PrintPageEventArgs e)
         {
             // Recupera o documento que enviou este evento.
@@ -1246,6 +1303,10 @@ namespace Trabalho_Mercado_Online.Views.Dados
         {
             e.Graphics.DrawString(ListaImprimir, new Font("Arial", 12, FontStyle.Bold), Brushes.Black, 50, 50);
         }
+
+
+
+
 
 
 

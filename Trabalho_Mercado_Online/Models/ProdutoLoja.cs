@@ -9,6 +9,7 @@ namespace Trabalho_Mercado_Online.Models
     {
         public int Id { get; set; }
         public int Produto { get; set; }
+        public decimal CustoUnitario { get; set; }
         public DateTime Entrada { get; set; }
         public DateTime Validade { get; set; }
         public int Prateleira { get; set; }
@@ -17,6 +18,7 @@ namespace Trabalho_Mercado_Online.Models
         public int? ConferenciaValidade { get; set; }
         public int? ConferenciaBalanco { get; set; }
 
+        public virtual Funcionario FuncionarioNavigation { get; set; }
         public virtual LojaPrateleira PrateleiraNavigation { get; set; }
         public virtual Produto ProdutoNavigation { get; set; }
     }

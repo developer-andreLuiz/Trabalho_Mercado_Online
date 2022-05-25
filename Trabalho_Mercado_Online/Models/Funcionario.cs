@@ -7,6 +7,11 @@ namespace Trabalho_Mercado_Online.Models
 {
     public partial class Funcionario
     {
+        public Funcionario()
+        {
+            ProdutoLojas = new HashSet<ProdutoLoja>();
+        }
+
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Senha { get; set; }
@@ -18,8 +23,9 @@ namespace Trabalho_Mercado_Online.Models
         public string Telefone { get; set; }
         public string Endereco { get; set; }
         public string Informacao { get; set; }
-        public int Habilitado { get; set; }
+        public bool Habilitado { get; set; }
 
         public virtual FuncionarioCargo CargoNavigation { get; set; }
+        public virtual ICollection<ProdutoLoja> ProdutoLojas { get; set; }
     }
 }
