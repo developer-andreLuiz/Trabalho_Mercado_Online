@@ -881,7 +881,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
         {
             if (dataGridView.SelectedRows.Count>0)
             {
-                DialogResult dialog = MessageBox.Show("Deseja Habilitar estes Produtos ?", "ATENÇÂO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialog = MessageBox.Show("Deseja Habilitar estes Produtos?", "ATENÇÂO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialog == DialogResult.Yes)
                 {
                     for (int i = 0; i < dataGridView.SelectedRows.Count; i++)
@@ -895,7 +895,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
                     }
                     GlobalHelper.Listas.Produto = ProdutoController.GetAll();
                     Filtrar();
-                    MessageBox.Show("Produtos Habilitados Apagadas");
+                    MessageBox.Show("Produtos Habilitados.");
                 }
             }
             else
