@@ -308,6 +308,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             }
             return r.ToString();
         }
+       
         //Layout
         void AberturaForm()
         {

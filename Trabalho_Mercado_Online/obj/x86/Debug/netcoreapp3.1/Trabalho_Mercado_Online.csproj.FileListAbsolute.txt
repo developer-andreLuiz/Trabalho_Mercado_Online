@@ -95,3 +95,6 @@ D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Mercado Online.dll
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Mercado Online.pdb
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.genruntimeconfig.cache
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.Dados.FrmDadosFuncionario.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.Dados.FrmDadosFuncionarioCargo.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\netcoreapp3.1\Trabalho_Mercado_Online.Views.Dados.FrmDadosFuncionarios.resources
