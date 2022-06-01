@@ -62,7 +62,6 @@ namespace Trabalho_Mercado_Online.Views.Armazenamento
             nUPEstante.Value = 1;
             nUPPrateleira.Value = 1;
             chkEstanteProdutoVariado.Checked = true;
-            chkPrateleiraLivre.Checked = true;
         }
         #endregion
 
@@ -96,8 +95,6 @@ namespace Trabalho_Mercado_Online.Views.Armazenamento
             if (cbPrateleira.SelectedValue != null)
             {
                 LojaPrateleira lojaPrateleira = ListaPrateleira.Find(x => x.Id == int.Parse(cbPrateleira.SelectedValue.ToString()));
-                chkPrateleiraLivre.Checked = lojaPrateleira.Livre > 0 ? true : false;
-               
             }
         }
         //Estante 
@@ -184,7 +181,6 @@ namespace Trabalho_Mercado_Online.Views.Armazenamento
                     LojaPrateleira lojaPrateleira = new LojaPrateleira();
                     valor++;
                     lojaPrateleira.LojaEstante = estante;
-                    lojaPrateleira.Livre = 1;
                     lojaPrateleira.Codigo = valor;
                     LojaPrateleiraController.Gravar(lojaPrateleira);
                 }
@@ -241,8 +237,7 @@ namespace Trabalho_Mercado_Online.Views.Armazenamento
             {
                 LojaPrateleira lojaPrateleira = new LojaPrateleira();
                 lojaPrateleira=ListaPrateleira.Find(x => x.LojaEstante == Convert.ToInt32(cbEstante.Text) && x.Codigo == Convert.ToInt32(cbPrateleira.Text));
-                lojaPrateleira.Livre= chkPrateleiraLivre.Checked == true ? 1 : 0;
-
+                
                 LojaPrateleiraController.Gravar(lojaPrateleira);
                 AtualizarDados();
                 AtualizarTela();

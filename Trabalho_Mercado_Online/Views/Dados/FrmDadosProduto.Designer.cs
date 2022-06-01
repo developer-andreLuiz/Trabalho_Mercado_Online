@@ -35,6 +35,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.chkHabilitado = new System.Windows.Forms.CheckBox();
             this.btnFechar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnImagensOnline = new System.Windows.Forms.Button();
@@ -97,7 +98,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.label3 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.chkHabilitado = new System.Windows.Forms.CheckBox();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDVolume)).BeginInit();
@@ -176,6 +176,19 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(900, 648);
             this.panelMain.TabIndex = 555;
+            // 
+            // chkHabilitado
+            // 
+            this.chkHabilitado.AutoSize = true;
+            this.chkHabilitado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chkHabilitado.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.chkHabilitado.Location = new System.Drawing.Point(573, 521);
+            this.chkHabilitado.Name = "chkHabilitado";
+            this.chkHabilitado.Size = new System.Drawing.Size(91, 20);
+            this.chkHabilitado.TabIndex = 55566;
+            this.chkHabilitado.TabStop = false;
+            this.chkHabilitado.Text = "Habilitado";
+            this.chkHabilitado.UseVisualStyleBackColor = true;
             // 
             // btnFechar
             // 
@@ -417,7 +430,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             // btnDeletar
             // 
             this.btnDeletar.BackColor = System.Drawing.Color.Black;
-            this.btnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeletar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDeletar.ForeColor = System.Drawing.Color.White;
@@ -897,7 +910,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Cyan;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.MidnightBlue;
             this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -1029,19 +1041,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.lblId.Size = new System.Drawing.Size(29, 32);
             this.lblId.TabIndex = 5555;
             this.lblId.Text = "0";
-            // 
-            // chkHabilitado
-            // 
-            this.chkHabilitado.AutoSize = true;
-            this.chkHabilitado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.chkHabilitado.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkHabilitado.Location = new System.Drawing.Point(573, 521);
-            this.chkHabilitado.Name = "chkHabilitado";
-            this.chkHabilitado.Size = new System.Drawing.Size(91, 20);
-            this.chkHabilitado.TabIndex = 55566;
-            this.chkHabilitado.TabStop = false;
-            this.chkHabilitado.Text = "Habilitado";
-            this.chkHabilitado.UseVisualStyleBackColor = true;
             // 
             // FrmDadosProduto
             // 

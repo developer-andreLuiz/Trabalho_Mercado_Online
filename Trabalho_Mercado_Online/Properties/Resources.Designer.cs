@@ -83,6 +83,16 @@ namespace Trabalho_Mercado_Online.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap category {
+            get {
+                object obj = ResourceManager.GetObject("category", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_access_40x40 {
             get {
                 object obj = ResourceManager.GetObject("icon_access_40x40", resourceCulture);
@@ -466,16 +476,6 @@ namespace Trabalho_Mercado_Online.Properties {
         internal static System.Drawing.Bitmap icon_warehouse_40x40 {
             get {
                 object obj = ResourceManager.GetObject("icon_warehouse_40x40", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap image_category_550x310 {
-            get {
-                object obj = ResourceManager.GetObject("image_category_550x310", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

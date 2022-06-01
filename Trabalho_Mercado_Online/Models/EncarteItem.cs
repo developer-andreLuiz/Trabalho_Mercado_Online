@@ -12,7 +12,5 @@ namespace Trabalho_Mercado_Online.Models
         public string Img { get; set; }
         public string Produto { get; set; }
         public string Valor { get; set; }
-
-        public virtual Encarte EncarteNavigation { get; set; }
     }
 }

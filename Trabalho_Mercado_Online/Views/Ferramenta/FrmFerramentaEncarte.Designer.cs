@@ -505,7 +505,6 @@ namespace Trabalho_Mercado_Online.Views.Ferramenta
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Cyan;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.MidnightBlue;
             this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -538,7 +537,7 @@ namespace Trabalho_Mercado_Online.Views.Ferramenta
             this.dataGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dataGridView.RowTemplate.Height = 25;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(399, 256);
+            this.dataGridView.Size = new System.Drawing.Size(400, 256);
             this.dataGridView.TabIndex = 55647;
             this.dataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellDoubleClick);
             // 

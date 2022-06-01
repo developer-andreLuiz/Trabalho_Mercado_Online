@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8MEWHt3AqMDPGqw0CGqXiXKWsPchdPzlEXUCj7F1dCz71uyxDBBksCiFVEUAQsrWnHyP3TKz9fCoujKeFEOLcA==",
+  "dgSpecHash": "DrRSfAHi0mCtwXONGg0IPf/HUVkbRuYKjgyDtT5+0FUOPKkglH3g9Bh4Pfkj4vsGntlD6SVZLeTZJA2+c+CKzQ==",
   "success": true,
   "projectFilePath": "D:\\Git\\Trabalho_Mercado_Online\\Trabalho_Mercado_Online\\Trabalho_Mercado_Online.csproj",
   "expectedPackageFiles": [
@@ -100,7 +100,6 @@
     "C:\\Users\\Developer\\.nuget\\packages\\system.reflection.typeextensions\\4.3.0\\system.reflection.typeextensions.4.3.0.nupkg.sha512",
     "C:\\Users\\Developer\\.nuget\\packages\\system.resources.resourcemanager\\4.3.0\\system.resources.resourcemanager.4.3.0.nupkg.sha512",
     "C:\\Users\\Developer\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
-    "C:\\Users\\Developer\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
     "C:\\Users\\Developer\\.nuget\\packages\\system.runtime.extensions\\4.3.0\\system.runtime.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\Developer\\.nuget\\packages\\system.runtime.handles\\4.3.0\\system.runtime.handles.4.3.0.nupkg.sha512",
     "C:\\Users\\Developer\\.nuget\\packages\\system.runtime.interopservices\\4.3.0\\system.runtime.interopservices.4.3.0.nupkg.sha512",

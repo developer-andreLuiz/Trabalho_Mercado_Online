@@ -141,9 +141,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             obj.Img = "" + obj.Id;
             if (novo == true && pathImagem.Length == 0)
             {
-                retorno.Evento = false;
-                retorno.Mensagem = "Produto sem Imagem";
-                return retorno;
+                pathImagem = System.IO.Directory.GetCurrentDirectory() + "\\Image.jpg";
             }
 
             if (cbCategoriasNivel1.Text.Length > 0)
@@ -483,7 +481,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
                             var ListaProdutoCategoria = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel3 == cat.Id);
                             foreach (var item in ListaProdutoCategoria)
                             {
-                                //ProdutoCategoriaController.Deletar(item);
+                                ProdutoCategoriaController.Deletar(item);
                             }
 
                             Limpar();

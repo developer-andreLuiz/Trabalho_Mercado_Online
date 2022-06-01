@@ -46,7 +46,6 @@
             this.lblTotalGeralPrateleira = new System.Windows.Forms.Label();
             this.lblTotalAtualPrateleira = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.chkPrateleiraLivre = new System.Windows.Forms.CheckBox();
             this.nUPPrateleira = new System.Windows.Forms.NumericUpDown();
             this.lblTotalGeralEstante = new System.Windows.Forms.Label();
             this.btnPrateleiraAdicionar = new System.Windows.Forms.Button();
@@ -89,7 +88,6 @@
             this.panelMain.Controls.Add(this.lblTotalGeralPrateleira);
             this.panelMain.Controls.Add(this.lblTotalAtualPrateleira);
             this.panelMain.Controls.Add(this.button1);
-            this.panelMain.Controls.Add(this.chkPrateleiraLivre);
             this.panelMain.Controls.Add(this.nUPPrateleira);
             this.panelMain.Controls.Add(this.lblTotalGeralEstante);
             this.panelMain.Controls.Add(this.btnPrateleiraAdicionar);
@@ -364,18 +362,6 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // chkPrateleiraLivre
-            // 
-            this.chkPrateleiraLivre.AutoSize = true;
-            this.chkPrateleiraLivre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.chkPrateleiraLivre.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.chkPrateleiraLivre.Location = new System.Drawing.Point(512, 237);
-            this.chkPrateleiraLivre.Name = "chkPrateleiraLivre";
-            this.chkPrateleiraLivre.Size = new System.Drawing.Size(66, 23);
-            this.chkPrateleiraLivre.TabIndex = 55614;
-            this.chkPrateleiraLivre.Text = "Livre";
-            this.chkPrateleiraLivre.UseVisualStyleBackColor = true;
-            // 
             // nUPPrateleira
             // 
             this.nUPPrateleira.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
@@ -588,7 +574,6 @@
         private System.Windows.Forms.Label lblTotalGeralEstante;
         private System.Windows.Forms.NumericUpDown nUPPrateleira;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox chkPrateleiraLivre;
         private System.Windows.Forms.Label lblTotalGeralPrateleira;
         private System.Windows.Forms.Label lblTotalAtualPrateleira;
         private System.Windows.Forms.NumericUpDown numericUpDown2;

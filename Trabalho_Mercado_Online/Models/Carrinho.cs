@@ -11,8 +11,5 @@ namespace Trabalho_Mercado_Online.Models
         public int Usuario { get; set; }
         public int Produto { get; set; }
         public int Quantidade { get; set; }
-
-        public virtual Produto ProdutoNavigation { get; set; }
-        public virtual Usuario UsuarioNavigation { get; set; }
     }
 }

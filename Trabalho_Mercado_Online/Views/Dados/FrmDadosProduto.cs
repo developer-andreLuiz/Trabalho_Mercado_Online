@@ -146,9 +146,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             {
                 if (pathImagem.Length == 0)
                 {
-                    retorno.Evento = false;
-                    retorno.Mensagem = "Produto sem Imagem";
-                    return retorno;
+                    pathImagem = System.IO.Directory.GetCurrentDirectory() + "\\Image.jpg";
                 }
                 if (txtCodigoBarra.Text.Length > 0)
                 {
@@ -295,6 +293,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             }
             dataGridView.DataSource = lista;
             dataGridView.Columns[0].Width = 50;
+            dataGridView.Columns[1].Width = 150;
         }
         string RetornoUltimoIguala()
         {

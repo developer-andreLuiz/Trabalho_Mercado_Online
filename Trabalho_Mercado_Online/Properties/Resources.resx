@@ -223,9 +223,6 @@
   <data name="icon_products_add_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icon_products_add_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="image_category_550x310" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\image_category_550x310.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icon_grid_Image_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icon_grid_Image_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -249,5 +246,8 @@
   </data>
   <data name="icon_print_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icon_print_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="category" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\category.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

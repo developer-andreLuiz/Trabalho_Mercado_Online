@@ -55,10 +55,6 @@ namespace Trabalho_Mercado_Online.Models
 
                 entity.HasComment("tabela com os dados do carrinho dos clientes");
 
-                entity.HasIndex(e => e.Produto, "fk_carrinho_produto_idx");
-
-                entity.HasIndex(e => e.Usuario, "fk_carrinho_usuario_idx");
-
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
                     .HasColumnName("id")
@@ -78,16 +74,6 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("int(11)")
                     .HasColumnName("usuario")
                     .HasComment("referencia ao id do usuario");
-
-                entity.HasOne(d => d.ProdutoNavigation)
-                    .WithMany(p => p.Carrinhos)
-                    .HasForeignKey(d => d.Produto)
-                    .HasConstraintName("fk_carrinho_produto");
-
-                entity.HasOne(d => d.UsuarioNavigation)
-                    .WithMany(p => p.Carrinhos)
-                    .HasForeignKey(d => d.Usuario)
-                    .HasConstraintName("fk_carrinho_usuario");
             });
 
             modelBuilder.Entity<CategoriaNivel1>(entity =>
@@ -125,8 +111,6 @@ namespace Trabalho_Mercado_Online.Models
 
                 entity.HasComment("tabela com os dados da categoria nivel 2");
 
-                entity.HasIndex(e => e.CategoriaNivel1, "fk_categoria_nivel_1_idx");
-
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
                     .HasColumnName("id")
@@ -153,11 +137,6 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("int(11)")
                     .HasColumnName("ordem")
                     .HasComment("ordem de exibição");
-
-                entity.HasOne(d => d.CategoriaNivel1Navigation)
-                    .WithMany(p => p.CategoriaNivel2s)
-                    .HasForeignKey(d => d.CategoriaNivel1)
-                    .HasConstraintName("fk_categoria_nivel_2_categoria_nivel_1");
             });
 
             modelBuilder.Entity<CategoriaNivel3>(entity =>
@@ -165,8 +144,6 @@ namespace Trabalho_Mercado_Online.Models
                 entity.ToTable("categoria_nivel_3");
 
                 entity.HasComment("tabela com os dados da categoria nivel 3");
-
-                entity.HasIndex(e => e.CategoriaNivel2, "fk_categoria_nivel_2_idx");
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
@@ -199,11 +176,6 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("int(11)")
                     .HasColumnName("ordem")
                     .HasComment("ordem de exibição");
-
-                entity.HasOne(d => d.CategoriaNivel2Navigation)
-                    .WithMany(p => p.CategoriaNivel3s)
-                    .HasForeignKey(d => d.CategoriaNivel2)
-                    .HasConstraintName("fk_categoria_nivel_3_categoria_nivel_2");
             });
 
             modelBuilder.Entity<CategoriaNivel4>(entity =>
@@ -211,8 +183,6 @@ namespace Trabalho_Mercado_Online.Models
                 entity.ToTable("categoria_nivel_4");
 
                 entity.HasComment("tabela com os dados da categoria nivel 4");
-
-                entity.HasIndex(e => e.CategoriaNivel3, "fk_categoria_nivel_3_idx");
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
@@ -250,11 +220,6 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("int(11)")
                     .HasColumnName("ordem")
                     .HasComment("ordem de exibição");
-
-                entity.HasOne(d => d.CategoriaNivel3Navigation)
-                    .WithMany(p => p.CategoriaNivel4s)
-                    .HasForeignKey(d => d.CategoriaNivel3)
-                    .HasConstraintName("fk_categoria_nivel_4_categoria_nivel_3");
             });
 
             modelBuilder.Entity<Encarte>(entity =>
@@ -297,8 +262,6 @@ namespace Trabalho_Mercado_Online.Models
             {
                 entity.ToTable("encarte_item");
 
-                entity.HasIndex(e => e.Encarte, "fk_encarte_item_encarte_idx");
-
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
                     .HasColumnName("id")
@@ -326,18 +289,11 @@ namespace Trabalho_Mercado_Online.Models
                     .HasMaxLength(255)
                     .HasColumnName("valor")
                     .HasComment("valor do produto");
-
-                entity.HasOne(d => d.EncarteNavigation)
-                    .WithMany(p => p.EncarteItems)
-                    .HasForeignKey(d => d.Encarte)
-                    .HasConstraintName("fk_encarte_item_encarte");
             });
 
             modelBuilder.Entity<Funcionario>(entity =>
             {
                 entity.ToTable("funcionario");
-
-                entity.HasIndex(e => e.Cargo, "fk_cargo_idx");
 
                 entity.HasIndex(e => e.Senha, "senha_UNIQUE")
                     .IsUnique();
@@ -400,12 +356,6 @@ namespace Trabalho_Mercado_Online.Models
                 entity.Property(e => e.ValeCompra)
                     .HasPrecision(10, 2)
                     .HasColumnName("vale_compra");
-
-                entity.HasOne(d => d.CargoNavigation)
-                    .WithMany(p => p.Funcionarios)
-                    .HasForeignKey(d => d.Cargo)
-                    .OnDelete(DeleteBehavior.SetNull)
-                    .HasConstraintName("fk_funcionario_cargo");
             });
 
             modelBuilder.Entity<FuncionarioCargo>(entity =>
@@ -449,8 +399,6 @@ namespace Trabalho_Mercado_Online.Models
             {
                 entity.ToTable("loja_prateleira");
 
-                entity.HasIndex(e => e.LojaEstante, "fk_loja_prateleira_idx");
-
                 entity.HasIndex(e => e.Id, "id_UNIQUE")
                     .IsUnique();
 
@@ -464,20 +412,10 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnName("codigo")
                     .HasComment("codigo da prateleira por estante \nexemplo \nestante 1 (loja_estante) prateleira 5 (codigo)\nestante 3 prateleira 5");
 
-                entity.Property(e => e.Livre)
-                    .HasColumnType("int(11)")
-                    .HasColumnName("livre")
-                    .HasComment("livre  para armazenar mais itens");
-
                 entity.Property(e => e.LojaEstante)
                     .HasColumnType("int(11)")
                     .HasColumnName("loja_estante")
                     .HasComment("referente ao id de loja_estante");
-
-                entity.HasOne(d => d.LojaEstanteNavigation)
-                    .WithMany(p => p.LojaPrateleiras)
-                    .HasForeignKey(d => d.LojaEstante)
-                    .HasConstraintName("fk_loja_prateleira_loja_estante");
             });
 
             modelBuilder.Entity<Produto>(entity =>
@@ -583,16 +521,6 @@ namespace Trabalho_Mercado_Online.Models
 
                 entity.HasComment("tabela com os dados dos produtos relacionando com as categorias");
 
-                entity.HasIndex(e => e.CategoriaNivel1, "fk_categoria_nivel_1_idx");
-
-                entity.HasIndex(e => e.CategoriaNivel2, "fk_categoria_nivel_2_idx");
-
-                entity.HasIndex(e => e.CategoriaNivel3, "fk_categoria_nivel_3_idx");
-
-                entity.HasIndex(e => e.CategoriaNivel4, "fk_categoria_nivel_4_idx");
-
-                entity.HasIndex(e => e.Produto, "fk_produto_categoria_produto_idx");
-
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
                     .HasColumnName("id")
@@ -606,19 +534,16 @@ namespace Trabalho_Mercado_Online.Models
                 entity.Property(e => e.CategoriaNivel2)
                     .HasColumnType("int(11)")
                     .HasColumnName("categoria_nivel_2")
-                    .HasDefaultValueSql("'0'")
                     .HasComment("referecia ao id de categoria nivel 2");
 
                 entity.Property(e => e.CategoriaNivel3)
                     .HasColumnType("int(11)")
                     .HasColumnName("categoria_nivel_3")
-                    .HasDefaultValueSql("'0'")
                     .HasComment("referecia ao id de categoria nivel 3");
 
                 entity.Property(e => e.CategoriaNivel4)
                     .HasColumnType("int(11)")
                     .HasColumnName("categoria_nivel_4")
-                    .HasDefaultValueSql("'0'")
                     .HasComment("referecia ao id de categoria nivel 4");
 
                 entity.Property(e => e.Ordem)
@@ -630,34 +555,6 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("int(11)")
                     .HasColumnName("produto")
                     .HasComment("referencia ao id do produto");
-
-                entity.HasOne(d => d.CategoriaNivel1Navigation)
-                    .WithMany(p => p.ProdutoCategoria)
-                    .HasForeignKey(d => d.CategoriaNivel1)
-                    .HasConstraintName("fk_produto_categoria_categoria_nivel_1");
-
-                entity.HasOne(d => d.CategoriaNivel2Navigation)
-                    .WithMany(p => p.ProdutoCategoria)
-                    .HasForeignKey(d => d.CategoriaNivel2)
-                    .OnDelete(DeleteBehavior.Cascade)
-                    .HasConstraintName("fk_produto_categoria_categoria_nivel_2");
-
-                entity.HasOne(d => d.CategoriaNivel3Navigation)
-                    .WithMany(p => p.ProdutoCategoria)
-                    .HasForeignKey(d => d.CategoriaNivel3)
-                    .OnDelete(DeleteBehavior.Cascade)
-                    .HasConstraintName("fk_produto_categoria_categoria_nivel_3");
-
-                entity.HasOne(d => d.CategoriaNivel4Navigation)
-                    .WithMany(p => p.ProdutoCategoria)
-                    .HasForeignKey(d => d.CategoriaNivel4)
-                    .OnDelete(DeleteBehavior.Cascade)
-                    .HasConstraintName("fk_produto_categoria_categoria_nivel_4");
-
-                entity.HasOne(d => d.ProdutoNavigation)
-                    .WithMany(p => p.ProdutoCategoria)
-                    .HasForeignKey(d => d.Produto)
-                    .HasConstraintName("fk_produto_categoria_produto");
             });
 
             modelBuilder.Entity<ProdutoCodigoBarra>(entity =>
@@ -665,8 +562,6 @@ namespace Trabalho_Mercado_Online.Models
                 entity.ToTable("produto_codigo_barra");
 
                 entity.HasComment("tabela com dados dos codigos de barra relacionando com o codigo do produto");
-
-                entity.HasIndex(e => e.Produto, "fk_produto_idx");
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
@@ -683,22 +578,11 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("int(11)")
                     .HasColumnName("produto")
                     .HasComment("referencia ao id de produto");
-
-                entity.HasOne(d => d.ProdutoNavigation)
-                    .WithMany(p => p.ProdutoCodigoBarras)
-                    .HasForeignKey(d => d.Produto)
-                    .HasConstraintName("fk_produto_codigo_barra_produto");
             });
 
             modelBuilder.Entity<ProdutoLoja>(entity =>
             {
                 entity.ToTable("produto_loja");
-
-                entity.HasIndex(e => e.Funcionario, "fk_produto_loja_funcionario_idx");
-
-                entity.HasIndex(e => e.Prateleira, "fk_produto_loja_prateleira_idx");
-
-                entity.HasIndex(e => e.Produto, "fk_produto_loja_produto_idx");
 
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
@@ -748,22 +632,6 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("datetime")
                     .HasColumnName("validade")
                     .HasComment("validade do produto");
-
-                entity.HasOne(d => d.FuncionarioNavigation)
-                    .WithMany(p => p.ProdutoLojas)
-                    .HasForeignKey(d => d.Funcionario)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_produto_loja_funcionario");
-
-                entity.HasOne(d => d.PrateleiraNavigation)
-                    .WithMany(p => p.ProdutoLojas)
-                    .HasForeignKey(d => d.Prateleira)
-                    .HasConstraintName("fk_produto_loja_prateleira");
-
-                entity.HasOne(d => d.ProdutoNavigation)
-                    .WithMany(p => p.ProdutoLojas)
-                    .HasForeignKey(d => d.Produto)
-                    .HasConstraintName("fk_produto_loja_produto");
             });
 
             modelBuilder.Entity<Usuario>(entity =>
@@ -829,8 +697,6 @@ namespace Trabalho_Mercado_Online.Models
             {
                 entity.ToTable("usuario_endereco");
 
-                entity.HasIndex(e => e.Usuario, "fk_usuario_endereco_usuario_idx");
-
                 entity.Property(e => e.Id)
                     .HasColumnType("int(11)")
                     .ValueGeneratedNever()
@@ -868,11 +734,6 @@ namespace Trabalho_Mercado_Online.Models
                     .HasColumnType("int(11)")
                     .HasColumnName("usuario")
                     .HasComment("referencia ao id de usuario");
-
-                entity.HasOne(d => d.UsuarioNavigation)
-                    .WithMany(p => p.UsuarioEnderecos)
-                    .HasForeignKey(d => d.Usuario)
-                    .HasConstraintName("fk_usuario_endereco_usuario");
             });
 
             OnModelCreatingPartial(modelBuilder);

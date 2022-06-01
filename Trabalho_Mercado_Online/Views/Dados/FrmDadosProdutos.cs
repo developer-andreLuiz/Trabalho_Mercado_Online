@@ -18,7 +18,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
     public partial class FrmDadosProdutos : Form
     {
         #region Variaveis 
-        //Open Form
         private Form activeForm = null;
         string ListaImprimir = string.Empty;
         #endregion
@@ -40,9 +39,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
             ChildForm.BringToFront();
             ChildForm.Show();
         }
-
-
-       
         //Filtro
         public void Filtrar()
         {
@@ -61,9 +57,9 @@ namespace Trabalho_Mercado_Online.Views.Dados
             bool categoria = chkCategoria.Checked;
             bool semCategoria = chkSemCategoria.Checked;
 
-            bool categoriaNivel1 = chkCategoriaNivel1.Checked;
-            bool categoriaNivel2 = chkCategoriaNivel2.Checked;
-            bool categoriaNivel3 = chkCategoriaNivel3.Checked;
+            bool categoriaNivel1 = chkCategoriaNivel1.Checked && cbNivel1.SelectedValue != null ? true : false;
+            bool categoriaNivel2 = chkCategoriaNivel2.Checked && cbNivel2.SelectedValue != null ? true : false;
+            bool categoriaNivel3 = chkCategoriaNivel3.Checked && cbNivel3.SelectedValue != null ? true : false;
             //Sem Filtro
             ListaProdutos.AddRange(GlobalHelper.Listas.Produto);
 
@@ -113,106 +109,60 @@ namespace Trabalho_Mercado_Online.Views.Dados
             }
             if (categoria)
             {
-                if (categoriaNivel1)
+                //Apenas Nivel 1
+                if (categoriaNivel1 == true && categoriaNivel2 == false && categoriaNivel3 ==false)
                 {
-                    if (cbNivel1.SelectedValue != null)
+                    int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
+                    var ltCateorias = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == 0 && x.CategoriaNivel3 == 0 && x.CategoriaNivel4 == 0);
+                    List<Produto> ListaBase = new List<Produto>();
+                    ListaBase.AddRange(ListaProdutos);
+                    foreach (var item in ListaBase)
                     {
-                        int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
-                        var ltCateorias = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == valor1);
-                        List<Produto> ListaBase = new List<Produto>();
-                        ListaBase.AddRange(ListaProdutos);
-                        foreach (var item in ListaBase)
+                        var itemcategoria = ltCateorias.Find(x => x.Produto == item.Id);
+                        if (itemcategoria == null)
                         {
-                            var itemcategoria = ltCateorias.Find(x => x.Produto == item.Id);
-                            if (itemcategoria == null)
-                            {
-                                ListaProdutos.Remove(item);
-                            }
+                            ListaProdutos.Remove(item);
                         }
                     }
                 }
-
-                if (categoriaNivel2)
+                
+                //Apenas Nivel 1 e 2
+                if (categoriaNivel1 == true && categoriaNivel2 == true && categoriaNivel3 == false)
                 {
-                    if (cbNivel2.SelectedValue != null)
+                    int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
+                    int valor2 = int.Parse(cbNivel2.SelectedValue.ToString());
+                    var ltCateorias = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == valor2 && x.CategoriaNivel3 == 0 && x.CategoriaNivel4 == 0);
+                    List<Produto> ListaBase = new List<Produto>();
+                    ListaBase.AddRange(ListaProdutos);
+                    foreach (var item in ListaBase)
                     {
-                        int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
-                        int valor2 = int.Parse(cbNivel2.SelectedValue.ToString());
-                        var ltCateorias = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == valor2);
-                        List<Produto> ListaBase = new List<Produto>();
-                        ListaBase.AddRange(ListaProdutos);
-                        foreach (var item in ListaBase)
+                        var itemcategoria = ltCateorias.Find(x => x.Produto == item.Id);
+                        if (itemcategoria == null)
                         {
-                            var itemcategoria = ltCateorias.Find(x => x.Produto == item.Id);
-                            if (itemcategoria == null)
-                            {
-                                ListaProdutos.Remove(item);
-                            }
+                            ListaProdutos.Remove(item);
                         }
                     }
                 }
-                else
+                
+                //Apenas Nivel 1, 2 e 3
+                if (categoriaNivel1 == true && categoriaNivel2 == true && categoriaNivel3 == true)
                 {
-                    if (cbNivel1.SelectedValue != null)
+                    int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
+                    int valor2 = int.Parse(cbNivel2.SelectedValue.ToString());
+                    int valor3 = int.Parse(cbNivel3.SelectedValue.ToString());
+                    var ltCateorias = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == valor2 && x.CategoriaNivel3 == valor3 && x.CategoriaNivel4 == 0);
+                    List<Produto> ListaBase = new List<Produto>();
+                    ListaBase.AddRange(ListaProdutos);
+                    foreach (var item in ListaBase)
                     {
-                        int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
-                        var ltCateorias = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == null && x.CategoriaNivel3 == null);
-                        List<Produto> ListaBase = new List<Produto>();
-                        ListaBase.AddRange(ListaProdutos);
-                        foreach (var item in ListaBase)
+                        var itemcategoria = ltCateorias.Find(x => x.Produto == item.Id);
+                        if (itemcategoria == null)
                         {
-                            var itemcategoria = ltCateorias.Find(x => x.Produto == item.Id);
-                            if (itemcategoria == null)
-                            {
-                                ListaProdutos.Remove(item);
-                            }
-                        }
-
-
-                    }
-                }
-
-                if (categoriaNivel3)
-                {
-                    if (cbNivel3.SelectedValue != null)
-                    {
-                        int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
-                        int valor2 = int.Parse(cbNivel2.SelectedValue.ToString());
-                        int valor3 = int.Parse(cbNivel3.SelectedValue.ToString());
-                        var ltCateorias = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == valor2 && x.CategoriaNivel3 == valor3);
-                        List<Produto> ListaBase = new List<Produto>();
-                        ListaBase.AddRange(ListaProdutos);
-                        foreach (var item in ListaBase)
-                        {
-                            var itemcategoria = ltCateorias.Find(x => x.Produto == item.Id);
-                            if (itemcategoria == null)
-                            {
-                                ListaProdutos.Remove(item);
-                            }
-                        }
-
-
-                    }
-                }
-                else
-                {
-                    if (categoriaNivel2 && cbNivel2.SelectedValue != null)
-                    {
-                        int valor1 = int.Parse(cbNivel1.SelectedValue.ToString());
-                        int valor2 = int.Parse(cbNivel2.SelectedValue.ToString());
-                        var ltCateorias = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == valor1 && x.CategoriaNivel2 == valor2 && x.CategoriaNivel3 == null);
-                        List<Produto> ListaBase = new List<Produto>();
-                        ListaBase.AddRange(ListaProdutos);
-                        foreach (var item in ListaBase)
-                        {
-                            var itemcategoria = ltCateorias.Find(x => x.Produto == item.Id);
-                            if (itemcategoria == null)
-                            {
-                                ListaProdutos.Remove(item);
-                            }
+                            ListaProdutos.Remove(item);
                         }
                     }
                 }
+               
 
             }
 
@@ -258,7 +208,15 @@ namespace Trabalho_Mercado_Online.Views.Dados
                 default: lblSelecionados.Text = $"{dataGridView.SelectedRows.Count} Selecionados"; break;
             }
             dataGridView.Columns[0].Width = 70;
-            dataGridView.Columns[1].Width = 350;
+            dataGridView.Columns[1].Width = 390;
+
+            dataGridView.Columns[2].Width = 70;
+            dataGridView.Columns[3].Width = 80;
+            dataGridView.Columns[4].Width = 80;
+            dataGridView.Columns[5].Width = 80;
+            dataGridView.Columns[6].Width = 80;
+
+
             if (ListaGrid.Count > 0)
             {
                 btnAdicionar.Enabled = true;
@@ -292,7 +250,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
             }
             #endregion
         }
-
         public void FiltrarCategorias(int categoria)
         {
             List<ProdutosDataGridHelper_Model> ListaGrid = new List<ProdutosDataGridHelper_Model>();
@@ -442,7 +399,13 @@ namespace Trabalho_Mercado_Online.Views.Dados
                 default: lblSelecionados.Text = $"{dataGridView.SelectedRows.Count} Selecionados"; break;
             }
             dataGridView.Columns[0].Width = 70;
-            dataGridView.Columns[1].Width = 350;
+            dataGridView.Columns[1].Width = 390;
+
+            dataGridView.Columns[2].Width = 70;
+            dataGridView.Columns[3].Width = 80;
+            dataGridView.Columns[4].Width = 80;
+            dataGridView.Columns[5].Width = 80;
+            dataGridView.Columns[6].Width = 80;
             if (ListaGrid.Count > 0)
             {
                 btnAdicionar.Enabled = true;
@@ -474,8 +437,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
             }
             #endregion
         }
-
-
         //Listas
         public void AtualizarListas()
         {
@@ -488,7 +449,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
 
             
         }
-
         //Combo Box
         void ComboCategoriasNivel1()
         {
@@ -501,6 +461,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
         void ComboCategoriasNivel2()
         {
             cbNivel2.DataSource = null;
+            cbNivel3.DataSource = null;
             if (cbNivel1.SelectedValue != null)
             {
                 int id_Nivel1 = int.Parse(cbNivel1.SelectedValue.ToString());
@@ -545,7 +506,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
             Filtrar();
             txtDescricao.Focus();
         }
-
         //ComboBox
         private void cbNivel1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -588,7 +548,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
                 }
             }
         }
-
         //Filtros
         private void chkTravarFiltro_CheckedChanged(object sender, EventArgs e)
         {
@@ -698,8 +657,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
                 }
             }
         }
-
-
         //Buttons
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
@@ -818,7 +775,15 @@ namespace Trabalho_Mercado_Online.Views.Dados
                     default: lblSelecionados.Text = $"{dataGridView.SelectedRows.Count} Selecionados"; break;
                 }
                 dataGridView.Columns[0].Width = 70;
-                dataGridView.Columns[1].Width = 350;
+                dataGridView.Columns[1].Width = 390;
+
+                dataGridView.Columns[2].HeaderText = "Nivel 1";
+                dataGridView.Columns[3].HeaderText = "Nivel 2";
+                dataGridView.Columns[4].HeaderText = "Nivel 3";
+
+                dataGridView.Columns[2].Width = 130;
+                dataGridView.Columns[3].Width = 130;
+                dataGridView.Columns[4].Width = 130;
                 if (ListaGrid.Count > 0)
                 {
                     btnAdicionar.Enabled = true;
@@ -947,88 +912,120 @@ namespace Trabalho_Mercado_Online.Views.Dados
         }
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
+            int nivel = 0;
+            
             int nivel1 = 0;
-            int? nivel2 =null;
-            int? nivel3 =null;
+            int nivel2 = 0;
+            int nivel3 = 0;
+            int nivel4 = 0;
+            
             string Nome1 = "Vazio";
             string Nome2 = "Vazio";
             string Nome3 = "Vazio";
 
-            if (chkCategoriaNivel1.Checked)
+            if (chkCategoriaNivel1.Checked && cbNivel1.SelectedValue != null)
             {
-                if (cbNivel1.SelectedValue != null)
-                {
-                    nivel1 = int.Parse(cbNivel1.SelectedValue.ToString());
-                    Nome1 = GlobalHelper.Listas.CategoriaNivel1.Find(x => x.Id == nivel1).Nome;
-                }
+                nivel = 1;
+                nivel1 = int.Parse(cbNivel1.SelectedValue.ToString());
+                Nome1 = GlobalHelper.Listas.CategoriaNivel1.Find(x => x.Id == nivel1).Nome;
             }
-
-            if (chkCategoriaNivel2.Checked)
+            if (chkCategoriaNivel2.Checked && cbNivel2.SelectedValue != null)
             {
-                if (cbNivel2.SelectedValue != null)
-                {
-                    nivel2 = int.Parse(cbNivel2.SelectedValue.ToString());
-                    Nome2 = GlobalHelper.Listas.CategoriaNivel2.Find(x => x.Id == nivel2).Nome;
-                }
+                nivel = 2;
+                nivel2 = int.Parse(cbNivel2.SelectedValue.ToString());
+                Nome2 = GlobalHelper.Listas.CategoriaNivel2.Find(x => x.Id == nivel2).Nome;
             }
-
-            if (chkCategoriaNivel3.Checked)
+            if (chkCategoriaNivel3.Checked && cbNivel3.SelectedValue != null)
             {
-                if (cbNivel3.SelectedValue != null)
-                {
-                    nivel3 = int.Parse(cbNivel3.SelectedValue.ToString());
-                    Nome3 = GlobalHelper.Listas.CategoriaNivel3.Find(x => x.Id == nivel3).Nome;
-                }
+                nivel = 3;
+                nivel3 = int.Parse(cbNivel3.SelectedValue.ToString());
+                Nome3 = GlobalHelper.Listas.CategoriaNivel3.Find(x => x.Id == nivel3).Nome;
             }
-            bool Continuar = true;
+          
+            //Controle de Redundancia 
             if (nivel1 == 0)
             {
-                Continuar = false;
-
+                MessageBox.Show("Nehuma Categoria Selecionada,Não Inserido!", "Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
             }
-
-            if (Continuar)
+            if (nivel == 1)
             {
-                string pergunta = $"Deseja inserir os Produtos nas Categorias:{Environment.NewLine}Categoria Nivel1: {Nome1}.{Environment.NewLine}Categoria Nivel2: {Nome2}.{Environment.NewLine}Categoria Nivel3: {Nome3}.";
-
-                DialogResult dialog = MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (dialog == DialogResult.Yes)
+                List<ProdutoCategorium> lista = new List<ProdutoCategorium>();
+                lista = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == nivel1 && x.CategoriaNivel2 > 0);
+                if (lista.Count > 0)
                 {
-                    for (int i = 0; i < dataGridView.SelectedRows.Count; i++)
-                    {
-                        var valor = dataGridView.SelectedRows[i].Cells[0].Value;
-
-                        int id = int.Parse(valor.ToString());
-                        ProdutoCategorium p = GlobalHelper.Listas.ProdutoCategoria.Find(x => x.Produto == id && x.CategoriaNivel1 == nivel1 && x.CategoriaNivel2 == nivel2 && x.CategoriaNivel3 == nivel3);
-                        if (p == null)
-                        {
-                            p = new ProdutoCategorium();
-                            p.Id = 0;
-                            p.Produto = id;
-                            p.CategoriaNivel1 = nivel1;
-                            p.CategoriaNivel2 = nivel2;
-                            p.CategoriaNivel3 = nivel3;
-                            ProdutoCategoriaController.Gravar(p);
-                        }
-
-                    }
-                    GlobalHelper.Listas.ProdutoCategoria = ProdutoCategoriaController.GetAll();
-                    //Filtrar();
-                    chkTravarFiltro.Checked = false;
-                    MessageBox.Show("Atualizado");
+                    MessageBox.Show("Existe produto viculado no próximo nivel, Desvicule Antes, Não Inserido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
-            else
+            if (nivel == 2)
             {
-                MessageBox.Show("Nehuma Categoria Selecionada");
+                List<ProdutoCategorium> lista = new List<ProdutoCategorium>();
+                lista = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == nivel1 && x.CategoriaNivel2 == 0);
+                if (lista.Count > 0)
+                {
+                    MessageBox.Show("Existe produto viculado em nivel Anterior, Desvicule Antes, Não Inserido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                lista = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == nivel1 && x.CategoriaNivel2 == nivel2 && x.CategoriaNivel3 > 0);
+                if (lista.Count > 0)
+                {
+                    MessageBox.Show("Existe produto viculado no próximo nivel, Desvicule Antes, Não Inserido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            if (nivel == 3)
+            {
+                List<ProdutoCategorium> lista = new List<ProdutoCategorium>();
+                lista = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == nivel1 && x.CategoriaNivel2 == 0);
+                if (lista.Count > 0)
+                {
+                    MessageBox.Show("Existe produto viculado em nivel Anterior, Desvicule Antes, Não Inserido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                
+                lista = GlobalHelper.Listas.ProdutoCategoria.FindAll(x => x.CategoriaNivel1 == nivel1 && x.CategoriaNivel2 == nivel2 && x.CategoriaNivel3 == 0);
+                if (lista.Count > 0)
+                {
+                    MessageBox.Show("Existe produto viculado em nivel Anterior, Desvicule Antes, Não Inserido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            
+            string pergunta = $"Deseja inserir os Produtos nas Categorias:{Environment.NewLine}Categoria Nivel1: {Nome1}.{Environment.NewLine}Categoria Nivel2: {Nome2}.{Environment.NewLine}Categoria Nivel3: {Nome3}.";
+            DialogResult dialog = MessageBox.Show(pergunta, "ATENÇÂO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialog == DialogResult.Yes)
+            {
+                for (int i = 0; i < dataGridView.SelectedRows.Count; i++)
+                {
+                    var valor = dataGridView.SelectedRows[i].Cells[0].Value;
+                    int id = int.Parse(valor.ToString());
+                    ProdutoCategorium p = GlobalHelper.Listas.ProdutoCategoria.Find(x => x.Produto == id && x.CategoriaNivel1 == nivel1 && x.CategoriaNivel2 == nivel2 && x.CategoriaNivel3 == nivel3);
+                    if (p == null)
+                    {
+                        p = new ProdutoCategorium();
+                        p.Id = 0;
+                        p.Produto = id;
+                        p.CategoriaNivel1 = nivel1;
+                        p.CategoriaNivel2 = nivel2;
+                        p.CategoriaNivel3 = nivel3;
+                        p.CategoriaNivel4 = nivel4;
+                        ProdutoCategoriaController.Gravar(p);
+                    }
+
+                }
+                GlobalHelper.Listas.ProdutoCategoria = ProdutoCategoriaController.GetAll();
+                //Filtrar();
+                chkTravarFiltro.Checked = false;
+                MessageBox.Show("Atualizado");
             }
         }
         private void btnRemover_Click(object sender, EventArgs e)
         {
             int nivel1 = 0;
-            int? nivel2 = null;
-            int? nivel3 = null;
+            int nivel2 = 0;
+            int nivel3 = 0;
+            int nivel4 = 0;
             string Nome1 = "Vazio";
             string Nome2 = "Vazio";
             string Nome3 = "Vazio";
@@ -1081,7 +1078,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
                         int id = int.Parse(valor.ToString());
 
 
-                        ProdutoCategorium p = GlobalHelper.Listas.ProdutoCategoria.Find(x => x.Produto == id && x.CategoriaNivel1 == nivel1 && x.CategoriaNivel2 == nivel2 && x.CategoriaNivel3 == nivel3);
+                        ProdutoCategorium p = GlobalHelper.Listas.ProdutoCategoria.Find(x => x.Produto == id && x.CategoriaNivel1 == nivel1 && x.CategoriaNivel2 == nivel2 && x.CategoriaNivel3 == nivel3 && x.CategoriaNivel4 == nivel4);
                         if (p != null)
                         {
                             ProdutoCategoriaController.Deletar(p);
@@ -1116,57 +1113,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
             Filtrar();
 
         }
-       
-       
-      
-        private void Doc_PrintPage(object sender, PrintPageEventArgs e)
-        {
-            // Recupera o documento que enviou este evento.
-            ImprimirDocumentoHelper doc = (ImprimirDocumentoHelper)sender;
-
-            // Define a fonte e determina a altura da linha
-            using (Font fonte = new Font("Verdana", 10))
-            {
-                float alturaLinha = fonte.GetHeight(e.Graphics);
-
-                // Cria as variáveis para tratar a posição na página
-                float x = e.MarginBounds.Left;
-                float y = e.MarginBounds.Top;
-
-                // Incrementa o contador de página para refletir
-                // a página que esta sendo impressa
-                doc.NumeroPagina += 1;
-
-                // Imprime toda a informação que cabe na página
-                // O laço termina quando a próxima linha
-                // iria passar a borda da margem ou quando não
-                // houve mais linhas a imprimir
-                while ((y + alturaLinha) < e.MarginBounds.Bottom &&
-                  doc.Offset <= doc.Texto.GetUpperBound(0))
-                {
-                    e.Graphics.DrawString(doc.Texto[doc.Offset], fonte,
-                      Brushes.Black, x, y);
-
-                    // move para a proxima linha
-                    doc.Offset += 1;
-
-                    // Move uma linha para baixo (proxima linha)
-                    y += alturaLinha;
-                }
-
-                if (doc.Offset < doc.Texto.GetUpperBound(0))
-                {
-                    // Havendo ainda pelo menos mais uma página.
-                    // Sinaliza o evento para disparar novamente
-                    e.HasMorePages = true;
-                }
-                else
-                {
-                    // A impressão terminou
-                    doc.Offset = 0;
-                }
-            }
-        }
         //DataGrid
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1193,7 +1139,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
                 }
             }
         }
-
         //Pesquisa
         private void txtCodigoBarraCodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -1263,7 +1208,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
             }
                 
         }
-
         private void btnBuscarCategoria2_Click(object sender, EventArgs e)
         {
             if (cbNivel2.SelectedValue != null)
@@ -1280,7 +1224,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
             }
                 
         }
-
         private void btnBuscarCategoria3_Click(object sender, EventArgs e)
         {
             if (cbNivel3.SelectedValue != null)
@@ -1297,24 +1240,61 @@ namespace Trabalho_Mercado_Online.Views.Dados
             }
                 
         }
-
         //Impressão
+        private void Doc_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            // Recupera o documento que enviou este evento.
+            ImprimirDocumentoHelper doc = (ImprimirDocumentoHelper)sender;
+
+            // Define a fonte e determina a altura da linha
+            using (Font fonte = new Font("Verdana", 10))
+            {
+                float alturaLinha = fonte.GetHeight(e.Graphics);
+
+                // Cria as variáveis para tratar a posição na página
+                float x = e.MarginBounds.Left;
+                float y = e.MarginBounds.Top;
+
+                // Incrementa o contador de página para refletir
+                // a página que esta sendo impressa
+                doc.NumeroPagina += 1;
+
+                // Imprime toda a informação que cabe na página
+                // O laço termina quando a próxima linha
+                // iria passar a borda da margem ou quando não
+                // houve mais linhas a imprimir
+                while ((y + alturaLinha) < e.MarginBounds.Bottom &&
+                  doc.Offset <= doc.Texto.GetUpperBound(0))
+                {
+                    e.Graphics.DrawString(doc.Texto[doc.Offset], fonte,
+                      Brushes.Black, x, y);
+
+                    // move para a proxima linha
+                    doc.Offset += 1;
+
+                    // Move uma linha para baixo (proxima linha)
+                    y += alturaLinha;
+                }
+
+                if (doc.Offset < doc.Texto.GetUpperBound(0))
+                {
+                    // Havendo ainda pelo menos mais uma página.
+                    // Sinaliza o evento para disparar novamente
+                    e.HasMorePages = true;
+                }
+                else
+                {
+                    // A impressão terminou
+                    doc.Offset = 0;
+                }
+            }
+        }
         private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             e.Graphics.DrawString(ListaImprimir, new Font("Arial", 12, FontStyle.Bold), Brushes.Black, 50, 50);
         }
-
-
-
-
-
-
-
-
-
-
         #endregion
 
-       
+        
     }
 }

@@ -135,7 +135,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             // btnDeletar
             // 
             this.btnDeletar.BackColor = System.Drawing.Color.Black;
-            this.btnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnDeletar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeletar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDeletar.ForeColor = System.Drawing.Color.White;
@@ -401,7 +401,6 @@ namespace Trabalho_Mercado_Online.Views.Dados
             this.listView.FullRowSelect = true;
             this.listView.GridLines = true;
             this.listView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.listView.HideSelection = false;
             this.listView.Location = new System.Drawing.Point(348, 14);
             this.listView.Name = "listView";
             this.listView.Size = new System.Drawing.Size(201, 620);

@@ -69,10 +69,12 @@ namespace Trabalho_Mercado_Online.Views.Ferramenta
             if (lista.Count > 0)
             {
                 dataGridView.Columns[0].Width = 30;
-                dataGridView.Columns[1].Width = 170;
+                dataGridView.Columns[1].Width = 200;
                 dataGridView.Columns[2].Width = 70;
-                dataGridView.Columns[3].Width = 50;
-                dataGridView.Columns[4].Width = 50;
+                dataGridView.Columns[3].Width = 70;
+
+                dataGridView.Columns[3].Visible = false;
+                dataGridView.Columns[4].Visible = false;
             }
         }
         //Tela

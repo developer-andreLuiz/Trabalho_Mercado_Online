@@ -258,9 +258,9 @@ namespace Trabalho_Mercado_Online.Views.Access
             
             
             
-            dataGridView.Columns[1].Width = 250;
-            dataGridView.Columns[3].Width = 50;
-            dataGridView.Columns[4].Width = 150;
+            dataGridView.Columns[1].Width = 685;
+            dataGridView.Columns[3].Width = 80;
+            dataGridView.Columns[4].Width = 80;
 
             dataGridView.Columns[0].Visible = false;
             dataGridView.Columns[2].Visible = false;

@@ -110,7 +110,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             if (ListaGrid.Count>0)
             {
                 dataGridView.Columns[0].Width = 100;
-                dataGridView.Columns[1].Width = 750;
+                dataGridView.Columns[1].Width = 725;
             }
             lblTotal.Text = $"Total: {ListaGrid.Count}";
             #endregion

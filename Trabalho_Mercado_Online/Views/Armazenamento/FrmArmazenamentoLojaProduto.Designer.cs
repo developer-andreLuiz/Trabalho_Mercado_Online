@@ -32,7 +32,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.txtTeste = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMain.SuspendLayout();
@@ -64,25 +63,12 @@
             this.panelMain.BackColor = System.Drawing.Color.White;
             this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelMain.Controls.Add(this.pictureBox1);
-            this.panelMain.Controls.Add(this.txtTeste);
             this.panelMain.Controls.Add(this.label3);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(900, 648);
             this.panelMain.TabIndex = 4;
-            // 
-            // txtTeste
-            // 
-            this.txtTeste.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTeste.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTeste.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.txtTeste.Location = new System.Drawing.Point(64, 103);
-            this.txtTeste.Multiline = true;
-            this.txtTeste.Name = "txtTeste";
-            this.txtTeste.Size = new System.Drawing.Size(539, 117);
-            this.txtTeste.TabIndex = 57;
-            this.txtTeste.TextChanged += new System.EventHandler(this.txtInformacao_TextChanged);
             // 
             // contextMenuStrip1
             // 
@@ -113,7 +99,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.TextBox txtTeste;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

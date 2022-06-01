@@ -127,7 +127,7 @@ namespace Trabalho_Mercado_Online.Views.Access
             this.btnLimparFiltro.ForeColor = System.Drawing.Color.White;
             this.btnLimparFiltro.Location = new System.Drawing.Point(797, 87);
             this.btnLimparFiltro.Name = "btnLimparFiltro";
-            this.btnLimparFiltro.Size = new System.Drawing.Size(89, 27);
+            this.btnLimparFiltro.Size = new System.Drawing.Size(88, 27);
             this.btnLimparFiltro.TabIndex = 97;
             this.btnLimparFiltro.Text = "Limpar Filtro";
             this.btnLimparFiltro.UseVisualStyleBackColor = false;
@@ -298,7 +298,6 @@ namespace Trabalho_Mercado_Online.Views.Access
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Cyan;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.MidnightBlue;
             this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -328,7 +327,7 @@ namespace Trabalho_Mercado_Online.Views.Access
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowTemplate.Height = 50;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(869, 377);
+            this.dataGridView.Size = new System.Drawing.Size(870, 377);
             this.dataGridView.TabIndex = 84;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
