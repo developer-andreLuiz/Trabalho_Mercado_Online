@@ -259,7 +259,7 @@ namespace Trabalho_Mercado_Online.Views.Dados
             bool igualaProduto = chkIgualaProduto.Checked;
             bool faltaEditar = chkFaltaEditar.Checked;
             bool editado = chkEditado.Checked;
-
+            bool habilitado = chkHabilitado.Checked;
 
             //Sem Filtro
             ListaProdutos.AddRange(GlobalHelper.Listas.Produto);
@@ -293,7 +293,11 @@ namespace Trabalho_Mercado_Online.Views.Dados
                 var lt = ListaProdutos.FindAll(x => x.Peso.Equals("00000") == false);
                 ListaProdutos = lt;
             }
-
+            if (habilitado)
+            {
+                var lt = ListaProdutos.FindAll(x => x.Habilitado == true);
+                ListaProdutos = lt;
+            }
             if (categoria==1)
             {
                 if (cbNivel1.SelectedValue != null)
