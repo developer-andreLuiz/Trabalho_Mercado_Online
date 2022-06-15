@@ -6520,6 +6520,7 @@
       "Microsoft.EntityFrameworkCore >= 5.0.10",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.10",
+      "Newtonsoft.Json >= 13.0.1",
       "Pomelo.EntityFrameworkCore.MySql >= 5.0.1",
       "System.Configuration.ConfigurationManager >= 5.0.0",
       "System.Data.OleDb >= 5.0.0",
@@ -6528,7 +6529,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Developer\\.nuget\\packages\\": {},
+    "C:\\Users\\Andre\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
@@ -6537,14 +6538,14 @@
       "projectUniqueName": "D:\\Git\\Trabalho_Mercado_Online\\Trabalho_Mercado_Online\\Trabalho_Mercado_Online.csproj",
       "projectName": "Mercado Online",
       "projectPath": "D:\\Git\\Trabalho_Mercado_Online\\Trabalho_Mercado_Online\\Trabalho_Mercado_Online.csproj",
-      "packagesPath": "C:\\Users\\Developer\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Andre\\.nuget\\packages\\",
       "outputPath": "D:\\Git\\Trabalho_Mercado_Online\\Trabalho_Mercado_Online\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Developer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6591,6 +6592,10 @@
             "target": "Package",
             "version": "[5.0.10, )"
           },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          },
           "Pomelo.EntityFrameworkCore.MySql": {
             "target": "Package",
             "version": "[5.0.1, )"
@@ -6630,7 +6635,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
