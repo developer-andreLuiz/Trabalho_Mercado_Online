@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnVisualizar = new System.Windows.Forms.Button();
             this.chkVizualizacao = new System.Windows.Forms.CheckBox();
-            this.btnCancelarEncarte = new System.Windows.Forms.Button();
-            this.btnSalvarEncarte = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtComplemento = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCartaz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -52,10 +54,11 @@
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.btnImprimir);
             this.panelMain.Controls.Add(this.btnVisualizar);
             this.panelMain.Controls.Add(this.chkVizualizacao);
-            this.panelMain.Controls.Add(this.btnCancelarEncarte);
-            this.panelMain.Controls.Add(this.btnSalvarEncarte);
+            this.panelMain.Controls.Add(this.btnCancelar);
+            this.panelMain.Controls.Add(this.btnSalvar);
             this.panelMain.Controls.Add(this.label4);
             this.panelMain.Controls.Add(this.txtComplemento);
             this.panelMain.Controls.Add(this.label3);
@@ -74,6 +77,23 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(900, 648);
             this.panelMain.TabIndex = 0;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnImprimir.ForeColor = System.Drawing.Color.White;
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimir.Location = new System.Drawing.Point(324, 573);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(129, 58);
+            this.btnImprimir.TabIndex = 55650;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnVisualizar
             // 
@@ -105,40 +125,40 @@
             this.chkVizualizacao.UseVisualStyleBackColor = true;
             this.chkVizualizacao.CheckedChanged += new System.EventHandler(this.chkVizualizacao_CheckedChanged);
             // 
-            // btnCancelarEncarte
+            // btnCancelar
             // 
-            this.btnCancelarEncarte.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnCancelarEncarte.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnCancelarEncarte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarEncarte.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCancelarEncarte.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarEncarte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarEncarte.Location = new System.Drawing.Point(32, 573);
-            this.btnCancelarEncarte.Name = "btnCancelarEncarte";
-            this.btnCancelarEncarte.Size = new System.Drawing.Size(168, 58);
-            this.btnCancelarEncarte.TabIndex = 7;
-            this.btnCancelarEncarte.TabStop = false;
-            this.btnCancelarEncarte.Text = "Cancelar";
-            this.btnCancelarEncarte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelarEncarte.UseVisualStyleBackColor = false;
-            this.btnCancelarEncarte.Click += new System.EventHandler(this.btnCancelarEncarte_Click);
+            this.btnCancelar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(32, 573);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(129, 58);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.TabStop = false;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // btnSalvarEncarte
+            // btnSalvar
             // 
-            this.btnSalvarEncarte.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnSalvarEncarte.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnSalvarEncarte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvarEncarte.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSalvarEncarte.ForeColor = System.Drawing.Color.White;
-            this.btnSalvarEncarte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvarEncarte.Location = new System.Drawing.Point(285, 573);
-            this.btnSalvarEncarte.Name = "btnSalvarEncarte";
-            this.btnSalvarEncarte.Size = new System.Drawing.Size(168, 58);
-            this.btnSalvarEncarte.TabIndex = 6;
-            this.btnSalvarEncarte.Text = "Salvar";
-            this.btnSalvarEncarte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSalvarEncarte.UseVisualStyleBackColor = false;
-            this.btnSalvarEncarte.Click += new System.EventHandler(this.btnSalvarEncarte_Click);
+            this.btnSalvar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSalvar.ForeColor = System.Drawing.Color.White;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvar.Location = new System.Drawing.Point(178, 573);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(129, 58);
+            this.btnSalvar.TabIndex = 6;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // label4
             // 
@@ -274,6 +294,10 @@
             this.label5.TabIndex = 585;
             this.label5.Text = "Cartaz";
             // 
+            // printDocument
+            // 
+            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
+            // 
             // FrmFerramentaCartaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -310,9 +334,11 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.PictureBox picCartaz;
-        private System.Windows.Forms.Button btnCancelarEncarte;
-        private System.Windows.Forms.Button btnSalvarEncarte;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.CheckBox chkVizualizacao;
         private System.Windows.Forms.Button btnVisualizar;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Drawing.Printing.PrintDocument printDocument;
     }
 }
