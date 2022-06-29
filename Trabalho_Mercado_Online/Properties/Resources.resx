@@ -172,8 +172,11 @@
   <data name="icon_depot_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icon_depot_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_access_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icon_access_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_edit_Image_30x30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_edit_Image_30x30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="category" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\category.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background_cell_phone_392x737" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\background_cell_phone_392x737.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,8 +196,8 @@
   <data name="icon_search_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icon_search_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_edit_Image_30x30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icon_edit_Image_30x30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_print_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_print_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_category2_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icon_category2_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,6 +226,12 @@
   <data name="icon_products_add_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icon_products_add_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_access_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_access_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_poster_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\icon_poster_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_grid_Image_40x40" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icon_grid_Image_40x40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -244,10 +253,7 @@
   <data name="icon_rubber_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icon_rubber_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_print_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\icon_print_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="category" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\category.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="background_poster_7016x9920" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\background_poster_7016x9920.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

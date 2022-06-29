@@ -296,6 +296,10 @@ namespace Trabalho_Mercado_Online.Views.Principal
         {
             openChildForm(new FrmFerramentaEncarte());
         }
+        private void ferramentaCartazToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FrmFerramentaCartaz());
+        }
         private void ferramentaImagemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openChildForm(new FrmFerramentaPesquisarImagem());
@@ -312,6 +316,8 @@ namespace Trabalho_Mercado_Online.Views.Principal
         }
 
         
+
+
         //Sair
         private void btnSair_Click(object sender, EventArgs e)
         {

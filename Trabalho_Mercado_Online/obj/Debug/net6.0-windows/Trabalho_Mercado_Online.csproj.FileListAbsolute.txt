@@ -75,3 +75,4 @@ D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\net6.0-windows\
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\net6.0-windows\Mercado Online.pdb
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\net6.0-windows\Trabalho_Mercado_Online.genruntimeconfig.cache
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\net6.0-windows\ref\Mercado Online.dll
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\Debug\net6.0-windows\Trabalho_Mercado_Online.Views.Ferramenta.FrmFerramentaCartaz.resources

@@ -25,6 +25,9 @@
     <Compile Update="Views\Dados\FrmDadosFuncionarios.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Ferramenta\FrmFerramentaCartaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\Ferramenta\FrmFerramentaEncartePreview.cs">
       <SubType>Form</SubType>
     </Compile>

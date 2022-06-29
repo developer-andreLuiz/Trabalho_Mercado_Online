@@ -55,6 +55,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.armazenamentoEstoqueEstruturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ferramentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ferramentaEncarteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ferramentaCartazToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ferramentaImagemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accessAlimentarProdutoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -188,7 +189,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.dadosProdutoToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_products_40x40;
             this.dadosProdutoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.dadosProdutoToolStripMenuItem.Name = "dadosProdutoToolStripMenuItem";
-            this.dadosProdutoToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.dadosProdutoToolStripMenuItem.Size = new System.Drawing.Size(194, 46);
             this.dadosProdutoToolStripMenuItem.Text = "Produto";
             this.dadosProdutoToolStripMenuItem.Click += new System.EventHandler(this.dadosProdutoToolStripMenuItem_Click);
             // 
@@ -204,7 +205,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.dadosCategoriaToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_category3_40x40;
             this.dadosCategoriaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.dadosCategoriaToolStripMenuItem.Name = "dadosCategoriaToolStripMenuItem";
-            this.dadosCategoriaToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.dadosCategoriaToolStripMenuItem.Size = new System.Drawing.Size(194, 46);
             this.dadosCategoriaToolStripMenuItem.Text = "Categoria";
             // 
             // dadosCategoria1ToolStripMenuItem
@@ -214,7 +215,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.dadosCategoria1ToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_category1_40x40;
             this.dadosCategoria1ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.dadosCategoria1ToolStripMenuItem.Name = "dadosCategoria1ToolStripMenuItem";
-            this.dadosCategoria1ToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.dadosCategoria1ToolStripMenuItem.Size = new System.Drawing.Size(153, 46);
             this.dadosCategoria1ToolStripMenuItem.Text = "Nivel 1";
             this.dadosCategoria1ToolStripMenuItem.Click += new System.EventHandler(this.dadosCategoria1ToolStripMenuItem_Click);
             // 
@@ -225,7 +226,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.dadosCategoria2ToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_category2_40x40;
             this.dadosCategoria2ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.dadosCategoria2ToolStripMenuItem.Name = "dadosCategoria2ToolStripMenuItem";
-            this.dadosCategoria2ToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.dadosCategoria2ToolStripMenuItem.Size = new System.Drawing.Size(153, 46);
             this.dadosCategoria2ToolStripMenuItem.Text = "Nivel 2";
             this.dadosCategoria2ToolStripMenuItem.Click += new System.EventHandler(this.dadosCategoria2ToolStripMenuItem_Click);
             // 
@@ -236,7 +237,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.dadosCategoria3ToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_category3_40x40;
             this.dadosCategoria3ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.dadosCategoria3ToolStripMenuItem.Name = "dadosCategoria3ToolStripMenuItem";
-            this.dadosCategoria3ToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.dadosCategoria3ToolStripMenuItem.Size = new System.Drawing.Size(153, 46);
             this.dadosCategoria3ToolStripMenuItem.Text = "Nivel 3";
             this.dadosCategoria3ToolStripMenuItem.Click += new System.EventHandler(this.dadosCategoria3ToolStripMenuItem_Click);
             // 
@@ -251,7 +252,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.dadosFuncionarioToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_employee_40x40;
             this.dadosFuncionarioToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.dadosFuncionarioToolStripMenuItem.Name = "dadosFuncionarioToolStripMenuItem";
-            this.dadosFuncionarioToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.dadosFuncionarioToolStripMenuItem.Size = new System.Drawing.Size(194, 46);
             this.dadosFuncionarioToolStripMenuItem.Text = "Funcionario";
             // 
             // dadosFuncionarioFuncionarioToolStripMenuItem
@@ -261,7 +262,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.dadosFuncionarioFuncionarioToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_employee_40x40;
             this.dadosFuncionarioFuncionarioToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.dadosFuncionarioFuncionarioToolStripMenuItem.Name = "dadosFuncionarioFuncionarioToolStripMenuItem";
-            this.dadosFuncionarioFuncionarioToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.dadosFuncionarioFuncionarioToolStripMenuItem.Size = new System.Drawing.Size(194, 46);
             this.dadosFuncionarioFuncionarioToolStripMenuItem.Text = "Funcionario";
             this.dadosFuncionarioFuncionarioToolStripMenuItem.Click += new System.EventHandler(this.dadosFuncionarioFuncionarioToolStripMenuItem_Click);
             // 
@@ -272,7 +273,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.dadosFuncionarioCargoToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_check_list_40x40;
             this.dadosFuncionarioCargoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.dadosFuncionarioCargoToolStripMenuItem.Name = "dadosFuncionarioCargoToolStripMenuItem";
-            this.dadosFuncionarioCargoToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.dadosFuncionarioCargoToolStripMenuItem.Size = new System.Drawing.Size(194, 46);
             this.dadosFuncionarioCargoToolStripMenuItem.Text = "Cargo";
             this.dadosFuncionarioCargoToolStripMenuItem.Click += new System.EventHandler(this.dadosFuncionarioCargoToolStripMenuItem_Click);
             // 
@@ -367,6 +368,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.ferramentaToolStripMenuItem.BackColor = System.Drawing.Color.DodgerBlue;
             this.ferramentaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ferramentaEncarteToolStripMenuItem,
+            this.ferramentaCartazToolStripMenuItem,
             this.ferramentaImagemToolStripMenuItem});
             this.ferramentaToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ferramentaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
@@ -386,9 +388,20 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.ferramentaEncarteToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_grid_Image_40x40;
             this.ferramentaEncarteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ferramentaEncarteToolStripMenuItem.Name = "ferramentaEncarteToolStripMenuItem";
-            this.ferramentaEncarteToolStripMenuItem.Size = new System.Drawing.Size(162, 46);
+            this.ferramentaEncarteToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
             this.ferramentaEncarteToolStripMenuItem.Text = "Encarte";
             this.ferramentaEncarteToolStripMenuItem.Click += new System.EventHandler(this.ferramentaEncarteToolStripMenuItem_Click);
+            // 
+            // ferramentaCartazToolStripMenuItem
+            // 
+            this.ferramentaCartazToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(174)))), ((int)(((byte)(254)))));
+            this.ferramentaCartazToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.ferramentaCartazToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_poster_40x40;
+            this.ferramentaCartazToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ferramentaCartazToolStripMenuItem.Name = "ferramentaCartazToolStripMenuItem";
+            this.ferramentaCartazToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.ferramentaCartazToolStripMenuItem.Text = "Cartaz";
+            this.ferramentaCartazToolStripMenuItem.Click += new System.EventHandler(this.ferramentaCartazToolStripMenuItem_Click);
             // 
             // ferramentaImagemToolStripMenuItem
             // 
@@ -397,7 +410,7 @@ namespace Trabalho_Mercado_Online.Views.Principal
             this.ferramentaImagemToolStripMenuItem.Image = global::Trabalho_Mercado_Online.Properties.Resources.icon_img_30x30;
             this.ferramentaImagemToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ferramentaImagemToolStripMenuItem.Name = "ferramentaImagemToolStripMenuItem";
-            this.ferramentaImagemToolStripMenuItem.Size = new System.Drawing.Size(162, 46);
+            this.ferramentaImagemToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
             this.ferramentaImagemToolStripMenuItem.Text = "Imagem";
             this.ferramentaImagemToolStripMenuItem.Click += new System.EventHandler(this.ferramentaImagemToolStripMenuItem_Click);
             // 
@@ -570,5 +583,6 @@ namespace Trabalho_Mercado_Online.Views.Principal
         private System.Windows.Forms.ToolStripMenuItem dadosFuncionarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dadosFuncionarioFuncionarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dadosFuncionarioCargoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ferramentaCartazToolStripMenuItem;
     }
 }

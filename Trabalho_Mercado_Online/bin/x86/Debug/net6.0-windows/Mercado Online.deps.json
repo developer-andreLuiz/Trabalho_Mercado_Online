@@ -12,6 +12,7 @@
           "Microsoft.EntityFrameworkCore": "5.0.10",
           "Microsoft.EntityFrameworkCore.Design": "5.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.10",
+          "Newtonsoft.Json": "13.0.1",
           "Pomelo.EntityFrameworkCore.MySql": "5.0.1",
           "System.Configuration.ConfigurationManager": "5.0.0",
           "System.Data.OleDb": "5.0.0",

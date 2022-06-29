@@ -59,6 +59,7 @@ D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\net6.0-wind
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\net6.0-windows\Trabalho_Mercado_Online.Views.Dados.FrmDadosFuncionarios.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\net6.0-windows\Trabalho_Mercado_Online.Views.Dados.FrmDadosProduto.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\net6.0-windows\Trabalho_Mercado_Online.Views.Dados.FrmDadosProdutos.resources
+D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\net6.0-windows\Trabalho_Mercado_Online.Views.Ferramenta.FrmFerramentaCartaz.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\net6.0-windows\Trabalho_Mercado_Online.Views.Ferramenta.FrmFerramentaEncarte.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\net6.0-windows\Trabalho_Mercado_Online.Views.Ferramenta.FrmFerramentaEncartePreview.resources
 D:\Git\Trabalho_Mercado_Online\Trabalho_Mercado_Online\obj\x86\Debug\net6.0-windows\Trabalho_Mercado_Online.Views.Ferramenta.FrmFerramentaPesquisarImagem.resources
