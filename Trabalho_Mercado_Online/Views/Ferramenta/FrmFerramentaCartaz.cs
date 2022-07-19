@@ -21,19 +21,28 @@ namespace Trabalho_Mercado_Online.Views.Ferramenta
         Bitmap bitmapTop2 = null;
         Bitmap bitmapBot1 = null;
         Bitmap bitmapBot2 = null;
+
+        List<Point> ListPosTxt = new List<Point>() 
+        {
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0),
+            new Point(0,0)
+        };
+        List<int> ListFontSize = new List<int>()
+        {
+            100,
+            100,
+            100,
+            100
+        };
+
         #endregion
+       
         #region Funções
         void ExibirImagem()
         {
-            if (txtComplemento.Text.Trim().Length>0)
-            {
-                picCartaz.BackgroundImage = CartazHelper.CartazLinha3(txtNome.Text, txtDescricao.Text, txtComplemento.Text, txtValor.Text);
-            }
-            else
-            {
-                picCartaz.BackgroundImage = CartazHelper.CartazLinha2(txtNome.Text, txtDescricao.Text, txtValor.Text);
-            }
-           
+            picCartaz.BackgroundImage = CartazHelper.Cartaz(txtNome.Text, txtDescricao.Text, txtComplemento.Text, txtValor.Text, ListPosTxt, ListFontSize);
         }
         void SalvarImagem()
         {
@@ -59,40 +68,17 @@ namespace Trabalho_Mercado_Online.Views.Ferramenta
 
 
         }
-        void ImprimirImagem()
-        {
-            Bitmap bitmapOriginal = new Bitmap(picCartaz.BackgroundImage);
-            bitmapImprimir = null;
-            bitmapTop1 = bitmapOriginal.Clone(new Rectangle(0, 0, 3508, 4960), bitmapOriginal.PixelFormat);
-
-            bitmapTop2 = bitmapOriginal.Clone(new Rectangle(3508, 0, 3508, 4960), bitmapOriginal.PixelFormat);
-
-            bitmapBot1 = bitmapOriginal.Clone(new Rectangle(0, 4960, 3508, 4960), bitmapOriginal.PixelFormat);
-
-            bitmapBot2 = bitmapOriginal.Clone(new Rectangle(3508, 4960, 3508, 4960), bitmapOriginal.PixelFormat);
-
-            
-            PaperSize paperSize = new PaperSize("A3", 3508, 4960);
-            printDocument.DefaultPageSettings.PaperSize = paperSize;
-            
-            bitmapImprimir = bitmapTop1;
-            printDocument.Print();
-            bitmapImprimir = bitmapTop2;
-            printDocument.Print();
-            bitmapImprimir = bitmapBot1;
-            printDocument.Print();
-            bitmapImprimir = bitmapBot2;
-            printDocument.Print();
-
-        }
+     
 
         #endregion
+       
         #region Eventos
         public FrmFerramentaCartaz()
         {
             InitializeComponent();
-
         }
+
+        //Interface
         private void txtNome_TextChanged(object sender, EventArgs e)
         {
             if (chkVizualizacao.Checked)
@@ -122,6 +108,8 @@ namespace Trabalho_Mercado_Online.Views.Ferramenta
                 ExibirImagem();
             }
         }
+
+        //Visualização
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
             ExibirImagem();
@@ -134,14 +122,7 @@ namespace Trabalho_Mercado_Online.Views.Ferramenta
             }
         }
 
-
-
-
-
-        #endregion
-
-       
-
+        //Btns
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             txtNome.Text = String.Empty;
@@ -159,18 +140,137 @@ namespace Trabalho_Mercado_Online.Views.Ferramenta
             catch { }
         }
 
-        private void btnImprimir_Click(object sender, EventArgs e)
+        //Ajuste
+        private void nUDHorizontal_ValueChanged(object sender, EventArgs e)
         {
-            try
+            if (rbNome.Checked)
             {
-                ImprimirImagem();
+                int pos = 0;
+                ListPosTxt[pos] = new Point((int)nUDHorizontal.Value, ListPosTxt[pos].Y);
             }
-            catch { }
+            if (rbDescicao.Checked)
+            {
+                int pos = 1;
+                ListPosTxt[pos] = new Point((int)nUDHorizontal.Value, ListPosTxt[pos].Y);
+            }
+            if (rbComplemento.Checked)
+            {
+                int pos = 2;
+                ListPosTxt[pos] = new Point((int)nUDHorizontal.Value, ListPosTxt[pos].Y);
+            }
+            if (rbValor.Checked)
+            {
+                int pos = 3;
+                ListPosTxt[pos] = new Point((int)nUDHorizontal.Value, ListPosTxt[pos].Y);
+            }
+            if (chkVizualizacao.Checked)
+            {
+                ExibirImagem();
+            }
+        }
+        private void nUDVertical_ValueChanged(object sender, EventArgs e)
+        {
+            if (rbNome.Checked)
+            {
+                int pos = 0;
+                ListPosTxt[pos] = new Point(ListPosTxt[pos].X, (int)nUDVertical.Value);
+            }
+            if (rbDescicao.Checked)
+            {
+                int pos = 1;
+                ListPosTxt[pos] = new Point(ListPosTxt[pos].X, (int)nUDVertical.Value);
+            }
+            if (rbComplemento.Checked)
+            {
+                int pos = 2;
+                ListPosTxt[pos] = new Point(ListPosTxt[pos].X, (int)nUDVertical.Value);
+            }
+            if (rbValor.Checked)
+            {
+                int pos = 3;
+                ListPosTxt[pos] = new Point(ListPosTxt[pos].X, (int)nUDVertical.Value);
+            }
+            if (chkVizualizacao.Checked)
+            {
+                ExibirImagem();
+            }
+        }
+        private void nUDFonte_ValueChanged(object sender, EventArgs e)
+        {
+            if (rbNome.Checked)
+            {
+                int pos = 0;
+                ListFontSize[pos] = (int)nUDFonte.Value > 0 ? (int)nUDFonte.Value : 1;
+
+            }
+            if (rbDescicao.Checked)
+            {
+                int pos = 1;
+                ListFontSize[pos] = (int)nUDFonte.Value > 0 ? (int)nUDFonte.Value : 1;
+            }
+            if (rbComplemento.Checked)
+            {
+                int pos = 2;
+                ListFontSize[pos] = (int)nUDFonte.Value > 0 ? (int)nUDFonte.Value : 1;
+            }
+            if (rbValor.Checked)
+            {
+                int pos = 3;
+                ListFontSize[pos] = (int)nUDFonte.Value > 0 ? (int)nUDFonte.Value : 1;
+            }
+            if (chkVizualizacao.Checked)
+            {
+                ExibirImagem();
+            }
         }
 
-        private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        private void rbNome_CheckedChanged(object sender, EventArgs e)
         {
-            e.Graphics.DrawImage(bitmapImprimir,0,0);
+            if (rbNome.Checked)
+            {
+                int pos = 0;
+                nUDHorizontal.Value = ListPosTxt[pos].X;
+                nUDVertical.Value = ListPosTxt[pos].Y;
+                nUDFonte.Value = ListFontSize[pos];
+            }
         }
+        private void rbDescicao_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbDescicao.Checked)
+            {
+                int pos = 1;
+                nUDHorizontal.Value = ListPosTxt[pos].X;
+                nUDVertical.Value = ListPosTxt[pos].Y;
+                nUDFonte.Value = ListFontSize[pos];
+            }
+        }
+        private void rbComplemento_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbComplemento.Checked)
+            {
+                int pos = 2;
+                nUDHorizontal.Value = ListPosTxt[pos].X;
+                nUDVertical.Value = ListPosTxt[pos].Y;
+                nUDFonte.Value = ListFontSize[pos];
+            }
+        }
+        private void rbValor_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbValor.Checked)
+            {
+                int pos = 3;
+                nUDHorizontal.Value = ListPosTxt[pos].X;
+                nUDVertical.Value = ListPosTxt[pos].Y;
+                nUDFonte.Value = ListFontSize[pos];
+            }
+        }
+
+
+
+
+
+        #endregion
+
+
     }
 }
