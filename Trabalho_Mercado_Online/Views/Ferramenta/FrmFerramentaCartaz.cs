@@ -44,8 +44,10 @@ namespace Trabalho_Mercado_Online.Views.Ferramenta
         {
             picCartaz.BackgroundImage = CartazHelper.Cartaz(txtNome.Text, txtDescricao.Text, txtComplemento.Text, txtValor.Text, ListPosTxt, ListFontSize);
         }
+      
         void SalvarImagem()
         {
+            picCartaz.BackgroundImage = CartazHelper.CartazSalvar(txtNome.Text, txtDescricao.Text, txtComplemento.Text, txtValor.Text, ListPosTxt, ListFontSize);
             Bitmap bitmapOriginal = new Bitmap(picCartaz.BackgroundImage);
             //Point A3 = new Point(7016, 9920);
             bitmapTop1 = bitmapOriginal.Clone(new Rectangle(0,0,3508,4960), bitmapOriginal.PixelFormat);
